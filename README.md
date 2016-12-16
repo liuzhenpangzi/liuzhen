@@ -23,8 +23,8 @@
 3. 可以发表文字和图片的“说说”。
 
 
-(http://github.com/10thcommune/10thspace/raw/master/1.jpg)
+![image](http://github.com/10thcommune/10thspace/raw/master/1.jpg)
 
-(http://github.com/10thcommune/10thspace/raw/master/2.jpg)
+![image](http://github.com/10thcommune/10thspace/raw/master/2.jpg)
 
 qq交流群 559341240
