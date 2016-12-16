@@ -276,7 +276,7 @@ namespace DB_PROXY {
 			string json_str = "";
 
 			CUserModel* pUserModel = CUserModel::getInstance();
-			if(!pUserModel->getUserById(nFriendId, cUser)){
+			if(!pUserModel->getUserById(nUserId, cUser)){
 				result_code = 2;
 
 			}else if(nAgree == IM::BaseDefine::ADD_FRIEND_AGREE){
@@ -366,7 +366,7 @@ namespace DB_PROXY {
 			//加之前还是要验证用户是否存在
 			if(!CRelationModel::getInstance()->delFollowUser(nUserId, nFriendId)){
 				result_code = 1;
-				//log("%u, %u failed", nUserId, nFriendId);
+				log("%u, %u failed", nUserId, nFriendId);
 			}
 
 			msgResp.set_result_code(result_code); //0:成功 1:失败

@@ -182,10 +182,13 @@ void CUserModel::getUsers2(uint32_t nUserId,uint32_t nLastTime,IM::Buddy::IMAllU
             log(" no result set for sql:%s", strSql.c_str());
         }
 
-        strSql = "select IMUser.* from IMUser,IMRelationShip where ((IMUser.id=IMRelationShip.smallId "
-				"and IMRelationShip.bigId="+int2string(nUserId)+") or (IMUser.id=IMRelationShip.bigId and "
-				"IMRelationShip.smallId="+int2string(nUserId)+")) and IMRelationShip.status<>"+
-				int2string(RELATION_TYPE_FRIEND);
+        strSql = "select IMUser.* from IMUser,IMRelationShip where (IMUser.id=IMRelationShip.smallId "
+				"and IMRelationShip.bigId="+int2string(nUserId)+" and (IMRelationShip.status=" +
+				int2string(RELATION_TYPE_FOLLOW_SMALL) + " or IMRelationShip.status=" +
+				int2string(RELATION_TYPE_FOLLOW_EACH_OTHER) + ")) or (IMUser.id=IMRelationShip.bigId and "
+				"IMRelationShip.smallId="+int2string(nUserId)+" and (IMRelationShip.status=" +
+				int2string(RELATION_TYPE_FOLLOW_BIG) + " or IMRelationShip.status=" +
+				int2string(RELATION_TYPE_FOLLOW_EACH_OTHER) + "))";
 				//" and IMUser.updated>" + int2string(nLastTime) + ")";
 		pResultSet = pDBConn->ExecuteQuery(strSql.c_str());
 		if(pResultSet)
@@ -202,6 +205,7 @@ void CUserModel::getUsers2(uint32_t nUserId,uint32_t nLastTime,IM::Buddy::IMAllU
 				pUser->set_email(pResultSet->GetString("email"));
 				pUser->set_avatar_url(pResultSet->GetString("avatar"));
 				pUser->set_sign_info(pResultSet->GetString("sign_info"));
+				pUser->set_fans_cnt(pResultSet->GetInt("fans_cnt"));
 
 				pUser->set_department_id(pResultSet->GetInt("departId"));
 				pUser->set_status(pResultSet->GetInt("status"));
