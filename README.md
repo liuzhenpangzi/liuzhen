@@ -22,8 +22,9 @@
 2. 文字，语音的单聊和群聊。
 3. 可以发表文字和图片的“说说”。
 
-1.jpg
 
-2.jpg
+(http://github.com/10thcommune/10thspace/raw/master/1.jpg)
+
+(http://github.com/10thcommune/10thspace/raw/master/2.jpg)
 
 qq交流群 559341240
