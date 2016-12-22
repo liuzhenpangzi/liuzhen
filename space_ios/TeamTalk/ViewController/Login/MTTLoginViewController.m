@@ -193,10 +193,7 @@
    
     [dic setObject:[password MD5] forKey:@"passwd"];
     
-    /*
-     打开下面那一句就是测试服务器
-     */
-    //[dic setObject:@"test" forKey:@"server_type"];
+    [dic setObject:@"test" forKey:@"server_type"];
 
     NSString *landu_arg = [dic jsonString];
     NSDictionary *postDic = @{@"arg":landu_arg};
