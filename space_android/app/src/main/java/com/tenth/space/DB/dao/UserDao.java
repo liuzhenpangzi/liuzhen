@@ -34,11 +34,12 @@ public class UserDao extends AbstractDao<UserEntity, Long> {
         public final static Property Avatar = new Property(7, String.class, "avatar", false, "AVATAR");
         public final static Property Phone = new Property(8, String.class, "phone", false, "PHONE");
         public final static Property Email = new Property(9, String.class, "email", false, "EMAIL");
-        public final static Property DepartmentId = new Property(10, int.class, "departmentId", false, "DEPARTMENT_ID");
-        public final static Property Status = new Property(11, int.class, "status", false, "STATUS");
-        public final static Property Created = new Property(12, int.class, "created", false, "CREATED");
-        public final static Property Updated = new Property(13, int.class, "updated", false, "UPDATED");
-        public final static Property FansCnt = new Property(14, int.class, "fansCnt", false, "FANS_CNT");
+        public final static Property Signature = new Property(10, String.class, "signature", false, "SIGNATURE");
+        public final static Property DepartmentId = new Property(11, int.class, "departmentId", false, "DEPARTMENT_ID");
+        public final static Property Status = new Property(12, int.class, "status", false, "STATUS");
+        public final static Property Created = new Property(13, int.class, "created", false, "CREATED");
+        public final static Property Updated = new Property(14, int.class, "updated", false, "UPDATED");
+        public final static Property FansCnt = new Property(15, int.class, "fansCnt", false, "FANS_CNT");
     };
 
 
@@ -64,11 +65,12 @@ public class UserDao extends AbstractDao<UserEntity, Long> {
                 "'AVATAR' TEXT NOT NULL ," + // 7: avatar
                 "'PHONE' TEXT NOT NULL ," + // 8: phone
                 "'EMAIL' TEXT NOT NULL ," + // 9: email
-                "'DEPARTMENT_ID' INTEGER NOT NULL ," + // 10: departmentId
-                "'STATUS' INTEGER NOT NULL ," + // 11: status
-                "'CREATED' INTEGER NOT NULL ," + // 12: created
-                "'UPDATED' INTEGER NOT NULL ," + // 13: updated
-                "'FANS_CNT' INTEGER NOT NULL );"); // 14: fansCnt
+                "'SIGNATURE' TEXT," + // 10: signature
+                "'DEPARTMENT_ID' INTEGER NOT NULL ," + // 11: departmentId
+                "'STATUS' INTEGER NOT NULL ," + // 12: status
+                "'CREATED' INTEGER NOT NULL ," + // 13: created
+                "'UPDATED' INTEGER NOT NULL ," + // 14: updated
+                "'FANS_CNT' INTEGER NOT NULL );"); // 15: fansCnt
         // Add Indexes
         db.execSQL("CREATE INDEX " + constraint + "IDX_UserInfo_PEER_ID ON UserInfo" +
                 " (PEER_ID);");
@@ -102,11 +104,16 @@ public class UserDao extends AbstractDao<UserEntity, Long> {
         stmt.bindString(8, entity.getAvatar());
         stmt.bindString(9, entity.getPhone());
         stmt.bindString(10, entity.getEmail());
-        stmt.bindLong(11, entity.getDepartmentId());
-        stmt.bindLong(12, entity.getStatus());
-        stmt.bindLong(13, entity.getCreated());
-        stmt.bindLong(14, entity.getUpdated());
-        stmt.bindLong(15, entity.getFansCnt());
+ 
+        String signature = entity.getSignature();
+        if (signature != null) {
+            stmt.bindString(11, signature);
+        }
+        stmt.bindLong(12, entity.getDepartmentId());
+        stmt.bindLong(13, entity.getStatus());
+        stmt.bindLong(14, entity.getCreated());
+        stmt.bindLong(15, entity.getUpdated());
+        stmt.bindLong(16, entity.getFansCnt());
     }
 
     /** @inheritdoc */
@@ -129,11 +136,12 @@ public class UserDao extends AbstractDao<UserEntity, Long> {
             cursor.getString(offset + 7), // avatar
             cursor.getString(offset + 8), // phone
             cursor.getString(offset + 9), // email
-            cursor.getInt(offset + 10), // departmentId
-            cursor.getInt(offset + 11), // status
-            cursor.getInt(offset + 12), // created
-            cursor.getInt(offset + 13), // updated
-            cursor.getInt(offset + 14) // fansCnt
+            cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10), // signature
+            cursor.getInt(offset + 11), // departmentId
+            cursor.getInt(offset + 12), // status
+            cursor.getInt(offset + 13), // created
+            cursor.getInt(offset + 14), // updated
+            cursor.getInt(offset + 15) // fansCnt
         );
         return entity;
     }
@@ -151,11 +159,12 @@ public class UserDao extends AbstractDao<UserEntity, Long> {
         entity.setAvatar(cursor.getString(offset + 7));
         entity.setPhone(cursor.getString(offset + 8));
         entity.setEmail(cursor.getString(offset + 9));
-        entity.setDepartmentId(cursor.getInt(offset + 10));
-        entity.setStatus(cursor.getInt(offset + 11));
-        entity.setCreated(cursor.getInt(offset + 12));
-        entity.setUpdated(cursor.getInt(offset + 13));
-        entity.setFansCnt(cursor.getInt(offset + 14));
+        entity.setSignature(cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10));
+        entity.setDepartmentId(cursor.getInt(offset + 11));
+        entity.setStatus(cursor.getInt(offset + 12));
+        entity.setCreated(cursor.getInt(offset + 13));
+        entity.setUpdated(cursor.getInt(offset + 14));
+        entity.setFansCnt(cursor.getInt(offset + 15));
      }
     
     /** @inheritdoc */

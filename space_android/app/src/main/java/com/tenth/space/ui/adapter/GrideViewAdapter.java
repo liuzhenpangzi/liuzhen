@@ -110,6 +110,7 @@ public class GrideViewAdapter extends BaseAdapter {
             viewHolder.tv_nikeName.setText(lists.get(position).getMainName()+"");
             viewHolder.cb.setVisibility(View.GONE);
             //判断是否在滑动，滑动就加载默认图片，不是滑动就不加载默认图片
+             //Log.i("GTAG","url="+IMApplication.app.PrivateUrlFormat(Config.pictrueUrl+lists.get(position).getPeerId()+Utils.PNG));
             try {
                 if (HomeItemFragment2.isFling){//滑动过程中，加载一张默认图片
                     ImageLoaderUtil.instance(). displayImage(IMApplication.app.PrivateUrlFormat(Config.pictrueUrl+lists.get(position).getPeerId()+Utils.PNG), viewHolder.image, ImageLoaderUtil.getNoCacheUseDrawable(), null);

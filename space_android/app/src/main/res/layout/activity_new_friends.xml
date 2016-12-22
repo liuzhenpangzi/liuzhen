@@ -16,7 +16,7 @@
             android:id="@+id/go_back"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:src="@drawable/tt_back_btn"
+            android:src="@drawable/tt_top_back"
             android:layout_centerVertical="true"
             android:padding="15dp"
             />

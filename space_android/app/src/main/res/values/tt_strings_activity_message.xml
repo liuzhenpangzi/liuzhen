@@ -55,6 +55,8 @@
     <string name="call">呼叫</string>
     <string name="save_image">保存图片到手机</string>
     <string name="im_service_disconnected">无法连接到后台服务</string>
-    <string name="online_friends_count">当前在线好友数量：</string>
+    <string name="online_friends_count">在线好友人数：</string>
+    <string name="online_recommend_count">在线总人数：</string>
+    <string name="online_flow_count">在线关注人数：</string>
 
 </resources>

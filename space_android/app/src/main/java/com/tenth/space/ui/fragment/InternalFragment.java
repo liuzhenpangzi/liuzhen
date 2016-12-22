@@ -7,6 +7,9 @@ import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
+import android.util.SparseArray;
+import android.util.SparseBooleanArray;
+import android.util.SparseIntArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +43,7 @@ import com.tenth.space.utils.LogUtils;
 import com.tenth.space.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -121,7 +125,7 @@ public class InternalFragment extends Fragment {
     }
     public InternalFragment(){
         //注册
-        EventBus.getDefault().registerSticky(this);//链接时注册EventBus事件订阅者
+        EventBus.getDefault().register(this);//链接时注册EventBus事件订阅者
     }
 
     @Override
@@ -151,7 +155,8 @@ public class InternalFragment extends Fragment {
                     @Override
                     public void run() {
                         //查询数据库
-                        DBlists = DBInterface.instance().loadAllUsers();
+                        //DBlists = DBInterface.instance().loadAllUsers();
+                        DBlists = DBInterface.instance().LoadUserFromTypeNOT(IMBaseDefine.UserRelationType.RELATION_RECOMMEND);
                         IMBlogManager.instance().reqBlogList(IMBaseDefine.BlogType.BLOG_TYPE_RCOMMEND,pager);
                         if (DBlists==null){
                             return;
@@ -207,7 +212,7 @@ public class InternalFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), CommentActivity.class);
                 intent.putExtra("BlogEntity", globalList.get(position));
                 intent.putExtra("position", position);
-                intent.putExtra("IsShowFlow", IsShowFlow);
+                intent.putExtra("IsShowFlow", IsShowFlow&&globalList.get(position).isShowButton);
                 getActivity().startActivity(intent);
             }
 
@@ -242,18 +247,24 @@ public class InternalFragment extends Fragment {
             case GET_BLOG_OK://获取博客列表（一般只在第一次执行）//获取临时文件
                 switch (mTag) {
                     case 0://推荐
-                       // Log.i("gTAG")
                         if (tags==-1){
                             mBlogList = IMBlogManager.instance().getRecommendBlogList();
                             //临时文件，对比数据库，是否包含好友和关注，有就删除不显示
-                            checkAndDelete(mBlogList,DBlists);
-                            mLrvInternal.refreshComplete();
+                           //checkAndDelete(mBlogList,DBlists);
+                            setShowORFalse(mBlogList,DBlists);
+                            if (mLrvInternal!=null){
+                                mLrvInternal.refreshComplete();
+                            }
                             if(pager==0){
                                 globalList.clear();
                             }
-                            if (mBlogList.size()>0) {
-                                globalList.addAll(mBlogList);
-                                mMomentsAdapter.setData(globalList);
+                            if (mMomentsAdapter!=null){
+                                if (mBlogList.size()>0) {
+                                    globalList.addAll(mBlogList);
+                                    mMomentsAdapter.setData(globalList);
+                                }else {
+                                    mMomentsAdapter.notifyDataSetChanged();
+                                }
                             }
                         }
                         break;
@@ -261,14 +272,21 @@ public class InternalFragment extends Fragment {
                     case 1://好友
                         if (tags==-2) {
                             mBlogList = IMBlogManager.instance().getFridendBlogList();
-                            mLrvInternal.refreshComplete();
+                            if (mLrvInternal!=null){
+                                mLrvInternal.refreshComplete();
+                            }
                             if(pager==0){
                                 globalList.clear();
                             }
-                            if (mBlogList.size()>0) {
-                                globalList.addAll(mBlogList);
-                                mMomentsAdapter.setData(globalList);
+                            if (mMomentsAdapter!=null){
+                                if (mBlogList.size()>0) {
+                                    globalList.addAll(mBlogList);
+                                    mMomentsAdapter.setData(globalList);
+                                }else {
+                                    mMomentsAdapter.notifyDataSetChanged();
+                                }
                             }
+
                         }
                         break;
 
@@ -279,13 +297,19 @@ public class InternalFragment extends Fragment {
                                 //标示已经全部关注了的
                                 blogEntity.isFollow=1;
                             }
-                            mLrvInternal.refreshComplete();
+                            if (mLrvInternal!=null){
+                                mLrvInternal.refreshComplete();
+                            }
                             if(pager==0){
                                 globalList.clear();
                             }
-                            if (mBlogList.size()>0) {
-                                globalList.addAll(mBlogList);
-                                mMomentsAdapter.setData(globalList);
+                            if (mMomentsAdapter!=null){
+                                if (mBlogList.size()>0) {
+                                    globalList.addAll(mBlogList);
+                                    mMomentsAdapter.setData(globalList);
+                                }else {
+                                    mMomentsAdapter.notifyDataSetChanged();
+                                }
                             }
                         }
 
@@ -304,16 +328,37 @@ public class InternalFragment extends Fragment {
         }
     }
 
+    private void setShowORFalse(List<BlogEntity> mBlogList, List<UserEntity> dBlists) {
+        if (mBlogList!=null&&dBlists!=null){
+            SparseBooleanArray sparseArray = new SparseBooleanArray();
+            sparseArray.put(IMLoginManager.instance().getLoginId(),true);//自己的占位
+            for (int j=0;j<dBlists.size();j++){
+                sparseArray.put(dBlists.get(j).getPeerId(),true);
+            }
+            for (int i=0;i<mBlogList.size();i++){
+                Long writerID = mBlogList.get(i).getWriterUserId();
+                long id=writerID;
+                boolean isExist = sparseArray.get((int) id);
+                if (isExist){
+                    mBlogList.get(i).isShowButton=false;
+                }
+            }
+        }
+
+    }
+
+
     private void checkAndDelete(List<BlogEntity> mBlogList, List<UserEntity> DBlists) {
         //对比判断是否有自己的id（首）
-        if (mBlogList.size()>0&&DBlists.size()>0){
+        if (mBlogList!=null&&mBlogList.size()>0&&DBlists!=null&&DBlists.size()>0){
             //对比
             Iterator<BlogEntity> mBlogListIterator = mBlogList.iterator();
            while (mBlogListIterator.hasNext()){
                Long friendId = mBlogListIterator.next().getWriterUserId();
                for (UserEntity userEntity:DBlists){
                    if (userEntity.getPeerId()==friendId||friendId== IMLoginManager.instance().getLoginId()){
-                       mBlogListIterator.remove();
+                     // mBlogListIterator.remove();
+                     mBlogListIterator.next().isShowButton=true;
                        break;
                    }
                }

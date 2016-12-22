@@ -9,6 +9,7 @@ import de.greenrobot.dao.AbstractDaoSession;
 import de.greenrobot.dao.identityscope.IdentityScopeType;
 import de.greenrobot.dao.internal.DaoConfig;
 
+
 import com.tenth.space.DB.entity.BlogEntity;
 import com.tenth.space.DB.entity.CommentEntity;
 import com.tenth.space.DB.entity.DepartmentEntity;

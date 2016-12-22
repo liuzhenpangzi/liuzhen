@@ -154,6 +154,39 @@ public class ImageLoaderUtil {
                 .build();
         return options;
     }
+
+    public static DisplayImageOptions getBinear() {
+        DisplayImageOptions options = new DisplayImageOptions.Builder()
+                // 设置图片在下载期间显示的图片
+                .showImageOnLoading(R.drawable.tt_message_image_default)
+                // 设置图片Uri为空或是错误的时候显示的图片
+                  .showImageForEmptyUri(R.mipmap.faild)
+                // 设置图片加载/解码过程中错误时候显示的图片
+                //  .showImageOnFail(R.mipmap.faild)
+                // 设置下载的图片是否缓存在内存中
+                .cacheInMemory(true)
+                // 设置下载的图片是否缓存在SD卡中
+                .cacheOnDisk(true)
+                // 保留Exif信息
+                .considerExifParams(true)
+                // 设置图片以如何的编码方式显示
+                .imageScaleType(ImageScaleType.EXACTLY_STRETCHED)
+                // 设置图片的解码类型
+                .bitmapConfig(Bitmap.Config.ARGB_8888)
+                // .decodingOptions(android.graphics.BitmapFactory.Options
+                // decodingOptions)//设置图片的解码配置
+                .considerExifParams(true)
+                // 设置图片下载前的延迟
+                .delayBeforeLoading(0)// int
+                // delayInMillis为你设置的延迟时间
+                // 设置图片加入缓存前，对bitmap进行设置
+                // .preProcessor(BitmapProcessor preProcessor)
+                .resetViewBeforeLoading(false)// 设置图片在下载前是否重置，复位
+                // .displayer(new RoundedBitmapDisplayer(20))//是否设置为圆角，弧度为多少
+                // .displayer(new FadeInBitmapDisplayer(100))// 淡入
+                .build();
+        return options;
+    }
     //blogImages
     public static DisplayImageOptions getBlogOptions() {
         DisplayImageOptions options = new DisplayImageOptions.Builder()

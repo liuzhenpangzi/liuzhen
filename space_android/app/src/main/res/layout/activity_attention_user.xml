@@ -78,6 +78,17 @@
             android:text="@string/add"
             android:textColor="@android:color/white"
             android:textSize="19sp"/>
+        <Button
+            android:id="@+id/add_follow"
+            android:layout_width="fill_parent"
+            android:layout_height="45.5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/captcha_lib_image_layout_shape"
+            android:text="@string/follow"
+            android:textColor="#4d4d4d"
+            android:textSize="19sp"/>
 
         <Button
             android:id="@+id/msg_btn"

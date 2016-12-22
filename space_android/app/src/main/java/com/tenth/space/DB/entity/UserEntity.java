@@ -5,16 +5,16 @@ package com.tenth.space.DB.entity;
 // KEEP INCLUDES - put your custom includes here
 // KEEP INCLUDES END
 
-import android.text.TextUtils;
-
 import com.tenth.space.config.DBConstant;
 import com.tenth.space.imservice.entity.SearchElement;
 import com.tenth.space.utils.pinyin.PinYin;
 
+import org.apache.http.util.TextUtils;
+
 /**
  * Entity mapped to table UserInfo.
  */
-public class UserEntity extends PeerEntity {
+public class UserEntity extends PeerEntity{
 
     private String relation;
     private Long id;
@@ -32,6 +32,7 @@ public class UserEntity extends PeerEntity {
     private String phone;
     /** Not-null value. */
     private String email;
+    private String signature;
     private int departmentId;
     private int status;
     private int created;
@@ -49,16 +50,10 @@ public class UserEntity extends PeerEntity {
     public UserEntity(Long id) {
         this.id = id;
     }
-
-    public int getFansCnt() {
-        return fansCnt;
+    public UserEntity(int  peerId) {
+        this.peerId = peerId;
     }
-
-    public void setFansCnt(int fansCnt) {
-        this.fansCnt = fansCnt;
-    }
-
-    public UserEntity(String relation, Long id, int peerId, int gender, String mainName, String pinyinName, String realName, String avatar, String phone, String email, int departmentId, int status, int created, int updated, int fansCnt) {
+    public UserEntity(String relation, Long id, int peerId, int gender, String mainName, String pinyinName, String realName, String avatar, String phone, String email, String signature, int departmentId, int status, int created, int updated, int fansCnt) {
         this.relation = relation;
         this.id = id;
         this.peerId = peerId;
@@ -69,6 +64,7 @@ public class UserEntity extends PeerEntity {
         this.avatar = avatar;
         this.phone = phone;
         this.email = email;
+        this.signature = signature;
         this.departmentId = departmentId;
         this.status = status;
         this.created = created;
@@ -166,6 +162,14 @@ public class UserEntity extends PeerEntity {
     /** Not-null value; ensure this value is available before it is saved to the database. */
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getSignature() {
+        return signature;
+    }
+
+    public void setSignature(String signature) {
+        this.signature = signature;
     }
 
     public int getDepartmentId() {
@@ -281,6 +285,16 @@ public class UserEntity extends PeerEntity {
     public int getType() {
         return DBConstant.SESSION_TYPE_SINGLE;
     }
+
+    public int getFansCnt() {
+        return fansCnt;
+    }
+
+    public void setFansCnt(int fansCnt) {
+        this.fansCnt = fansCnt;
+    }
+
+    // KEEP METHODS - put your custom methods here
     // KEEP METHODS END
 
 }

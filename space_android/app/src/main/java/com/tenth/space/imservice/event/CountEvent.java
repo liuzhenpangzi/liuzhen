@@ -1,13 +1,22 @@
 package com.tenth.space.imservice.event;
 
+import com.tenth.space.DB.entity.UserEntity;
+
+import java.util.List;
+
 /**
  * Created by Administrator on 2016/11/29.
  */
 
 public class CountEvent {
 
+    private  List<UserEntity> list;
     private CountEvent.Event event;
     private int count;
+
+    public List<UserEntity> getList() {
+        return list;
+    }
 
     /**很多的场景只是关心改变的类型以及change的Ids*/
 
@@ -16,13 +25,13 @@ public class CountEvent {
         this.count=count;
     }
 
-//    public CountEvent(GroupEvent.Event event, GroupEntity groupEntity){
-//        this.groupEntity = groupEntity;
-//        this.event = event;
-//    }
-
+    public CountEvent(Event event,List<UserEntity> list){
+        this.event = event;
+        this.list=list;
+    }
     public enum Event{
-        UPDATACOUNT
+        UPDATACOUNT,
+        RECOMMEND_OK_BACK
     }
 
     public Event getEvent() {

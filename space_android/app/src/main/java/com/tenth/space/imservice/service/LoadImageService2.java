@@ -76,7 +76,6 @@ public class LoadImageService2 extends IntentService {
                      String imageName = Config.blogPicsPath + IMLoginManager.instance().getLoginId()+currentTime + ".png";
                     //构建上传请求
                     PutObjectResult resultcode = new AliyunUpload(ossClient, Config.bucketName, imageName, null, null, null).uploadBytes(bytes);
-                   Log.i("GTAG","imname="+Config.endpointExtra+imageName);
                     if (resultcode!=null&&resultcode.getStatusCode()==200){
                         //上传成功
                         upUrls.add(Config.endpointExtra +imageName);

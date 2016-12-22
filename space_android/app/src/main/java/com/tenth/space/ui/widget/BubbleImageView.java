@@ -58,7 +58,7 @@ public class BubbleImageView extends ImageView {
             final BubbleImageView view = this;
             if (!TextUtils.isEmpty(this.imageUrl)) {
                 ImageAware imageAware = new ImageViewAware(this, false);
-                logger.i("neil 11" + this.imageUrl);
+                //logger.i("neil 11" + this.imageUrl);
                 ImageLoaderUtil.instance().displayImage(IMApplication.app.UrlFormat(this.imageUrl), imageAware, new DisplayImageOptions.Builder()
                         .cacheInMemory(true)
                         .cacheOnDisk(true)

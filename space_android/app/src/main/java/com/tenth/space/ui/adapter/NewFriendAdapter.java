@@ -14,6 +14,7 @@ import com.tenth.space.DB.entity.RequesterEntity;
 import com.tenth.space.R;
 import com.tenth.space.app.IMApplication;
 import com.tenth.space.imservice.manager.IMBuddyManager;
+import com.tenth.space.imservice.manager.IMContactManager;
 import com.tenth.space.imservice.manager.IMLoginManager;
 import com.tenth.space.protobuf.IMBaseDefine;
 import com.tenth.space.ui.activity.NewFriendsActivity;
@@ -100,6 +101,8 @@ public class NewFriendAdapter extends BaseAdapter {
                 finalViewHolder.agree.setVisibility(View.GONE);
                 finalViewHolder.state.setVisibility(View.VISIBLE);
                 finalViewHolder.state.setText("已同意");
+                //同意添加好友，同步数据库
+                IMContactManager.instance().reqGetAllUsers(0);
 //                userEntity.setId((long) requesterEntity.getFromUserId());
 //                userEntity.setMainName(requesterEntity.getNick_name());
 //                userEntity.setAvatar(requesterEntity.getAvatar_url());

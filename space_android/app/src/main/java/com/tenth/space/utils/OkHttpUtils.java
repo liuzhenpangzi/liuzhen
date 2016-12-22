@@ -34,8 +34,6 @@ public class OkHttpUtils {
             public void run() {
                 try {
                     Response execute = okHttpClient.newCall(request).execute();
-                    Log.i("GTAG","ec"+execute.toString());
-                    LogUtils.d("attemptRegister:" + execute.toString());
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -74,7 +72,6 @@ public class OkHttpUtils {
                     dos.close();
                     //获得响应状态
                     int resultCode=httpConn.getResponseCode();
-                    Log.i("GTAG","recde="+resultCode);
 
         if(HttpURLConnection.HTTP_OK==resultCode){
             StringBuffer sb=new StringBuffer();
@@ -84,7 +81,6 @@ public class OkHttpUtils {
                 sb.append(readLine).append("\n");
             }
             responseReader.close();
-            Log.i("GTAG","sb="+sb.toString());
         }
                 }catch (Exception e){
 

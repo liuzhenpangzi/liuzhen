@@ -500,6 +500,8 @@ public class ContactsFragment extends MainFragment implements OnTouchingLetterCh
                 int delResult = delRsp.getResultCode();
                 int friendId = delRsp.getFriendId();
                 if(delResult==0){
+                    //同步本地数据库
+                    IMContactManager.instance().reqGetAllUsers(0);
                     List<UserEntity> userList = contactAdapter.getUserList();
                     for(UserEntity entity:userList){
                         if (entity.getPeerId()==friendId){

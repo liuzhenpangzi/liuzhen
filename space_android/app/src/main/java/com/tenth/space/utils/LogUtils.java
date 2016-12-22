@@ -5,7 +5,7 @@ import android.util.Log;
 public class LogUtils {
 
     private static final String TAG = "LogUtils";
-    private static boolean debugFlag = true;
+    private static boolean debugFlag = false;
 
     public static void d(String tag, String msg) {
         if (debugFlag) {

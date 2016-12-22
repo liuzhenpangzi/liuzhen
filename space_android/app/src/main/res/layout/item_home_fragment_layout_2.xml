@@ -42,11 +42,9 @@
             </LinearLayout>
 
 
-
-
         </FrameLayout>
 
-    <GridView
+    <com.tenth.space.ui.widget.HeaderGridView
         android:padding="3dp"
         android:horizontalSpacing="3dp"
         android:verticalSpacing="3dp"
@@ -56,7 +54,7 @@
         android:layout_height="match_parent"
         android:id="@+id/gv"
         android:numColumns="2"
-        ></GridView>
+        ></com.tenth.space.ui.widget.HeaderGridView>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/ll_progress_bar"

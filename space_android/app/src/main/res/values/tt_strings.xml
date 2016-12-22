@@ -29,6 +29,7 @@
     <string name="connecting">正在连接...</string>
     <string name="chat">发信息</string>
     <string name="add">添加好友</string>
+    <string name="follow">添加关注</string>
     <string name="contact_all">全部</string>
     <string name="contact_department">部门</string>
     <string name="top_left_back">返回</string>

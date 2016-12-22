@@ -19,7 +19,7 @@ class Speex {
 
     public void init() {
         load();
-        open(DEFAULT_COMPRESSION);
+         open(DEFAULT_COMPRESSION);
         log.i("AEC INIT " + getAecStatus());
         // if (getAecStatus() == 0) {
         // initEcho(240, 1600);

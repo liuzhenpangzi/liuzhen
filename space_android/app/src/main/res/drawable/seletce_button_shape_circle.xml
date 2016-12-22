@@ -5,7 +5,7 @@
     android:useLevel="false" >
     <!-- 填充的颜色 -->
 
-    <solid android:color="@android:color/holo_blue_bright"/>
+    <solid android:color="@color/custom_bottom"/>
 
     <!-- 设置按钮的四个角为弧形 -->
 

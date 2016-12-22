@@ -7,6 +7,7 @@
     tools:context="com.tenth.space.ui.activity.AddActivity"
     android:orientation="vertical"
     >
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -16,7 +17,7 @@
             android:id="@+id/go_back"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:src="@drawable/tt_back_btn"
+            android:src="@drawable/tt_top_back"
             android:layout_centerVertical="true"
             android:padding="15dp"
             />
@@ -44,6 +45,7 @@
             android:textColor="@android:color/white"
             android:gravity="center_vertical"/>
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

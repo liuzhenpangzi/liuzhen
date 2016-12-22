@@ -140,7 +140,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMRecentContactSessionReq> getParserForType() {
       return PARSER;
     }
@@ -261,59 +261,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq parseFrom(
+    public static IMRecentContactSessionReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq parseFrom(
+    public static IMRecentContactSessionReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq parseFrom(byte[] data)
+    public static IMRecentContactSessionReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq parseFrom(
+    public static IMRecentContactSessionReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq parseFrom(java.io.InputStream input)
+    public static IMRecentContactSessionReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq parseFrom(
+    public static IMRecentContactSessionReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMRecentContactSessionReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq parseDelimitedFrom(
+    public static IMRecentContactSessionReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq parseFrom(
+    public static IMRecentContactSessionReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq parseFrom(
+    public static IMRecentContactSessionReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -322,7 +322,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq prototype) {
+    public static Builder newBuilder(IMRecentContactSessionReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -332,10 +332,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq, Builder>
+          IMRecentContactSessionReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMRecentContactSessionReq)
-        com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReqOrBuilder {
+        IMRecentContactSessionReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -362,20 +362,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq.getDefaultInstance();
+      public IMRecentContactSessionReq getDefaultInstanceForType() {
+        return IMRecentContactSessionReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq result = buildPartial();
+      public IMRecentContactSessionReq build() {
+        IMRecentContactSessionReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq result = new com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq(this);
+      public IMRecentContactSessionReq buildPartial() {
+        IMRecentContactSessionReq result = new IMRecentContactSessionReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -394,8 +394,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMRecentContactSessionReq other) {
+        if (other == IMRecentContactSessionReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -426,11 +426,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq parsedMessage = null;
+        IMRecentContactSessionReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionReq) e.getUnfinishedMessage();
+          parsedMessage = (IMRecentContactSessionReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -591,12 +591,12 @@ public final class IMBuddy {
     /**
      * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
      */
-    java.util.List<com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo> 
+    java.util.List<IMBaseDefine.ContactSessionInfo>
         getContactSessionListList();
     /**
      * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
      */
-    com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo getContactSessionList(int index);
+    IMBaseDefine.ContactSessionInfo getContactSessionList(int index);
     /**
      * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
      */
@@ -668,10 +668,10 @@ public final class IMBuddy {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                contactSessionList_ = new java.util.ArrayList<com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo>();
+                contactSessionList_ = new java.util.ArrayList<IMBaseDefine.ContactSessionInfo>();
                 mutable_bitField0_ |= 0x00000002;
               }
-              contactSessionList_.add(input.readMessage(com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo.PARSER, extensionRegistry));
+              contactSessionList_.add(input.readMessage(IMBaseDefine.ContactSessionInfo.PARSER, extensionRegistry));
               break;
             }
             case 162: {
@@ -710,7 +710,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMRecentContactSessionRsp> getParserForType() {
       return PARSER;
     }
@@ -740,17 +740,17 @@ public final class IMBuddy {
     }
 
     public static final int CONTACT_SESSION_LIST_FIELD_NUMBER = 2;
-    private java.util.List<com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo> contactSessionList_;
+    private java.util.List<IMBaseDefine.ContactSessionInfo> contactSessionList_;
     /**
      * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
      */
-    public java.util.List<com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo> getContactSessionListList() {
+    public java.util.List<IMBaseDefine.ContactSessionInfo> getContactSessionListList() {
       return contactSessionList_;
     }
     /**
      * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
      */
-    public java.util.List<? extends com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfoOrBuilder> 
+    public java.util.List<? extends IMBaseDefine.ContactSessionInfoOrBuilder>
         getContactSessionListOrBuilderList() {
       return contactSessionList_;
     }
@@ -763,13 +763,13 @@ public final class IMBuddy {
     /**
      * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo getContactSessionList(int index) {
+    public IMBaseDefine.ContactSessionInfo getContactSessionList(int index) {
       return contactSessionList_.get(index);
     }
     /**
      * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfoOrBuilder getContactSessionListOrBuilder(
+    public IMBaseDefine.ContactSessionInfoOrBuilder getContactSessionListOrBuilder(
         int index) {
       return contactSessionList_.get(index);
     }
@@ -853,59 +853,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp parseFrom(
+    public static IMRecentContactSessionRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp parseFrom(
+    public static IMRecentContactSessionRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp parseFrom(byte[] data)
+    public static IMRecentContactSessionRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp parseFrom(
+    public static IMRecentContactSessionRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp parseFrom(java.io.InputStream input)
+    public static IMRecentContactSessionRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp parseFrom(
+    public static IMRecentContactSessionRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMRecentContactSessionRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp parseDelimitedFrom(
+    public static IMRecentContactSessionRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp parseFrom(
+    public static IMRecentContactSessionRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp parseFrom(
+    public static IMRecentContactSessionRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -914,7 +914,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp prototype) {
+    public static Builder newBuilder(IMRecentContactSessionRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -924,10 +924,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp, Builder>
+          IMRecentContactSessionRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMRecentContactSessionRsp)
-        com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRspOrBuilder {
+        IMRecentContactSessionRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -954,20 +954,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp.getDefaultInstance();
+      public IMRecentContactSessionRsp getDefaultInstanceForType() {
+        return IMRecentContactSessionRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp result = buildPartial();
+      public IMRecentContactSessionRsp build() {
+        IMRecentContactSessionRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp result = new com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp(this);
+      public IMRecentContactSessionRsp buildPartial() {
+        IMRecentContactSessionRsp result = new IMRecentContactSessionRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -987,8 +987,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMRecentContactSessionRsp other) {
+        if (other == IMRecentContactSessionRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -1028,11 +1028,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp parsedMessage = null;
+        IMRecentContactSessionRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMRecentContactSessionRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMRecentContactSessionRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -1091,11 +1091,11 @@ public final class IMBuddy {
         return this;
       }
 
-      private java.util.List<com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo> contactSessionList_ =
+      private java.util.List<IMBaseDefine.ContactSessionInfo> contactSessionList_ =
         java.util.Collections.emptyList();
       private void ensureContactSessionListIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          contactSessionList_ = new java.util.ArrayList<com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo>(contactSessionList_);
+          contactSessionList_ = new java.util.ArrayList<IMBaseDefine.ContactSessionInfo>(contactSessionList_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -1103,7 +1103,7 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
        */
-      public java.util.List<com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo> getContactSessionListList() {
+      public java.util.List<IMBaseDefine.ContactSessionInfo> getContactSessionListList() {
         return java.util.Collections.unmodifiableList(contactSessionList_);
       }
       /**
@@ -1115,14 +1115,14 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
        */
-      public com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo getContactSessionList(int index) {
+      public IMBaseDefine.ContactSessionInfo getContactSessionList(int index) {
         return contactSessionList_.get(index);
       }
       /**
        * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
        */
       public Builder setContactSessionList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo value) {
+          int index, IMBaseDefine.ContactSessionInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1135,7 +1135,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
        */
       public Builder setContactSessionList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo.Builder builderForValue) {
+          int index, IMBaseDefine.ContactSessionInfo.Builder builderForValue) {
         ensureContactSessionListIsMutable();
         contactSessionList_.set(index, builderForValue.build());
 
@@ -1144,7 +1144,7 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
        */
-      public Builder addContactSessionList(com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo value) {
+      public Builder addContactSessionList(IMBaseDefine.ContactSessionInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1157,7 +1157,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
        */
       public Builder addContactSessionList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo value) {
+          int index, IMBaseDefine.ContactSessionInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1170,7 +1170,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
        */
       public Builder addContactSessionList(
-          com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo.Builder builderForValue) {
+          IMBaseDefine.ContactSessionInfo.Builder builderForValue) {
         ensureContactSessionListIsMutable();
         contactSessionList_.add(builderForValue.build());
 
@@ -1180,7 +1180,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
        */
       public Builder addContactSessionList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo.Builder builderForValue) {
+          int index, IMBaseDefine.ContactSessionInfo.Builder builderForValue) {
         ensureContactSessionListIsMutable();
         contactSessionList_.add(index, builderForValue.build());
 
@@ -1190,7 +1190,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
        */
       public Builder addAllContactSessionList(
-          java.lang.Iterable<? extends com.tenth.space.protobuf.IMBaseDefine.ContactSessionInfo> values) {
+          Iterable<? extends IMBaseDefine.ContactSessionInfo> values) {
         ensureContactSessionListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, contactSessionList_);
@@ -1281,7 +1281,7 @@ public final class IMBuddy {
      *cmd id:		0x0203
      * </pre>
      */
-    com.tenth.space.protobuf.IMBaseDefine.UserStat getUserStat();
+    IMBaseDefine.UserStat getUserStat();
   }
   /**
    * Protobuf type {@code IM.Buddy.IMUserStatNotify}
@@ -1334,11 +1334,11 @@ public final class IMBuddy {
               break;
             }
             case 10: {
-              com.tenth.space.protobuf.IMBaseDefine.UserStat.Builder subBuilder = null;
+              IMBaseDefine.UserStat.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
                 subBuilder = userStat_.toBuilder();
               }
-              userStat_ = input.readMessage(com.tenth.space.protobuf.IMBaseDefine.UserStat.PARSER, extensionRegistry);
+              userStat_ = input.readMessage(IMBaseDefine.UserStat.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(userStat_);
                 userStat_ = subBuilder.buildPartial();
@@ -1374,14 +1374,14 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMUserStatNotify> getParserForType() {
       return PARSER;
     }
 
     private int bitField0_;
     public static final int USER_STAT_FIELD_NUMBER = 1;
-    private com.tenth.space.protobuf.IMBaseDefine.UserStat userStat_;
+    private IMBaseDefine.UserStat userStat_;
     /**
      * <code>required .IM.BaseDefine.UserStat user_stat = 1;</code>
      *
@@ -1399,12 +1399,12 @@ public final class IMBuddy {
      *cmd id:		0x0203
      * </pre>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.UserStat getUserStat() {
+    public IMBaseDefine.UserStat getUserStat() {
       return userStat_;
     }
 
     private void initFields() {
-      userStat_ = com.tenth.space.protobuf.IMBaseDefine.UserStat.getDefaultInstance();
+      userStat_ = IMBaseDefine.UserStat.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -1449,59 +1449,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMUserStatNotify parseFrom(
+    public static IMUserStatNotify parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUserStatNotify parseFrom(
+    public static IMUserStatNotify parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUserStatNotify parseFrom(byte[] data)
+    public static IMUserStatNotify parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUserStatNotify parseFrom(
+    public static IMUserStatNotify parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUserStatNotify parseFrom(java.io.InputStream input)
+    public static IMUserStatNotify parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUserStatNotify parseFrom(
+    public static IMUserStatNotify parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUserStatNotify parseDelimitedFrom(java.io.InputStream input)
+    public static IMUserStatNotify parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUserStatNotify parseDelimitedFrom(
+    public static IMUserStatNotify parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUserStatNotify parseFrom(
+    public static IMUserStatNotify parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUserStatNotify parseFrom(
+    public static IMUserStatNotify parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1510,7 +1510,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMUserStatNotify prototype) {
+    public static Builder newBuilder(IMUserStatNotify prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -1520,10 +1520,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMUserStatNotify, Builder>
+          IMUserStatNotify, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMUserStatNotify)
-        com.tenth.space.protobuf.IMBuddy.IMUserStatNotifyOrBuilder {
+        IMUserStatNotifyOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMUserStatNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -1537,7 +1537,7 @@ public final class IMBuddy {
 
       public Builder clear() {
         super.clear();
-        userStat_ = com.tenth.space.protobuf.IMBaseDefine.UserStat.getDefaultInstance();
+        userStat_ = IMBaseDefine.UserStat.getDefaultInstance();
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -1546,20 +1546,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUserStatNotify getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMUserStatNotify.getDefaultInstance();
+      public IMUserStatNotify getDefaultInstanceForType() {
+        return IMUserStatNotify.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUserStatNotify build() {
-        com.tenth.space.protobuf.IMBuddy.IMUserStatNotify result = buildPartial();
+      public IMUserStatNotify build() {
+        IMUserStatNotify result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUserStatNotify buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMUserStatNotify result = new com.tenth.space.protobuf.IMBuddy.IMUserStatNotify(this);
+      public IMUserStatNotify buildPartial() {
+        IMUserStatNotify result = new IMUserStatNotify(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1570,8 +1570,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMUserStatNotify other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMUserStatNotify.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMUserStatNotify other) {
+        if (other == IMUserStatNotify.getDefaultInstance()) return this;
         if (other.hasUserStat()) {
           mergeUserStat(other.getUserStat());
         }
@@ -1596,11 +1596,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMUserStatNotify parsedMessage = null;
+        IMUserStatNotify parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMUserStatNotify) e.getUnfinishedMessage();
+          parsedMessage = (IMUserStatNotify) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -1611,7 +1611,7 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      private com.tenth.space.protobuf.IMBaseDefine.UserStat userStat_ = com.tenth.space.protobuf.IMBaseDefine.UserStat.getDefaultInstance();
+      private IMBaseDefine.UserStat userStat_ = IMBaseDefine.UserStat.getDefaultInstance();
       /**
        * <code>required .IM.BaseDefine.UserStat user_stat = 1;</code>
        *
@@ -1629,7 +1629,7 @@ public final class IMBuddy {
        *cmd id:		0x0203
        * </pre>
        */
-      public com.tenth.space.protobuf.IMBaseDefine.UserStat getUserStat() {
+      public IMBaseDefine.UserStat getUserStat() {
         return userStat_;
       }
       /**
@@ -1639,7 +1639,7 @@ public final class IMBuddy {
        *cmd id:		0x0203
        * </pre>
        */
-      public Builder setUserStat(com.tenth.space.protobuf.IMBaseDefine.UserStat value) {
+      public Builder setUserStat(IMBaseDefine.UserStat value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1656,7 +1656,7 @@ public final class IMBuddy {
        * </pre>
        */
       public Builder setUserStat(
-          com.tenth.space.protobuf.IMBaseDefine.UserStat.Builder builderForValue) {
+          IMBaseDefine.UserStat.Builder builderForValue) {
         userStat_ = builderForValue.build();
 
         bitField0_ |= 0x00000001;
@@ -1669,11 +1669,11 @@ public final class IMBuddy {
        *cmd id:		0x0203
        * </pre>
        */
-      public Builder mergeUserStat(com.tenth.space.protobuf.IMBaseDefine.UserStat value) {
+      public Builder mergeUserStat(IMBaseDefine.UserStat value) {
         if (((bitField0_ & 0x00000001) == 0x00000001) &&
-            userStat_ != com.tenth.space.protobuf.IMBaseDefine.UserStat.getDefaultInstance()) {
+            userStat_ != IMBaseDefine.UserStat.getDefaultInstance()) {
           userStat_ =
-            com.tenth.space.protobuf.IMBaseDefine.UserStat.newBuilder(userStat_).mergeFrom(value).buildPartial();
+            IMBaseDefine.UserStat.newBuilder(userStat_).mergeFrom(value).buildPartial();
         } else {
           userStat_ = value;
         }
@@ -1689,7 +1689,7 @@ public final class IMBuddy {
        * </pre>
        */
       public Builder clearUserStat() {
-        userStat_ = com.tenth.space.protobuf.IMBaseDefine.UserStat.getDefaultInstance();
+        userStat_ = IMBaseDefine.UserStat.getDefaultInstance();
 
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -1730,7 +1730,7 @@ public final class IMBuddy {
     /**
      * <code>repeated uint32 user_id_list = 2;</code>
      */
-    java.util.List<java.lang.Integer> getUserIdListList();
+    java.util.List<Integer> getUserIdListList();
     /**
      * <code>repeated uint32 user_id_list = 2;</code>
      */
@@ -1806,7 +1806,7 @@ public final class IMBuddy {
             }
             case 16: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                userIdList_ = new java.util.ArrayList<java.lang.Integer>();
+                userIdList_ = new java.util.ArrayList<Integer>();
                 mutable_bitField0_ |= 0x00000002;
               }
               userIdList_.add(input.readUInt32());
@@ -1816,7 +1816,7 @@ public final class IMBuddy {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
-                userIdList_ = new java.util.ArrayList<java.lang.Integer>();
+                userIdList_ = new java.util.ArrayList<Integer>();
                 mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -1861,7 +1861,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMUsersInfoReq> getParserForType() {
       return PARSER;
     }
@@ -1891,11 +1891,11 @@ public final class IMBuddy {
     }
 
     public static final int USER_ID_LIST_FIELD_NUMBER = 2;
-    private java.util.List<java.lang.Integer> userIdList_;
+    private java.util.List<Integer> userIdList_;
     /**
      * <code>repeated uint32 user_id_list = 2;</code>
      */
-    public java.util.List<java.lang.Integer>
+    public java.util.List<Integer>
         getUserIdListList() {
       return userIdList_;
     }
@@ -1990,59 +1990,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq parseFrom(
+    public static IMUsersInfoReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq parseFrom(
+    public static IMUsersInfoReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq parseFrom(byte[] data)
+    public static IMUsersInfoReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq parseFrom(
+    public static IMUsersInfoReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq parseFrom(java.io.InputStream input)
+    public static IMUsersInfoReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq parseFrom(
+    public static IMUsersInfoReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMUsersInfoReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq parseDelimitedFrom(
+    public static IMUsersInfoReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq parseFrom(
+    public static IMUsersInfoReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq parseFrom(
+    public static IMUsersInfoReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2051,7 +2051,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq prototype) {
+    public static Builder newBuilder(IMUsersInfoReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -2061,10 +2061,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq, Builder>
+          IMUsersInfoReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMUsersInfoReq)
-        com.tenth.space.protobuf.IMBuddy.IMUsersInfoReqOrBuilder {
+        IMUsersInfoReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -2091,20 +2091,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq.getDefaultInstance();
+      public IMUsersInfoReq getDefaultInstanceForType() {
+        return IMUsersInfoReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq result = buildPartial();
+      public IMUsersInfoReq build() {
+        IMUsersInfoReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq result = new com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq(this);
+      public IMUsersInfoReq buildPartial() {
+        IMUsersInfoReq result = new IMUsersInfoReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -2124,8 +2124,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMUsersInfoReq other) {
+        if (other == IMUsersInfoReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -2159,11 +2159,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq parsedMessage = null;
+        IMUsersInfoReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMUsersInfoReq) e.getUnfinishedMessage();
+          parsedMessage = (IMUsersInfoReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -2222,17 +2222,17 @@ public final class IMBuddy {
         return this;
       }
 
-      private java.util.List<java.lang.Integer> userIdList_ = java.util.Collections.emptyList();
+      private java.util.List<Integer> userIdList_ = java.util.Collections.emptyList();
       private void ensureUserIdListIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          userIdList_ = new java.util.ArrayList<java.lang.Integer>(userIdList_);
+          userIdList_ = new java.util.ArrayList<Integer>(userIdList_);
           bitField0_ |= 0x00000002;
          }
       }
       /**
        * <code>repeated uint32 user_id_list = 2;</code>
        */
-      public java.util.List<java.lang.Integer>
+      public java.util.List<Integer>
           getUserIdListList() {
         return java.util.Collections.unmodifiableList(userIdList_);
       }
@@ -2271,7 +2271,7 @@ public final class IMBuddy {
        * <code>repeated uint32 user_id_list = 2;</code>
        */
       public Builder addAllUserIdList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
+          Iterable<? extends Integer> values) {
         ensureUserIdListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, userIdList_);
@@ -2358,12 +2358,12 @@ public final class IMBuddy {
     /**
      * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
      */
-    java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserInfo> 
+    java.util.List<IMBaseDefine.UserInfo>
         getUserInfoListList();
     /**
      * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
      */
-    com.tenth.space.protobuf.IMBaseDefine.UserInfo getUserInfoList(int index);
+    IMBaseDefine.UserInfo getUserInfoList(int index);
     /**
      * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
      */
@@ -2435,10 +2435,10 @@ public final class IMBuddy {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                userInfoList_ = new java.util.ArrayList<com.tenth.space.protobuf.IMBaseDefine.UserInfo>();
+                userInfoList_ = new java.util.ArrayList<IMBaseDefine.UserInfo>();
                 mutable_bitField0_ |= 0x00000002;
               }
-              userInfoList_.add(input.readMessage(com.tenth.space.protobuf.IMBaseDefine.UserInfo.PARSER, extensionRegistry));
+              userInfoList_.add(input.readMessage(IMBaseDefine.UserInfo.PARSER, extensionRegistry));
               break;
             }
             case 162: {
@@ -2477,7 +2477,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMUsersInfoRsp> getParserForType() {
       return PARSER;
     }
@@ -2507,17 +2507,17 @@ public final class IMBuddy {
     }
 
     public static final int USER_INFO_LIST_FIELD_NUMBER = 2;
-    private java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserInfo> userInfoList_;
+    private java.util.List<IMBaseDefine.UserInfo> userInfoList_;
     /**
      * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
      */
-    public java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserInfo> getUserInfoListList() {
+    public java.util.List<IMBaseDefine.UserInfo> getUserInfoListList() {
       return userInfoList_;
     }
     /**
      * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
      */
-    public java.util.List<? extends com.tenth.space.protobuf.IMBaseDefine.UserInfoOrBuilder> 
+    public java.util.List<? extends IMBaseDefine.UserInfoOrBuilder>
         getUserInfoListOrBuilderList() {
       return userInfoList_;
     }
@@ -2530,13 +2530,13 @@ public final class IMBuddy {
     /**
      * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.UserInfo getUserInfoList(int index) {
+    public IMBaseDefine.UserInfo getUserInfoList(int index) {
       return userInfoList_.get(index);
     }
     /**
      * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.UserInfoOrBuilder getUserInfoListOrBuilder(
+    public IMBaseDefine.UserInfoOrBuilder getUserInfoListOrBuilder(
         int index) {
       return userInfoList_.get(index);
     }
@@ -2620,59 +2620,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp parseFrom(
+    public static IMUsersInfoRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp parseFrom(
+    public static IMUsersInfoRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp parseFrom(byte[] data)
+    public static IMUsersInfoRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp parseFrom(
+    public static IMUsersInfoRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp parseFrom(java.io.InputStream input)
+    public static IMUsersInfoRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp parseFrom(
+    public static IMUsersInfoRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMUsersInfoRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp parseDelimitedFrom(
+    public static IMUsersInfoRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp parseFrom(
+    public static IMUsersInfoRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp parseFrom(
+    public static IMUsersInfoRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2681,7 +2681,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp prototype) {
+    public static Builder newBuilder(IMUsersInfoRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -2691,10 +2691,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp, Builder>
+          IMUsersInfoRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMUsersInfoRsp)
-        com.tenth.space.protobuf.IMBuddy.IMUsersInfoRspOrBuilder {
+        IMUsersInfoRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -2721,20 +2721,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp.getDefaultInstance();
+      public IMUsersInfoRsp getDefaultInstanceForType() {
+        return IMUsersInfoRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp result = buildPartial();
+      public IMUsersInfoRsp build() {
+        IMUsersInfoRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp result = new com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp(this);
+      public IMUsersInfoRsp buildPartial() {
+        IMUsersInfoRsp result = new IMUsersInfoRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -2754,8 +2754,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMUsersInfoRsp other) {
+        if (other == IMUsersInfoRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -2795,11 +2795,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp parsedMessage = null;
+        IMUsersInfoRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMUsersInfoRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMUsersInfoRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -2858,11 +2858,11 @@ public final class IMBuddy {
         return this;
       }
 
-      private java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserInfo> userInfoList_ =
+      private java.util.List<IMBaseDefine.UserInfo> userInfoList_ =
         java.util.Collections.emptyList();
       private void ensureUserInfoListIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          userInfoList_ = new java.util.ArrayList<com.tenth.space.protobuf.IMBaseDefine.UserInfo>(userInfoList_);
+          userInfoList_ = new java.util.ArrayList<IMBaseDefine.UserInfo>(userInfoList_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -2870,7 +2870,7 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
        */
-      public java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserInfo> getUserInfoListList() {
+      public java.util.List<IMBaseDefine.UserInfo> getUserInfoListList() {
         return java.util.Collections.unmodifiableList(userInfoList_);
       }
       /**
@@ -2882,14 +2882,14 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
        */
-      public com.tenth.space.protobuf.IMBaseDefine.UserInfo getUserInfoList(int index) {
+      public IMBaseDefine.UserInfo getUserInfoList(int index) {
         return userInfoList_.get(index);
       }
       /**
        * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
        */
       public Builder setUserInfoList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.UserInfo value) {
+          int index, IMBaseDefine.UserInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2902,7 +2902,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
        */
       public Builder setUserInfoList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.UserInfo.Builder builderForValue) {
+          int index, IMBaseDefine.UserInfo.Builder builderForValue) {
         ensureUserInfoListIsMutable();
         userInfoList_.set(index, builderForValue.build());
 
@@ -2911,7 +2911,7 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
        */
-      public Builder addUserInfoList(com.tenth.space.protobuf.IMBaseDefine.UserInfo value) {
+      public Builder addUserInfoList(IMBaseDefine.UserInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2924,7 +2924,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
        */
       public Builder addUserInfoList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.UserInfo value) {
+          int index, IMBaseDefine.UserInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2937,7 +2937,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
        */
       public Builder addUserInfoList(
-          com.tenth.space.protobuf.IMBaseDefine.UserInfo.Builder builderForValue) {
+          IMBaseDefine.UserInfo.Builder builderForValue) {
         ensureUserInfoListIsMutable();
         userInfoList_.add(builderForValue.build());
 
@@ -2947,7 +2947,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
        */
       public Builder addUserInfoList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.UserInfo.Builder builderForValue) {
+          int index, IMBaseDefine.UserInfo.Builder builderForValue) {
         ensureUserInfoListIsMutable();
         userInfoList_.add(index, builderForValue.build());
 
@@ -2957,7 +2957,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
        */
       public Builder addAllUserInfoList(
-          java.lang.Iterable<? extends com.tenth.space.protobuf.IMBaseDefine.UserInfo> values) {
+          Iterable<? extends IMBaseDefine.UserInfo> values) {
         ensureUserInfoListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, userInfoList_);
@@ -3057,7 +3057,7 @@ public final class IMBuddy {
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
      */
-    com.tenth.space.protobuf.IMBaseDefine.SessionType getSessionType();
+    IMBaseDefine.SessionType getSessionType();
 
     /**
      * <code>required uint32 session_id = 3;</code>
@@ -3134,7 +3134,7 @@ public final class IMBuddy {
             }
             case 16: {
               int rawValue = input.readEnum();
-              com.tenth.space.protobuf.IMBaseDefine.SessionType value = com.tenth.space.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
+              IMBaseDefine.SessionType value = IMBaseDefine.SessionType.valueOf(rawValue);
               if (value == null) {
                 unknownFieldsCodedOutput.writeRawVarint32(tag);
                 unknownFieldsCodedOutput.writeRawVarint32(rawValue);
@@ -3182,7 +3182,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMRemoveSessionReq> getParserForType() {
       return PARSER;
     }
@@ -3212,7 +3212,7 @@ public final class IMBuddy {
     }
 
     public static final int SESSION_TYPE_FIELD_NUMBER = 2;
-    private com.tenth.space.protobuf.IMBaseDefine.SessionType sessionType_;
+    private IMBaseDefine.SessionType sessionType_;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
      */
@@ -3222,7 +3222,7 @@ public final class IMBuddy {
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.SessionType getSessionType() {
+    public IMBaseDefine.SessionType getSessionType() {
       return sessionType_;
     }
 
@@ -3258,7 +3258,7 @@ public final class IMBuddy {
 
     private void initFields() {
       userId_ = 0;
-      sessionType_ = com.tenth.space.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
+      sessionType_ = IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       sessionId_ = 0;
       attachData_ = com.google.protobuf.ByteString.EMPTY;
     }
@@ -3330,59 +3330,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq parseFrom(
+    public static IMRemoveSessionReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq parseFrom(
+    public static IMRemoveSessionReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq parseFrom(byte[] data)
+    public static IMRemoveSessionReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq parseFrom(
+    public static IMRemoveSessionReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq parseFrom(java.io.InputStream input)
+    public static IMRemoveSessionReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq parseFrom(
+    public static IMRemoveSessionReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMRemoveSessionReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq parseDelimitedFrom(
+    public static IMRemoveSessionReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq parseFrom(
+    public static IMRemoveSessionReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq parseFrom(
+    public static IMRemoveSessionReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3391,7 +3391,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq prototype) {
+    public static Builder newBuilder(IMRemoveSessionReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -3401,10 +3401,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq, Builder>
+          IMRemoveSessionReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMRemoveSessionReq)
-        com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReqOrBuilder {
+        IMRemoveSessionReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -3420,7 +3420,7 @@ public final class IMBuddy {
         super.clear();
         userId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        sessionType_ = com.tenth.space.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
+        sessionType_ = IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
         bitField0_ = (bitField0_ & ~0x00000002);
         sessionId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -3433,20 +3433,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq.getDefaultInstance();
+      public IMRemoveSessionReq getDefaultInstanceForType() {
+        return IMRemoveSessionReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq result = buildPartial();
+      public IMRemoveSessionReq build() {
+        IMRemoveSessionReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq result = new com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq(this);
+      public IMRemoveSessionReq buildPartial() {
+        IMRemoveSessionReq result = new IMRemoveSessionReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -3469,8 +3469,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMRemoveSessionReq other) {
+        if (other == IMRemoveSessionReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -3508,11 +3508,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq parsedMessage = null;
+        IMRemoveSessionReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMRemoveSessionReq) e.getUnfinishedMessage();
+          parsedMessage = (IMRemoveSessionReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -3571,7 +3571,7 @@ public final class IMBuddy {
         return this;
       }
 
-      private com.tenth.space.protobuf.IMBaseDefine.SessionType sessionType_ = com.tenth.space.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
+      private IMBaseDefine.SessionType sessionType_ = IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
        */
@@ -3581,13 +3581,13 @@ public final class IMBuddy {
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
        */
-      public com.tenth.space.protobuf.IMBaseDefine.SessionType getSessionType() {
+      public IMBaseDefine.SessionType getSessionType() {
         return sessionType_;
       }
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
        */
-      public Builder setSessionType(com.tenth.space.protobuf.IMBaseDefine.SessionType value) {
+      public Builder setSessionType(IMBaseDefine.SessionType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -3601,7 +3601,7 @@ public final class IMBuddy {
        */
       public Builder clearSessionType() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        sessionType_ = com.tenth.space.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
+        sessionType_ = IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
         
         return this;
       }
@@ -3721,7 +3721,7 @@ public final class IMBuddy {
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 3;</code>
      */
-    com.tenth.space.protobuf.IMBaseDefine.SessionType getSessionType();
+    IMBaseDefine.SessionType getSessionType();
 
     /**
      * <code>required uint32 session_id = 4;</code>
@@ -3803,7 +3803,7 @@ public final class IMBuddy {
             }
             case 24: {
               int rawValue = input.readEnum();
-              com.tenth.space.protobuf.IMBaseDefine.SessionType value = com.tenth.space.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
+              IMBaseDefine.SessionType value = IMBaseDefine.SessionType.valueOf(rawValue);
               if (value == null) {
                 unknownFieldsCodedOutput.writeRawVarint32(tag);
                 unknownFieldsCodedOutput.writeRawVarint32(rawValue);
@@ -3851,7 +3851,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMRemoveSessionRsp> getParserForType() {
       return PARSER;
     }
@@ -3896,7 +3896,7 @@ public final class IMBuddy {
     }
 
     public static final int SESSION_TYPE_FIELD_NUMBER = 3;
-    private com.tenth.space.protobuf.IMBaseDefine.SessionType sessionType_;
+    private IMBaseDefine.SessionType sessionType_;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 3;</code>
      */
@@ -3906,7 +3906,7 @@ public final class IMBuddy {
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 3;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.SessionType getSessionType() {
+    public IMBaseDefine.SessionType getSessionType() {
       return sessionType_;
     }
 
@@ -3943,7 +3943,7 @@ public final class IMBuddy {
     private void initFields() {
       userId_ = 0;
       resultCode_ = 0;
-      sessionType_ = com.tenth.space.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
+      sessionType_ = IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       sessionId_ = 0;
       attachData_ = com.google.protobuf.ByteString.EMPTY;
     }
@@ -4026,59 +4026,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp parseFrom(
+    public static IMRemoveSessionRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp parseFrom(
+    public static IMRemoveSessionRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp parseFrom(byte[] data)
+    public static IMRemoveSessionRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp parseFrom(
+    public static IMRemoveSessionRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp parseFrom(java.io.InputStream input)
+    public static IMRemoveSessionRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp parseFrom(
+    public static IMRemoveSessionRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMRemoveSessionRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp parseDelimitedFrom(
+    public static IMRemoveSessionRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp parseFrom(
+    public static IMRemoveSessionRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp parseFrom(
+    public static IMRemoveSessionRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4087,7 +4087,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp prototype) {
+    public static Builder newBuilder(IMRemoveSessionRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -4097,10 +4097,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp, Builder>
+          IMRemoveSessionRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMRemoveSessionRsp)
-        com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRspOrBuilder {
+        IMRemoveSessionRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -4118,7 +4118,7 @@ public final class IMBuddy {
         bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
-        sessionType_ = com.tenth.space.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
+        sessionType_ = IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
         bitField0_ = (bitField0_ & ~0x00000004);
         sessionId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -4131,20 +4131,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp.getDefaultInstance();
+      public IMRemoveSessionRsp getDefaultInstanceForType() {
+        return IMRemoveSessionRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp result = buildPartial();
+      public IMRemoveSessionRsp build() {
+        IMRemoveSessionRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp result = new com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp(this);
+      public IMRemoveSessionRsp buildPartial() {
+        IMRemoveSessionRsp result = new IMRemoveSessionRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4171,8 +4171,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMRemoveSessionRsp other) {
+        if (other == IMRemoveSessionRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -4217,11 +4217,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp parsedMessage = null;
+        IMRemoveSessionRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMRemoveSessionRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMRemoveSessionRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -4312,7 +4312,7 @@ public final class IMBuddy {
         return this;
       }
 
-      private com.tenth.space.protobuf.IMBaseDefine.SessionType sessionType_ = com.tenth.space.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
+      private IMBaseDefine.SessionType sessionType_ = IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 3;</code>
        */
@@ -4322,13 +4322,13 @@ public final class IMBuddy {
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 3;</code>
        */
-      public com.tenth.space.protobuf.IMBaseDefine.SessionType getSessionType() {
+      public IMBaseDefine.SessionType getSessionType() {
         return sessionType_;
       }
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 3;</code>
        */
-      public Builder setSessionType(com.tenth.space.protobuf.IMBaseDefine.SessionType value) {
+      public Builder setSessionType(IMBaseDefine.SessionType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -4342,7 +4342,7 @@ public final class IMBuddy {
        */
       public Builder clearSessionType() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        sessionType_ = com.tenth.space.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
+        sessionType_ = IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
         
         return this;
       }
@@ -4557,7 +4557,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMAllUserReq> getParserForType() {
       return PARSER;
     }
@@ -4678,59 +4678,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserReq parseFrom(
+    public static IMAllUserReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserReq parseFrom(
+    public static IMAllUserReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserReq parseFrom(byte[] data)
+    public static IMAllUserReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserReq parseFrom(
+    public static IMAllUserReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserReq parseFrom(java.io.InputStream input)
+    public static IMAllUserReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserReq parseFrom(
+    public static IMAllUserReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMAllUserReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserReq parseDelimitedFrom(
+    public static IMAllUserReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserReq parseFrom(
+    public static IMAllUserReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserReq parseFrom(
+    public static IMAllUserReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4739,7 +4739,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMAllUserReq prototype) {
+    public static Builder newBuilder(IMAllUserReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -4749,10 +4749,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMAllUserReq, Builder>
+          IMAllUserReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMAllUserReq)
-        com.tenth.space.protobuf.IMBuddy.IMAllUserReqOrBuilder {
+        IMAllUserReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMAllUserReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -4779,20 +4779,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAllUserReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMAllUserReq.getDefaultInstance();
+      public IMAllUserReq getDefaultInstanceForType() {
+        return IMAllUserReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAllUserReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMAllUserReq result = buildPartial();
+      public IMAllUserReq build() {
+        IMAllUserReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAllUserReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMAllUserReq result = new com.tenth.space.protobuf.IMBuddy.IMAllUserReq(this);
+      public IMAllUserReq buildPartial() {
+        IMAllUserReq result = new IMAllUserReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4811,8 +4811,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMAllUserReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMAllUserReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMAllUserReq other) {
+        if (other == IMAllUserReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -4843,11 +4843,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMAllUserReq parsedMessage = null;
+        IMAllUserReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMAllUserReq) e.getUnfinishedMessage();
+          parsedMessage = (IMAllUserReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -5017,12 +5017,12 @@ public final class IMBuddy {
     /**
      * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
      */
-    java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserInfo> 
+    java.util.List<IMBaseDefine.UserInfo>
         getUserListList();
     /**
      * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
      */
-    com.tenth.space.protobuf.IMBaseDefine.UserInfo getUserList(int index);
+    IMBaseDefine.UserInfo getUserList(int index);
     /**
      * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
      */
@@ -5099,10 +5099,10 @@ public final class IMBuddy {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                userList_ = new java.util.ArrayList<com.tenth.space.protobuf.IMBaseDefine.UserInfo>();
+                userList_ = new java.util.ArrayList<IMBaseDefine.UserInfo>();
                 mutable_bitField0_ |= 0x00000004;
               }
-              userList_.add(input.readMessage(com.tenth.space.protobuf.IMBaseDefine.UserInfo.PARSER, extensionRegistry));
+              userList_.add(input.readMessage(IMBaseDefine.UserInfo.PARSER, extensionRegistry));
               break;
             }
             case 162: {
@@ -5141,7 +5141,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMAllUserRsp> getParserForType() {
       return PARSER;
     }
@@ -5186,17 +5186,17 @@ public final class IMBuddy {
     }
 
     public static final int USER_LIST_FIELD_NUMBER = 3;
-    private java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserInfo> userList_;
+    private java.util.List<IMBaseDefine.UserInfo> userList_;
     /**
      * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
      */
-    public java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserInfo> getUserListList() {
+    public java.util.List<IMBaseDefine.UserInfo> getUserListList() {
       return userList_;
     }
     /**
      * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
      */
-    public java.util.List<? extends com.tenth.space.protobuf.IMBaseDefine.UserInfoOrBuilder> 
+    public java.util.List<? extends IMBaseDefine.UserInfoOrBuilder>
         getUserListOrBuilderList() {
       return userList_;
     }
@@ -5209,13 +5209,13 @@ public final class IMBuddy {
     /**
      * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.UserInfo getUserList(int index) {
+    public IMBaseDefine.UserInfo getUserList(int index) {
       return userList_.get(index);
     }
     /**
      * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.UserInfoOrBuilder getUserListOrBuilder(
+    public IMBaseDefine.UserInfoOrBuilder getUserListOrBuilder(
         int index) {
       return userList_.get(index);
     }
@@ -5311,59 +5311,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserRsp parseFrom(
+    public static IMAllUserRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserRsp parseFrom(
+    public static IMAllUserRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserRsp parseFrom(byte[] data)
+    public static IMAllUserRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserRsp parseFrom(
+    public static IMAllUserRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserRsp parseFrom(java.io.InputStream input)
+    public static IMAllUserRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserRsp parseFrom(
+    public static IMAllUserRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMAllUserRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserRsp parseDelimitedFrom(
+    public static IMAllUserRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserRsp parseFrom(
+    public static IMAllUserRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAllUserRsp parseFrom(
+    public static IMAllUserRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5372,7 +5372,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMAllUserRsp prototype) {
+    public static Builder newBuilder(IMAllUserRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -5382,10 +5382,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMAllUserRsp, Builder>
+          IMAllUserRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMAllUserRsp)
-        com.tenth.space.protobuf.IMBuddy.IMAllUserRspOrBuilder {
+        IMAllUserRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMAllUserRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -5414,20 +5414,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAllUserRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMAllUserRsp.getDefaultInstance();
+      public IMAllUserRsp getDefaultInstanceForType() {
+        return IMAllUserRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAllUserRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMAllUserRsp result = buildPartial();
+      public IMAllUserRsp build() {
+        IMAllUserRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAllUserRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMAllUserRsp result = new com.tenth.space.protobuf.IMBuddy.IMAllUserRsp(this);
+      public IMAllUserRsp buildPartial() {
+        IMAllUserRsp result = new IMAllUserRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -5451,8 +5451,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMAllUserRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMAllUserRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMAllUserRsp other) {
+        if (other == IMAllUserRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -5499,11 +5499,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMAllUserRsp parsedMessage = null;
+        IMAllUserRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMAllUserRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMAllUserRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -5594,11 +5594,11 @@ public final class IMBuddy {
         return this;
       }
 
-      private java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserInfo> userList_ =
+      private java.util.List<IMBaseDefine.UserInfo> userList_ =
         java.util.Collections.emptyList();
       private void ensureUserListIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          userList_ = new java.util.ArrayList<com.tenth.space.protobuf.IMBaseDefine.UserInfo>(userList_);
+          userList_ = new java.util.ArrayList<IMBaseDefine.UserInfo>(userList_);
           bitField0_ |= 0x00000004;
          }
       }
@@ -5606,7 +5606,7 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
        */
-      public java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserInfo> getUserListList() {
+      public java.util.List<IMBaseDefine.UserInfo> getUserListList() {
         return java.util.Collections.unmodifiableList(userList_);
       }
       /**
@@ -5618,14 +5618,14 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
        */
-      public com.tenth.space.protobuf.IMBaseDefine.UserInfo getUserList(int index) {
+      public IMBaseDefine.UserInfo getUserList(int index) {
         return userList_.get(index);
       }
       /**
        * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
        */
       public Builder setUserList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.UserInfo value) {
+          int index, IMBaseDefine.UserInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -5638,7 +5638,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
        */
       public Builder setUserList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.UserInfo.Builder builderForValue) {
+          int index, IMBaseDefine.UserInfo.Builder builderForValue) {
         ensureUserListIsMutable();
         userList_.set(index, builderForValue.build());
 
@@ -5647,7 +5647,7 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
        */
-      public Builder addUserList(com.tenth.space.protobuf.IMBaseDefine.UserInfo value) {
+      public Builder addUserList(IMBaseDefine.UserInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -5660,7 +5660,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
        */
       public Builder addUserList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.UserInfo value) {
+          int index, IMBaseDefine.UserInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -5673,7 +5673,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
        */
       public Builder addUserList(
-          com.tenth.space.protobuf.IMBaseDefine.UserInfo.Builder builderForValue) {
+          IMBaseDefine.UserInfo.Builder builderForValue) {
         ensureUserListIsMutable();
         userList_.add(builderForValue.build());
 
@@ -5683,7 +5683,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
        */
       public Builder addUserList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.UserInfo.Builder builderForValue) {
+          int index, IMBaseDefine.UserInfo.Builder builderForValue) {
         ensureUserListIsMutable();
         userList_.add(index, builderForValue.build());
 
@@ -5693,7 +5693,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
        */
       public Builder addAllUserList(
-          java.lang.Iterable<? extends com.tenth.space.protobuf.IMBaseDefine.UserInfo> values) {
+          Iterable<? extends IMBaseDefine.UserInfo> values) {
         ensureUserListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, userList_);
@@ -5789,7 +5789,7 @@ public final class IMBuddy {
     /**
      * <code>repeated uint32 user_id_list = 2;</code>
      */
-    java.util.List<java.lang.Integer> getUserIdListList();
+    java.util.List<Integer> getUserIdListList();
     /**
      * <code>repeated uint32 user_id_list = 2;</code>
      */
@@ -5865,7 +5865,7 @@ public final class IMBuddy {
             }
             case 16: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                userIdList_ = new java.util.ArrayList<java.lang.Integer>();
+                userIdList_ = new java.util.ArrayList<Integer>();
                 mutable_bitField0_ |= 0x00000002;
               }
               userIdList_.add(input.readUInt32());
@@ -5875,7 +5875,7 @@ public final class IMBuddy {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
-                userIdList_ = new java.util.ArrayList<java.lang.Integer>();
+                userIdList_ = new java.util.ArrayList<Integer>();
                 mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -5920,7 +5920,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMUsersStatReq> getParserForType() {
       return PARSER;
     }
@@ -5950,11 +5950,11 @@ public final class IMBuddy {
     }
 
     public static final int USER_ID_LIST_FIELD_NUMBER = 2;
-    private java.util.List<java.lang.Integer> userIdList_;
+    private java.util.List<Integer> userIdList_;
     /**
      * <code>repeated uint32 user_id_list = 2;</code>
      */
-    public java.util.List<java.lang.Integer>
+    public java.util.List<Integer>
         getUserIdListList() {
       return userIdList_;
     }
@@ -6049,59 +6049,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatReq parseFrom(
+    public static IMUsersStatReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatReq parseFrom(
+    public static IMUsersStatReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatReq parseFrom(byte[] data)
+    public static IMUsersStatReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatReq parseFrom(
+    public static IMUsersStatReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatReq parseFrom(java.io.InputStream input)
+    public static IMUsersStatReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatReq parseFrom(
+    public static IMUsersStatReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMUsersStatReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatReq parseDelimitedFrom(
+    public static IMUsersStatReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatReq parseFrom(
+    public static IMUsersStatReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatReq parseFrom(
+    public static IMUsersStatReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6110,7 +6110,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMUsersStatReq prototype) {
+    public static Builder newBuilder(IMUsersStatReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -6120,10 +6120,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMUsersStatReq, Builder>
+          IMUsersStatReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMUsersStatReq)
-        com.tenth.space.protobuf.IMBuddy.IMUsersStatReqOrBuilder {
+        IMUsersStatReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMUsersStatReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -6150,20 +6150,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUsersStatReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMUsersStatReq.getDefaultInstance();
+      public IMUsersStatReq getDefaultInstanceForType() {
+        return IMUsersStatReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUsersStatReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMUsersStatReq result = buildPartial();
+      public IMUsersStatReq build() {
+        IMUsersStatReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUsersStatReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMUsersStatReq result = new com.tenth.space.protobuf.IMBuddy.IMUsersStatReq(this);
+      public IMUsersStatReq buildPartial() {
+        IMUsersStatReq result = new IMUsersStatReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -6183,8 +6183,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMUsersStatReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMUsersStatReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMUsersStatReq other) {
+        if (other == IMUsersStatReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -6218,11 +6218,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMUsersStatReq parsedMessage = null;
+        IMUsersStatReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMUsersStatReq) e.getUnfinishedMessage();
+          parsedMessage = (IMUsersStatReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -6281,17 +6281,17 @@ public final class IMBuddy {
         return this;
       }
 
-      private java.util.List<java.lang.Integer> userIdList_ = java.util.Collections.emptyList();
+      private java.util.List<Integer> userIdList_ = java.util.Collections.emptyList();
       private void ensureUserIdListIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          userIdList_ = new java.util.ArrayList<java.lang.Integer>(userIdList_);
+          userIdList_ = new java.util.ArrayList<Integer>(userIdList_);
           bitField0_ |= 0x00000002;
          }
       }
       /**
        * <code>repeated uint32 user_id_list = 2;</code>
        */
-      public java.util.List<java.lang.Integer>
+      public java.util.List<Integer>
           getUserIdListList() {
         return java.util.Collections.unmodifiableList(userIdList_);
       }
@@ -6330,7 +6330,7 @@ public final class IMBuddy {
        * <code>repeated uint32 user_id_list = 2;</code>
        */
       public Builder addAllUserIdList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
+          Iterable<? extends Integer> values) {
         ensureUserIdListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, userIdList_);
@@ -6417,12 +6417,12 @@ public final class IMBuddy {
     /**
      * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
      */
-    java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserStat> 
+    java.util.List<IMBaseDefine.UserStat>
         getUserStatListList();
     /**
      * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
      */
-    com.tenth.space.protobuf.IMBaseDefine.UserStat getUserStatList(int index);
+    IMBaseDefine.UserStat getUserStatList(int index);
     /**
      * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
      */
@@ -6494,10 +6494,10 @@ public final class IMBuddy {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                userStatList_ = new java.util.ArrayList<com.tenth.space.protobuf.IMBaseDefine.UserStat>();
+                userStatList_ = new java.util.ArrayList<IMBaseDefine.UserStat>();
                 mutable_bitField0_ |= 0x00000002;
               }
-              userStatList_.add(input.readMessage(com.tenth.space.protobuf.IMBaseDefine.UserStat.PARSER, extensionRegistry));
+              userStatList_.add(input.readMessage(IMBaseDefine.UserStat.PARSER, extensionRegistry));
               break;
             }
             case 162: {
@@ -6536,7 +6536,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMUsersStatRsp> getParserForType() {
       return PARSER;
     }
@@ -6566,17 +6566,17 @@ public final class IMBuddy {
     }
 
     public static final int USER_STAT_LIST_FIELD_NUMBER = 2;
-    private java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserStat> userStatList_;
+    private java.util.List<IMBaseDefine.UserStat> userStatList_;
     /**
      * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
      */
-    public java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserStat> getUserStatListList() {
+    public java.util.List<IMBaseDefine.UserStat> getUserStatListList() {
       return userStatList_;
     }
     /**
      * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
      */
-    public java.util.List<? extends com.tenth.space.protobuf.IMBaseDefine.UserStatOrBuilder> 
+    public java.util.List<? extends IMBaseDefine.UserStatOrBuilder>
         getUserStatListOrBuilderList() {
       return userStatList_;
     }
@@ -6589,13 +6589,13 @@ public final class IMBuddy {
     /**
      * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.UserStat getUserStatList(int index) {
+    public IMBaseDefine.UserStat getUserStatList(int index) {
       return userStatList_.get(index);
     }
     /**
      * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.UserStatOrBuilder getUserStatListOrBuilder(
+    public IMBaseDefine.UserStatOrBuilder getUserStatListOrBuilder(
         int index) {
       return userStatList_.get(index);
     }
@@ -6679,59 +6679,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp parseFrom(
+    public static IMUsersStatRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp parseFrom(
+    public static IMUsersStatRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp parseFrom(byte[] data)
+    public static IMUsersStatRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp parseFrom(
+    public static IMUsersStatRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp parseFrom(java.io.InputStream input)
+    public static IMUsersStatRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp parseFrom(
+    public static IMUsersStatRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMUsersStatRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp parseDelimitedFrom(
+    public static IMUsersStatRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp parseFrom(
+    public static IMUsersStatRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp parseFrom(
+    public static IMUsersStatRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6740,7 +6740,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp prototype) {
+    public static Builder newBuilder(IMUsersStatRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -6750,10 +6750,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp, Builder>
+          IMUsersStatRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMUsersStatRsp)
-        com.tenth.space.protobuf.IMBuddy.IMUsersStatRspOrBuilder {
+        IMUsersStatRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -6780,20 +6780,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp.getDefaultInstance();
+      public IMUsersStatRsp getDefaultInstanceForType() {
+        return IMUsersStatRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp result = buildPartial();
+      public IMUsersStatRsp build() {
+        IMUsersStatRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp result = new com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp(this);
+      public IMUsersStatRsp buildPartial() {
+        IMUsersStatRsp result = new IMUsersStatRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -6813,8 +6813,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMUsersStatRsp other) {
+        if (other == IMUsersStatRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -6854,11 +6854,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp parsedMessage = null;
+        IMUsersStatRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMUsersStatRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMUsersStatRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -6917,11 +6917,11 @@ public final class IMBuddy {
         return this;
       }
 
-      private java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserStat> userStatList_ =
+      private java.util.List<IMBaseDefine.UserStat> userStatList_ =
         java.util.Collections.emptyList();
       private void ensureUserStatListIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          userStatList_ = new java.util.ArrayList<com.tenth.space.protobuf.IMBaseDefine.UserStat>(userStatList_);
+          userStatList_ = new java.util.ArrayList<IMBaseDefine.UserStat>(userStatList_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -6929,7 +6929,7 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
        */
-      public java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserStat> getUserStatListList() {
+      public java.util.List<IMBaseDefine.UserStat> getUserStatListList() {
         return java.util.Collections.unmodifiableList(userStatList_);
       }
       /**
@@ -6941,14 +6941,14 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
        */
-      public com.tenth.space.protobuf.IMBaseDefine.UserStat getUserStatList(int index) {
+      public IMBaseDefine.UserStat getUserStatList(int index) {
         return userStatList_.get(index);
       }
       /**
        * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
        */
       public Builder setUserStatList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.UserStat value) {
+          int index, IMBaseDefine.UserStat value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -6961,7 +6961,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
        */
       public Builder setUserStatList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.UserStat.Builder builderForValue) {
+          int index, IMBaseDefine.UserStat.Builder builderForValue) {
         ensureUserStatListIsMutable();
         userStatList_.set(index, builderForValue.build());
 
@@ -6970,7 +6970,7 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
        */
-      public Builder addUserStatList(com.tenth.space.protobuf.IMBaseDefine.UserStat value) {
+      public Builder addUserStatList(IMBaseDefine.UserStat value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -6983,7 +6983,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
        */
       public Builder addUserStatList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.UserStat value) {
+          int index, IMBaseDefine.UserStat value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -6996,7 +6996,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
        */
       public Builder addUserStatList(
-          com.tenth.space.protobuf.IMBaseDefine.UserStat.Builder builderForValue) {
+          IMBaseDefine.UserStat.Builder builderForValue) {
         ensureUserStatListIsMutable();
         userStatList_.add(builderForValue.build());
 
@@ -7006,7 +7006,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
        */
       public Builder addUserStatList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.UserStat.Builder builderForValue) {
+          int index, IMBaseDefine.UserStat.Builder builderForValue) {
         ensureUserStatListIsMutable();
         userStatList_.add(index, builderForValue.build());
 
@@ -7016,7 +7016,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
        */
       public Builder addAllUserStatList(
-          java.lang.Iterable<? extends com.tenth.space.protobuf.IMBaseDefine.UserStat> values) {
+          Iterable<? extends IMBaseDefine.UserStat> values) {
         ensureUserStatListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, userStatList_);
@@ -7116,7 +7116,7 @@ public final class IMBuddy {
     /**
      * <code>required string avatar_url = 2;</code>
      */
-    java.lang.String getAvatarUrl();
+    String getAvatarUrl();
     /**
      * <code>required string avatar_url = 2;</code>
      */
@@ -7226,7 +7226,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMChangeAvatarReq> getParserForType() {
       return PARSER;
     }
@@ -7256,7 +7256,7 @@ public final class IMBuddy {
     }
 
     public static final int AVATAR_URL_FIELD_NUMBER = 2;
-    private java.lang.Object avatarUrl_;
+    private Object avatarUrl_;
     /**
      * <code>required string avatar_url = 2;</code>
      */
@@ -7266,14 +7266,14 @@ public final class IMBuddy {
     /**
      * <code>required string avatar_url = 2;</code>
      */
-    public java.lang.String getAvatarUrl() {
-      java.lang.Object ref = avatarUrl_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getAvatarUrl() {
+      Object ref = avatarUrl_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           avatarUrl_ = s;
         }
@@ -7285,11 +7285,11 @@ public final class IMBuddy {
      */
     public com.google.protobuf.ByteString
         getAvatarUrlBytes() {
-      java.lang.Object ref = avatarUrl_;
-      if (ref instanceof java.lang.String) {
+      Object ref = avatarUrl_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         avatarUrl_ = b;
         return b;
       } else {
@@ -7374,59 +7374,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq parseFrom(
+    public static IMChangeAvatarReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq parseFrom(
+    public static IMChangeAvatarReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq parseFrom(byte[] data)
+    public static IMChangeAvatarReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq parseFrom(
+    public static IMChangeAvatarReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq parseFrom(java.io.InputStream input)
+    public static IMChangeAvatarReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq parseFrom(
+    public static IMChangeAvatarReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMChangeAvatarReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq parseDelimitedFrom(
+    public static IMChangeAvatarReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq parseFrom(
+    public static IMChangeAvatarReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq parseFrom(
+    public static IMChangeAvatarReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7435,7 +7435,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq prototype) {
+    public static Builder newBuilder(IMChangeAvatarReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -7445,10 +7445,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq, Builder>
+          IMChangeAvatarReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMChangeAvatarReq)
-        com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReqOrBuilder {
+        IMChangeAvatarReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -7475,20 +7475,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq.getDefaultInstance();
+      public IMChangeAvatarReq getDefaultInstanceForType() {
+        return IMChangeAvatarReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq result = buildPartial();
+      public IMChangeAvatarReq build() {
+        IMChangeAvatarReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq result = new com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq(this);
+      public IMChangeAvatarReq buildPartial() {
+        IMChangeAvatarReq result = new IMChangeAvatarReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -7507,8 +7507,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMChangeAvatarReq other) {
+        if (other == IMChangeAvatarReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -7541,11 +7541,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq parsedMessage = null;
+        IMChangeAvatarReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMChangeAvatarReq) e.getUnfinishedMessage();
+          parsedMessage = (IMChangeAvatarReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -7604,7 +7604,7 @@ public final class IMBuddy {
         return this;
       }
 
-      private java.lang.Object avatarUrl_ = "";
+      private Object avatarUrl_ = "";
       /**
        * <code>required string avatar_url = 2;</code>
        */
@@ -7614,18 +7614,18 @@ public final class IMBuddy {
       /**
        * <code>required string avatar_url = 2;</code>
        */
-      public java.lang.String getAvatarUrl() {
-        java.lang.Object ref = avatarUrl_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getAvatarUrl() {
+        Object ref = avatarUrl_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             avatarUrl_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -7633,11 +7633,11 @@ public final class IMBuddy {
        */
       public com.google.protobuf.ByteString
           getAvatarUrlBytes() {
-        java.lang.Object ref = avatarUrl_;
+        Object ref = avatarUrl_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           avatarUrl_ = b;
           return b;
         } else {
@@ -7648,7 +7648,7 @@ public final class IMBuddy {
        * <code>required string avatar_url = 2;</code>
        */
       public Builder setAvatarUrl(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7858,7 +7858,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMChangeAvatarRsp> getParserForType() {
       return PARSER;
     }
@@ -7979,59 +7979,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp parseFrom(
+    public static IMChangeAvatarRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp parseFrom(
+    public static IMChangeAvatarRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp parseFrom(byte[] data)
+    public static IMChangeAvatarRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp parseFrom(
+    public static IMChangeAvatarRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp parseFrom(java.io.InputStream input)
+    public static IMChangeAvatarRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp parseFrom(
+    public static IMChangeAvatarRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMChangeAvatarRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp parseDelimitedFrom(
+    public static IMChangeAvatarRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp parseFrom(
+    public static IMChangeAvatarRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp parseFrom(
+    public static IMChangeAvatarRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8040,7 +8040,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp prototype) {
+    public static Builder newBuilder(IMChangeAvatarRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -8050,10 +8050,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp, Builder>
+          IMChangeAvatarRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMChangeAvatarRsp)
-        com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRspOrBuilder {
+        IMChangeAvatarRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -8080,20 +8080,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp.getDefaultInstance();
+      public IMChangeAvatarRsp getDefaultInstanceForType() {
+        return IMChangeAvatarRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp result = buildPartial();
+      public IMChangeAvatarRsp build() {
+        IMChangeAvatarRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp result = new com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp(this);
+      public IMChangeAvatarRsp buildPartial() {
+        IMChangeAvatarRsp result = new IMChangeAvatarRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -8112,8 +8112,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMChangeAvatarRsp other) {
+        if (other == IMChangeAvatarRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -8144,11 +8144,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp parsedMessage = null;
+        IMChangeAvatarRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMChangeAvatarRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMChangeAvatarRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -8313,7 +8313,7 @@ public final class IMBuddy {
     /**
      * <code>required .IM.BaseDefine.UserStatType login_stat = 2;</code>
      */
-    com.tenth.space.protobuf.IMBaseDefine.UserStatType getLoginStat();
+    IMBaseDefine.UserStatType getLoginStat();
   }
   /**
    * Protobuf type {@code IM.Buddy.IMPCLoginStatusNotify}
@@ -8376,7 +8376,7 @@ public final class IMBuddy {
             }
             case 16: {
               int rawValue = input.readEnum();
-              com.tenth.space.protobuf.IMBaseDefine.UserStatType value = com.tenth.space.protobuf.IMBaseDefine.UserStatType.valueOf(rawValue);
+              IMBaseDefine.UserStatType value = IMBaseDefine.UserStatType.valueOf(rawValue);
               if (value == null) {
                 unknownFieldsCodedOutput.writeRawVarint32(tag);
                 unknownFieldsCodedOutput.writeRawVarint32(rawValue);
@@ -8414,7 +8414,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMPCLoginStatusNotify> getParserForType() {
       return PARSER;
     }
@@ -8444,7 +8444,7 @@ public final class IMBuddy {
     }
 
     public static final int LOGIN_STAT_FIELD_NUMBER = 2;
-    private com.tenth.space.protobuf.IMBaseDefine.UserStatType loginStat_;
+    private IMBaseDefine.UserStatType loginStat_;
     /**
      * <code>required .IM.BaseDefine.UserStatType login_stat = 2;</code>
      */
@@ -8454,13 +8454,13 @@ public final class IMBuddy {
     /**
      * <code>required .IM.BaseDefine.UserStatType login_stat = 2;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.UserStatType getLoginStat() {
+    public IMBaseDefine.UserStatType getLoginStat() {
       return loginStat_;
     }
 
     private void initFields() {
       userId_ = 0;
-      loginStat_ = com.tenth.space.protobuf.IMBaseDefine.UserStatType.USER_STATUS_ONLINE;
+      loginStat_ = IMBaseDefine.UserStatType.USER_STATUS_ONLINE;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -8512,59 +8512,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify parseFrom(
+    public static IMPCLoginStatusNotify parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify parseFrom(
+    public static IMPCLoginStatusNotify parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify parseFrom(byte[] data)
+    public static IMPCLoginStatusNotify parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify parseFrom(
+    public static IMPCLoginStatusNotify parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify parseFrom(java.io.InputStream input)
+    public static IMPCLoginStatusNotify parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify parseFrom(
+    public static IMPCLoginStatusNotify parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify parseDelimitedFrom(java.io.InputStream input)
+    public static IMPCLoginStatusNotify parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify parseDelimitedFrom(
+    public static IMPCLoginStatusNotify parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify parseFrom(
+    public static IMPCLoginStatusNotify parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify parseFrom(
+    public static IMPCLoginStatusNotify parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8573,7 +8573,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify prototype) {
+    public static Builder newBuilder(IMPCLoginStatusNotify prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -8587,10 +8587,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify, Builder>
+          IMPCLoginStatusNotify, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMPCLoginStatusNotify)
-        com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotifyOrBuilder {
+        IMPCLoginStatusNotifyOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -8606,7 +8606,7 @@ public final class IMBuddy {
         super.clear();
         userId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        loginStat_ = com.tenth.space.protobuf.IMBaseDefine.UserStatType.USER_STATUS_ONLINE;
+        loginStat_ = IMBaseDefine.UserStatType.USER_STATUS_ONLINE;
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
@@ -8615,20 +8615,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify.getDefaultInstance();
+      public IMPCLoginStatusNotify getDefaultInstanceForType() {
+        return IMPCLoginStatusNotify.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify build() {
-        com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify result = buildPartial();
+      public IMPCLoginStatusNotify build() {
+        IMPCLoginStatusNotify result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify result = new com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify(this);
+      public IMPCLoginStatusNotify buildPartial() {
+        IMPCLoginStatusNotify result = new IMPCLoginStatusNotify(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -8643,8 +8643,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMPCLoginStatusNotify other) {
+        if (other == IMPCLoginStatusNotify.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -8672,11 +8672,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify parsedMessage = null;
+        IMPCLoginStatusNotify parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMPCLoginStatusNotify) e.getUnfinishedMessage();
+          parsedMessage = (IMPCLoginStatusNotify) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -8735,7 +8735,7 @@ public final class IMBuddy {
         return this;
       }
 
-      private com.tenth.space.protobuf.IMBaseDefine.UserStatType loginStat_ = com.tenth.space.protobuf.IMBaseDefine.UserStatType.USER_STATUS_ONLINE;
+      private IMBaseDefine.UserStatType loginStat_ = IMBaseDefine.UserStatType.USER_STATUS_ONLINE;
       /**
        * <code>required .IM.BaseDefine.UserStatType login_stat = 2;</code>
        */
@@ -8745,13 +8745,13 @@ public final class IMBuddy {
       /**
        * <code>required .IM.BaseDefine.UserStatType login_stat = 2;</code>
        */
-      public com.tenth.space.protobuf.IMBaseDefine.UserStatType getLoginStat() {
+      public IMBaseDefine.UserStatType getLoginStat() {
         return loginStat_;
       }
       /**
        * <code>required .IM.BaseDefine.UserStatType login_stat = 2;</code>
        */
-      public Builder setLoginStat(com.tenth.space.protobuf.IMBaseDefine.UserStatType value) {
+      public Builder setLoginStat(IMBaseDefine.UserStatType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -8765,7 +8765,7 @@ public final class IMBuddy {
        */
       public Builder clearLoginStat() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        loginStat_ = com.tenth.space.protobuf.IMBaseDefine.UserStatType.USER_STATUS_ONLINE;
+        loginStat_ = IMBaseDefine.UserStatType.USER_STATUS_ONLINE;
         
         return this;
       }
@@ -8809,7 +8809,7 @@ public final class IMBuddy {
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
      */
-    com.tenth.space.protobuf.IMBaseDefine.SessionType getSessionType();
+    IMBaseDefine.SessionType getSessionType();
 
     /**
      * <code>required uint32 session_id = 3;</code>
@@ -8877,7 +8877,7 @@ public final class IMBuddy {
             }
             case 16: {
               int rawValue = input.readEnum();
-              com.tenth.space.protobuf.IMBaseDefine.SessionType value = com.tenth.space.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
+              IMBaseDefine.SessionType value = IMBaseDefine.SessionType.valueOf(rawValue);
               if (value == null) {
                 unknownFieldsCodedOutput.writeRawVarint32(tag);
                 unknownFieldsCodedOutput.writeRawVarint32(rawValue);
@@ -8920,7 +8920,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMRemoveSessionNotify> getParserForType() {
       return PARSER;
     }
@@ -8950,7 +8950,7 @@ public final class IMBuddy {
     }
 
     public static final int SESSION_TYPE_FIELD_NUMBER = 2;
-    private com.tenth.space.protobuf.IMBaseDefine.SessionType sessionType_;
+    private IMBaseDefine.SessionType sessionType_;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
      */
@@ -8960,7 +8960,7 @@ public final class IMBuddy {
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.SessionType getSessionType() {
+    public IMBaseDefine.SessionType getSessionType() {
       return sessionType_;
     }
 
@@ -8981,7 +8981,7 @@ public final class IMBuddy {
 
     private void initFields() {
       userId_ = 0;
-      sessionType_ = com.tenth.space.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
+      sessionType_ = IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       sessionId_ = 0;
     }
     private byte memoizedIsInitialized = -1;
@@ -9045,59 +9045,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify parseFrom(
+    public static IMRemoveSessionNotify parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify parseFrom(
+    public static IMRemoveSessionNotify parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify parseFrom(byte[] data)
+    public static IMRemoveSessionNotify parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify parseFrom(
+    public static IMRemoveSessionNotify parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify parseFrom(java.io.InputStream input)
+    public static IMRemoveSessionNotify parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify parseFrom(
+    public static IMRemoveSessionNotify parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify parseDelimitedFrom(java.io.InputStream input)
+    public static IMRemoveSessionNotify parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify parseDelimitedFrom(
+    public static IMRemoveSessionNotify parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify parseFrom(
+    public static IMRemoveSessionNotify parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify parseFrom(
+    public static IMRemoveSessionNotify parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9106,7 +9106,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify prototype) {
+    public static Builder newBuilder(IMRemoveSessionNotify prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -9116,10 +9116,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify, Builder>
+          IMRemoveSessionNotify, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMRemoveSessionNotify)
-        com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotifyOrBuilder {
+        IMRemoveSessionNotifyOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -9135,7 +9135,7 @@ public final class IMBuddy {
         super.clear();
         userId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        sessionType_ = com.tenth.space.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
+        sessionType_ = IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
         bitField0_ = (bitField0_ & ~0x00000002);
         sessionId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -9146,20 +9146,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify.getDefaultInstance();
+      public IMRemoveSessionNotify getDefaultInstanceForType() {
+        return IMRemoveSessionNotify.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify build() {
-        com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify result = buildPartial();
+      public IMRemoveSessionNotify build() {
+        IMRemoveSessionNotify result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify result = new com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify(this);
+      public IMRemoveSessionNotify buildPartial() {
+        IMRemoveSessionNotify result = new IMRemoveSessionNotify(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -9178,8 +9178,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMRemoveSessionNotify other) {
+        if (other == IMRemoveSessionNotify.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -9214,11 +9214,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify parsedMessage = null;
+        IMRemoveSessionNotify parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMRemoveSessionNotify) e.getUnfinishedMessage();
+          parsedMessage = (IMRemoveSessionNotify) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -9277,7 +9277,7 @@ public final class IMBuddy {
         return this;
       }
 
-      private com.tenth.space.protobuf.IMBaseDefine.SessionType sessionType_ = com.tenth.space.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
+      private IMBaseDefine.SessionType sessionType_ = IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
        */
@@ -9287,13 +9287,13 @@ public final class IMBuddy {
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
        */
-      public com.tenth.space.protobuf.IMBaseDefine.SessionType getSessionType() {
+      public IMBaseDefine.SessionType getSessionType() {
         return sessionType_;
       }
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
        */
-      public Builder setSessionType(com.tenth.space.protobuf.IMBaseDefine.SessionType value) {
+      public Builder setSessionType(IMBaseDefine.SessionType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -9307,7 +9307,7 @@ public final class IMBuddy {
        */
       public Builder clearSessionType() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        sessionType_ = com.tenth.space.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
+        sessionType_ = IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
         
         return this;
       }
@@ -9487,7 +9487,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMDepartmentReq> getParserForType() {
       return PARSER;
     }
@@ -9608,59 +9608,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentReq parseFrom(
+    public static IMDepartmentReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentReq parseFrom(
+    public static IMDepartmentReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentReq parseFrom(byte[] data)
+    public static IMDepartmentReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentReq parseFrom(
+    public static IMDepartmentReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentReq parseFrom(java.io.InputStream input)
+    public static IMDepartmentReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentReq parseFrom(
+    public static IMDepartmentReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMDepartmentReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentReq parseDelimitedFrom(
+    public static IMDepartmentReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentReq parseFrom(
+    public static IMDepartmentReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentReq parseFrom(
+    public static IMDepartmentReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9669,7 +9669,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMDepartmentReq prototype) {
+    public static Builder newBuilder(IMDepartmentReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -9679,10 +9679,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMDepartmentReq, Builder>
+          IMDepartmentReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMDepartmentReq)
-        com.tenth.space.protobuf.IMBuddy.IMDepartmentReqOrBuilder {
+        IMDepartmentReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMDepartmentReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -9709,20 +9709,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDepartmentReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMDepartmentReq.getDefaultInstance();
+      public IMDepartmentReq getDefaultInstanceForType() {
+        return IMDepartmentReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDepartmentReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMDepartmentReq result = buildPartial();
+      public IMDepartmentReq build() {
+        IMDepartmentReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDepartmentReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMDepartmentReq result = new com.tenth.space.protobuf.IMBuddy.IMDepartmentReq(this);
+      public IMDepartmentReq buildPartial() {
+        IMDepartmentReq result = new IMDepartmentReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -9741,8 +9741,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMDepartmentReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMDepartmentReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMDepartmentReq other) {
+        if (other == IMDepartmentReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -9773,11 +9773,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMDepartmentReq parsedMessage = null;
+        IMDepartmentReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMDepartmentReq) e.getUnfinishedMessage();
+          parsedMessage = (IMDepartmentReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -9947,12 +9947,12 @@ public final class IMBuddy {
     /**
      * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
      */
-    java.util.List<com.tenth.space.protobuf.IMBaseDefine.DepartInfo> 
+    java.util.List<IMBaseDefine.DepartInfo>
         getDeptListList();
     /**
      * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
      */
-    com.tenth.space.protobuf.IMBaseDefine.DepartInfo getDeptList(int index);
+    IMBaseDefine.DepartInfo getDeptList(int index);
     /**
      * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
      */
@@ -10029,10 +10029,10 @@ public final class IMBuddy {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                deptList_ = new java.util.ArrayList<com.tenth.space.protobuf.IMBaseDefine.DepartInfo>();
+                deptList_ = new java.util.ArrayList<IMBaseDefine.DepartInfo>();
                 mutable_bitField0_ |= 0x00000004;
               }
-              deptList_.add(input.readMessage(com.tenth.space.protobuf.IMBaseDefine.DepartInfo.PARSER, extensionRegistry));
+              deptList_.add(input.readMessage(IMBaseDefine.DepartInfo.PARSER, extensionRegistry));
               break;
             }
             case 162: {
@@ -10071,7 +10071,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMDepartmentRsp> getParserForType() {
       return PARSER;
     }
@@ -10116,17 +10116,17 @@ public final class IMBuddy {
     }
 
     public static final int DEPT_LIST_FIELD_NUMBER = 3;
-    private java.util.List<com.tenth.space.protobuf.IMBaseDefine.DepartInfo> deptList_;
+    private java.util.List<IMBaseDefine.DepartInfo> deptList_;
     /**
      * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
      */
-    public java.util.List<com.tenth.space.protobuf.IMBaseDefine.DepartInfo> getDeptListList() {
+    public java.util.List<IMBaseDefine.DepartInfo> getDeptListList() {
       return deptList_;
     }
     /**
      * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
      */
-    public java.util.List<? extends com.tenth.space.protobuf.IMBaseDefine.DepartInfoOrBuilder> 
+    public java.util.List<? extends IMBaseDefine.DepartInfoOrBuilder>
         getDeptListOrBuilderList() {
       return deptList_;
     }
@@ -10139,13 +10139,13 @@ public final class IMBuddy {
     /**
      * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.DepartInfo getDeptList(int index) {
+    public IMBaseDefine.DepartInfo getDeptList(int index) {
       return deptList_.get(index);
     }
     /**
      * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.DepartInfoOrBuilder getDeptListOrBuilder(
+    public IMBaseDefine.DepartInfoOrBuilder getDeptListOrBuilder(
         int index) {
       return deptList_.get(index);
     }
@@ -10241,59 +10241,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp parseFrom(
+    public static IMDepartmentRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp parseFrom(
+    public static IMDepartmentRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp parseFrom(byte[] data)
+    public static IMDepartmentRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp parseFrom(
+    public static IMDepartmentRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp parseFrom(java.io.InputStream input)
+    public static IMDepartmentRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp parseFrom(
+    public static IMDepartmentRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMDepartmentRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp parseDelimitedFrom(
+    public static IMDepartmentRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp parseFrom(
+    public static IMDepartmentRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp parseFrom(
+    public static IMDepartmentRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -10302,7 +10302,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp prototype) {
+    public static Builder newBuilder(IMDepartmentRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -10312,10 +10312,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp, Builder>
+          IMDepartmentRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMDepartmentRsp)
-        com.tenth.space.protobuf.IMBuddy.IMDepartmentRspOrBuilder {
+        IMDepartmentRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -10344,20 +10344,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp.getDefaultInstance();
+      public IMDepartmentRsp getDefaultInstanceForType() {
+        return IMDepartmentRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp result = buildPartial();
+      public IMDepartmentRsp build() {
+        IMDepartmentRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp result = new com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp(this);
+      public IMDepartmentRsp buildPartial() {
+        IMDepartmentRsp result = new IMDepartmentRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -10381,8 +10381,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMDepartmentRsp other) {
+        if (other == IMDepartmentRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -10429,11 +10429,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp parsedMessage = null;
+        IMDepartmentRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMDepartmentRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMDepartmentRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -10524,11 +10524,11 @@ public final class IMBuddy {
         return this;
       }
 
-      private java.util.List<com.tenth.space.protobuf.IMBaseDefine.DepartInfo> deptList_ =
+      private java.util.List<IMBaseDefine.DepartInfo> deptList_ =
         java.util.Collections.emptyList();
       private void ensureDeptListIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          deptList_ = new java.util.ArrayList<com.tenth.space.protobuf.IMBaseDefine.DepartInfo>(deptList_);
+          deptList_ = new java.util.ArrayList<IMBaseDefine.DepartInfo>(deptList_);
           bitField0_ |= 0x00000004;
          }
       }
@@ -10536,7 +10536,7 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
        */
-      public java.util.List<com.tenth.space.protobuf.IMBaseDefine.DepartInfo> getDeptListList() {
+      public java.util.List<IMBaseDefine.DepartInfo> getDeptListList() {
         return java.util.Collections.unmodifiableList(deptList_);
       }
       /**
@@ -10548,14 +10548,14 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
        */
-      public com.tenth.space.protobuf.IMBaseDefine.DepartInfo getDeptList(int index) {
+      public IMBaseDefine.DepartInfo getDeptList(int index) {
         return deptList_.get(index);
       }
       /**
        * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
        */
       public Builder setDeptList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.DepartInfo value) {
+          int index, IMBaseDefine.DepartInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -10568,7 +10568,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
        */
       public Builder setDeptList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.DepartInfo.Builder builderForValue) {
+          int index, IMBaseDefine.DepartInfo.Builder builderForValue) {
         ensureDeptListIsMutable();
         deptList_.set(index, builderForValue.build());
 
@@ -10577,7 +10577,7 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
        */
-      public Builder addDeptList(com.tenth.space.protobuf.IMBaseDefine.DepartInfo value) {
+      public Builder addDeptList(IMBaseDefine.DepartInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -10590,7 +10590,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
        */
       public Builder addDeptList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.DepartInfo value) {
+          int index, IMBaseDefine.DepartInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -10603,7 +10603,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
        */
       public Builder addDeptList(
-          com.tenth.space.protobuf.IMBaseDefine.DepartInfo.Builder builderForValue) {
+          IMBaseDefine.DepartInfo.Builder builderForValue) {
         ensureDeptListIsMutable();
         deptList_.add(builderForValue.build());
 
@@ -10613,7 +10613,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
        */
       public Builder addDeptList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.DepartInfo.Builder builderForValue) {
+          int index, IMBaseDefine.DepartInfo.Builder builderForValue) {
         ensureDeptListIsMutable();
         deptList_.add(index, builderForValue.build());
 
@@ -10623,7 +10623,7 @@ public final class IMBuddy {
        * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
        */
       public Builder addAllDeptList(
-          java.lang.Iterable<? extends com.tenth.space.protobuf.IMBaseDefine.DepartInfo> values) {
+          Iterable<? extends IMBaseDefine.DepartInfo> values) {
         ensureDeptListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, deptList_);
@@ -10731,7 +10731,7 @@ public final class IMBuddy {
      *
      * </pre>
      */
-    java.lang.String getAvatarUrl();
+    String getAvatarUrl();
     /**
      * <code>required string avatar_url = 2;</code>
      *
@@ -10831,7 +10831,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMAvatarChangedNotify> getParserForType() {
       return PARSER;
     }
@@ -10861,7 +10861,7 @@ public final class IMBuddy {
     }
 
     public static final int AVATAR_URL_FIELD_NUMBER = 2;
-    private java.lang.Object avatarUrl_;
+    private Object avatarUrl_;
     /**
      * <code>required string avatar_url = 2;</code>
      *
@@ -10879,14 +10879,14 @@ public final class IMBuddy {
      *
      * </pre>
      */
-    public java.lang.String getAvatarUrl() {
-      java.lang.Object ref = avatarUrl_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getAvatarUrl() {
+      Object ref = avatarUrl_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           avatarUrl_ = s;
         }
@@ -10902,11 +10902,11 @@ public final class IMBuddy {
      */
     public com.google.protobuf.ByteString
         getAvatarUrlBytes() {
-      java.lang.Object ref = avatarUrl_;
-      if (ref instanceof java.lang.String) {
+      Object ref = avatarUrl_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         avatarUrl_ = b;
         return b;
       } else {
@@ -10968,59 +10968,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify parseFrom(
+    public static IMAvatarChangedNotify parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify parseFrom(
+    public static IMAvatarChangedNotify parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify parseFrom(byte[] data)
+    public static IMAvatarChangedNotify parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify parseFrom(
+    public static IMAvatarChangedNotify parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify parseFrom(java.io.InputStream input)
+    public static IMAvatarChangedNotify parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify parseFrom(
+    public static IMAvatarChangedNotify parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify parseDelimitedFrom(java.io.InputStream input)
+    public static IMAvatarChangedNotify parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify parseDelimitedFrom(
+    public static IMAvatarChangedNotify parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify parseFrom(
+    public static IMAvatarChangedNotify parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify parseFrom(
+    public static IMAvatarChangedNotify parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11029,7 +11029,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify prototype) {
+    public static Builder newBuilder(IMAvatarChangedNotify prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -11039,10 +11039,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify, Builder>
+          IMAvatarChangedNotify, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMAvatarChangedNotify)
-        com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotifyOrBuilder {
+        IMAvatarChangedNotifyOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -11067,20 +11067,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify.getDefaultInstance();
+      public IMAvatarChangedNotify getDefaultInstanceForType() {
+        return IMAvatarChangedNotify.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify build() {
-        com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify result = buildPartial();
+      public IMAvatarChangedNotify build() {
+        IMAvatarChangedNotify result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify result = new com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify(this);
+      public IMAvatarChangedNotify buildPartial() {
+        IMAvatarChangedNotify result = new IMAvatarChangedNotify(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -11095,8 +11095,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMAvatarChangedNotify other) {
+        if (other == IMAvatarChangedNotify.getDefaultInstance()) return this;
         if (other.hasChangedUserId()) {
           setChangedUserId(other.getChangedUserId());
         }
@@ -11126,11 +11126,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify parsedMessage = null;
+        IMAvatarChangedNotify parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMAvatarChangedNotify) e.getUnfinishedMessage();
+          parsedMessage = (IMAvatarChangedNotify) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -11189,7 +11189,7 @@ public final class IMBuddy {
         return this;
       }
 
-      private java.lang.Object avatarUrl_ = "";
+      private Object avatarUrl_ = "";
       /**
        * <code>required string avatar_url = 2;</code>
        *
@@ -11207,18 +11207,18 @@ public final class IMBuddy {
        *
        * </pre>
        */
-      public java.lang.String getAvatarUrl() {
-        java.lang.Object ref = avatarUrl_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getAvatarUrl() {
+        Object ref = avatarUrl_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             avatarUrl_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -11230,11 +11230,11 @@ public final class IMBuddy {
        */
       public com.google.protobuf.ByteString
           getAvatarUrlBytes() {
-        java.lang.Object ref = avatarUrl_;
+        Object ref = avatarUrl_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           avatarUrl_ = b;
           return b;
         } else {
@@ -11249,7 +11249,7 @@ public final class IMBuddy {
        * </pre>
        */
       public Builder setAvatarUrl(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -11320,7 +11320,7 @@ public final class IMBuddy {
     /**
      * <code>required string sign_info = 2;</code>
      */
-    java.lang.String getSignInfo();
+    String getSignInfo();
     /**
      * <code>required string sign_info = 2;</code>
      */
@@ -11434,7 +11434,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMChangeSignInfoReq> getParserForType() {
       return PARSER;
     }
@@ -11456,7 +11456,7 @@ public final class IMBuddy {
     }
 
     public static final int SIGN_INFO_FIELD_NUMBER = 2;
-    private java.lang.Object signInfo_;
+    private Object signInfo_;
     /**
      * <code>required string sign_info = 2;</code>
      */
@@ -11466,14 +11466,14 @@ public final class IMBuddy {
     /**
      * <code>required string sign_info = 2;</code>
      */
-    public java.lang.String getSignInfo() {
-      java.lang.Object ref = signInfo_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getSignInfo() {
+      Object ref = signInfo_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           signInfo_ = s;
         }
@@ -11485,11 +11485,11 @@ public final class IMBuddy {
      */
     public com.google.protobuf.ByteString
         getSignInfoBytes() {
-      java.lang.Object ref = signInfo_;
-      if (ref instanceof java.lang.String) {
+      Object ref = signInfo_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         signInfo_ = b;
         return b;
       } else {
@@ -11574,59 +11574,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq parseFrom(
+    public static IMChangeSignInfoReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq parseFrom(
+    public static IMChangeSignInfoReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq parseFrom(byte[] data)
+    public static IMChangeSignInfoReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq parseFrom(
+    public static IMChangeSignInfoReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq parseFrom(java.io.InputStream input)
+    public static IMChangeSignInfoReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq parseFrom(
+    public static IMChangeSignInfoReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMChangeSignInfoReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq parseDelimitedFrom(
+    public static IMChangeSignInfoReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq parseFrom(
+    public static IMChangeSignInfoReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq parseFrom(
+    public static IMChangeSignInfoReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11635,7 +11635,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq prototype) {
+    public static Builder newBuilder(IMChangeSignInfoReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -11649,10 +11649,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq, Builder>
+          IMChangeSignInfoReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMChangeSignInfoReq)
-        com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReqOrBuilder {
+        IMChangeSignInfoReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -11679,20 +11679,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq.getDefaultInstance();
+      public IMChangeSignInfoReq getDefaultInstanceForType() {
+        return IMChangeSignInfoReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq result = buildPartial();
+      public IMChangeSignInfoReq build() {
+        IMChangeSignInfoReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq result = new com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq(this);
+      public IMChangeSignInfoReq buildPartial() {
+        IMChangeSignInfoReq result = new IMChangeSignInfoReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -11711,8 +11711,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMChangeSignInfoReq other) {
+        if (other == IMChangeSignInfoReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -11745,11 +11745,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq parsedMessage = null;
+        IMChangeSignInfoReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoReq) e.getUnfinishedMessage();
+          parsedMessage = (IMChangeSignInfoReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -11792,7 +11792,7 @@ public final class IMBuddy {
         return this;
       }
 
-      private java.lang.Object signInfo_ = "";
+      private Object signInfo_ = "";
       /**
        * <code>required string sign_info = 2;</code>
        */
@@ -11802,18 +11802,18 @@ public final class IMBuddy {
       /**
        * <code>required string sign_info = 2;</code>
        */
-      public java.lang.String getSignInfo() {
-        java.lang.Object ref = signInfo_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getSignInfo() {
+        Object ref = signInfo_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             signInfo_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -11821,11 +11821,11 @@ public final class IMBuddy {
        */
       public com.google.protobuf.ByteString
           getSignInfoBytes() {
-        java.lang.Object ref = signInfo_;
+        Object ref = signInfo_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           signInfo_ = b;
           return b;
         } else {
@@ -11836,7 +11836,7 @@ public final class IMBuddy {
        * <code>required string sign_info = 2;</code>
        */
       public Builder setSignInfo(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -11959,7 +11959,7 @@ public final class IMBuddy {
      * 此字段服务端用，客户端直接忽略
      * </pre>
      */
-    java.lang.String getSignInfo();
+    String getSignInfo();
     /**
      * <code>optional string sign_info = 3;</code>
      *
@@ -12078,7 +12078,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMChangeSignInfoRsp> getParserForType() {
       return PARSER;
     }
@@ -12123,7 +12123,7 @@ public final class IMBuddy {
     }
 
     public static final int SIGN_INFO_FIELD_NUMBER = 3;
-    private java.lang.Object signInfo_;
+    private Object signInfo_;
     /**
      * <code>optional string sign_info = 3;</code>
      *
@@ -12141,14 +12141,14 @@ public final class IMBuddy {
      * 此字段服务端用，客户端直接忽略
      * </pre>
      */
-    public java.lang.String getSignInfo() {
-      java.lang.Object ref = signInfo_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getSignInfo() {
+      Object ref = signInfo_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           signInfo_ = s;
         }
@@ -12164,11 +12164,11 @@ public final class IMBuddy {
      */
     public com.google.protobuf.ByteString
         getSignInfoBytes() {
-      java.lang.Object ref = signInfo_;
-      if (ref instanceof java.lang.String) {
+      Object ref = signInfo_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         signInfo_ = b;
         return b;
       } else {
@@ -12261,59 +12261,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp parseFrom(
+    public static IMChangeSignInfoRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp parseFrom(
+    public static IMChangeSignInfoRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp parseFrom(byte[] data)
+    public static IMChangeSignInfoRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp parseFrom(
+    public static IMChangeSignInfoRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp parseFrom(java.io.InputStream input)
+    public static IMChangeSignInfoRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp parseFrom(
+    public static IMChangeSignInfoRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMChangeSignInfoRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp parseDelimitedFrom(
+    public static IMChangeSignInfoRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp parseFrom(
+    public static IMChangeSignInfoRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp parseFrom(
+    public static IMChangeSignInfoRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -12322,7 +12322,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp prototype) {
+    public static Builder newBuilder(IMChangeSignInfoRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -12332,10 +12332,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp, Builder>
+          IMChangeSignInfoRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMChangeSignInfoRsp)
-        com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRspOrBuilder {
+        IMChangeSignInfoRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -12364,20 +12364,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp.getDefaultInstance();
+      public IMChangeSignInfoRsp getDefaultInstanceForType() {
+        return IMChangeSignInfoRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp result = buildPartial();
+      public IMChangeSignInfoRsp build() {
+        IMChangeSignInfoRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp result = new com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp(this);
+      public IMChangeSignInfoRsp buildPartial() {
+        IMChangeSignInfoRsp result = new IMChangeSignInfoRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -12400,8 +12400,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMChangeSignInfoRsp other) {
+        if (other == IMChangeSignInfoRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -12437,11 +12437,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp parsedMessage = null;
+        IMChangeSignInfoRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMChangeSignInfoRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMChangeSignInfoRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -12532,7 +12532,7 @@ public final class IMBuddy {
         return this;
       }
 
-      private java.lang.Object signInfo_ = "";
+      private Object signInfo_ = "";
       /**
        * <code>optional string sign_info = 3;</code>
        *
@@ -12550,18 +12550,18 @@ public final class IMBuddy {
        * 此字段服务端用，客户端直接忽略
        * </pre>
        */
-      public java.lang.String getSignInfo() {
-        java.lang.Object ref = signInfo_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getSignInfo() {
+        Object ref = signInfo_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             signInfo_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -12573,11 +12573,11 @@ public final class IMBuddy {
        */
       public com.google.protobuf.ByteString
           getSignInfoBytes() {
-        java.lang.Object ref = signInfo_;
+        Object ref = signInfo_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           signInfo_ = b;
           return b;
         } else {
@@ -12592,7 +12592,7 @@ public final class IMBuddy {
        * </pre>
        */
       public Builder setSignInfo(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -12706,7 +12706,7 @@ public final class IMBuddy {
     /**
      * <code>required string sign_info = 2;</code>
      */
-    java.lang.String getSignInfo();
+    String getSignInfo();
     /**
      * <code>required string sign_info = 2;</code>
      */
@@ -12806,7 +12806,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMSignInfoChangedNotify> getParserForType() {
       return PARSER;
     }
@@ -12836,7 +12836,7 @@ public final class IMBuddy {
     }
 
     public static final int SIGN_INFO_FIELD_NUMBER = 2;
-    private java.lang.Object signInfo_;
+    private Object signInfo_;
     /**
      * <code>required string sign_info = 2;</code>
      */
@@ -12846,14 +12846,14 @@ public final class IMBuddy {
     /**
      * <code>required string sign_info = 2;</code>
      */
-    public java.lang.String getSignInfo() {
-      java.lang.Object ref = signInfo_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getSignInfo() {
+      Object ref = signInfo_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           signInfo_ = s;
         }
@@ -12865,11 +12865,11 @@ public final class IMBuddy {
      */
     public com.google.protobuf.ByteString
         getSignInfoBytes() {
-      java.lang.Object ref = signInfo_;
-      if (ref instanceof java.lang.String) {
+      Object ref = signInfo_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         signInfo_ = b;
         return b;
       } else {
@@ -12931,59 +12931,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify parseFrom(
+    public static IMSignInfoChangedNotify parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify parseFrom(
+    public static IMSignInfoChangedNotify parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify parseFrom(byte[] data)
+    public static IMSignInfoChangedNotify parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify parseFrom(
+    public static IMSignInfoChangedNotify parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify parseFrom(java.io.InputStream input)
+    public static IMSignInfoChangedNotify parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify parseFrom(
+    public static IMSignInfoChangedNotify parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify parseDelimitedFrom(java.io.InputStream input)
+    public static IMSignInfoChangedNotify parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify parseDelimitedFrom(
+    public static IMSignInfoChangedNotify parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify parseFrom(
+    public static IMSignInfoChangedNotify parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify parseFrom(
+    public static IMSignInfoChangedNotify parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -12992,7 +12992,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify prototype) {
+    public static Builder newBuilder(IMSignInfoChangedNotify prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -13006,10 +13006,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify, Builder>
+          IMSignInfoChangedNotify, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMSignInfoChangedNotify)
-        com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotifyOrBuilder {
+        IMSignInfoChangedNotifyOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -13034,20 +13034,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify.getDefaultInstance();
+      public IMSignInfoChangedNotify getDefaultInstanceForType() {
+        return IMSignInfoChangedNotify.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify build() {
-        com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify result = buildPartial();
+      public IMSignInfoChangedNotify build() {
+        IMSignInfoChangedNotify result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify result = new com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify(this);
+      public IMSignInfoChangedNotify buildPartial() {
+        IMSignInfoChangedNotify result = new IMSignInfoChangedNotify(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -13062,8 +13062,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMSignInfoChangedNotify other) {
+        if (other == IMSignInfoChangedNotify.getDefaultInstance()) return this;
         if (other.hasChangedUserId()) {
           setChangedUserId(other.getChangedUserId());
         }
@@ -13093,11 +13093,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify parsedMessage = null;
+        IMSignInfoChangedNotify parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMSignInfoChangedNotify) e.getUnfinishedMessage();
+          parsedMessage = (IMSignInfoChangedNotify) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -13156,7 +13156,7 @@ public final class IMBuddy {
         return this;
       }
 
-      private java.lang.Object signInfo_ = "";
+      private Object signInfo_ = "";
       /**
        * <code>required string sign_info = 2;</code>
        */
@@ -13166,18 +13166,18 @@ public final class IMBuddy {
       /**
        * <code>required string sign_info = 2;</code>
        */
-      public java.lang.String getSignInfo() {
-        java.lang.Object ref = signInfo_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getSignInfo() {
+        Object ref = signInfo_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             signInfo_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -13185,11 +13185,11 @@ public final class IMBuddy {
        */
       public com.google.protobuf.ByteString
           getSignInfoBytes() {
-        java.lang.Object ref = signInfo_;
+        Object ref = signInfo_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           signInfo_ = b;
           return b;
         } else {
@@ -13200,7 +13200,7 @@ public final class IMBuddy {
        * <code>required string sign_info = 2;</code>
        */
       public Builder setSignInfo(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -13271,7 +13271,7 @@ public final class IMBuddy {
      * 要查询的用户名
      * </pre>
      */
-    java.lang.String getSearchUserName();
+    String getSearchUserName();
     /**
      * <code>required string search_user_name = 2;</code>
      *
@@ -13389,7 +13389,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMSearchUserReq> getParserForType() {
       return PARSER;
     }
@@ -13411,7 +13411,7 @@ public final class IMBuddy {
     }
 
     public static final int SEARCH_USER_NAME_FIELD_NUMBER = 2;
-    private java.lang.Object searchUserName_;
+    private Object searchUserName_;
     /**
      * <code>required string search_user_name = 2;</code>
      *
@@ -13429,14 +13429,14 @@ public final class IMBuddy {
      * 要查询的用户名
      * </pre>
      */
-    public java.lang.String getSearchUserName() {
-      java.lang.Object ref = searchUserName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getSearchUserName() {
+      Object ref = searchUserName_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           searchUserName_ = s;
         }
@@ -13452,11 +13452,11 @@ public final class IMBuddy {
      */
     public com.google.protobuf.ByteString
         getSearchUserNameBytes() {
-      java.lang.Object ref = searchUserName_;
-      if (ref instanceof java.lang.String) {
+      Object ref = searchUserName_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         searchUserName_ = b;
         return b;
       } else {
@@ -13541,59 +13541,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserReq parseFrom(
+    public static IMSearchUserReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserReq parseFrom(
+    public static IMSearchUserReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserReq parseFrom(byte[] data)
+    public static IMSearchUserReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserReq parseFrom(
+    public static IMSearchUserReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserReq parseFrom(java.io.InputStream input)
+    public static IMSearchUserReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserReq parseFrom(
+    public static IMSearchUserReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMSearchUserReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserReq parseDelimitedFrom(
+    public static IMSearchUserReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserReq parseFrom(
+    public static IMSearchUserReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserReq parseFrom(
+    public static IMSearchUserReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -13602,7 +13602,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMSearchUserReq prototype) {
+    public static Builder newBuilder(IMSearchUserReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -13616,10 +13616,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMSearchUserReq, Builder>
+          IMSearchUserReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMSearchUserReq)
-        com.tenth.space.protobuf.IMBuddy.IMSearchUserReqOrBuilder {
+        IMSearchUserReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMSearchUserReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -13646,20 +13646,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMSearchUserReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMSearchUserReq.getDefaultInstance();
+      public IMSearchUserReq getDefaultInstanceForType() {
+        return IMSearchUserReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMSearchUserReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMSearchUserReq result = buildPartial();
+      public IMSearchUserReq build() {
+        IMSearchUserReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMSearchUserReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMSearchUserReq result = new com.tenth.space.protobuf.IMBuddy.IMSearchUserReq(this);
+      public IMSearchUserReq buildPartial() {
+        IMSearchUserReq result = new IMSearchUserReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -13678,8 +13678,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMSearchUserReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMSearchUserReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMSearchUserReq other) {
+        if (other == IMSearchUserReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -13712,11 +13712,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMSearchUserReq parsedMessage = null;
+        IMSearchUserReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMSearchUserReq) e.getUnfinishedMessage();
+          parsedMessage = (IMSearchUserReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -13759,7 +13759,7 @@ public final class IMBuddy {
         return this;
       }
 
-      private java.lang.Object searchUserName_ = "";
+      private Object searchUserName_ = "";
       /**
        * <code>required string search_user_name = 2;</code>
        *
@@ -13777,18 +13777,18 @@ public final class IMBuddy {
        * 要查询的用户名
        * </pre>
        */
-      public java.lang.String getSearchUserName() {
-        java.lang.Object ref = searchUserName_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getSearchUserName() {
+        Object ref = searchUserName_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             searchUserName_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -13800,11 +13800,11 @@ public final class IMBuddy {
        */
       public com.google.protobuf.ByteString
           getSearchUserNameBytes() {
-        java.lang.Object ref = searchUserName_;
+        Object ref = searchUserName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           searchUserName_ = b;
           return b;
         } else {
@@ -13819,7 +13819,7 @@ public final class IMBuddy {
        * </pre>
        */
       public Builder setSearchUserName(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -13925,7 +13925,7 @@ public final class IMBuddy {
      * 空表示没查到
      * </pre>
      */
-    java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserInfo> 
+    java.util.List<IMBaseDefine.UserInfo>
         getSearchUserListList();
     /**
      * <code>repeated .IM.BaseDefine.UserInfo search_user_list = 2;</code>
@@ -13934,7 +13934,7 @@ public final class IMBuddy {
      * 空表示没查到
      * </pre>
      */
-    com.tenth.space.protobuf.IMBaseDefine.UserInfo getSearchUserList(int index);
+    IMBaseDefine.UserInfo getSearchUserList(int index);
     /**
      * <code>repeated .IM.BaseDefine.UserInfo search_user_list = 2;</code>
      *
@@ -14014,10 +14014,10 @@ public final class IMBuddy {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                searchUserList_ = new java.util.ArrayList<com.tenth.space.protobuf.IMBaseDefine.UserInfo>();
+                searchUserList_ = new java.util.ArrayList<IMBaseDefine.UserInfo>();
                 mutable_bitField0_ |= 0x00000002;
               }
-              searchUserList_.add(input.readMessage(com.tenth.space.protobuf.IMBaseDefine.UserInfo.PARSER, extensionRegistry));
+              searchUserList_.add(input.readMessage(IMBaseDefine.UserInfo.PARSER, extensionRegistry));
               break;
             }
             case 162: {
@@ -14056,7 +14056,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMSearchUserRsp> getParserForType() {
       return PARSER;
     }
@@ -14078,7 +14078,7 @@ public final class IMBuddy {
     }
 
     public static final int SEARCH_USER_LIST_FIELD_NUMBER = 2;
-    private java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserInfo> searchUserList_;
+    private java.util.List<IMBaseDefine.UserInfo> searchUserList_;
     /**
      * <code>repeated .IM.BaseDefine.UserInfo search_user_list = 2;</code>
      *
@@ -14086,7 +14086,7 @@ public final class IMBuddy {
      * 空表示没查到
      * </pre>
      */
-    public java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserInfo> getSearchUserListList() {
+    public java.util.List<IMBaseDefine.UserInfo> getSearchUserListList() {
       return searchUserList_;
     }
     /**
@@ -14096,7 +14096,7 @@ public final class IMBuddy {
      * 空表示没查到
      * </pre>
      */
-    public java.util.List<? extends com.tenth.space.protobuf.IMBaseDefine.UserInfoOrBuilder> 
+    public java.util.List<? extends IMBaseDefine.UserInfoOrBuilder>
         getSearchUserListOrBuilderList() {
       return searchUserList_;
     }
@@ -14117,7 +14117,7 @@ public final class IMBuddy {
      * 空表示没查到
      * </pre>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.UserInfo getSearchUserList(int index) {
+    public IMBaseDefine.UserInfo getSearchUserList(int index) {
       return searchUserList_.get(index);
     }
     /**
@@ -14127,7 +14127,7 @@ public final class IMBuddy {
      * 空表示没查到
      * </pre>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.UserInfoOrBuilder getSearchUserListOrBuilder(
+    public IMBaseDefine.UserInfoOrBuilder getSearchUserListOrBuilder(
         int index) {
       return searchUserList_.get(index);
     }
@@ -14211,59 +14211,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp parseFrom(
+    public static IMSearchUserRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp parseFrom(
+    public static IMSearchUserRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp parseFrom(byte[] data)
+    public static IMSearchUserRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp parseFrom(
+    public static IMSearchUserRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp parseFrom(java.io.InputStream input)
+    public static IMSearchUserRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp parseFrom(
+    public static IMSearchUserRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMSearchUserRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp parseDelimitedFrom(
+    public static IMSearchUserRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp parseFrom(
+    public static IMSearchUserRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp parseFrom(
+    public static IMSearchUserRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -14272,7 +14272,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp prototype) {
+    public static Builder newBuilder(IMSearchUserRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -14286,10 +14286,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp, Builder>
+          IMSearchUserRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMSearchUserRsp)
-        com.tenth.space.protobuf.IMBuddy.IMSearchUserRspOrBuilder {
+        IMSearchUserRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -14316,20 +14316,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp.getDefaultInstance();
+      public IMSearchUserRsp getDefaultInstanceForType() {
+        return IMSearchUserRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp result = buildPartial();
+      public IMSearchUserRsp build() {
+        IMSearchUserRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp result = new com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp(this);
+      public IMSearchUserRsp buildPartial() {
+        IMSearchUserRsp result = new IMSearchUserRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -14349,8 +14349,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMSearchUserRsp other) {
+        if (other == IMSearchUserRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -14390,11 +14390,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp parsedMessage = null;
+        IMSearchUserRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMSearchUserRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMSearchUserRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -14437,11 +14437,11 @@ public final class IMBuddy {
         return this;
       }
 
-      private java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserInfo> searchUserList_ =
+      private java.util.List<IMBaseDefine.UserInfo> searchUserList_ =
         java.util.Collections.emptyList();
       private void ensureSearchUserListIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          searchUserList_ = new java.util.ArrayList<com.tenth.space.protobuf.IMBaseDefine.UserInfo>(searchUserList_);
+          searchUserList_ = new java.util.ArrayList<IMBaseDefine.UserInfo>(searchUserList_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -14453,7 +14453,7 @@ public final class IMBuddy {
        * 空表示没查到
        * </pre>
        */
-      public java.util.List<com.tenth.space.protobuf.IMBaseDefine.UserInfo> getSearchUserListList() {
+      public java.util.List<IMBaseDefine.UserInfo> getSearchUserListList() {
         return java.util.Collections.unmodifiableList(searchUserList_);
       }
       /**
@@ -14473,7 +14473,7 @@ public final class IMBuddy {
        * 空表示没查到
        * </pre>
        */
-      public com.tenth.space.protobuf.IMBaseDefine.UserInfo getSearchUserList(int index) {
+      public IMBaseDefine.UserInfo getSearchUserList(int index) {
         return searchUserList_.get(index);
       }
       /**
@@ -14484,7 +14484,7 @@ public final class IMBuddy {
        * </pre>
        */
       public Builder setSearchUserList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.UserInfo value) {
+          int index, IMBaseDefine.UserInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -14501,7 +14501,7 @@ public final class IMBuddy {
        * </pre>
        */
       public Builder setSearchUserList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.UserInfo.Builder builderForValue) {
+          int index, IMBaseDefine.UserInfo.Builder builderForValue) {
         ensureSearchUserListIsMutable();
         searchUserList_.set(index, builderForValue.build());
 
@@ -14514,7 +14514,7 @@ public final class IMBuddy {
        * 空表示没查到
        * </pre>
        */
-      public Builder addSearchUserList(com.tenth.space.protobuf.IMBaseDefine.UserInfo value) {
+      public Builder addSearchUserList(IMBaseDefine.UserInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -14531,7 +14531,7 @@ public final class IMBuddy {
        * </pre>
        */
       public Builder addSearchUserList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.UserInfo value) {
+          int index, IMBaseDefine.UserInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -14548,7 +14548,7 @@ public final class IMBuddy {
        * </pre>
        */
       public Builder addSearchUserList(
-          com.tenth.space.protobuf.IMBaseDefine.UserInfo.Builder builderForValue) {
+          IMBaseDefine.UserInfo.Builder builderForValue) {
         ensureSearchUserListIsMutable();
         searchUserList_.add(builderForValue.build());
 
@@ -14562,7 +14562,7 @@ public final class IMBuddy {
        * </pre>
        */
       public Builder addSearchUserList(
-          int index, com.tenth.space.protobuf.IMBaseDefine.UserInfo.Builder builderForValue) {
+          int index, IMBaseDefine.UserInfo.Builder builderForValue) {
         ensureSearchUserListIsMutable();
         searchUserList_.add(index, builderForValue.build());
 
@@ -14576,7 +14576,7 @@ public final class IMBuddy {
        * </pre>
        */
       public Builder addAllSearchUserList(
-          java.lang.Iterable<? extends com.tenth.space.protobuf.IMBaseDefine.UserInfo> values) {
+          Iterable<? extends IMBaseDefine.UserInfo> values) {
         ensureSearchUserListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, searchUserList_);
@@ -14806,7 +14806,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMAddFriendReq> getParserForType() {
       return PARSER;
     }
@@ -14950,59 +14950,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReq parseFrom(
+    public static IMAddFriendReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReq parseFrom(
+    public static IMAddFriendReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReq parseFrom(byte[] data)
+    public static IMAddFriendReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReq parseFrom(
+    public static IMAddFriendReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReq parseFrom(java.io.InputStream input)
+    public static IMAddFriendReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReq parseFrom(
+    public static IMAddFriendReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMAddFriendReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReq parseDelimitedFrom(
+    public static IMAddFriendReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReq parseFrom(
+    public static IMAddFriendReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReq parseFrom(
+    public static IMAddFriendReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -15011,7 +15011,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMAddFriendReq prototype) {
+    public static Builder newBuilder(IMAddFriendReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -15025,10 +15025,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMAddFriendReq, Builder>
+          IMAddFriendReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMAddFriendReq)
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendReqOrBuilder {
+        IMAddFriendReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMAddFriendReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -15057,20 +15057,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMAddFriendReq.getDefaultInstance();
+      public IMAddFriendReq getDefaultInstanceForType() {
+        return IMAddFriendReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendReq result = buildPartial();
+      public IMAddFriendReq build() {
+        IMAddFriendReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendReq result = new com.tenth.space.protobuf.IMBuddy.IMAddFriendReq(this);
+      public IMAddFriendReq buildPartial() {
+        IMAddFriendReq result = new IMAddFriendReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -15093,8 +15093,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMAddFriendReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMAddFriendReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMAddFriendReq other) {
+        if (other == IMAddFriendReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -15128,11 +15128,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendReq parsedMessage = null;
+        IMAddFriendReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMAddFriendReq) e.getUnfinishedMessage();
+          parsedMessage = (IMAddFriendReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -15468,7 +15468,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMAddFriendRsp> getParserForType() {
       return PARSER;
     }
@@ -15639,59 +15639,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp parseFrom(
+    public static IMAddFriendRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp parseFrom(
+    public static IMAddFriendRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp parseFrom(byte[] data)
+    public static IMAddFriendRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp parseFrom(
+    public static IMAddFriendRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp parseFrom(java.io.InputStream input)
+    public static IMAddFriendRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp parseFrom(
+    public static IMAddFriendRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMAddFriendRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp parseDelimitedFrom(
+    public static IMAddFriendRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp parseFrom(
+    public static IMAddFriendRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp parseFrom(
+    public static IMAddFriendRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -15700,7 +15700,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp prototype) {
+    public static Builder newBuilder(IMAddFriendRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -15714,10 +15714,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp, Builder>
+          IMAddFriendRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMAddFriendRsp)
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendRspOrBuilder {
+        IMAddFriendRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -15748,20 +15748,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp.getDefaultInstance();
+      public IMAddFriendRsp getDefaultInstanceForType() {
+        return IMAddFriendRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp result = buildPartial();
+      public IMAddFriendRsp build() {
+        IMAddFriendRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp result = new com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp(this);
+      public IMAddFriendRsp buildPartial() {
+        IMAddFriendRsp result = new IMAddFriendRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -15788,8 +15788,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMAddFriendRsp other) {
+        if (other == IMAddFriendRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -15830,11 +15830,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp parsedMessage = null;
+        IMAddFriendRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMAddFriendRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMAddFriendRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -16067,7 +16067,7 @@ public final class IMBuddy {
     /**
      * <code>required .IM.BaseDefine.SystemMsgType type = 3;</code>
      */
-    com.tenth.space.protobuf.IMBaseDefine.SystemMsgType getType();
+    IMBaseDefine.SystemMsgType getType();
 
     /**
      * <code>required bytes add_friend_data = 5;</code>
@@ -16161,7 +16161,7 @@ public final class IMBuddy {
             }
             case 24: {
               int rawValue = input.readEnum();
-              com.tenth.space.protobuf.IMBaseDefine.SystemMsgType value = com.tenth.space.protobuf.IMBaseDefine.SystemMsgType.valueOf(rawValue);
+              IMBaseDefine.SystemMsgType value = IMBaseDefine.SystemMsgType.valueOf(rawValue);
               if (value == null) {
                 unknownFieldsCodedOutput.writeRawVarint32(tag);
                 unknownFieldsCodedOutput.writeRawVarint32(rawValue);
@@ -16209,7 +16209,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMAddFriendData> getParserForType() {
       return PARSER;
     }
@@ -16246,7 +16246,7 @@ public final class IMBuddy {
     }
 
     public static final int TYPE_FIELD_NUMBER = 3;
-    private com.tenth.space.protobuf.IMBaseDefine.SystemMsgType type_;
+    private IMBaseDefine.SystemMsgType type_;
     /**
      * <code>required .IM.BaseDefine.SystemMsgType type = 3;</code>
      */
@@ -16256,7 +16256,7 @@ public final class IMBuddy {
     /**
      * <code>required .IM.BaseDefine.SystemMsgType type = 3;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.SystemMsgType getType() {
+    public IMBaseDefine.SystemMsgType getType() {
       return type_;
     }
 
@@ -16301,7 +16301,7 @@ public final class IMBuddy {
     private void initFields() {
       userId_ = 0;
       friendId_ = 0;
-      type_ = com.tenth.space.protobuf.IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
+      type_ = IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
       addFriendData_ = com.google.protobuf.ByteString.EMPTY;
       attachData_ = com.google.protobuf.ByteString.EMPTY;
     }
@@ -16384,59 +16384,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendData parseFrom(
+    public static IMAddFriendData parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendData parseFrom(
+    public static IMAddFriendData parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendData parseFrom(byte[] data)
+    public static IMAddFriendData parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendData parseFrom(
+    public static IMAddFriendData parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendData parseFrom(java.io.InputStream input)
+    public static IMAddFriendData parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendData parseFrom(
+    public static IMAddFriendData parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendData parseDelimitedFrom(java.io.InputStream input)
+    public static IMAddFriendData parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendData parseDelimitedFrom(
+    public static IMAddFriendData parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendData parseFrom(
+    public static IMAddFriendData parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendData parseFrom(
+    public static IMAddFriendData parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -16445,7 +16445,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMAddFriendData prototype) {
+    public static Builder newBuilder(IMAddFriendData prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -16459,10 +16459,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMAddFriendData, Builder>
+          IMAddFriendData, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMAddFriendData)
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendDataOrBuilder {
+        IMAddFriendDataOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMAddFriendData.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -16480,7 +16480,7 @@ public final class IMBuddy {
         bitField0_ = (bitField0_ & ~0x00000001);
         friendId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
-        type_ = com.tenth.space.protobuf.IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
+        type_ = IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
         bitField0_ = (bitField0_ & ~0x00000004);
         addFriendData_ = com.google.protobuf.ByteString.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -16493,20 +16493,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendData getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMAddFriendData.getDefaultInstance();
+      public IMAddFriendData getDefaultInstanceForType() {
+        return IMAddFriendData.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendData build() {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendData result = buildPartial();
+      public IMAddFriendData build() {
+        IMAddFriendData result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendData buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendData result = new com.tenth.space.protobuf.IMBuddy.IMAddFriendData(this);
+      public IMAddFriendData buildPartial() {
+        IMAddFriendData result = new IMAddFriendData(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -16533,8 +16533,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMAddFriendData other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMAddFriendData.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMAddFriendData other) {
+        if (other == IMAddFriendData.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -16579,11 +16579,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendData parsedMessage = null;
+        IMAddFriendData parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMAddFriendData) e.getUnfinishedMessage();
+          parsedMessage = (IMAddFriendData) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -16658,7 +16658,7 @@ public final class IMBuddy {
         return this;
       }
 
-      private com.tenth.space.protobuf.IMBaseDefine.SystemMsgType type_ = com.tenth.space.protobuf.IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
+      private IMBaseDefine.SystemMsgType type_ = IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
       /**
        * <code>required .IM.BaseDefine.SystemMsgType type = 3;</code>
        */
@@ -16668,13 +16668,13 @@ public final class IMBuddy {
       /**
        * <code>required .IM.BaseDefine.SystemMsgType type = 3;</code>
        */
-      public com.tenth.space.protobuf.IMBaseDefine.SystemMsgType getType() {
+      public IMBaseDefine.SystemMsgType getType() {
         return type_;
       }
       /**
        * <code>required .IM.BaseDefine.SystemMsgType type = 3;</code>
        */
-      public Builder setType(com.tenth.space.protobuf.IMBaseDefine.SystemMsgType value) {
+      public Builder setType(IMBaseDefine.SystemMsgType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -16688,7 +16688,7 @@ public final class IMBuddy {
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        type_ = com.tenth.space.protobuf.IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
+        type_ = IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
         
         return this;
       }
@@ -16904,7 +16904,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMAddFriendReadDataAck> getParserForType() {
       return PARSER;
     }
@@ -16990,59 +16990,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck parseFrom(
+    public static IMAddFriendReadDataAck parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck parseFrom(
+    public static IMAddFriendReadDataAck parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck parseFrom(byte[] data)
+    public static IMAddFriendReadDataAck parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck parseFrom(
+    public static IMAddFriendReadDataAck parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck parseFrom(java.io.InputStream input)
+    public static IMAddFriendReadDataAck parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck parseFrom(
+    public static IMAddFriendReadDataAck parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck parseDelimitedFrom(java.io.InputStream input)
+    public static IMAddFriendReadDataAck parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck parseDelimitedFrom(
+    public static IMAddFriendReadDataAck parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck parseFrom(
+    public static IMAddFriendReadDataAck parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck parseFrom(
+    public static IMAddFriendReadDataAck parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -17051,7 +17051,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck prototype) {
+    public static Builder newBuilder(IMAddFriendReadDataAck prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -17065,10 +17065,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck, Builder>
+          IMAddFriendReadDataAck, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMAddFriendReadDataAck)
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAckOrBuilder {
+        IMAddFriendReadDataAckOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -17093,20 +17093,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck.getDefaultInstance();
+      public IMAddFriendReadDataAck getDefaultInstanceForType() {
+        return IMAddFriendReadDataAck.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck build() {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck result = buildPartial();
+      public IMAddFriendReadDataAck build() {
+        IMAddFriendReadDataAck result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck result = new com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck(this);
+      public IMAddFriendReadDataAck buildPartial() {
+        IMAddFriendReadDataAck result = new IMAddFriendReadDataAck(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -17121,8 +17121,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMAddFriendReadDataAck other) {
+        if (other == IMAddFriendReadDataAck.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -17146,11 +17146,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck parsedMessage = null;
+        IMAddFriendReadDataAck parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMAddFriendReadDataAck) e.getUnfinishedMessage();
+          parsedMessage = (IMAddFriendReadDataAck) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -17367,7 +17367,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMGetAddFriendDataReq> getParserForType() {
       return PARSER;
     }
@@ -17480,59 +17480,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq parseFrom(
+    public static IMGetAddFriendDataReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq parseFrom(
+    public static IMGetAddFriendDataReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq parseFrom(byte[] data)
+    public static IMGetAddFriendDataReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq parseFrom(
+    public static IMGetAddFriendDataReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq parseFrom(java.io.InputStream input)
+    public static IMGetAddFriendDataReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq parseFrom(
+    public static IMGetAddFriendDataReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMGetAddFriendDataReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq parseDelimitedFrom(
+    public static IMGetAddFriendDataReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq parseFrom(
+    public static IMGetAddFriendDataReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq parseFrom(
+    public static IMGetAddFriendDataReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -17541,7 +17541,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq prototype) {
+    public static Builder newBuilder(IMGetAddFriendDataReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -17555,10 +17555,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq, Builder>
+          IMGetAddFriendDataReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMGetAddFriendDataReq)
-        com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReqOrBuilder {
+        IMGetAddFriendDataReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -17585,20 +17585,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq.getDefaultInstance();
+      public IMGetAddFriendDataReq getDefaultInstanceForType() {
+        return IMGetAddFriendDataReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq result = buildPartial();
+      public IMGetAddFriendDataReq build() {
+        IMGetAddFriendDataReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq result = new com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq(this);
+      public IMGetAddFriendDataReq buildPartial() {
+        IMGetAddFriendDataReq result = new IMGetAddFriendDataReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -17617,8 +17617,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMGetAddFriendDataReq other) {
+        if (other == IMGetAddFriendDataReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -17649,11 +17649,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq parsedMessage = null;
+        IMGetAddFriendDataReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataReq) e.getUnfinishedMessage();
+          parsedMessage = (IMGetAddFriendDataReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -17798,12 +17798,12 @@ public final class IMBuddy {
     /**
      * <code>repeated .IM.Buddy.IMAddFriendData data_list = 2;</code>
      */
-    java.util.List<com.tenth.space.protobuf.IMBuddy.IMAddFriendData> 
+    java.util.List<IMAddFriendData>
         getDataListList();
     /**
      * <code>repeated .IM.Buddy.IMAddFriendData data_list = 2;</code>
      */
-    com.tenth.space.protobuf.IMBuddy.IMAddFriendData getDataList(int index);
+    IMAddFriendData getDataList(int index);
     /**
      * <code>repeated .IM.Buddy.IMAddFriendData data_list = 2;</code>
      */
@@ -17875,10 +17875,10 @@ public final class IMBuddy {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                dataList_ = new java.util.ArrayList<com.tenth.space.protobuf.IMBuddy.IMAddFriendData>();
+                dataList_ = new java.util.ArrayList<IMAddFriendData>();
                 mutable_bitField0_ |= 0x00000002;
               }
-              dataList_.add(input.readMessage(com.tenth.space.protobuf.IMBuddy.IMAddFriendData.PARSER, extensionRegistry));
+              dataList_.add(input.readMessage(IMAddFriendData.PARSER, extensionRegistry));
               break;
             }
             case 162: {
@@ -17917,7 +17917,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMGetAddFriendDataRsp> getParserForType() {
       return PARSER;
     }
@@ -17947,17 +17947,17 @@ public final class IMBuddy {
     }
 
     public static final int DATA_LIST_FIELD_NUMBER = 2;
-    private java.util.List<com.tenth.space.protobuf.IMBuddy.IMAddFriendData> dataList_;
+    private java.util.List<IMAddFriendData> dataList_;
     /**
      * <code>repeated .IM.Buddy.IMAddFriendData data_list = 2;</code>
      */
-    public java.util.List<com.tenth.space.protobuf.IMBuddy.IMAddFriendData> getDataListList() {
+    public java.util.List<IMAddFriendData> getDataListList() {
       return dataList_;
     }
     /**
      * <code>repeated .IM.Buddy.IMAddFriendData data_list = 2;</code>
      */
-    public java.util.List<? extends com.tenth.space.protobuf.IMBuddy.IMAddFriendDataOrBuilder> 
+    public java.util.List<? extends IMAddFriendDataOrBuilder>
         getDataListOrBuilderList() {
       return dataList_;
     }
@@ -17970,13 +17970,13 @@ public final class IMBuddy {
     /**
      * <code>repeated .IM.Buddy.IMAddFriendData data_list = 2;</code>
      */
-    public com.tenth.space.protobuf.IMBuddy.IMAddFriendData getDataList(int index) {
+    public IMAddFriendData getDataList(int index) {
       return dataList_.get(index);
     }
     /**
      * <code>repeated .IM.Buddy.IMAddFriendData data_list = 2;</code>
      */
-    public com.tenth.space.protobuf.IMBuddy.IMAddFriendDataOrBuilder getDataListOrBuilder(
+    public IMAddFriendDataOrBuilder getDataListOrBuilder(
         int index) {
       return dataList_.get(index);
     }
@@ -18060,59 +18060,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp parseFrom(
+    public static IMGetAddFriendDataRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp parseFrom(
+    public static IMGetAddFriendDataRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp parseFrom(byte[] data)
+    public static IMGetAddFriendDataRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp parseFrom(
+    public static IMGetAddFriendDataRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp parseFrom(java.io.InputStream input)
+    public static IMGetAddFriendDataRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp parseFrom(
+    public static IMGetAddFriendDataRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMGetAddFriendDataRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp parseDelimitedFrom(
+    public static IMGetAddFriendDataRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp parseFrom(
+    public static IMGetAddFriendDataRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp parseFrom(
+    public static IMGetAddFriendDataRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -18121,7 +18121,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp prototype) {
+    public static Builder newBuilder(IMGetAddFriendDataRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -18131,10 +18131,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp, Builder>
+          IMGetAddFriendDataRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMGetAddFriendDataRsp)
-        com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRspOrBuilder {
+        IMGetAddFriendDataRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -18161,20 +18161,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp.getDefaultInstance();
+      public IMGetAddFriendDataRsp getDefaultInstanceForType() {
+        return IMGetAddFriendDataRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp result = buildPartial();
+      public IMGetAddFriendDataRsp build() {
+        IMGetAddFriendDataRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp result = new com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp(this);
+      public IMGetAddFriendDataRsp buildPartial() {
+        IMGetAddFriendDataRsp result = new IMGetAddFriendDataRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -18194,8 +18194,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMGetAddFriendDataRsp other) {
+        if (other == IMGetAddFriendDataRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -18235,11 +18235,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp parsedMessage = null;
+        IMGetAddFriendDataRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMGetAddFriendDataRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMGetAddFriendDataRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -18298,11 +18298,11 @@ public final class IMBuddy {
         return this;
       }
 
-      private java.util.List<com.tenth.space.protobuf.IMBuddy.IMAddFriendData> dataList_ =
+      private java.util.List<IMAddFriendData> dataList_ =
         java.util.Collections.emptyList();
       private void ensureDataListIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          dataList_ = new java.util.ArrayList<com.tenth.space.protobuf.IMBuddy.IMAddFriendData>(dataList_);
+          dataList_ = new java.util.ArrayList<IMAddFriendData>(dataList_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -18310,7 +18310,7 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.Buddy.IMAddFriendData data_list = 2;</code>
        */
-      public java.util.List<com.tenth.space.protobuf.IMBuddy.IMAddFriendData> getDataListList() {
+      public java.util.List<IMAddFriendData> getDataListList() {
         return java.util.Collections.unmodifiableList(dataList_);
       }
       /**
@@ -18322,14 +18322,14 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.Buddy.IMAddFriendData data_list = 2;</code>
        */
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendData getDataList(int index) {
+      public IMAddFriendData getDataList(int index) {
         return dataList_.get(index);
       }
       /**
        * <code>repeated .IM.Buddy.IMAddFriendData data_list = 2;</code>
        */
       public Builder setDataList(
-          int index, com.tenth.space.protobuf.IMBuddy.IMAddFriendData value) {
+          int index, IMAddFriendData value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -18342,7 +18342,7 @@ public final class IMBuddy {
        * <code>repeated .IM.Buddy.IMAddFriendData data_list = 2;</code>
        */
       public Builder setDataList(
-          int index, com.tenth.space.protobuf.IMBuddy.IMAddFriendData.Builder builderForValue) {
+          int index, IMAddFriendData.Builder builderForValue) {
         ensureDataListIsMutable();
         dataList_.set(index, builderForValue.build());
 
@@ -18351,7 +18351,7 @@ public final class IMBuddy {
       /**
        * <code>repeated .IM.Buddy.IMAddFriendData data_list = 2;</code>
        */
-      public Builder addDataList(com.tenth.space.protobuf.IMBuddy.IMAddFriendData value) {
+      public Builder addDataList(IMAddFriendData value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -18364,7 +18364,7 @@ public final class IMBuddy {
        * <code>repeated .IM.Buddy.IMAddFriendData data_list = 2;</code>
        */
       public Builder addDataList(
-          int index, com.tenth.space.protobuf.IMBuddy.IMAddFriendData value) {
+          int index, IMAddFriendData value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -18377,7 +18377,7 @@ public final class IMBuddy {
        * <code>repeated .IM.Buddy.IMAddFriendData data_list = 2;</code>
        */
       public Builder addDataList(
-          com.tenth.space.protobuf.IMBuddy.IMAddFriendData.Builder builderForValue) {
+          IMAddFriendData.Builder builderForValue) {
         ensureDataListIsMutable();
         dataList_.add(builderForValue.build());
 
@@ -18387,7 +18387,7 @@ public final class IMBuddy {
        * <code>repeated .IM.Buddy.IMAddFriendData data_list = 2;</code>
        */
       public Builder addDataList(
-          int index, com.tenth.space.protobuf.IMBuddy.IMAddFriendData.Builder builderForValue) {
+          int index, IMAddFriendData.Builder builderForValue) {
         ensureDataListIsMutable();
         dataList_.add(index, builderForValue.build());
 
@@ -18397,7 +18397,7 @@ public final class IMBuddy {
        * <code>repeated .IM.Buddy.IMAddFriendData data_list = 2;</code>
        */
       public Builder addAllDataList(
-          java.lang.Iterable<? extends com.tenth.space.protobuf.IMBuddy.IMAddFriendData> values) {
+          Iterable<? extends IMAddFriendData> values) {
         ensureDataListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, dataList_);
@@ -18583,7 +18583,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMAddFriendUnreadCntReq> getParserForType() {
       return PARSER;
     }
@@ -18669,59 +18669,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq parseFrom(
+    public static IMAddFriendUnreadCntReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq parseFrom(
+    public static IMAddFriendUnreadCntReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq parseFrom(byte[] data)
+    public static IMAddFriendUnreadCntReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq parseFrom(
+    public static IMAddFriendUnreadCntReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq parseFrom(java.io.InputStream input)
+    public static IMAddFriendUnreadCntReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq parseFrom(
+    public static IMAddFriendUnreadCntReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMAddFriendUnreadCntReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq parseDelimitedFrom(
+    public static IMAddFriendUnreadCntReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq parseFrom(
+    public static IMAddFriendUnreadCntReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq parseFrom(
+    public static IMAddFriendUnreadCntReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -18730,7 +18730,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq prototype) {
+    public static Builder newBuilder(IMAddFriendUnreadCntReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -18744,10 +18744,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq, Builder>
+          IMAddFriendUnreadCntReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMAddFriendUnreadCntReq)
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReqOrBuilder {
+        IMAddFriendUnreadCntReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -18772,20 +18772,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq.getDefaultInstance();
+      public IMAddFriendUnreadCntReq getDefaultInstanceForType() {
+        return IMAddFriendUnreadCntReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq result = buildPartial();
+      public IMAddFriendUnreadCntReq build() {
+        IMAddFriendUnreadCntReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq result = new com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq(this);
+      public IMAddFriendUnreadCntReq buildPartial() {
+        IMAddFriendUnreadCntReq result = new IMAddFriendUnreadCntReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -18800,8 +18800,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMAddFriendUnreadCntReq other) {
+        if (other == IMAddFriendUnreadCntReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -18825,11 +18825,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq parsedMessage = null;
+        IMAddFriendUnreadCntReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntReq) e.getUnfinishedMessage();
+          parsedMessage = (IMAddFriendUnreadCntReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -19046,7 +19046,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMAddFriendUnreadCntRsp> getParserForType() {
       return PARSER;
     }
@@ -19159,59 +19159,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp parseFrom(
+    public static IMAddFriendUnreadCntRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp parseFrom(
+    public static IMAddFriendUnreadCntRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp parseFrom(byte[] data)
+    public static IMAddFriendUnreadCntRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp parseFrom(
+    public static IMAddFriendUnreadCntRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp parseFrom(java.io.InputStream input)
+    public static IMAddFriendUnreadCntRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp parseFrom(
+    public static IMAddFriendUnreadCntRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMAddFriendUnreadCntRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp parseDelimitedFrom(
+    public static IMAddFriendUnreadCntRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp parseFrom(
+    public static IMAddFriendUnreadCntRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp parseFrom(
+    public static IMAddFriendUnreadCntRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -19220,7 +19220,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp prototype) {
+    public static Builder newBuilder(IMAddFriendUnreadCntRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -19234,10 +19234,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp, Builder>
+          IMAddFriendUnreadCntRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMAddFriendUnreadCntRsp)
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRspOrBuilder {
+        IMAddFriendUnreadCntRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -19264,20 +19264,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp.getDefaultInstance();
+      public IMAddFriendUnreadCntRsp getDefaultInstanceForType() {
+        return IMAddFriendUnreadCntRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp result = buildPartial();
+      public IMAddFriendUnreadCntRsp build() {
+        IMAddFriendUnreadCntRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp result = new com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp(this);
+      public IMAddFriendUnreadCntRsp buildPartial() {
+        IMAddFriendUnreadCntRsp result = new IMAddFriendUnreadCntRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -19296,8 +19296,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMAddFriendUnreadCntRsp other) {
+        if (other == IMAddFriendUnreadCntRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -19328,11 +19328,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp parsedMessage = null;
+        IMAddFriendUnreadCntRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMAddFriendUnreadCntRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMAddFriendUnreadCntRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -19498,7 +19498,7 @@ public final class IMBuddy {
      * 忽略的就不用上传到服务器了
      * </pre>
      */
-    com.tenth.space.protobuf.IMBaseDefine.SystemMsgType getAgree();
+    IMBaseDefine.SystemMsgType getAgree();
 
     /**
      * <code>optional bytes addition_msg = 4;</code>
@@ -19584,7 +19584,7 @@ public final class IMBuddy {
             }
             case 24: {
               int rawValue = input.readEnum();
-              com.tenth.space.protobuf.IMBaseDefine.SystemMsgType value = com.tenth.space.protobuf.IMBaseDefine.SystemMsgType.valueOf(rawValue);
+              IMBaseDefine.SystemMsgType value = IMBaseDefine.SystemMsgType.valueOf(rawValue);
               if (value == null) {
                 unknownFieldsCodedOutput.writeRawVarint32(tag);
                 unknownFieldsCodedOutput.writeRawVarint32(rawValue);
@@ -19632,7 +19632,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMAgreeAddFriendReq> getParserForType() {
       return PARSER;
     }
@@ -19677,7 +19677,7 @@ public final class IMBuddy {
     }
 
     public static final int AGREE_FIELD_NUMBER = 3;
-    private com.tenth.space.protobuf.IMBaseDefine.SystemMsgType agree_;
+    private IMBaseDefine.SystemMsgType agree_;
     /**
      * <code>required .IM.BaseDefine.SystemMsgType agree = 3;</code>
      *
@@ -19695,7 +19695,7 @@ public final class IMBuddy {
      * 忽略的就不用上传到服务器了
      * </pre>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.SystemMsgType getAgree() {
+    public IMBaseDefine.SystemMsgType getAgree() {
       return agree_;
     }
 
@@ -19732,7 +19732,7 @@ public final class IMBuddy {
     private void initFields() {
       userId_ = 0;
       friendId_ = 0;
-      agree_ = com.tenth.space.protobuf.IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
+      agree_ = IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
       additionMsg_ = com.google.protobuf.ByteString.EMPTY;
       attachData_ = com.google.protobuf.ByteString.EMPTY;
     }
@@ -19811,59 +19811,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq parseFrom(
+    public static IMAgreeAddFriendReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq parseFrom(
+    public static IMAgreeAddFriendReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq parseFrom(byte[] data)
+    public static IMAgreeAddFriendReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq parseFrom(
+    public static IMAgreeAddFriendReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq parseFrom(java.io.InputStream input)
+    public static IMAgreeAddFriendReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq parseFrom(
+    public static IMAgreeAddFriendReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMAgreeAddFriendReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq parseDelimitedFrom(
+    public static IMAgreeAddFriendReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq parseFrom(
+    public static IMAgreeAddFriendReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq parseFrom(
+    public static IMAgreeAddFriendReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -19872,7 +19872,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq prototype) {
+    public static Builder newBuilder(IMAgreeAddFriendReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -19886,10 +19886,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq, Builder>
+          IMAgreeAddFriendReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMAgreeAddFriendReq)
-        com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReqOrBuilder {
+        IMAgreeAddFriendReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -19907,7 +19907,7 @@ public final class IMBuddy {
         bitField0_ = (bitField0_ & ~0x00000001);
         friendId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
-        agree_ = com.tenth.space.protobuf.IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
+        agree_ = IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
         bitField0_ = (bitField0_ & ~0x00000004);
         additionMsg_ = com.google.protobuf.ByteString.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -19920,20 +19920,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq.getDefaultInstance();
+      public IMAgreeAddFriendReq getDefaultInstanceForType() {
+        return IMAgreeAddFriendReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq result = buildPartial();
+      public IMAgreeAddFriendReq build() {
+        IMAgreeAddFriendReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq result = new com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq(this);
+      public IMAgreeAddFriendReq buildPartial() {
+        IMAgreeAddFriendReq result = new IMAgreeAddFriendReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -19960,8 +19960,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMAgreeAddFriendReq other) {
+        if (other == IMAgreeAddFriendReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -20002,11 +20002,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq parsedMessage = null;
+        IMAgreeAddFriendReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendReq) e.getUnfinishedMessage();
+          parsedMessage = (IMAgreeAddFriendReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -20097,7 +20097,7 @@ public final class IMBuddy {
         return this;
       }
 
-      private com.tenth.space.protobuf.IMBaseDefine.SystemMsgType agree_ = com.tenth.space.protobuf.IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
+      private IMBaseDefine.SystemMsgType agree_ = IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
       /**
        * <code>required .IM.BaseDefine.SystemMsgType agree = 3;</code>
        *
@@ -20115,7 +20115,7 @@ public final class IMBuddy {
        * 忽略的就不用上传到服务器了
        * </pre>
        */
-      public com.tenth.space.protobuf.IMBaseDefine.SystemMsgType getAgree() {
+      public IMBaseDefine.SystemMsgType getAgree() {
         return agree_;
       }
       /**
@@ -20125,7 +20125,7 @@ public final class IMBuddy {
        * 忽略的就不用上传到服务器了
        * </pre>
        */
-      public Builder setAgree(com.tenth.space.protobuf.IMBaseDefine.SystemMsgType value) {
+      public Builder setAgree(IMBaseDefine.SystemMsgType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -20143,7 +20143,7 @@ public final class IMBuddy {
        */
       public Builder clearAgree() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        agree_ = com.tenth.space.protobuf.IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
+        agree_ = IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
         
         return this;
       }
@@ -20258,7 +20258,7 @@ public final class IMBuddy {
     /**
      * <code>required .IM.BaseDefine.SystemMsgType agree = 3;</code>
      */
-    com.tenth.space.protobuf.IMBaseDefine.SystemMsgType getAgree();
+    IMBaseDefine.SystemMsgType getAgree();
 
     /**
      * <code>required uint32 result_code = 4;</code>
@@ -20361,7 +20361,7 @@ public final class IMBuddy {
             }
             case 24: {
               int rawValue = input.readEnum();
-              com.tenth.space.protobuf.IMBaseDefine.SystemMsgType value = com.tenth.space.protobuf.IMBaseDefine.SystemMsgType.valueOf(rawValue);
+              IMBaseDefine.SystemMsgType value = IMBaseDefine.SystemMsgType.valueOf(rawValue);
               if (value == null) {
                 unknownFieldsCodedOutput.writeRawVarint32(tag);
                 unknownFieldsCodedOutput.writeRawVarint32(rawValue);
@@ -20414,7 +20414,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMAgreeAddFriendRsp> getParserForType() {
       return PARSER;
     }
@@ -20451,7 +20451,7 @@ public final class IMBuddy {
     }
 
     public static final int AGREE_FIELD_NUMBER = 3;
-    private com.tenth.space.protobuf.IMBaseDefine.SystemMsgType agree_;
+    private IMBaseDefine.SystemMsgType agree_;
     /**
      * <code>required .IM.BaseDefine.SystemMsgType agree = 3;</code>
      */
@@ -20461,7 +20461,7 @@ public final class IMBuddy {
     /**
      * <code>required .IM.BaseDefine.SystemMsgType agree = 3;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.SystemMsgType getAgree() {
+    public IMBaseDefine.SystemMsgType getAgree() {
       return agree_;
     }
 
@@ -20521,7 +20521,7 @@ public final class IMBuddy {
     private void initFields() {
       userId_ = 0;
       friendId_ = 0;
-      agree_ = com.tenth.space.protobuf.IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
+      agree_ = IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
       resultCode_ = 0;
       agreeFriendData_ = com.google.protobuf.ByteString.EMPTY;
       attachData_ = com.google.protobuf.ByteString.EMPTY;
@@ -20612,59 +20612,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp parseFrom(
+    public static IMAgreeAddFriendRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp parseFrom(
+    public static IMAgreeAddFriendRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp parseFrom(byte[] data)
+    public static IMAgreeAddFriendRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp parseFrom(
+    public static IMAgreeAddFriendRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp parseFrom(java.io.InputStream input)
+    public static IMAgreeAddFriendRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp parseFrom(
+    public static IMAgreeAddFriendRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMAgreeAddFriendRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp parseDelimitedFrom(
+    public static IMAgreeAddFriendRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp parseFrom(
+    public static IMAgreeAddFriendRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp parseFrom(
+    public static IMAgreeAddFriendRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -20673,7 +20673,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp prototype) {
+    public static Builder newBuilder(IMAgreeAddFriendRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -20687,10 +20687,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp, Builder>
+          IMAgreeAddFriendRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMAgreeAddFriendRsp)
-        com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRspOrBuilder {
+        IMAgreeAddFriendRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -20708,7 +20708,7 @@ public final class IMBuddy {
         bitField0_ = (bitField0_ & ~0x00000001);
         friendId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
-        agree_ = com.tenth.space.protobuf.IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
+        agree_ = IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
         bitField0_ = (bitField0_ & ~0x00000004);
         resultCode_ = 0;
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -20723,20 +20723,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp.getDefaultInstance();
+      public IMAgreeAddFriendRsp getDefaultInstanceForType() {
+        return IMAgreeAddFriendRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp result = buildPartial();
+      public IMAgreeAddFriendRsp build() {
+        IMAgreeAddFriendRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp result = new com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp(this);
+      public IMAgreeAddFriendRsp buildPartial() {
+        IMAgreeAddFriendRsp result = new IMAgreeAddFriendRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -20767,8 +20767,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMAgreeAddFriendRsp other) {
+        if (other == IMAgreeAddFriendRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -20816,11 +20816,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp parsedMessage = null;
+        IMAgreeAddFriendRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMAgreeAddFriendRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMAgreeAddFriendRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -20895,7 +20895,7 @@ public final class IMBuddy {
         return this;
       }
 
-      private com.tenth.space.protobuf.IMBaseDefine.SystemMsgType agree_ = com.tenth.space.protobuf.IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
+      private IMBaseDefine.SystemMsgType agree_ = IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
       /**
        * <code>required .IM.BaseDefine.SystemMsgType agree = 3;</code>
        */
@@ -20905,13 +20905,13 @@ public final class IMBuddy {
       /**
        * <code>required .IM.BaseDefine.SystemMsgType agree = 3;</code>
        */
-      public com.tenth.space.protobuf.IMBaseDefine.SystemMsgType getAgree() {
+      public IMBaseDefine.SystemMsgType getAgree() {
         return agree_;
       }
       /**
        * <code>required .IM.BaseDefine.SystemMsgType agree = 3;</code>
        */
-      public Builder setAgree(com.tenth.space.protobuf.IMBaseDefine.SystemMsgType value) {
+      public Builder setAgree(IMBaseDefine.SystemMsgType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -20925,7 +20925,7 @@ public final class IMBuddy {
        */
       public Builder clearAgree() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        agree_ = com.tenth.space.protobuf.IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
+        agree_ = IMBaseDefine.SystemMsgType.ADD_FRIEND_REQUEST;
         
         return this;
       }
@@ -21195,7 +21195,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMFollowUserReq> getParserForType() {
       return PARSER;
     }
@@ -21316,59 +21316,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserReq parseFrom(
+    public static IMFollowUserReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserReq parseFrom(
+    public static IMFollowUserReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserReq parseFrom(byte[] data)
+    public static IMFollowUserReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserReq parseFrom(
+    public static IMFollowUserReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserReq parseFrom(java.io.InputStream input)
+    public static IMFollowUserReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserReq parseFrom(
+    public static IMFollowUserReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMFollowUserReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserReq parseDelimitedFrom(
+    public static IMFollowUserReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserReq parseFrom(
+    public static IMFollowUserReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserReq parseFrom(
+    public static IMFollowUserReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -21377,7 +21377,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMFollowUserReq prototype) {
+    public static Builder newBuilder(IMFollowUserReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -21391,10 +21391,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMFollowUserReq, Builder>
+          IMFollowUserReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMFollowUserReq)
-        com.tenth.space.protobuf.IMBuddy.IMFollowUserReqOrBuilder {
+        IMFollowUserReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMFollowUserReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -21421,20 +21421,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMFollowUserReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMFollowUserReq.getDefaultInstance();
+      public IMFollowUserReq getDefaultInstanceForType() {
+        return IMFollowUserReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMFollowUserReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMFollowUserReq result = buildPartial();
+      public IMFollowUserReq build() {
+        IMFollowUserReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMFollowUserReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMFollowUserReq result = new com.tenth.space.protobuf.IMBuddy.IMFollowUserReq(this);
+      public IMFollowUserReq buildPartial() {
+        IMFollowUserReq result = new IMFollowUserReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -21453,8 +21453,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMFollowUserReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMFollowUserReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMFollowUserReq other) {
+        if (other == IMFollowUserReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -21485,11 +21485,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMFollowUserReq parsedMessage = null;
+        IMFollowUserReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMFollowUserReq) e.getUnfinishedMessage();
+          parsedMessage = (IMFollowUserReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -21754,7 +21754,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMFollowUserRsp> getParserForType() {
       return PARSER;
     }
@@ -21867,59 +21867,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp parseFrom(
+    public static IMFollowUserRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp parseFrom(
+    public static IMFollowUserRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp parseFrom(byte[] data)
+    public static IMFollowUserRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp parseFrom(
+    public static IMFollowUserRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp parseFrom(java.io.InputStream input)
+    public static IMFollowUserRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp parseFrom(
+    public static IMFollowUserRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMFollowUserRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp parseDelimitedFrom(
+    public static IMFollowUserRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp parseFrom(
+    public static IMFollowUserRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp parseFrom(
+    public static IMFollowUserRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -21928,7 +21928,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp prototype) {
+    public static Builder newBuilder(IMFollowUserRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -21942,10 +21942,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp, Builder>
+          IMFollowUserRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMFollowUserRsp)
-        com.tenth.space.protobuf.IMBuddy.IMFollowUserRspOrBuilder {
+        IMFollowUserRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -21972,20 +21972,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp.getDefaultInstance();
+      public IMFollowUserRsp getDefaultInstanceForType() {
+        return IMFollowUserRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp result = buildPartial();
+      public IMFollowUserRsp build() {
+        IMFollowUserRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp result = new com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp(this);
+      public IMFollowUserRsp buildPartial() {
+        IMFollowUserRsp result = new IMFollowUserRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -22004,8 +22004,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMFollowUserRsp other) {
+        if (other == IMFollowUserRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -22036,11 +22036,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp parsedMessage = null;
+        IMFollowUserRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMFollowUserRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMFollowUserRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -22311,7 +22311,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMDelFriendReq> getParserForType() {
       return PARSER;
     }
@@ -22455,59 +22455,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendReq parseFrom(
+    public static IMDelFriendReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendReq parseFrom(
+    public static IMDelFriendReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendReq parseFrom(byte[] data)
+    public static IMDelFriendReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendReq parseFrom(
+    public static IMDelFriendReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendReq parseFrom(java.io.InputStream input)
+    public static IMDelFriendReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendReq parseFrom(
+    public static IMDelFriendReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMDelFriendReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendReq parseDelimitedFrom(
+    public static IMDelFriendReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendReq parseFrom(
+    public static IMDelFriendReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendReq parseFrom(
+    public static IMDelFriendReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -22516,7 +22516,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMDelFriendReq prototype) {
+    public static Builder newBuilder(IMDelFriendReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -22530,10 +22530,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMDelFriendReq, Builder>
+          IMDelFriendReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMDelFriendReq)
-        com.tenth.space.protobuf.IMBuddy.IMDelFriendReqOrBuilder {
+        IMDelFriendReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMDelFriendReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -22562,20 +22562,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDelFriendReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMDelFriendReq.getDefaultInstance();
+      public IMDelFriendReq getDefaultInstanceForType() {
+        return IMDelFriendReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDelFriendReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMDelFriendReq result = buildPartial();
+      public IMDelFriendReq build() {
+        IMDelFriendReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDelFriendReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMDelFriendReq result = new com.tenth.space.protobuf.IMBuddy.IMDelFriendReq(this);
+      public IMDelFriendReq buildPartial() {
+        IMDelFriendReq result = new IMDelFriendReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -22598,8 +22598,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMDelFriendReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMDelFriendReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMDelFriendReq other) {
+        if (other == IMDelFriendReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -22633,11 +22633,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMDelFriendReq parsedMessage = null;
+        IMDelFriendReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMDelFriendReq) e.getUnfinishedMessage();
+          parsedMessage = (IMDelFriendReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -22965,7 +22965,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMDelFriendRsp> getParserForType() {
       return PARSER;
     }
@@ -23128,59 +23128,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp parseFrom(
+    public static IMDelFriendRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp parseFrom(
+    public static IMDelFriendRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp parseFrom(byte[] data)
+    public static IMDelFriendRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp parseFrom(
+    public static IMDelFriendRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp parseFrom(java.io.InputStream input)
+    public static IMDelFriendRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp parseFrom(
+    public static IMDelFriendRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMDelFriendRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp parseDelimitedFrom(
+    public static IMDelFriendRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp parseFrom(
+    public static IMDelFriendRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp parseFrom(
+    public static IMDelFriendRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -23189,7 +23189,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp prototype) {
+    public static Builder newBuilder(IMDelFriendRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -23203,10 +23203,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp, Builder>
+          IMDelFriendRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMDelFriendRsp)
-        com.tenth.space.protobuf.IMBuddy.IMDelFriendRspOrBuilder {
+        IMDelFriendRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -23237,20 +23237,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp.getDefaultInstance();
+      public IMDelFriendRsp getDefaultInstanceForType() {
+        return IMDelFriendRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp result = buildPartial();
+      public IMDelFriendRsp build() {
+        IMDelFriendRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp result = new com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp(this);
+      public IMDelFriendRsp buildPartial() {
+        IMDelFriendRsp result = new IMDelFriendRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -23277,8 +23277,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMDelFriendRsp other) {
+        if (other == IMDelFriendRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -23319,11 +23319,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp parsedMessage = null;
+        IMDelFriendRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMDelFriendRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMDelFriendRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -23647,7 +23647,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMDelFollowUserReq> getParserForType() {
       return PARSER;
     }
@@ -23768,59 +23768,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq parseFrom(
+    public static IMDelFollowUserReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq parseFrom(
+    public static IMDelFollowUserReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq parseFrom(byte[] data)
+    public static IMDelFollowUserReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq parseFrom(
+    public static IMDelFollowUserReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq parseFrom(java.io.InputStream input)
+    public static IMDelFollowUserReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq parseFrom(
+    public static IMDelFollowUserReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMDelFollowUserReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq parseDelimitedFrom(
+    public static IMDelFollowUserReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq parseFrom(
+    public static IMDelFollowUserReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq parseFrom(
+    public static IMDelFollowUserReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -23829,7 +23829,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq prototype) {
+    public static Builder newBuilder(IMDelFollowUserReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -23843,10 +23843,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq, Builder>
+          IMDelFollowUserReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMDelFollowUserReq)
-        com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReqOrBuilder {
+        IMDelFollowUserReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -23873,20 +23873,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq.getDefaultInstance();
+      public IMDelFollowUserReq getDefaultInstanceForType() {
+        return IMDelFollowUserReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq result = buildPartial();
+      public IMDelFollowUserReq build() {
+        IMDelFollowUserReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq result = new com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq(this);
+      public IMDelFollowUserReq buildPartial() {
+        IMDelFollowUserReq result = new IMDelFollowUserReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -23905,8 +23905,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMDelFollowUserReq other) {
+        if (other == IMDelFollowUserReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -23937,11 +23937,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq parsedMessage = null;
+        IMDelFollowUserReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMDelFollowUserReq) e.getUnfinishedMessage();
+          parsedMessage = (IMDelFollowUserReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -24220,7 +24220,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMDelFollowUserRsp> getParserForType() {
       return PARSER;
     }
@@ -24360,59 +24360,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp parseFrom(
+    public static IMDelFollowUserRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp parseFrom(
+    public static IMDelFollowUserRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp parseFrom(byte[] data)
+    public static IMDelFollowUserRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp parseFrom(
+    public static IMDelFollowUserRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp parseFrom(java.io.InputStream input)
+    public static IMDelFollowUserRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp parseFrom(
+    public static IMDelFollowUserRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMDelFollowUserRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp parseDelimitedFrom(
+    public static IMDelFollowUserRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp parseFrom(
+    public static IMDelFollowUserRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp parseFrom(
+    public static IMDelFollowUserRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -24421,7 +24421,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp prototype) {
+    public static Builder newBuilder(IMDelFollowUserRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -24435,10 +24435,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp, Builder>
+          IMDelFollowUserRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMDelFollowUserRsp)
-        com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRspOrBuilder {
+        IMDelFollowUserRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -24467,20 +24467,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp.getDefaultInstance();
+      public IMDelFollowUserRsp getDefaultInstanceForType() {
+        return IMDelFollowUserRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp result = buildPartial();
+      public IMDelFollowUserRsp build() {
+        IMDelFollowUserRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp result = new com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp(this);
+      public IMDelFollowUserRsp buildPartial() {
+        IMDelFollowUserRsp result = new IMDelFollowUserRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -24503,8 +24503,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMDelFollowUserRsp other) {
+        if (other == IMDelFollowUserRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -24542,11 +24542,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp parsedMessage = null;
+        IMDelFollowUserRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMDelFollowUserRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMDelFollowUserRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -24813,7 +24813,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMALLOnlineUserCntReq> getParserForType() {
       return PARSER;
     }
@@ -24899,59 +24899,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq parseFrom(
+    public static IMALLOnlineUserCntReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq parseFrom(
+    public static IMALLOnlineUserCntReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq parseFrom(byte[] data)
+    public static IMALLOnlineUserCntReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq parseFrom(
+    public static IMALLOnlineUserCntReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq parseFrom(java.io.InputStream input)
+    public static IMALLOnlineUserCntReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq parseFrom(
+    public static IMALLOnlineUserCntReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMALLOnlineUserCntReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq parseDelimitedFrom(
+    public static IMALLOnlineUserCntReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq parseFrom(
+    public static IMALLOnlineUserCntReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq parseFrom(
+    public static IMALLOnlineUserCntReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -24960,7 +24960,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq prototype) {
+    public static Builder newBuilder(IMALLOnlineUserCntReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -24974,10 +24974,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq, Builder>
+          IMALLOnlineUserCntReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMALLOnlineUserCntReq)
-        com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReqOrBuilder {
+        IMALLOnlineUserCntReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -25002,20 +25002,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq.getDefaultInstance();
+      public IMALLOnlineUserCntReq getDefaultInstanceForType() {
+        return IMALLOnlineUserCntReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq result = buildPartial();
+      public IMALLOnlineUserCntReq build() {
+        IMALLOnlineUserCntReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq result = new com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq(this);
+      public IMALLOnlineUserCntReq buildPartial() {
+        IMALLOnlineUserCntReq result = new IMALLOnlineUserCntReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -25030,8 +25030,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMALLOnlineUserCntReq other) {
+        if (other == IMALLOnlineUserCntReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -25055,11 +25055,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq parsedMessage = null;
+        IMALLOnlineUserCntReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntReq) e.getUnfinishedMessage();
+          parsedMessage = (IMALLOnlineUserCntReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -25276,7 +25276,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMALLOnlineUserCntRsp> getParserForType() {
       return PARSER;
     }
@@ -25389,59 +25389,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp parseFrom(
+    public static IMALLOnlineUserCntRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp parseFrom(
+    public static IMALLOnlineUserCntRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp parseFrom(byte[] data)
+    public static IMALLOnlineUserCntRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp parseFrom(
+    public static IMALLOnlineUserCntRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp parseFrom(java.io.InputStream input)
+    public static IMALLOnlineUserCntRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp parseFrom(
+    public static IMALLOnlineUserCntRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMALLOnlineUserCntRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp parseDelimitedFrom(
+    public static IMALLOnlineUserCntRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp parseFrom(
+    public static IMALLOnlineUserCntRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp parseFrom(
+    public static IMALLOnlineUserCntRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -25450,7 +25450,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp prototype) {
+    public static Builder newBuilder(IMALLOnlineUserCntRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -25464,10 +25464,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp, Builder>
+          IMALLOnlineUserCntRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMALLOnlineUserCntRsp)
-        com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRspOrBuilder {
+        IMALLOnlineUserCntRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -25494,20 +25494,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp.getDefaultInstance();
+      public IMALLOnlineUserCntRsp getDefaultInstanceForType() {
+        return IMALLOnlineUserCntRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp result = buildPartial();
+      public IMALLOnlineUserCntRsp build() {
+        IMALLOnlineUserCntRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp result = new com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp(this);
+      public IMALLOnlineUserCntRsp buildPartial() {
+        IMALLOnlineUserCntRsp result = new IMALLOnlineUserCntRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -25526,8 +25526,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMALLOnlineUserCntRsp other) {
+        if (other == IMALLOnlineUserCntRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -25558,11 +25558,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp parsedMessage = null;
+        IMALLOnlineUserCntRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMALLOnlineUserCntRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMALLOnlineUserCntRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -25711,7 +25711,7 @@ public final class IMBuddy {
     /**
      * <code>required .IM.BaseDefine.UserInfo user_info = 2;</code>
      */
-    com.tenth.space.protobuf.IMBaseDefine.UserInfo getUserInfo();
+    IMBaseDefine.UserInfo getUserInfo();
 
     /**
      * <code>optional bytes attach_data = 20;</code>
@@ -25778,11 +25778,11 @@ public final class IMBuddy {
               break;
             }
             case 18: {
-              com.tenth.space.protobuf.IMBaseDefine.UserInfo.Builder subBuilder = null;
+              IMBaseDefine.UserInfo.Builder subBuilder = null;
               if (((bitField0_ & 0x00000002) == 0x00000002)) {
                 subBuilder = userInfo_.toBuilder();
               }
-              userInfo_ = input.readMessage(com.tenth.space.protobuf.IMBaseDefine.UserInfo.PARSER, extensionRegistry);
+              userInfo_ = input.readMessage(IMBaseDefine.UserInfo.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(userInfo_);
                 userInfo_ = subBuilder.buildPartial();
@@ -25823,7 +25823,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMUpdateUsersInfoReq> getParserForType() {
       return PARSER;
     }
@@ -25853,7 +25853,7 @@ public final class IMBuddy {
     }
 
     public static final int USER_INFO_FIELD_NUMBER = 2;
-    private com.tenth.space.protobuf.IMBaseDefine.UserInfo userInfo_;
+    private IMBaseDefine.UserInfo userInfo_;
     /**
      * <code>required .IM.BaseDefine.UserInfo user_info = 2;</code>
      */
@@ -25863,7 +25863,7 @@ public final class IMBuddy {
     /**
      * <code>required .IM.BaseDefine.UserInfo user_info = 2;</code>
      */
-    public com.tenth.space.protobuf.IMBaseDefine.UserInfo getUserInfo() {
+    public IMBaseDefine.UserInfo getUserInfo() {
       return userInfo_;
     }
 
@@ -25884,7 +25884,7 @@ public final class IMBuddy {
 
     private void initFields() {
       userId_ = 0;
-      userInfo_ = com.tenth.space.protobuf.IMBaseDefine.UserInfo.getDefaultInstance();
+      userInfo_ = IMBaseDefine.UserInfo.getDefaultInstance();
       attachData_ = com.google.protobuf.ByteString.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
@@ -25948,59 +25948,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq parseFrom(
+    public static IMUpdateUsersInfoReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq parseFrom(
+    public static IMUpdateUsersInfoReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq parseFrom(byte[] data)
+    public static IMUpdateUsersInfoReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq parseFrom(
+    public static IMUpdateUsersInfoReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq parseFrom(java.io.InputStream input)
+    public static IMUpdateUsersInfoReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq parseFrom(
+    public static IMUpdateUsersInfoReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq parseDelimitedFrom(java.io.InputStream input)
+    public static IMUpdateUsersInfoReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq parseDelimitedFrom(
+    public static IMUpdateUsersInfoReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq parseFrom(
+    public static IMUpdateUsersInfoReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq parseFrom(
+    public static IMUpdateUsersInfoReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -26009,7 +26009,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq prototype) {
+    public static Builder newBuilder(IMUpdateUsersInfoReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -26019,10 +26019,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq, Builder>
+          IMUpdateUsersInfoReq, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMUpdateUsersInfoReq)
-        com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReqOrBuilder {
+        IMUpdateUsersInfoReqOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -26038,7 +26038,7 @@ public final class IMBuddy {
         super.clear();
         userId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        userInfo_ = com.tenth.space.protobuf.IMBaseDefine.UserInfo.getDefaultInstance();
+        userInfo_ = IMBaseDefine.UserInfo.getDefaultInstance();
         bitField0_ = (bitField0_ & ~0x00000002);
         attachData_ = com.google.protobuf.ByteString.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -26049,20 +26049,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq.getDefaultInstance();
+      public IMUpdateUsersInfoReq getDefaultInstanceForType() {
+        return IMUpdateUsersInfoReq.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq build() {
-        com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq result = buildPartial();
+      public IMUpdateUsersInfoReq build() {
+        IMUpdateUsersInfoReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq result = new com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq(this);
+      public IMUpdateUsersInfoReq buildPartial() {
+        IMUpdateUsersInfoReq result = new IMUpdateUsersInfoReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -26081,8 +26081,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMUpdateUsersInfoReq other) {
+        if (other == IMUpdateUsersInfoReq.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -26117,11 +26117,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq parsedMessage = null;
+        IMUpdateUsersInfoReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoReq) e.getUnfinishedMessage();
+          parsedMessage = (IMUpdateUsersInfoReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -26180,7 +26180,7 @@ public final class IMBuddy {
         return this;
       }
 
-      private com.tenth.space.protobuf.IMBaseDefine.UserInfo userInfo_ = com.tenth.space.protobuf.IMBaseDefine.UserInfo.getDefaultInstance();
+      private IMBaseDefine.UserInfo userInfo_ = IMBaseDefine.UserInfo.getDefaultInstance();
       /**
        * <code>required .IM.BaseDefine.UserInfo user_info = 2;</code>
        */
@@ -26190,13 +26190,13 @@ public final class IMBuddy {
       /**
        * <code>required .IM.BaseDefine.UserInfo user_info = 2;</code>
        */
-      public com.tenth.space.protobuf.IMBaseDefine.UserInfo getUserInfo() {
+      public IMBaseDefine.UserInfo getUserInfo() {
         return userInfo_;
       }
       /**
        * <code>required .IM.BaseDefine.UserInfo user_info = 2;</code>
        */
-      public Builder setUserInfo(com.tenth.space.protobuf.IMBaseDefine.UserInfo value) {
+      public Builder setUserInfo(IMBaseDefine.UserInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -26209,7 +26209,7 @@ public final class IMBuddy {
        * <code>required .IM.BaseDefine.UserInfo user_info = 2;</code>
        */
       public Builder setUserInfo(
-          com.tenth.space.protobuf.IMBaseDefine.UserInfo.Builder builderForValue) {
+          IMBaseDefine.UserInfo.Builder builderForValue) {
         userInfo_ = builderForValue.build();
 
         bitField0_ |= 0x00000002;
@@ -26218,11 +26218,11 @@ public final class IMBuddy {
       /**
        * <code>required .IM.BaseDefine.UserInfo user_info = 2;</code>
        */
-      public Builder mergeUserInfo(com.tenth.space.protobuf.IMBaseDefine.UserInfo value) {
+      public Builder mergeUserInfo(IMBaseDefine.UserInfo value) {
         if (((bitField0_ & 0x00000002) == 0x00000002) &&
-            userInfo_ != com.tenth.space.protobuf.IMBaseDefine.UserInfo.getDefaultInstance()) {
+            userInfo_ != IMBaseDefine.UserInfo.getDefaultInstance()) {
           userInfo_ =
-            com.tenth.space.protobuf.IMBaseDefine.UserInfo.newBuilder(userInfo_).mergeFrom(value).buildPartial();
+            IMBaseDefine.UserInfo.newBuilder(userInfo_).mergeFrom(value).buildPartial();
         } else {
           userInfo_ = value;
         }
@@ -26234,7 +26234,7 @@ public final class IMBuddy {
        * <code>required .IM.BaseDefine.UserInfo user_info = 2;</code>
        */
       public Builder clearUserInfo() {
-        userInfo_ = com.tenth.space.protobuf.IMBaseDefine.UserInfo.getDefaultInstance();
+        userInfo_ = IMBaseDefine.UserInfo.getDefaultInstance();
 
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
@@ -26418,7 +26418,7 @@ public final class IMBuddy {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IMUpdateUsersInfoRsp> getParserForType() {
       return PARSER;
     }
@@ -26539,59 +26539,59 @@ public final class IMBuddy {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp parseFrom(
+    public static IMUpdateUsersInfoRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp parseFrom(
+    public static IMUpdateUsersInfoRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp parseFrom(byte[] data)
+    public static IMUpdateUsersInfoRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp parseFrom(
+    public static IMUpdateUsersInfoRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp parseFrom(java.io.InputStream input)
+    public static IMUpdateUsersInfoRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp parseFrom(
+    public static IMUpdateUsersInfoRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp parseDelimitedFrom(java.io.InputStream input)
+    public static IMUpdateUsersInfoRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp parseDelimitedFrom(
+    public static IMUpdateUsersInfoRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp parseFrom(
+    public static IMUpdateUsersInfoRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp parseFrom(
+    public static IMUpdateUsersInfoRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -26600,7 +26600,7 @@ public final class IMBuddy {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp prototype) {
+    public static Builder newBuilder(IMUpdateUsersInfoRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -26610,10 +26610,10 @@ public final class IMBuddy {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp, Builder>
+          IMUpdateUsersInfoRsp, Builder>
         implements
         // @@protoc_insertion_point(builder_implements:IM.Buddy.IMUpdateUsersInfoRsp)
-        com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRspOrBuilder {
+        IMUpdateUsersInfoRspOrBuilder {
       // Construct using com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -26640,20 +26640,20 @@ public final class IMBuddy {
         return create().mergeFrom(buildPartial());
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp getDefaultInstanceForType() {
-        return com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp.getDefaultInstance();
+      public IMUpdateUsersInfoRsp getDefaultInstanceForType() {
+        return IMUpdateUsersInfoRsp.getDefaultInstance();
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp build() {
-        com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp result = buildPartial();
+      public IMUpdateUsersInfoRsp build() {
+        IMUpdateUsersInfoRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp buildPartial() {
-        com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp result = new com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp(this);
+      public IMUpdateUsersInfoRsp buildPartial() {
+        IMUpdateUsersInfoRsp result = new IMUpdateUsersInfoRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -26672,8 +26672,8 @@ public final class IMBuddy {
         return result;
       }
 
-      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp other) {
-        if (other == com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(IMUpdateUsersInfoRsp other) {
+        if (other == IMUpdateUsersInfoRsp.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -26704,11 +26704,11 @@ public final class IMBuddy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp parsedMessage = null;
+        IMUpdateUsersInfoRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMUpdateUsersInfoRsp) e.getUnfinishedMessage();
+          parsedMessage = (IMUpdateUsersInfoRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -26843,6 +26843,1396 @@ public final class IMBuddy {
     }
 
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMUpdateUsersInfoRsp)
+  }
+
+  public interface IMRecommendListReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMRecommendListReq)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>required uint32 user_id = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0204
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required uint32 user_id = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0204
+     * </pre>
+     */
+    int getUserId();
+
+    /**
+     * <code>required uint32 page = 2;</code>
+     */
+    boolean hasPage();
+    /**
+     * <code>required uint32 page = 2;</code>
+     */
+    int getPage();
+
+    /**
+     * <code>required uint32 page_size = 3;</code>
+     */
+    boolean hasPageSize();
+    /**
+     * <code>required uint32 page_size = 3;</code>
+     */
+    int getPageSize();
+
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    boolean hasAttachData();
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    com.google.protobuf.ByteString getAttachData();
+  }
+  /**
+   * Protobuf type {@code IM.Buddy.IMRecommendListReq}
+   */
+  public static final class IMRecommendListReq extends
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMRecommendListReq)
+      IMRecommendListReqOrBuilder {
+    // Use IMRecommendListReq.newBuilder() to construct.
+    private IMRecommendListReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private IMRecommendListReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
+
+    private static final IMRecommendListReq defaultInstance;
+    public static IMRecommendListReq getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public IMRecommendListReq getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.ByteString unknownFields;
+    private IMRecommendListReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              userId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              page_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              pageSize_ = input.readUInt32();
+              break;
+            }
+            case 162: {
+              bitField0_ |= 0x00000008;
+              attachData_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<IMRecommendListReq> PARSER =
+        new com.google.protobuf.AbstractParser<IMRecommendListReq>() {
+      public IMRecommendListReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new IMRecommendListReq(input, extensionRegistry);
+      }
+    };
+
+    @Override
+    public com.google.protobuf.Parser<IMRecommendListReq> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int USER_ID_FIELD_NUMBER = 1;
+    private int userId_;
+    /**
+     * <code>required uint32 user_id = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0204
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required uint32 user_id = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0204
+     * </pre>
+     */
+    public int getUserId() {
+      return userId_;
+    }
+
+    public static final int PAGE_FIELD_NUMBER = 2;
+    private int page_;
+    /**
+     * <code>required uint32 page = 2;</code>
+     */
+    public boolean hasPage() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required uint32 page = 2;</code>
+     */
+    public int getPage() {
+      return page_;
+    }
+
+    public static final int PAGE_SIZE_FIELD_NUMBER = 3;
+    private int pageSize_;
+    /**
+     * <code>required uint32 page_size = 3;</code>
+     */
+    public boolean hasPageSize() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required uint32 page_size = 3;</code>
+     */
+    public int getPageSize() {
+      return pageSize_;
+    }
+
+    public static final int ATTACH_DATA_FIELD_NUMBER = 20;
+    private com.google.protobuf.ByteString attachData_;
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    public boolean hasAttachData() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    public com.google.protobuf.ByteString getAttachData() {
+      return attachData_;
+    }
+
+    private void initFields() {
+      userId_ = 0;
+      page_ = 0;
+      pageSize_ = 0;
+      attachData_ = com.google.protobuf.ByteString.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPage()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPageSize()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, userId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt32(2, page_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeUInt32(3, pageSize_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(20, attachData_);
+      }
+      output.writeRawBytes(unknownFields);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, userId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, page_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, pageSize_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(20, attachData_);
+      }
+      size += unknownFields.size();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @Override
+    protected Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static IMRecommendListReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static IMRecommendListReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static IMRecommendListReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static IMRecommendListReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static IMRecommendListReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static IMRecommendListReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static IMRecommendListReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static IMRecommendListReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static IMRecommendListReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static IMRecommendListReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(IMRecommendListReq prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code IM.Buddy.IMRecommendListReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          IMRecommendListReq, Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMRecommendListReq)
+        IMRecommendListReqOrBuilder {
+      // Construct using com.tenth.space.protobuf.IMBuddy.IMRecommendListReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        userId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        page_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        pageSize_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        attachData_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public IMRecommendListReq getDefaultInstanceForType() {
+        return IMRecommendListReq.getDefaultInstance();
+      }
+
+      public IMRecommendListReq build() {
+        IMRecommendListReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public IMRecommendListReq buildPartial() {
+        IMRecommendListReq result = new IMRecommendListReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.userId_ = userId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.page_ = page_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.pageSize_ = pageSize_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.attachData_ = attachData_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+
+      public Builder mergeFrom(IMRecommendListReq other) {
+        if (other == IMRecommendListReq.getDefaultInstance()) return this;
+        if (other.hasUserId()) {
+          setUserId(other.getUserId());
+        }
+        if (other.hasPage()) {
+          setPage(other.getPage());
+        }
+        if (other.hasPageSize()) {
+          setPageSize(other.getPageSize());
+        }
+        if (other.hasAttachData()) {
+          setAttachData(other.getAttachData());
+        }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasUserId()) {
+          
+          return false;
+        }
+        if (!hasPage()) {
+          
+          return false;
+        }
+        if (!hasPageSize()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        IMRecommendListReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (IMRecommendListReq) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int userId_ ;
+      /**
+       * <code>required uint32 user_id = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0204
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required uint32 user_id = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0204
+       * </pre>
+       */
+      public int getUserId() {
+        return userId_;
+      }
+      /**
+       * <code>required uint32 user_id = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0204
+       * </pre>
+       */
+      public Builder setUserId(int value) {
+        bitField0_ |= 0x00000001;
+        userId_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required uint32 user_id = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0204
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = 0;
+        
+        return this;
+      }
+
+      private int page_ ;
+      /**
+       * <code>required uint32 page = 2;</code>
+       */
+      public boolean hasPage() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required uint32 page = 2;</code>
+       */
+      public int getPage() {
+        return page_;
+      }
+      /**
+       * <code>required uint32 page = 2;</code>
+       */
+      public Builder setPage(int value) {
+        bitField0_ |= 0x00000002;
+        page_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required uint32 page = 2;</code>
+       */
+      public Builder clearPage() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        page_ = 0;
+        
+        return this;
+      }
+
+      private int pageSize_ ;
+      /**
+       * <code>required uint32 page_size = 3;</code>
+       */
+      public boolean hasPageSize() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required uint32 page_size = 3;</code>
+       */
+      public int getPageSize() {
+        return pageSize_;
+      }
+      /**
+       * <code>required uint32 page_size = 3;</code>
+       */
+      public Builder setPageSize(int value) {
+        bitField0_ |= 0x00000004;
+        pageSize_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required uint32 page_size = 3;</code>
+       */
+      public Builder clearPageSize() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        pageSize_ = 0;
+        
+        return this;
+      }
+
+      private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public boolean hasAttachData() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public com.google.protobuf.ByteString getAttachData() {
+        return attachData_;
+      }
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public Builder setAttachData(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        attachData_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public Builder clearAttachData() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        attachData_ = getDefaultInstance().getAttachData();
+        
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:IM.Buddy.IMRecommendListReq)
+    }
+
+    static {
+      defaultInstance = new IMRecommendListReq(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:IM.Buddy.IMRecommendListReq)
+  }
+
+  public interface IMRecommendListRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMRecommendListRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>repeated uint32 recommend_list = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0205
+     * </pre>
+     */
+    java.util.List<Integer> getRecommendListList();
+    /**
+     * <code>repeated uint32 recommend_list = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0205
+     * </pre>
+     */
+    int getRecommendListCount();
+    /**
+     * <code>repeated uint32 recommend_list = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0205
+     * </pre>
+     */
+    int getRecommendList(int index);
+
+    /**
+     * <code>repeated string recommend_nick_list = 2;</code>
+     */
+    com.google.protobuf.ProtocolStringList
+        getRecommendNickListList();
+    /**
+     * <code>repeated string recommend_nick_list = 2;</code>
+     */
+    int getRecommendNickListCount();
+    /**
+     * <code>repeated string recommend_nick_list = 2;</code>
+     */
+    String getRecommendNickList(int index);
+    /**
+     * <code>repeated string recommend_nick_list = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getRecommendNickListBytes(int index);
+
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    boolean hasAttachData();
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    com.google.protobuf.ByteString getAttachData();
+  }
+  /**
+   * Protobuf type {@code IM.Buddy.IMRecommendListRsp}
+   */
+  public static final class IMRecommendListRsp extends
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMRecommendListRsp)
+      IMRecommendListRspOrBuilder {
+    // Use IMRecommendListRsp.newBuilder() to construct.
+    private IMRecommendListRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private IMRecommendListRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
+
+    private static final IMRecommendListRsp defaultInstance;
+    public static IMRecommendListRsp getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public IMRecommendListRsp getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.ByteString unknownFields;
+    private IMRecommendListRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                recommendList_ = new java.util.ArrayList<Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              recommendList_.add(input.readUInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
+                recommendList_ = new java.util.ArrayList<Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                recommendList_.add(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                recommendNickList_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              recommendNickList_.add(bs);
+              break;
+            }
+            case 162: {
+              bitField0_ |= 0x00000001;
+              attachData_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          recommendList_ = java.util.Collections.unmodifiableList(recommendList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          recommendNickList_ = recommendNickList_.getUnmodifiableView();
+        }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<IMRecommendListRsp> PARSER =
+        new com.google.protobuf.AbstractParser<IMRecommendListRsp>() {
+      public IMRecommendListRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new IMRecommendListRsp(input, extensionRegistry);
+      }
+    };
+
+    @Override
+    public com.google.protobuf.Parser<IMRecommendListRsp> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int RECOMMEND_LIST_FIELD_NUMBER = 1;
+    private java.util.List<Integer> recommendList_;
+    /**
+     * <code>repeated uint32 recommend_list = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0205
+     * </pre>
+     */
+    public java.util.List<Integer>
+        getRecommendListList() {
+      return recommendList_;
+    }
+    /**
+     * <code>repeated uint32 recommend_list = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0205
+     * </pre>
+     */
+    public int getRecommendListCount() {
+      return recommendList_.size();
+    }
+    /**
+     * <code>repeated uint32 recommend_list = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0205
+     * </pre>
+     */
+    public int getRecommendList(int index) {
+      return recommendList_.get(index);
+    }
+
+    public static final int RECOMMEND_NICK_LIST_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList recommendNickList_;
+    /**
+     * <code>repeated string recommend_nick_list = 2;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRecommendNickListList() {
+      return recommendNickList_;
+    }
+    /**
+     * <code>repeated string recommend_nick_list = 2;</code>
+     */
+    public int getRecommendNickListCount() {
+      return recommendNickList_.size();
+    }
+    /**
+     * <code>repeated string recommend_nick_list = 2;</code>
+     */
+    public String getRecommendNickList(int index) {
+      return recommendNickList_.get(index);
+    }
+    /**
+     * <code>repeated string recommend_nick_list = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRecommendNickListBytes(int index) {
+      return recommendNickList_.getByteString(index);
+    }
+
+    public static final int ATTACH_DATA_FIELD_NUMBER = 20;
+    private com.google.protobuf.ByteString attachData_;
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    public boolean hasAttachData() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    public com.google.protobuf.ByteString getAttachData() {
+      return attachData_;
+    }
+
+    private void initFields() {
+      recommendList_ = java.util.Collections.emptyList();
+      recommendNickList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      attachData_ = com.google.protobuf.ByteString.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < recommendList_.size(); i++) {
+        output.writeUInt32(1, recommendList_.get(i));
+      }
+      for (int i = 0; i < recommendNickList_.size(); i++) {
+        output.writeBytes(2, recommendNickList_.getByteString(i));
+      }
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(20, attachData_);
+      }
+      output.writeRawBytes(unknownFields);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < recommendList_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(recommendList_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getRecommendListList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < recommendNickList_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(recommendNickList_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getRecommendNickListList().size();
+      }
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(20, attachData_);
+      }
+      size += unknownFields.size();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @Override
+    protected Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static IMRecommendListRsp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static IMRecommendListRsp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static IMRecommendListRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static IMRecommendListRsp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static IMRecommendListRsp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static IMRecommendListRsp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static IMRecommendListRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static IMRecommendListRsp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static IMRecommendListRsp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static IMRecommendListRsp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(IMRecommendListRsp prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code IM.Buddy.IMRecommendListRsp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          IMRecommendListRsp, Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMRecommendListRsp)
+        IMRecommendListRspOrBuilder {
+      // Construct using com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        recommendList_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        recommendNickList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        attachData_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public IMRecommendListRsp getDefaultInstanceForType() {
+        return IMRecommendListRsp.getDefaultInstance();
+      }
+
+      public IMRecommendListRsp build() {
+        IMRecommendListRsp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public IMRecommendListRsp buildPartial() {
+        IMRecommendListRsp result = new IMRecommendListRsp(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          recommendList_ = java.util.Collections.unmodifiableList(recommendList_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.recommendList_ = recommendList_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          recommendNickList_ = recommendNickList_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.recommendNickList_ = recommendNickList_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.attachData_ = attachData_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+
+      public Builder mergeFrom(IMRecommendListRsp other) {
+        if (other == IMRecommendListRsp.getDefaultInstance()) return this;
+        if (!other.recommendList_.isEmpty()) {
+          if (recommendList_.isEmpty()) {
+            recommendList_ = other.recommendList_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureRecommendListIsMutable();
+            recommendList_.addAll(other.recommendList_);
+          }
+          
+        }
+        if (!other.recommendNickList_.isEmpty()) {
+          if (recommendNickList_.isEmpty()) {
+            recommendNickList_ = other.recommendNickList_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureRecommendNickListIsMutable();
+            recommendNickList_.addAll(other.recommendNickList_);
+          }
+          
+        }
+        if (other.hasAttachData()) {
+          setAttachData(other.getAttachData());
+        }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        IMRecommendListRsp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (IMRecommendListRsp) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<Integer> recommendList_ = java.util.Collections.emptyList();
+      private void ensureRecommendListIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          recommendList_ = new java.util.ArrayList<Integer>(recommendList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated uint32 recommend_list = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0205
+       * </pre>
+       */
+      public java.util.List<Integer>
+          getRecommendListList() {
+        return java.util.Collections.unmodifiableList(recommendList_);
+      }
+      /**
+       * <code>repeated uint32 recommend_list = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0205
+       * </pre>
+       */
+      public int getRecommendListCount() {
+        return recommendList_.size();
+      }
+      /**
+       * <code>repeated uint32 recommend_list = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0205
+       * </pre>
+       */
+      public int getRecommendList(int index) {
+        return recommendList_.get(index);
+      }
+      /**
+       * <code>repeated uint32 recommend_list = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0205
+       * </pre>
+       */
+      public Builder setRecommendList(
+          int index, int value) {
+        ensureRecommendListIsMutable();
+        recommendList_.set(index, value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated uint32 recommend_list = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0205
+       * </pre>
+       */
+      public Builder addRecommendList(int value) {
+        ensureRecommendListIsMutable();
+        recommendList_.add(value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated uint32 recommend_list = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0205
+       * </pre>
+       */
+      public Builder addAllRecommendList(
+          Iterable<? extends Integer> values) {
+        ensureRecommendListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, recommendList_);
+        
+        return this;
+      }
+      /**
+       * <code>repeated uint32 recommend_list = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0205
+       * </pre>
+       */
+      public Builder clearRecommendList() {
+        recommendList_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList recommendNickList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureRecommendNickListIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          recommendNickList_ = new com.google.protobuf.LazyStringArrayList(recommendNickList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getRecommendNickListList() {
+        return recommendNickList_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public int getRecommendNickListCount() {
+        return recommendNickList_.size();
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public String getRecommendNickList(int index) {
+        return recommendNickList_.get(index);
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRecommendNickListBytes(int index) {
+        return recommendNickList_.getByteString(index);
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public Builder setRecommendNickList(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRecommendNickListIsMutable();
+        recommendNickList_.set(index, value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public Builder addRecommendNickList(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRecommendNickListIsMutable();
+        recommendNickList_.add(value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public Builder addAllRecommendNickList(
+          Iterable<String> values) {
+        ensureRecommendNickListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, recommendNickList_);
+        
+        return this;
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public Builder clearRecommendNickList() {
+        recommendNickList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        
+        return this;
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public Builder addRecommendNickListBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRecommendNickListIsMutable();
+        recommendNickList_.add(value);
+        
+        return this;
+      }
+
+      private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public boolean hasAttachData() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public com.google.protobuf.ByteString getAttachData() {
+        return attachData_;
+      }
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public Builder setAttachData(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        attachData_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public Builder clearAttachData() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        attachData_ = getDefaultInstance().getAttachData();
+        
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:IM.Buddy.IMRecommendListRsp)
+    }
+
+    static {
+      defaultInstance = new IMRecommendListRsp(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:IM.Buddy.IMRecommendListRsp)
   }
 
 

@@ -25,6 +25,7 @@ public class BlogEntity implements Serializable {
     public int isFollow = 0;
     private long created;
     private long updated;
+    public boolean isShowButton=true;//是否显示“关注button"
 
     // KEEP FIELDS - put your custom fields here
     // KEEP FIELDS END

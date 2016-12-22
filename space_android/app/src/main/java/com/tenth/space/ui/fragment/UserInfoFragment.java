@@ -51,12 +51,13 @@ import com.tenth.space.imservice.service.IMService;
 import com.tenth.space.imservice.support.IMServiceConnector;
 import com.tenth.space.protobuf.IMBaseDefine;
 import com.tenth.space.protobuf.IMBuddy;
+import com.tenth.space.protobuf.helper.ProtoBuf2JavaBean;
 import com.tenth.space.ui.activity.DetailPortraitActivity;
+import com.tenth.space.ui.activity.MainActivity;
+import com.tenth.space.ui.activity.Share2DCode;
 import com.tenth.space.utils.FileUtil;
 import com.tenth.space.utils.IMUIHelper;
 import com.tenth.space.utils.ImageLoaderUtil;
-import com.tenth.space.utils.LogUtils;
-import com.tenth.space.utils.OkHttpUtils;
 import com.tenth.space.utils.ToastUtils;
 import com.tenth.space.utils.Utils;
 
@@ -66,9 +67,14 @@ import java.util.ArrayList;
 import de.greenrobot.event.EventBus;
 
 import static android.app.Activity.RESULT_OK;
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 import static android.media.MediaRecorder.VideoSource.CAMERA;
 import static android.os.Build.VERSION_CODES.M;
+import static com.tenth.space.R.id.finish;
 import static com.tenth.space.R.id.msg;
+import static com.tenth.space.R.id.nickName;
+import static com.tenth.space.R.id.tv_referralcode;
+import static com.tenth.space.R.string.signature;
 import static com.tenth.space.imservice.event.UserInfoEvent.Event.USER_INFO_UPDATE;
 
 /**
@@ -82,13 +88,14 @@ public class UserInfoFragment extends MainFragment {
     private IMService imService;
     private UserEntity currentUser;
     private int currentUserId;
+    private EditText nickName;
+    private EditText signature;
 
 
     private IMServiceConnector imServiceConnector = new IMServiceConnector() {
         @Override
         public void onIMServiceConnected() {
             logger.i("detail#onIMServiceConnected");
-
             imService = imServiceConnector.getIMService();
             if (imService == null) {
                 logger.e("detail#imService is null");
@@ -96,11 +103,15 @@ public class UserInfoFragment extends MainFragment {
             }
 
             currentUserId = getActivity().getIntent().getIntExtra(IntentConstant.KEY_PEERID, 0);
+
             if (currentUserId == 0) {
                 logger.e("detail#intent params error!!");
                 return;
             }
-            currentUser = imService.getContactManager().findContact(currentUserId);
+                currentUser = imService.getContactManager().findContact(currentUserId);
+            if(currentUser==null){
+                currentUser=IMLoginManager.instance().getLoginInfo();
+            }
             if (currentUser != null) {
                 initBaseProfile();
                 initDetailProfile();
@@ -117,6 +128,11 @@ public class UserInfoFragment extends MainFragment {
     };
     private Uri mUri;
     private ImageView portraitImageView;
+    private RadioButton gender1;
+    private RadioButton gender;
+    private EditText phone;
+    private IMBaseDefine.UserInfo userInfo;
+    private TextView referralcode;
 
     @Override
     public void onDestroyView() {
@@ -141,7 +157,7 @@ public class UserInfoFragment extends MainFragment {
         curView = inflater.inflate(R.layout.tt_fragment_user_detail, topContentView);
         super.init(curView);
         showProgressBar();
-        initRes();
+//        initRes();
         EventBus.getDefault().register(this);
         return curView;
     }
@@ -160,6 +176,9 @@ public class UserInfoFragment extends MainFragment {
      * @Description 初始化资源
      */
     private void initRes() {
+        TextView operate = (TextView) curView.findViewById(R.id.tv_logo);
+        final int loginId = IMLoginManager.instance().getLoginId();
+
         // 设置标题栏
         setTopTitle(getActivity().getString(R.string.page_user_detail));
         setTopLeftButton(R.drawable.tt_top_back);
@@ -172,37 +191,68 @@ public class UserInfoFragment extends MainFragment {
         });
         topLetTitleTxt.setTextColor(getResources().getColor(R.color.default_bk));
         setTopLeftText(getResources().getString(R.string.top_left_back));
-        final EditText signature = (EditText) curView.findViewById(R.id.et_signature);
-        final RadioButton gender = (RadioButton) curView.findViewById(R.id.rb_man);
-        final EditText nickName = (EditText) curView.findViewById(R.id.nickName);
-        final EditText phone = (EditText) curView.findViewById(R.id.et_phone);
-        curView.findViewById(R.id.tv_logo).setOnClickListener(new View.OnClickListener() {
+        signature = (EditText) curView.findViewById(R.id.et_signature);
+        gender = (RadioButton) curView.findViewById(R.id.rb_man);
+        gender1 = (RadioButton) curView.findViewById(R.id.rb_woman);
+        nickName = (EditText) curView.findViewById(R.id.nickName);
+        phone =(EditText) curView.findViewById(R.id.et_phone);
+        referralcode = (TextView) curView.findViewById(tv_referralcode);
+        curView.findViewById(R.id.ll_share).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IMBaseDefine.UserInfo userInfo = IMBaseDefine.UserInfo.newBuilder()
-                        .setUserId(IMLoginManager.instance().getLoginId())
-                        .setSignInfo(signature.getText().toString())
-                        .setUserGender(gender.isChecked()?1:2)
-                        .setUserNickName(nickName.getText().toString())
-                        .setUserTel(phone.getText().toString())
-                        .setAvatarUrl("")
-                        .setDepartmentId(0)
-                        .setUserRealName("")
-                        .setUserDomain("")
-                        .setStatus(0)
-                        .setEmail("")
-                        .build();
-                IMBuddy.IMUpdateUsersInfoReq msg = IMBuddy.IMUpdateUsersInfoReq.newBuilder()
-                        .setUserInfo(userInfo)
-                        .setUserId(IMLoginManager.instance().getLoginId() )
-                        .build();
-                int sid = IMBaseDefine.ServiceID.SID_BUDDY_LIST_VALUE;
-                int cid = IMBaseDefine.BuddyListCmdID.CID_BUDDY_LIST_UPDATE_USER_INFO_REQUEST_VALUE;
-                IMSocketManager.instance().sendRequest(msg, sid, cid);
+                Intent intent = new Intent(getActivity(), Share2DCode.class);
+                intent.putExtra("referralcode",referralcode.getText().toString());
+                startActivity(intent);
+            }
+        });
+        if(currentUserId !=loginId){
+            operate.setText("发消息");
+            gender.setEnabled(false);
+            gender1.setEnabled(false);
+            nickName.setEnabled(false);
+            signature.setEnabled(false);
+            phone.setEnabled(false);
+        }else {
+            gender.setEnabled(true);
+            gender1.setEnabled(true);
+            nickName.setEnabled(true);
+            signature.setEnabled(true);
+            phone.setEnabled(true);
+            operate.setText("保存");
+        }
+        operate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (currentUserId != loginId) {
+                    String sessionKey = currentUser.getSessionKey();
+                    IMUIHelper.openChatActivity(getActivity(), sessionKey);
+                    getActivity().finish();
+                } else {
+                    userInfo = IMBaseDefine.UserInfo.newBuilder()
+                            .setUserId(IMLoginManager.instance().getLoginId())
+                            .setSignInfo(signature.getText().toString())
+                            .setUserGender(gender.isChecked() ? 1 : 2)
+                            .setUserNickName(nickName.getText().toString())
+                            .setUserTel("")
+                            .setAvatarUrl(!Utils.isStringEmpty(currentUser.getAvatar())?currentUser.getAvatar():Config.endpoint +"/"+Config.avatarPicsPath +IMLoginManager.instance().getLoginId()+Utils.PNG)
+                            .setDepartmentId(0)
+                            .setUserRealName("")
+                            .setUserDomain("")
+                            .setStatus(0)
+                            .setEmail("")
+                            .build();
+
+                    IMBuddy.IMUpdateUsersInfoReq msg = IMBuddy.IMUpdateUsersInfoReq.newBuilder()
+                            .setUserInfo(userInfo)
+                            .setUserId(IMLoginManager.instance().getLoginId())
+                            .build();
+                    int sid = IMBaseDefine.ServiceID.SID_BUDDY_LIST_VALUE;
+                    int cid = IMBaseDefine.BuddyListCmdID.CID_BUDDY_LIST_UPDATE_USER_INFO_REQUEST_VALUE;
+                    IMSocketManager.instance().sendRequest(msg, sid, cid);
+                }
             }
         });
     }
-
     @Override
     protected void initHandler() {
     }
@@ -220,18 +270,36 @@ public class UserInfoFragment extends MainFragment {
     public void onEventMainThread(PriorityEvent event) {
         switch (event.event) {
             case MSG_UPDATE_USERINFO_SUCEED:
+                //存本地数据库
+                UserEntity entity =  ProtoBuf2JavaBean.getUserEntity(userInfo);
+                imService.getContactManager().putContact(entity);
+                DBInterface.instance().insertOrUpdateUser(entity);
                 IMBuddy.IMUpdateUsersInfoRsp obj = (IMBuddy.IMUpdateUsersInfoRsp)event.object;
                 int resultCode = obj.getResultCode();
                 if(resultCode==0)
                 ToastUtils.show("个人信息提交成功");
+                //销毁actitity将用户名传递过去
+                Intent intent=new Intent(getActivity(), MainActivity.class);
+                intent.putExtra("backName",entity.getMainName());
+                getActivity().setResult(RESULT_OK,intent);
+                getActivity().finish();
+
         }
     }
 
 
     private void initBaseProfile() {
+        initRes();
          portraitImageView = (ImageView) curView.findViewById(R.id.user_portrait);
         setTextViewContent(R.id.nickName, currentUser.getMainName());
         setTextViewContent(R.id.fans_cnt, currentUser.getFansCnt()+"");
+        referralcode.setText(currentUser.getRealName());
+        if(currentUser.getGender()==2){
+            gender1.setChecked(true);
+        }else {
+            gender.setChecked(true);
+        }
+        signature.setText(currentUser.getSignature());
 //        setTextViewContent(R.id.userName, currentUser.getRealName());
         //头像设置
        ImageLoaderUtil.instance().displayImage(IMApplication.app.UrlFormat(currentUser.getAvatar()), portraitImageView, ImageLoaderUtil.getAvatarOptions(20, 0));
@@ -352,7 +420,7 @@ public class UserInfoFragment extends MainFragment {
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                ImageLoaderUtil.instance().displayImage("file:/" +IMApplication.app.UrlFormat(path),portraitImageView);
+                                ImageLoaderUtil.instance().displayImage("file:/" +IMApplication.app.UrlFormat(path),portraitImageView,ImageLoaderUtil.getAvatarOptions(10,0));
                             }
                         });
                     }

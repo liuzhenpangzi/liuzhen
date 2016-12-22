@@ -1,5 +1,7 @@
 package com.tenth.space.imservice.manager;
 
+import android.util.Log;
+
 import com.tenth.space.DB.DBInterface;
 import com.tenth.space.DB.entity.DepartmentEntity;
 import com.tenth.space.DB.entity.UserEntity;
@@ -124,7 +126,7 @@ public class IMContactManager extends IMManager {
 
     /**-----------------------事件驱动---end---------*/
 
-    private void reqGetAllUsers(int lastUpdateTime) {
+    public void reqGetAllUsers(int lastUpdateTime) {
 		logger.i("contact#reqGetAllUsers");
 		int userId = IMLoginManager.instance().getLoginId();
 
@@ -153,9 +155,9 @@ public class IMContactManager extends IMManager {
 
         int count =  imAllUserRsp.getUserListCount();
 		logger.i("contact#user cnt:%d", count);
-        if(count <=0){
-            return;
-        }
+//        if(count <=0){//此处如果返回为空就不会删除数据库，更新内容了
+//            return;
+//        }
 
 		int loginId = IMLoginManager.instance().getLoginId();
         if(userId != loginId){
@@ -164,14 +166,20 @@ public class IMContactManager extends IMManager {
         }
         List<IMBaseDefine.UserInfo> changeList =  imAllUserRsp.getUserListList();
         ArrayList<UserEntity> needDb = new ArrayList<>();
+        //先添加自己到数据库
+        needDb.add(IMLoginManager.instance().getLoginInfo());
+        userMap.put(IMLoginManager.instance().getLoginId(),IMLoginManager.instance().getLoginInfo());
+
         for(IMBaseDefine.UserInfo userInfo:changeList){
             UserEntity entity =  ProtoBuf2JavaBean.getUserEntity(userInfo);
             userMap.put(entity.getPeerId(),entity);
             needDb.add(entity);
         }
 
+        //同步网路数据库之前先要删除本地数据库
+        dbInterface.deleteUserDaoAll();
         dbInterface.batchInsertOrUpdateUser(needDb);
-        triggerEvent(UserInfoEvent.Event.USER_INFO_UPDATE);
+        triggerEvent(UserInfoEvent.Event.USER_INFO_UPDATE);//发送成功，改变其他数据
 	}
 
     public UserEntity findContact(int buddyId){
@@ -191,7 +199,9 @@ public class IMContactManager extends IMManager {
 //        }
         return null;
     }
-
+    public void putContact(UserEntity userEntity){
+        userMap.put(userEntity.getPeerId(),userEntity);
+    }
     /**
      * 请求用户详细信息
      * @param userIds
@@ -219,7 +229,7 @@ public class IMContactManager extends IMManager {
      */
     public void  onRepDetailUsers(IMBuddy.IMUsersInfoRsp imUsersInfoRsp){
         int loginId = imUsersInfoRsp.getUserId();
-        boolean needEvent = false;
+       // boolean needEvent = false;
         List<IMBaseDefine.UserInfo> userInfoList = imUsersInfoRsp.getUserInfoListList();
 
         ArrayList<UserEntity>  dbNeed = new ArrayList<>();
@@ -229,7 +239,7 @@ public class IMContactManager extends IMManager {
             if (userMap.containsKey(userId) && userMap.get(userId).equals(userEntity)) {
                 //没有必要通知更新
             } else {
-                needEvent = true;
+               // needEvent = true;
                 userMap.put(userEntity.getPeerId(), userEntity);
                 dbNeed.add(userEntity);
                 if (userInfo.getUserId() == loginId) {
@@ -241,9 +251,9 @@ public class IMContactManager extends IMManager {
         dbInterface.batchInsertOrUpdateUser(dbNeed);
 
         // 判断有没有必要进行推送
-        if(needEvent){
+      //  if(needEvent){
             triggerEvent(UserInfoEvent.Event.USER_INFO_UPDATE);
-        }
+      //  }
     }
 
 

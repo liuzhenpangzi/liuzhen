@@ -77,7 +77,7 @@ public class IMBuddyManager extends IMManager {
                     ToastUtils.show("关注成功");
                 }
             });
-
+            IMContactManager.instance().reqGetAllUsers(0);
             EventBus.getDefault().postSticky(new BlogInfoEvent(BlogInfoEvent.Event.FOLLOW_SUCCESS, position));
         } else {
             ToastUtils.show("关注失败");
@@ -99,21 +99,18 @@ public class IMBuddyManager extends IMManager {
         int sid = IMBaseDefine.ServiceID.SID_BUDDY_LIST_VALUE;
         int cid = IMBaseDefine.BuddyListCmdID.CID_BUDDY_LIST_DEL_FOLLOW_USER_REQUEST_VALUE;
         imSocketManager.sendRequest(followUserReq, sid, cid);
-        Log.i("GTAG","IMBuddyManager-----reqDelFollowUser:发送取消关注请求(loginId:" + userId + "--writerId:" + friendId + ")");
     }
 
     public void onReqDelFollowUser(IMBuddy.IMDelFollowUserRsp rsp) {
-//        int userId = rsp.getUserId();
-        String rspUTF8 = rsp.getAttachData().toStringUtf8();
-//        LogUtils.d("IMBuddyManager------onReqDelFollowUser" + rspUTF8);
         if (rsp.getResultCode() == 0) {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
                     ToastUtils.show("取消关注成功");
+
                 }
             });
-
+            IMContactManager.instance().reqGetAllUsers(0);//每次更新好友列表只能添加，或者更新，不能够删除好友，此处要删除已关注的好友
             EventBus.getDefault().postSticky(new BlogInfoEvent(BlogInfoEvent.Event.DEL_FOLLOW_SUCCESS, position));
         } else {
             ToastUtils.show("取消关注失败");

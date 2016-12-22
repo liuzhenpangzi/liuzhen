@@ -51,7 +51,7 @@
     <string name="tt_ok">确定</string>
     <string name="tt_cancel">取消</string>
     <string name="empty_prompt">名字不能为空</string>
-    <string name="setting_version">版本: 20150320</string>
+    <string name="setting_version">版本:1.0 </string>
     <string name="sex_female_name">女</string>
     <string name="sex_male_name">男</string>
     <string name="error_code_name">错误代码</string>

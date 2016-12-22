@@ -49,6 +49,7 @@ public class RegisterActivity1 extends Activity {
     private TextView next;
     private ImageView imCode;
     private OkHttpClient client;
+    private boolean isFindPwd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,12 +59,17 @@ public class RegisterActivity1 extends Activity {
         code=(EditText)findViewById(R.id.et_code);
         imCode=(ImageView)findViewById(R.id.iv_code);
         next=(TextView)findViewById(R.id.tv_sure);
+        TextView title = (TextView) findViewById(R.id.title);
         findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
+        isFindPwd = getIntent().getBooleanExtra("isFindPwd", false);
+        if(isFindPwd){
+            title.setText("重置密码");
+        }
         client = new OkHttpClient().newBuilder()
                 .cookieJar(new CookieJar() {
             private final HashMap<HttpUrl, List<Cookie>> cookieStore = new HashMap<>();
@@ -192,6 +198,9 @@ public class RegisterActivity1 extends Activity {
         try {
             json.put("valid_code2", code);
             json.put("phone", num);
+            if(isFindPwd){
+                json.put("tag",2);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -215,6 +224,7 @@ public class RegisterActivity1 extends Activity {
                             public void run() {
                                 Intent intent  = new Intent(RegisterActivity1.this,RegisterActivity.class);
                                 intent.putExtra("phone",num);
+                                intent.putExtra("isFindPwd",isFindPwd);
                                 startActivity(intent);
                                 finish();
                             }

@@ -16,6 +16,7 @@ import com.tenth.space.DB.DBInterface;
 import com.tenth.space.DB.entity.RequesterEntity;
 import com.tenth.space.R;
 import com.tenth.space.imservice.event.PriorityEvent;
+import com.tenth.space.imservice.manager.IMContactManager;
 import com.tenth.space.protobuf.IMBuddy;
 import com.tenth.space.ui.activity.FriendsActivity;
 import com.tenth.space.ui.activity.MainActivity;
@@ -163,6 +164,7 @@ public class ContactFragment extends Fragment implements ViewPager.OnPageChangeL
                         ((MainActivity) getActivity()).setNewContact(i);
                         break;
                     case ADD_FRIEND_AGREE:
+                        //对方同意添加好友
                         try {
                             String date = obj1.getAddFriendData().toStringUtf8();
                             final JSONObject object = new JSONObject(date);
@@ -176,6 +178,8 @@ public class ContactFragment extends Fragment implements ViewPager.OnPageChangeL
                             DBInterface.instance().batchInsertOrUpdateRquest(requesterEntity);
                             int cnt = ((MainActivity) getActivity()).getLocalUreadCnt() + 1;
                             ((MainActivity) getActivity()).setNewContact(cnt);
+                            //更新userEnitity数据库
+                            IMContactManager.instance().reqGetAllUsers(0);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

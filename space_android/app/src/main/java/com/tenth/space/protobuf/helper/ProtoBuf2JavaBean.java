@@ -69,6 +69,7 @@ public class ProtoBuf2JavaBean {
         userEntity.setUpdated(timeNow);
         userEntity.setPeerId(userInfo.getUserId());
         userEntity.setFansCnt(userInfo.getFansCnt());
+        userEntity.setSignature(userInfo.getSignInfo());
 
         PinYin.getPinYin(userEntity.getMainName(), userEntity.getPinyinElement());
         return userEntity;

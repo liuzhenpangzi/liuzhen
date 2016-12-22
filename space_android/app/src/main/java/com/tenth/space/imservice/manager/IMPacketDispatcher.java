@@ -126,6 +126,11 @@ public class IMPacketDispatcher {
                 case IMBaseDefine.BuddyListCmdID.CID_BUDDY_LIST_UPDATE_USER_INFO_RESPONSE_VALUE:
                     IMBuddy.IMUpdateUsersInfoRsp imUpdateUsersInfoRsp = IMBuddy.IMUpdateUsersInfoRsp.parseFrom(buffer);
                     FriendManager.instance().onOperateFriendRsp(imUpdateUsersInfoRsp);
+
+                case IMBaseDefine.BuddyListCmdID.CID_BUDDY_LIST_RECOMMEND_LIST_RESPONSE_VALUE:
+                    IMBuddy.IMRecommendListRsp imRecommendListRsp = IMBuddy.IMRecommendListRsp.parseFrom(buffer);
+                    IMonLineCountManager.instance().getRecommendRsp(imRecommendListRsp);
+                    //返回推荐好友数据
                     break;
                 default:
                     int i = commandId;

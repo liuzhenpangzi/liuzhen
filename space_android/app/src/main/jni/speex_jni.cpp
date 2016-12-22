@@ -44,7 +44,7 @@ void *dec_state;
 
 static JavaVM *gJavaVM;
 
-extern "C" JNIEXPORT jint JNICALL Java_com_mogujie_tt_imservice_support_audio_Speex_open(
+extern "C" JNIEXPORT jint JNICALL Java_com_tenth_space_imservice_support_audio_Speex_open(
 		JNIEnv *env, jobject obj, jint compression) {
 	int tmp = 0;
 	if (codec_open++ != 0)
@@ -72,7 +72,7 @@ extern "C" JNIEXPORT jint JNICALL Java_com_mogujie_tt_imservice_support_audio_Sp
 	return (jint) 0;
 }
 
-extern "C" JNIEXPORT jint JNICALL Java_com_mogujie_tt_imservice_support_audio_Speex_encode(
+extern "C" JNIEXPORT jint JNICALL Java_com_tenth_space_imservice_support_audio_Speex_encode(
 		JNIEnv *env, jobject obj, jshortArray lin, jint offset,
 		jbyteArray encoded, jint size) {
 
@@ -101,7 +101,7 @@ extern "C" JNIEXPORT jint JNICALL Java_com_mogujie_tt_imservice_support_audio_Sp
 	return (jint) tot_bytes;
 }
 
-extern "C" JNIEXPORT jint Java_com_mogujie_tt_imservice_support_audio_Speex_decode(
+extern "C" JNIEXPORT jint Java_com_tenth_space_imservice_support_audio_Speex_decode(
 		JNIEnv *env, jobject obj, jbyteArray encoded, jshortArray lin,
 		jint size) {
 
@@ -120,7 +120,7 @@ extern "C" JNIEXPORT jint Java_com_mogujie_tt_imservice_support_audio_Speex_deco
 	return (jint) dec_frame_size;
 }
 
-extern "C" JNIEXPORT jint JNICALL Java_com_mogujie_tt_imservice_support_audio_Speex_getFrameSize(
+extern "C" JNIEXPORT jint JNICALL Java_com_tenth_space_imservice_support_audio_Speex_getFrameSize(
 		JNIEnv *env, jobject obj) {
 
 	if (!codec_open)
@@ -129,7 +129,7 @@ extern "C" JNIEXPORT jint JNICALL Java_com_mogujie_tt_imservice_support_audio_Sp
 
 }
 
-extern "C" JNIEXPORT void JNICALL Java_com_mogujie_tt_imservice_support_audio_Speex_close(
+extern "C" JNIEXPORT void JNICALL Java_com_tenth_space_imservice_support_audio_Speex_close(
 		JNIEnv *env, jobject obj) {
 
 	if (--codec_open != 0)
@@ -141,7 +141,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_mogujie_tt_imservice_support_audio_Sp
 	speex_encoder_destroy(enc_state);
 }
 
-extern "C" JNIEXPORT void Java_com_mogujie_tt_imservice_support_audio_Speex_initEcho(
+extern "C" JNIEXPORT void Java_com_tenth_space_imservice_support_audio_Speex_initEcho(
 		JNIEnv *env, jobject jobj, jint frame_size, jint filter_length) {
 	if (aec_status == AEC_OPENED)
 		return;
@@ -159,7 +159,7 @@ extern "C" JNIEXPORT void Java_com_mogujie_tt_imservice_support_audio_Speex_init
 	speex_preprocess_ctl(den, SPEEX_PREPROCESS_SET_ECHO_STATE, echoState);
 }
 
-extern "C" JNIEXPORT void Java_com_mogujie_tt_imservice_support_audio_Speex_echoCancellation(
+extern "C" JNIEXPORT void Java_com_tenth_space_imservice_support_audio_Speex_echoCancellation(
 		JNIEnv *env, jshortArray rec, jshortArray play, jshortArray out) {
 
 	jshort echo_buf[enc_frame_size];
@@ -176,7 +176,7 @@ extern "C" JNIEXPORT void Java_com_mogujie_tt_imservice_support_audio_Speex_echo
 
 }
 
-extern "C" JNIEXPORT int Java_com_mogujie_tt_imservice_support_audio_Speex_echoCancellationEncode(
+extern "C" JNIEXPORT int Java_com_tenth_space_imservice_support_audio_Speex_echoCancellationEncode(
 		JNIEnv *env, jshortArray rec, jshortArray play, jbyteArray encoded) {
 
 	jshort echo_buf[enc_frame_size];
@@ -201,11 +201,11 @@ extern "C" JNIEXPORT int Java_com_mogujie_tt_imservice_support_audio_Speex_echoC
 	return (jint) tot_bytes;
 }
 
-extern "C" JNIEXPORT jint JNICALL Java_com_mogujie_tt_imservice_support_audio_Speex_getAecStatus() {
+extern "C" JNIEXPORT jint JNICALL Java_com_tenth_space_imservice_support_audio_Speex_getAecStatus() {
 	return (jint) aec_status;
 }
 
-extern "C" JNIEXPORT void Java_com_mogujie_tt_imservice_support_audio_Speex_destroyEcho(
+extern "C" JNIEXPORT void Java_com_tenth_space_imservice_support_audio_Speex_destroyEcho(
 		JNIEnv * env, jobject jobj) {
 	if (aec_status == AEC_CLOSED)
 		return;

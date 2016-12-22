@@ -163,7 +163,23 @@
                 android:divider="@null"
                 android:visibility="gone" />
 
+            <ListView
+                android:id="@+id/all_contact_list"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:listSelector="@android:color/transparent"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@null"/>
 
+            <com.tenth.space.ui.widget.SortSideBar
+                android:id="@+id/sidrbar"
+                android:layout_width="30dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="right|center"
+                android:layout_marginBottom="31dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginRight="2.5dp"/>
             <TextView
                 android:id="@+id/dialog"
                 android:layout_width="80dp"
@@ -174,23 +190,6 @@
                 android:textColor="#ffffffff"
                 android:textSize="30dp"
                 android:visibility="invisible" />
-
-            <ListView
-                android:id="@+id/all_contact_list"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_gravity="center"
-                android:listSelector="@android:color/transparent"
-                android:cacheColorHint="@android:color/transparent"
-                android:divider="@null"/>
-            <com.tenth.space.ui.widget.SortSideBar
-                android:id="@+id/sidrbar"
-                android:layout_width="30dp"
-                android:layout_height="fill_parent"
-                android:layout_gravity="right|center"
-                android:layout_marginBottom="31dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginRight="2.5dp"/>
         </FrameLayout>
     </LinearLayout>
 

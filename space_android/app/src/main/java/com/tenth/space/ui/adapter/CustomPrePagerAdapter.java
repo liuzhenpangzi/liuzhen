@@ -44,7 +44,7 @@ public class CustomPrePagerAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, final int position) {
         View inflate = View.inflate(context, R.layout.item_vp_pre, null);
         final ImageView imageView = (ImageView) inflate.findViewById(R.id.iv_pre);
-        ImageLoaderUtil.instance().displayImage(IMApplication.app.UrlFormat(paths.get(position)),imageView,ImageLoaderUtil.getBlogOptions());
+        ImageLoaderUtil.instance().displayImage(IMApplication.app.UrlFormat(paths.get(position)),imageView,ImageLoaderUtil.getBinear());
        // imageView.setBackground(new BitmapDrawable(BitmapUtils.getSquareBitmap2(BitmapFactory.decodeFile(paths.get(position)))));
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override

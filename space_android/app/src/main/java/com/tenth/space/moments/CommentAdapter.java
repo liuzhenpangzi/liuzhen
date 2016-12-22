@@ -85,7 +85,10 @@ public class CommentAdapter extends RecyclerView.Adapter {
             ((CommentHolder) holder).mTvPhoneModel.setText("来自" + model + "用户");
             //时间
             int created = mData.get(position).getCreated();
-            Date date = new Date(created * 1000);
+            if (created==0){
+                created = (int) (System.currentTimeMillis()/1000);
+            }
+            Date date = new Date(created * 1000L);
             LogUtils.d("date:" + date.toString());
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd HH:mm");//yyyy-MM-dd HH:mm:ss
             String format = simpleDateFormat.format(date);

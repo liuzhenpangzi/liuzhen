@@ -87,6 +87,7 @@ public class GreenDaoGenerator {
         userInfo.addStringProperty("avatar").notNull();
         userInfo.addStringProperty("phone").notNull();
         userInfo.addStringProperty("email").notNull();
+        userInfo.addStringProperty("signature");
         userInfo.addIntProperty("departmentId").notNull();
 
         userInfo.addIntProperty("status").notNull();

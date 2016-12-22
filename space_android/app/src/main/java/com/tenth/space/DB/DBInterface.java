@@ -175,7 +175,18 @@ public class DBInterface {
         }
 
     }
+    //查询数据库不是推荐
+    public List<UserEntity> LoadUserFromTypeNOT(IMBaseDefine.UserRelationType  event){
+        //防止查询数据库异常导致app闪退
+        try {
+            UserDao dao = openReadableDb().getUserDao();
+            List<UserEntity> listUser = dao.queryBuilder().where(UserDao.Properties.Relation.notEq(event)).list();
+            return listUser;
+        }catch (Exception e){
+            return null;
+        }
 
+    }
     /**-------------------------下面开始User 操作相关---------------------------------------*/
     /**
      * @return
@@ -220,6 +231,10 @@ public class DBInterface {
         }
         UserDao userDao =  openWritableDb().getUserDao();
         userDao.insertOrReplaceInTx(entityList);
+    }
+    public  void  deleteUserDaoAll(){
+        UserDao userDao =  openWritableDb().getUserDao();
+        userDao.deleteAll();
     }
 
     /**update*/

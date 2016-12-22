@@ -248,7 +248,6 @@ public class AddBlogActivity extends Activity {
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.i("GTAG","back");
         switch (requestCode) {
             case TAKE_PICTURE:
                 if (Bimp.bmpPaths.size() < 9 && resultCode == -1) {

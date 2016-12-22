@@ -34,7 +34,6 @@ public class STSGetter extends OSSFederationCredentialProvider {
             String backString = getToken(Config.EndAliyun,Config.tokenUrl);
          //  InputStream input = conn.getInputStream();
          //   String jsonText = IOUtils.readStreamAsString(input, OSSConstants.DEFAULT_CHARSET_NAME);
-           Log.i("GTAG","jsontext="+backString+"Config.EndAliyun="+Config.EndAliyun);
             if (!Utils.isStringEmpty(backString)){
                 JSONObject jsonObjs = new JSONObject(backString);
                 String ak = jsonObjs.optString("AccessKeyId");

@@ -38,17 +38,25 @@ public class FileUtil {
 
     //uri转文件绝对路径
     public static String getFilePathFromContentUri(Uri uri, ContentResolver contentResolver) {
-        String filePath;
-        String[] filePathColumn = {MediaStore.Images.Media.DATA};
+        String filePath="";
+        //url分为2中：1、file开头标示文件夹选中的图片；2、content开头；
+        if (uri!=null){
+            if (uri.toString().contains("file://")){
 
-//        Cursor cursor = IMApplication.app.getContentResolver().query(uri, filePathColumn, null, null, null);
-        Cursor cursor = contentResolver.query(uri, filePathColumn, null, null, null);
-        cursor.moveToFirst();
-
-        int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-        filePath = cursor.getString(columnIndex);
-        cursor.close();
-        return filePath;
+                filePath=uri.toString().split("file://")[1];
+                return filePath;
+            }else {
+                String[] filePathColumn = {MediaStore.Images.Media.DATA};
+                Cursor cursor = contentResolver.query(uri, filePathColumn, null, null, null);
+                cursor.moveToFirst();
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                filePath = cursor.getString(columnIndex);
+                cursor.close();
+                return filePath;
+            }
+        }else {
+            return filePath;
+        }
     }
 
     /**

@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.BinaryHttpResponseHandler;
+import com.tenth.space.utils.Utils;
 import com.tenth.tools.EncryptTools;
 import com.tenth.space.DB.sp.LoginSp;
 import com.tenth.space.DB.sp.SystemConfigSp;
@@ -133,6 +134,8 @@ public class RegisterActivity extends TTBaseActivity implements View.OnFocusChan
     private TextView getcode;
     private TextView register;
     private EditText nickname;
+    private boolean isFindPwd;
+    private EditText referralcode;
 
 
     /**
@@ -235,6 +238,12 @@ public class RegisterActivity extends TTBaseActivity implements View.OnFocusChan
     }
 
     private void init() {
+        isFindPwd = getIntent().getBooleanExtra("isFindPwd", false);
+        TextView title = (TextView) findViewById(R.id.title);
+        if(isFindPwd){
+            title.setText("重置密码");
+            findViewById(R.id.et_referralcode).setVisibility(View.GONE);
+        }
         code = (EditText) findViewById(R.id.et_code);
         nickname = (EditText) findViewById(nick_name);
         password = (EditText) findViewById(R.id.et_psw);
@@ -301,8 +310,21 @@ public class RegisterActivity extends TTBaseActivity implements View.OnFocusChan
 
     private void attemptRegister() {
         register.setEnabled(false);
+
         JSONObject json = new JSONObject();
+        referralcode = (EditText)findViewById(R.id.et_referralcode);
+        String url = null;
         try {
+        if(isFindPwd){
+            url=UrlConstant.FIND_PWD_SERVER;
+
+        }else {
+            String rerral = referralcode.getText().toString();
+            if(! Utils.isStringEmpty(rerral)){
+                json.put("referral_code",referralcode.getText().toString());
+            }
+            url=UrlConstant.REGISTER_SERVER;
+        }
 //            json.put("nick",nickname.getText().toString());
             json.put("valid_code", code.getText().toString());
             json.put("phone",getIntent().getStringExtra("phone"));
@@ -311,10 +333,9 @@ public class RegisterActivity extends TTBaseActivity implements View.OnFocusChan
             e.printStackTrace();
         }
         final OkHttpClient client = new OkHttpClient();
-        String s = json.toString();
         RequestBody body = new FormBody.Builder().add("arg", json.toString()).build();
         final Request request = new Request.Builder()
-                .url(UrlConstant.REGISTER_SERVER)
+                .url(url)
                 .post(body)
                 .build();
         client.newCall(request).enqueue(new Callback() {
@@ -323,7 +344,7 @@ public class RegisterActivity extends TTBaseActivity implements View.OnFocusChan
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(RegisterActivity.this, "注册异常，请重试", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "异常，请重试", Toast.LENGTH_SHORT).show();
                         register.setEnabled(true);
                     }
                 });
@@ -344,7 +365,7 @@ public class RegisterActivity extends TTBaseActivity implements View.OnFocusChan
 
                             switch (error_code){
                                 case 0:
-                                    Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegisterActivity.this, "成功", Toast.LENGTH_SHORT).show();
                                     finish();
                                     break;
                                 case 1:
@@ -359,7 +380,12 @@ public class RegisterActivity extends TTBaseActivity implements View.OnFocusChan
                                 case 3:
                                     code.setText("");
                                     register.setEnabled(true);
-                                    Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegisterActivity.this, "验证码错误，请重新输入", Toast.LENGTH_SHORT).show();
+                                    break;
+                                case 5:
+                                    referralcode.setText("");
+                                    register.setEnabled(true);
+                                    Toast.makeText(RegisterActivity.this, "推荐码错误，请重新输入", Toast.LENGTH_SHORT).show();
                                     break;
                             }
                         }

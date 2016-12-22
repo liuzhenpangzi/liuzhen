@@ -31,6 +31,10 @@ import com.tenth.space.imservice.entity.SearchElement;
 import com.tenth.space.imservice.event.LoginEvent;
 import com.tenth.space.imservice.event.SocketEvent;
 import com.tenth.space.imservice.manager.FriendManager;
+import com.tenth.space.imservice.manager.IMBlogManager;
+import com.tenth.space.imservice.manager.IMBuddyManager;
+import com.tenth.space.imservice.manager.IMContactManager;
+import com.tenth.space.ui.activity.AddActivity;
 import com.tenth.space.ui.activity.GroupMemberSelectActivity;
 import com.tenth.space.ui.activity.MessageActivity;
 import com.tenth.space.ui.activity.UserInfoActivity;
@@ -67,6 +71,41 @@ public class IMUIHelper {
                     case 2 :
 						//删除好友
                         FriendManager.instance().deleteFriend(ctx,contact);
+                        break;
+                }
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.setCanceledOnTouchOutside(true);
+        alertDialog.show();
+    }
+    public static void attentionItemLongClick(final UserEntity contact, final Context ctx){
+        if(contact == null || ctx == null){
+            return;
+        }
+        AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(ctx, android.R.style.Theme_Holo_Light_Dialog));
+        builder.setTitle(contact.getMainName());
+        String[] items = new String[]{ctx.getString(R.string.check_profile),
+                "添加好友","取消关注"};
+
+        final int userId = contact.getPeerId();
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case 0 :
+                        IMUIHelper.openUserProfileActivity(ctx, userId);
+                        break;
+                    case 1 :
+                        //跳转添加好友页面
+                        Intent intent = new Intent(ctx,AddActivity.class);
+                        intent.putExtra("friendId", contact.getPeerId());
+                        ctx.startActivity(intent);
+                        break;
+                    case 2 :
+						//取消关注
+                        IMBuddyManager.instance().reqDelFollowUser((long) contact.getPeerId(),0);
                         break;
                 }
             }

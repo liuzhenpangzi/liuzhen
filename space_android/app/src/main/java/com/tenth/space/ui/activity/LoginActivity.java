@@ -38,6 +38,7 @@ import com.tenth.space.ui.base.TTBaseActivity;
 import com.tenth.space.utils.IMUIHelper;
 import com.tenth.space.utils.LogUtils;
 import com.tenth.space.utils.Logger;
+import com.tenth.space.utils.ToastUtils;
 import com.tenth.space.utils.Utils;
 
 import de.greenrobot.event.EventBus;
@@ -53,7 +54,7 @@ import de.greenrobot.event.EventBus;
  * 2. 请求消息服务器地址，链接，验证，触发loginSuccess
  * 3. 保存登陆状态
  */
-public class LoginActivity extends TTBaseActivity {
+public class LoginActivity extends TTBaseActivity implements View.OnClickListener {
 
     private Logger logger = Logger.getLogger(LoginActivity.class);
     private Handler uiHandler = new Handler();
@@ -128,6 +129,7 @@ public class LoginActivity extends TTBaseActivity {
             }
         }
     };
+    private TextView findPwd;
 
     /**
      * 跳转到登陆的页面
@@ -217,19 +219,9 @@ public class LoginActivity extends TTBaseActivity {
         });
 
         mRegister = (TextView) findViewById(R.id.register);
-        mRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity1.class);
-                startActivity(intent);
-
-
-				/*PowerManager pm = (PowerManager)getSystemService(Context.POWER_SERVICE);
-                WakeLock mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "WhatEver");
-				mWakeLock.acquire();*/
-            }
-        });
-
+        findPwd = (TextView) findViewById(R.id.find_pwd);
+        mRegister.setOnClickListener(this);
+        findPwd.setOnClickListener(this);
         mNameView = (EditText) findViewById(R.id.name);
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -448,5 +440,19 @@ public class LoginActivity extends TTBaseActivity {
         logger.i("login#errorTip:%s", errorTip);
         mLoginStatusView.setVisibility(View.GONE);
         Toast.makeText(this, errorTip, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(LoginActivity.this, RegisterActivity1.class);
+        switch (v.getId()){
+            case R.id.register:
+                intent.putExtra("isFindPwd",false);
+                break;
+            case R.id.find_pwd:
+                intent.putExtra("isFindPwd",true);
+                break;
+        }
+        startActivity(intent);
     }
 }

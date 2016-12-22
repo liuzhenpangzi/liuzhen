@@ -83,7 +83,7 @@
 
         <TextView
             android:id="@+id/tv_pulldown"
-            android:layout_width="60dp"
+            android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
@@ -92,8 +92,9 @@
             android:gravity="center"
             android:padding="5dp"
             android:text="+关注"
-            android:textColor="@drawable/selector_btn_follow"
+            android:textColor="@color/custom_bottom"
             />
+        <!--android:textColor="@drawable/selector_btn_follow"-->
         <!--</LinearLayout>-->
     </RelativeLayout>
 
@@ -113,9 +114,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:maxLines="8"
-            android:text="虽然这个框架有很好的缓存机制，有效的避免了OOM的产生，一般的情况下产生OOM的概率比较小。
-    \n但是并不能保证OutOfMemoryError永远不发生，这个框架对于OutOfMemoryError做了简单的catch,保证我们的程序遇到OOM而不被crash掉，但是如果我们使用该框架经常发生OOM，我们应该怎么去改善呢？"
             android:textColor="#444444"
             android:textSize="14sp"
             />
@@ -156,7 +154,7 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="转"
+                android:text="分享"
                 android:textSize="12sp"/>
             <!--<ImageView-->
             <!--android:layout_width="wrap_content"-->
@@ -169,7 +167,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:gravity="center"
-                android:text="99"
                 android:textSize="12sp"/>
 
         </LinearLayout>
@@ -183,7 +180,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="评"
+                android:text="评论"
                 android:textSize="12sp"/>
             <!--<ImageView-->
             <!--android:layout_width="wrap_content"-->
@@ -196,7 +193,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:paddingLeft="5dp"
-                android:text="99"
                 android:textSize="12sp"/>
 
         </LinearLayout>

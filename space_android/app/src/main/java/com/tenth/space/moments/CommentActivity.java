@@ -306,7 +306,7 @@ public class CommentActivity extends MomentsBaseActivity implements View.OnClick
         JSONArray jsonArray = Utils.string2JsonArray(mBlogEntity.getBlogImages());
         //时间
         long created = mBlogEntity.getCreated();
-        Date date = new Date(created * 1000);
+        Date date = new Date(created * 1000L);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd HH:mm");//yyyy-MM-dd HH:mm:ss
         String format = simpleDateFormat.format(date);
         mHeadHolder.mTvTime.setText(format);
@@ -332,14 +332,14 @@ public class CommentActivity extends MomentsBaseActivity implements View.OnClick
             });
         }
         //评论点赞数
-        mHeadHolder.mCommentCnt.setText(mBlogEntity.getCommentCnt() + "");
-        mHeadHolder.mZanCnt.setText(mBlogEntity.getLikeCnt() + "");
+       // mHeadHolder.mCommentCnt.setText(mBlogEntity.getCommentCnt() + "");
+       // mHeadHolder.mZanCnt.setText(mBlogEntity.getLikeCnt() + "");
         //设置是否关注
         if (IsShowFlow){
             mHeadHolder.mTvPulldown.setVisibility(View.VISIBLE);
             if (mBlogEntity.isFollow == 1) {
                 mHeadHolder.mTvPulldown.setSelected(true);
-                mHeadHolder.mTvPulldown.setText("已关注");
+                mHeadHolder.mTvPulldown.setText("-关注");
             } else {
                 mHeadHolder.mTvPulldown.setSelected(false);
                 mHeadHolder.mTvPulldown.setText("+关注");
@@ -370,7 +370,7 @@ public class CommentActivity extends MomentsBaseActivity implements View.OnClick
                 LogUtils.d("关注成功，更新UI");
 
                 mHeadHolder.mTvPulldown.setSelected(true);
-                mHeadHolder.mTvPulldown.setText("已关注");
+                mHeadHolder.mTvPulldown.setText("-关注");
                 break;
 
             case DEL_FOLLOW_SUCCESS:

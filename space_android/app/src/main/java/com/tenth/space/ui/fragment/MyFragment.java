@@ -29,11 +29,13 @@ import com.tenth.space.DB.entity.UserEntity;
 import com.tenth.space.R;
 import com.tenth.space.aliyun.Config;
 import com.tenth.space.app.IMApplication;
+import com.tenth.space.config.IntentConstant;
 import com.tenth.space.imservice.event.UserInfoEvent;
 import com.tenth.space.imservice.manager.IMLoginManager;
 import com.tenth.space.imservice.service.IMService;
 import com.tenth.space.imservice.support.IMServiceConnector;
 import com.tenth.space.ui.activity.SettingActivity;
+import com.tenth.space.ui.activity.UserInfoActivity;
 import com.tenth.space.ui.widget.IMBaseImageView;
 import com.tenth.space.utils.FileUtil;
 import com.tenth.space.utils.IMUIHelper;
@@ -44,6 +46,8 @@ import com.tenth.space.utils.Utils;
 import java.io.File;
 
 import de.greenrobot.event.EventBus;
+
+import static android.app.Activity.RESULT_OK;
 
 public class MyFragment extends MainFragment {
     private View curView = null;
@@ -73,6 +77,8 @@ public class MyFragment extends MainFragment {
             }
         }
     };
+    private TextView nickNameView;
+    private TextView userNameView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -246,6 +252,7 @@ public class MyFragment extends MainFragment {
 //               // MemoryCacheUtils.removeFromCache(photo+"?x-oss-process=image/resize,h_100", (MemoryCache) ImageLoaderUtil.instance().getDiskCache());
 //               // MemoryCacheUtils.removeFromCache(photo+"?x-oss-process=image/resize,h_100", ImageLoaderUtil.instance().getMemoryCache());
 //               Utils.clearDiskAndMemoryCache(photo+"?x-oss-process=image/resize,h_100",true,true);
+                loginContact=IMLoginManager.instance().getLoginInfo();
                 init(imServiceConnector.getIMService());
                 break;
 
@@ -264,13 +271,14 @@ public class MyFragment extends MainFragment {
         if (loginContact == null) {
             return;
         }
-        TextView nickNameView = (TextView) curView.findViewById(R.id.nickName);
-        TextView userNameView = (TextView) curView.findViewById(R.id.userName);
+        nickNameView = (TextView) curView.findViewById(R.id.nickName);
+        userNameView = (TextView) curView.findViewById(R.id.userName);
      //   IMBaseImageView portraitImageView = (IMBaseImageView) curView.findViewById(R.id.user_portrait);
      final ImageView  portraitImageView = (ImageView) curView.findViewById(R.id.user_portrait);
 
         nickNameView.setText(loginContact.getMainName());
-        userNameView.setText(loginContact.getRealName());
+       // userNameView.setText(loginContact.getRealName());
+        //userNameView.setText(loginContact.getPeerId()+"");//测试填写peerId
 
         //头像设置
 
@@ -282,7 +290,6 @@ public class MyFragment extends MainFragment {
         String photo="";
         if (!Utils.isStringEmpty(loginContact.getAvatar())){
                 photo=loginContact.getAvatar();
-            Log.i("GTAG","photo"+photo);
         }else {
             photo= Config.endpoint +"/"+Config.avatarPicsPath +IMLoginManager.instance().getLoginId()+Utils.PNG;
         }
@@ -299,9 +306,24 @@ public class MyFragment extends MainFragment {
         userContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                IMUIHelper.openUserProfileActivity(getActivity(), loginContact.getPeerId());
+                Intent intent = new Intent(getActivity(), UserInfoActivity.class);
+                intent.putExtra(IntentConstant.KEY_PEERID, loginContact.getPeerId());
+                startActivityForResult(intent,0);
+                //IMUIHelper.openUserProfileActivity(getActivity(), loginContact.getPeerId());
             }
         });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==0&&resultCode==RESULT_OK){
+            //改变用户名
+            String mainName = data.getStringExtra("backName");
+            if (nickNameView!=null){
+                nickNameView.setText(mainName+"");
+            }
+        }
     }
 
     private void deleteFilesByDirectory(File directory) {

@@ -153,7 +153,6 @@ public class IMBlogManager extends IMManager {
         }
 
 //用回调
-        Log.i("GTAG","发送");
         LogUtils.d("程序位置-IMBlogManager---------GET_BLOG_OK（已获取博客列表）事件分发");
         switch (rsp.getBlogType()){
             case BLOG_TYPE_RCOMMEND:

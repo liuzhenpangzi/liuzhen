@@ -1,15 +1,15 @@
 package com.tenth.space.ui.fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +17,6 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -27,21 +26,24 @@ import com.tenth.space.DB.entity.UserEntity;
 import com.tenth.space.R;
 import com.tenth.space.aliyun.Config;
 import com.tenth.space.app.IMApplication;
+import com.tenth.space.config.IntentConstant;
 import com.tenth.space.imservice.event.CountEvent;
+import com.tenth.space.imservice.event.UserInfoEvent;
 import com.tenth.space.imservice.manager.IMLoginManager;
 import com.tenth.space.imservice.manager.IMonLineCountManager;
 import com.tenth.space.protobuf.IMBaseDefine;
+import com.tenth.space.ui.activity.RecommendInfoActivity;
+import com.tenth.space.ui.activity.UserInfoActivity;
 import com.tenth.space.ui.adapter.CustomPrePagerAdapter;
 import com.tenth.space.ui.adapter.GrideViewAdapter;
-import com.tenth.space.ui.adapter.ViewPageAdapter;
 import com.tenth.space.ui.adapter.album.OnItemClickListener;
+import com.tenth.space.ui.widget.HeaderGridView;
 import com.tenth.space.utils.IMUIHelper;
 import com.tenth.space.utils.NetworkUtil;
 import com.tenth.space.utils.Utils;
 
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -64,7 +66,7 @@ public class HomeItemFragment2 extends Fragment implements AdapterView.OnItemCli
     private  final int BINEARTIEMR=3;
     public TextView tv_total_count;
     ArrayList<UserEntity> pictureList=new ArrayList<>();
-    private GridView gv;
+    private HeaderGridView gv;
     private GrideViewAdapter adapter;
     private LinearLayout ll_progress_bar;
     private ViewPager binear_vp;
@@ -83,9 +85,18 @@ public class HomeItemFragment2 extends Fragment implements AdapterView.OnItemCli
                     break;
                 case UpDateDB:
                     //查询网络，查询数据库
-                    queryDB(state);
-                    //当前在线好友数量
-                    IMonLineCountManager.instance().getONlineCount(IMLoginManager.instance().getLoginId());
+                    switch (state){
+                        case RELATION_RECOMMEND:
+                            IMonLineCountManager.instance().sendRecommendRqs(IMLoginManager.instance().getLoginId());
+                            break;
+                        case RELATION_FOLLOW:
+                        case RELATION_FRIEND:
+                            queryDB(state);
+                            //当前在线好友数量
+                            break;
+                    }
+                        IMonLineCountManager.instance().getONlineCount(IMLoginManager.instance().getLoginId());
+
                     break;
                 case UpDateMySelfOpen:
                     if (frgemntparents.cusbitmap!=null){
@@ -109,6 +120,61 @@ public class HomeItemFragment2 extends Fragment implements AdapterView.OnItemCli
             }
         }
     };
+    SparseBooleanArray sparseArray = new SparseBooleanArray();;
+    private List<UserEntity> checkNetAndDb(List<UserEntity> netList, List<UserEntity> dBlists) {
+
+        if (netList!=null&&dBlists!=null){
+            sparseArray.clear();
+                for (int j=0;j<dBlists.size();j++){
+                    sparseArray.put(dBlists.get(j).getPeerId(),true);
+            }
+
+            Iterator<UserEntity> iterator = netList.iterator();
+            while (iterator.hasNext()){
+                int peerID = iterator.next().getPeerId();
+                boolean isExist = sparseArray.get(peerID);
+                if (isExist){
+                    iterator.remove();
+                }
+            }
+            return netList;
+        }else if(dBlists==null){
+            return netList;
+        }else {
+            return null;
+        }
+
+    }
+    private void checkDBAndRealse(final List<UserEntity> netList) {
+        //查询好友数据库，返回集合列表，查询完成后，更新adapter,显示在线好友数量
+        IMApplication.app.getThreadPool().execute(new Runnable() {
+            @Override
+            public void run() {
+                //查询数据库
+                if (needUDdataDB){
+                  //  DBfriendsList=DBInterface.instance().loadAllUsers();
+                   DBfriendsList=DBInterface.instance().LoadUserFromTypeNOT(IMBaseDefine.UserRelationType.RELATION_RECOMMEND);
+                    needUDdataDB=false;
+                }
+                if (DBfriendsList==null){
+                    needUDdataDB=true;
+                    return;
+                }
+                List<UserEntity> checkIDList = checkNetAndDb(netList, DBfriendsList);
+                if (checkIDList==null){
+                    return;
+                }
+                pictureList=(ArrayList<UserEntity>) checkIDList;
+                //解决办法，两次请求的集合数据进行比较
+                Message customMessage = handler.obtainMessage();
+                customMessage.what=UpDateTime;
+                customMessage.obj=pictureList;
+                handler.sendMessage(customMessage);
+            }
+        });
+
+    }
+
     private LinearLayout ll_binear;
     private int lastPosition;
     private FrameLayout framelayout;
@@ -119,16 +185,24 @@ public class HomeItemFragment2 extends Fragment implements AdapterView.OnItemCli
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EventBus.getDefault().registerSticky(this);
-
     }
 
     public void onEventMainThread(CountEvent event){
         switch (state){
             case RELATION_RECOMMEND:
-                int counts = event.getCount();
-                if (tv_total_count!=null){
-                    tv_total_count.setText(getString(R.string.online_friends_count)+counts+"");
+                if (event.getEvent()== CountEvent.Event.UPDATACOUNT){
+                    int counts = event.getCount();
+                    if (tv_total_count!=null){
+                        tv_total_count.setText(getString(R.string.online_recommend_count)+counts+"");
+                    }
+                }else if (event.getEvent()==CountEvent.Event.RECOMMEND_OK_BACK){
+                    //返回推荐好友数量好友数量
+                    List<UserEntity> recommendList = event.getList();
+                    checkDBAndRealse(recommendList);
+                    //当网络返回推荐好友的时候再去查询数据库进行过滤
                 }
+
+
                 break;
             case RELATION_FRIEND:
                 if (tv_total_count!=null&&pictureList.size()>0){
@@ -138,8 +212,22 @@ public class HomeItemFragment2 extends Fragment implements AdapterView.OnItemCli
                 break;
             case RELATION_FOLLOW:
                 if (tv_total_count!=null&&pictureList.size()>0){
-                    tv_total_count.setText(getString(R.string.online_friends_count)+(pictureList.size()-1)+"");
+                    tv_total_count.setText(getString(R.string.online_flow_count)+(pictureList.size()-1)+"");
                 }
+                break;
+        }
+
+
+    }
+
+
+
+    public void onEventMainThread(UserInfoEvent.Event event){
+        switch (event){
+            case USER_INFO_UPDATE:
+                //获取数据库
+               // queryDB(state);
+                needUDdataDB=true;
                 break;
         }
 
@@ -150,37 +238,44 @@ public class HomeItemFragment2 extends Fragment implements AdapterView.OnItemCli
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.item_home_fragment_layout_2,container,false);
-        gv=(GridView)view.findViewById(R.id.gv);
+        gv=(HeaderGridView)view.findViewById(R.id.gv);
         tv_total_count=(TextView)view.findViewById(R.id.tv_total_count);
         ll_progress_bar=(LinearLayout)view.findViewById(R.id.ll_progress_bar);
-        binear_vp=(ViewPager)view.findViewById(R.id.binear_vp);
-        ll_binear=(LinearLayout)view.findViewById(R.id.ll_binear);
-        framelayout=(FrameLayout)view.findViewById(R.id.framelayout);
         ll_progress_bar.setVisibility(View.VISIBLE);
         //判断网络是否正常
         if (!NetworkUtil.isNetWorkAvalible(getActivity())){
             ll_progress_bar.setVisibility(View.GONE);
         }
+
         //推荐页面添加广告binear
         if (state==IMBaseDefine.UserRelationType.RELATION_RECOMMEND){
-            framelayout.setVisibility(View.VISIBLE);
+            //添加头布局
+            framelayout = (FrameLayout) View.inflate(getActivity(), R.layout.headviewlayout, null);
+            binear_vp=(ViewPager)framelayout.findViewById(R.id.binear_vp);
+            ll_binear=(LinearLayout)framelayout.findViewById(R.id.ll_binear);
+            gv.addHeaderView(framelayout);
+          // framelayout.setVisibility(View.VISIBLE);
             initBinear(binear_vp);
+            //发送网络请求，获取请求获取推荐所有好友数量
+            IMonLineCountManager.instance().sendRecommendRqs(IMLoginManager.instance().getLoginId());
+        } else {
+            //添加第一张自己的图片占位用的
+            pictureList.add(0,new UserEntity(Long.valueOf( IMLoginManager.instance().getLoginId())));
+            handler.sendEmptyMessage(UpDateDB);
         }
 
-        //添加第一张自己的图片占位用的
-       pictureList.add(0,new UserEntity(Long.valueOf( IMLoginManager.instance().getLoginId())));
-        handler.sendEmptyMessage(UpDateDB);
         return view;
     }
 public ArrayList<String> binearUrls;
     private void initBinear(ViewPager binear_vp) {
         //加载广告循环页面http://img1.imgtn.bdimg.com/it/u=2710984090,618232935&fm=15&gp=0.jpg
-        String url="http://img1.imgtn.bdimg.com/it/u=2710984090,618232935&fm=15&gp=0.jpg";
+       // String url1="http://mobile.10thcommune.com/html/images/ad01.jpg";
+       // String url2="http://mobile.10thcommune.com/html/images/ad02.jpg";
+        String url3="http://mobile.10thcommune.com/html/images/ad03.jpg";
          binearUrls=new ArrayList<>();
-        binearUrls.add(url);
-        binearUrls.add(url);
-        binearUrls.add(url);
-        binearUrls.add(url);
+       // binearUrls.add(url1);
+       // binearUrls.add(url2);
+        binearUrls.add(url3);
         for (int i=0;i<binearUrls.size();i++){
             Button button=new Button(getActivity());
             if (i==0){
@@ -241,7 +336,8 @@ public ArrayList<String> binearUrls;
         this.state=state;
         this.frgemntparents=frgemntparents;
     }
-
+private boolean needUDdataDB=true;
+    List<UserEntity> DBfriendsList=new ArrayList<>();
     private void queryDB(final IMBaseDefine.UserRelationType state) {
                 //查询好友数据库，返回集合列表，查询完成后，更新adapter,显示在线好友数量
                 IMApplication.app.getThreadPool().execute(new Runnable() {
@@ -250,9 +346,18 @@ public ArrayList<String> binearUrls;
                         //查询数据库
                        // pictureList.clear();//添加自己的头像
                        // pictureList.add(0,new UserEntity(Long.valueOf( IMLoginManager.instance().getLoginId())));//按照构造方法中状态查询数据库
-                        List<UserEntity> DBfriendsList=DBInterface.instance().LoadUserFromType(state);
+                       // List<UserEntity> DBfriendsList=DBInterface.instance().LoadUserFromType(state);
+                        if (needUDdataDB){
+                                    DBfriendsList=DBInterface.instance().LoadUserFromType(state);
+                                    needUDdataDB=false;
+                        }
                         if (DBfriendsList==null){
+                            needUDdataDB=true;
                             return;
+                        }
+                        if (DBfriendsList.size()==0){
+                            pictureList.clear();
+                            pictureList.add(0,new UserEntity(Long.valueOf( IMLoginManager.instance().getLoginId())));
                         }
                         //遍历请求网路，是否有图片
                         for (UserEntity entity:DBfriendsList){
@@ -368,6 +473,9 @@ public ArrayList<String> binearUrls;
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if (state== IMBaseDefine.UserRelationType.RELATION_RECOMMEND){
+            position=position-2;//推荐页面添加了headview占位2个item
+        }
         if (position==0){
             if (frgemntparents.globleCheckState){
                 //点击关闭相机
@@ -387,7 +495,18 @@ public ArrayList<String> binearUrls;
             }
         }else {
             //显示好友详细资料
-            IMUIHelper.openUserProfileActivity(getActivity(), pictureList.get(position).getPeerId());
+            switch (state) {
+                case RELATION_RECOMMEND:
+
+                    Intent intent = new Intent(getActivity(), RecommendInfoActivity.class);
+                    intent.putExtra(IntentConstant.KEY_PEERID, pictureList.get(position).getPeerId());
+                    startActivity(intent);
+                    break;
+                case RELATION_FOLLOW:
+                case RELATION_FRIEND:
+                    IMUIHelper.openUserProfileActivity(getActivity(), pictureList.get(position).getPeerId());
+                    break;
+            }
         }
 
     }
