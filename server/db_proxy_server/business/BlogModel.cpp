@@ -114,11 +114,20 @@ void CBlogModel::getBlog(uint32_t nUserId, uint32_t update_time, IM::BaseDefine:
 				int2string(page*page_size)+","+int2string(page_size);
 
 		}else if(type == IM::BaseDefine::BLOG_TYPE_FOLLOWUSER){
-			strSql = "select IMBlog_0.*,nick,avatar from IMBlog_0,IMUser where fromId=IMUser.id and type=" +
+			/*strSql = "select IMBlog_0.*,nick,avatar from IMBlog_0,IMUser where fromId=IMUser.id and type=" +
 				int2string(IM::BaseDefine::BLOG_TYPE2_BLOG) + " and fromId in (select smallId+bigId-" + int2string(nUserId) +
 				" from IMRelationShip where status<>" + int2string(RELATION_TYPE_FRIEND) +
 				" and (smallId=" + int2string(nUserId) + " or bigId=" + int2string(nUserId) +
 				")) order by IMBlog_0.updated desc limit "+
+				int2string(page*page_size)+","+int2string(page_size);*/
+
+			strSql = "select IMBlog_0.*,nick,avatar from IMBlog_0,IMUser where fromId=IMUser.id and type=" +
+				int2string(IM::BaseDefine::BLOG_TYPE2_BLOG) + " and fromId in (select smallId+bigId-" + int2string(nUserId) +
+				" from IMRelationShip where (bigId="+int2string(nUserId)+" and (status=" +
+				int2string(RELATION_TYPE_FOLLOW_SMALL) + " or status=" +
+				int2string(RELATION_TYPE_FOLLOW_EACH_OTHER) + ")) or (smallId="+int2string(nUserId)+
+				" and (status=" + int2string(RELATION_TYPE_FOLLOW_BIG) + " or status=" +
+				int2string(RELATION_TYPE_FOLLOW_EACH_OTHER) + "))) order by IMBlog_0.updated desc limit "+
 				int2string(page*page_size)+","+int2string(page_size);
 
 			//".updated>"+ int2string(update_time)

@@ -11,6 +11,7 @@
 #include "imconn.h"
 #include "public_define.h"
 #include "IM.System.pb.h"
+#include "IM.Buddy.pb.h"
 #define MAX_ONLINE_FRIEND_CNT		100	//通知好友状态通知的最多个数
 
 class CMsgConn;
@@ -100,7 +101,7 @@ public:
     
     void BroadcastPdu(CImPdu* pdu, uint32_t client_type_flag);
 
-    //void AddOnlineFriendList(CImUser* pUser);
+    void GetOnlineRecommendList(uint32_t page, uint32_t page_size, IM::Buddy::IMRecommendListRsp &resp);
 private:
     ImUserMapByName_t m_im_user_map_by_name;
 

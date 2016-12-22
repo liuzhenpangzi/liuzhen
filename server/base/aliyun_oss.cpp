@@ -98,7 +98,7 @@ bool CAliyunOss::put_object_from_buffer(string object_name, unsigned char *byte_
     init_sample_request_options(options, is_cname, type);
     headers = aos_table_make(p, 1);
     apr_table_set(headers, "x-oss-meta-author", "oss");
-    aos_str_set(&bucket, BUCKET_NAME);
+    aos_str_set(&bucket, BUCKET_NAME2);
     aos_str_set(&object, object_name.c_str());
 
     aos_list_init(&buffer);

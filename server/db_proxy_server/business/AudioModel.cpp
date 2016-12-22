@@ -164,7 +164,7 @@ int CAudioModel::saveAudioInfo(uint32_t nFromId, uint32_t nToId, uint32_t nCreat
             "values(?, ?, ?, ?, ?, ?)";
             replace_mark(strSql, nFromId, nStartPos);
             replace_mark(strSql, nToId, nStartPos);
-            string tmp = BUCKET_NAME;
+            string tmp = BUCKET_NAME2;
             tmp = tmp + "." + OSS_ENDPOINT;
             tmp = tmp + "/";
             strPath = tmp + strPath;

@@ -75,6 +75,7 @@ private:
     void _HandleChangeAvatarRequest(CImPdu* pPdu);
     void _HandleChangeSignInfoRequest(CImPdu* pPdu);
     void _HandleClientUpdateUserInfoRequest(CImPdu *pPdu);
+    void _HandleClientRecommendListRequest(CImPdu *pPdu);
 
     void _HandleClientDeviceToken(CImPdu* pPdu);
     void _HandleKickPCClient(CImPdu* pPdu);

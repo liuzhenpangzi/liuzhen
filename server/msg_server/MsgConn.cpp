@@ -24,6 +24,9 @@
 #include "public_define.h"
 #include "ImPduBase.h"
 #include "aliyun_oss.h"
+#include "EncDec.h"
+#include "json/json.h"
+#include "base_config.h"
 using namespace IM::BaseDefine;
 
 #define TIMEOUT_WATI_LOGIN_RESPONSE		15000	// 15 seconds
@@ -401,6 +404,9 @@ void CMsgConn::HandlePdu(CImPdu* pPdu)
             break;
         case CID_BUDDY_LIST_UPDATE_USER_INFO_REQUEST:
         	_HandleClientUpdateUserInfoRequest(pPdu);
+        	break;
+        case CID_BUDDY_LIST_RECOMMEND_LIST_REQUEST:
+        	_HandleClientRecommendListRequest(pPdu);
         	break;
 
         // for group process
@@ -1215,6 +1221,28 @@ void CMsgConn::_HandleClientUpdateUserInfoRequest(CImPdu *pPdu)
 		pDBConn->SendPdu(pPdu);
 	}
 
+}
+
+void CMsgConn::_HandleClientRecommendListRequest(CImPdu *pPdu)
+{
+	IM::Buddy::IMRecommendListReq msg;
+	IM::Buddy::IMRecommendListRsp msgResp;
+	CHECK_PB_PARSE_MSG(msg.ParseFromArray(pPdu->GetBodyData(), pPdu->GetBodyLength()));
+
+	CImUserManager::GetInstance()->GetOnlineRecommendList(msg.page(), msg.page_size(), msgResp);
+
+	//msgResp.add_recommend_list(1);
+	//msgResp.add_recommend_list(2);
+
+	log("get recommend list user_id=%u recommend %u", GetUserId(),
+			msgResp.recommend_list_size());
+
+	CImPdu pdu;
+	pdu.SetPBMsg(&msgResp);
+	pdu.SetServiceId(IM::BaseDefine::SID_BUDDY_LIST);
+	pdu.SetCommandId(IM::BaseDefine::CID_BUDDY_LIST_RECOMMEND_LIST_RESPONSE);
+	pdu.SetSeqNum(pPdu->GetSeqNum());
+	SendPdu(&pdu);
 }
 
 void CMsgConn::_HandleClientDeviceToken(CImPdu *pPdu)

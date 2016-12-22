@@ -229,6 +229,32 @@ CImUser* CImUserManager::GetImUserById(uint32_t user_id)
     return pUser;
 }
 
+void CImUserManager::GetOnlineRecommendList(uint32_t page, uint32_t page_size, IM::Buddy::IMRecommendListRsp &resp)
+{
+	uint32_t start = 0;
+	if(page * page_size > m_im_user_map.size()){
+		start = m_im_user_map.size();
+	}
+
+	uint32_t end = page_size * (page + 1) > m_im_user_map.size() ? m_im_user_map.size() : page * (page_size + 1);
+
+	ImUserMap_t::iterator it = m_im_user_map.begin();
+	uint32_t i = 0;
+	for(;i < start; i++){
+		it++;
+	}
+
+	CImUser *pUser = NULL;
+	for(i= start; i<end; i++, it++){
+		resp.add_recommend_list(it->first);
+		pUser = it->second;
+		resp.add_recommend_nick_list(pUser->GetNickName());
+		//log("recommend user %s", pUser->GetNickName().c_str());
+	}
+
+	log("start:%u end:%u m_im_user_map.size:%u", start, end, m_im_user_map.size());
+}
+
 CMsgConn* CImUserManager::GetMsgConnByHandle(uint32_t user_id, uint32_t handle)
 {
     CMsgConn* pMsgConn = NULL;

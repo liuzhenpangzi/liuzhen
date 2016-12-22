@@ -94,6 +94,7 @@ uint32_t CRelationModel::getRelationId(uint32_t nUserAId, uint32_t nUserBId, boo
 
 uint32_t CRelationModel::addRelation(uint32_t nFromUserId, uint32_t nToUserId, uint32_t tag)
 {
+	bool bRet = false;
 	uint32_t nBigId = nFromUserId > nToUserId ? nFromUserId : nToUserId;
 	uint32_t nSmallId = nFromUserId > nToUserId ? nToUserId : nFromUserId;
 
@@ -116,13 +117,13 @@ uint32_t CRelationModel::addRelation(uint32_t nFromUserId, uint32_t nToUserId, u
             if(tag == RELATION_ACTION_ADD_FRIEND){
             	status2 = RELATION_TYPE_FRIEND;
             }else if (tag == RELATION_ACTION_ADD_FOLLOW){
-            	if((status == RELATION_TYPE_FOLLOW_BIG && nBigId != nToUserId) || (status == RELATION_TYPE_FOLLOW_SMALL && nSmallId != nToUserId)){
+            	if((status == RELATION_TYPE_FOLLOW_BIG && nSmallId == nToUserId) || (status == RELATION_TYPE_FOLLOW_SMALL && nBigId == nToUserId)){
             		status2 = RELATION_TYPE_FOLLOW_EACH_OTHER;
             	}
             }
-            if(status != status2){
+            if(-2 != status2 && status2 != status){
             	strSql = "update IMRelationShip set status=" + int2string(status2) + ", updated=" + int2string(nTimeNow) + " where id=" + int2string(nRelationId);
-				bool bRet = pDBConn->ExecuteUpdate(strSql.c_str());
+				bRet = pDBConn->ExecuteUpdate(strSql.c_str());
 				if(!bRet)
 				{
 					nRelationId = INVALID_VALUE;
@@ -153,7 +154,7 @@ uint32_t CRelationModel::addRelation(uint32_t nFromUserId, uint32_t nToUserId, u
                 stmt->SetParam(index++, status2);
                 stmt->SetParam(index++, nTimeNow);
                 stmt->SetParam(index++, nTimeNow);
-                bool bRet = stmt->ExecuteUpdate();
+                bRet = stmt->ExecuteUpdate();
                 if (bRet)
                 {
                     nRelationId = pDBConn->GetInsertId();
@@ -177,7 +178,7 @@ uint32_t CRelationModel::addRelation(uint32_t nFromUserId, uint32_t nToUserId, u
         pDBManager->RelDBConn(pDBConn);
 
         //更新 fans count
-		if(status != status2){
+		if(-2 != status2 && status2 != status && tag == RELATION_ACTION_ADD_FOLLOW){
 			CUserModel::getInstance()->updateFansCnt(nToUserId);
 		}
     }
@@ -277,7 +278,7 @@ bool CRelationModel::delFollowUser(uint32_t nUserId, uint32_t nFriendId)
 				strSql2 = "delete from IMRelationShip where id=" + int2string(nRelationId);
 			}
 
-			if(strSql2 != "" && status == RELATION_TYPE_FOLLOW_EACH_OTHER){
+			if(strSql2 == "" && status == RELATION_TYPE_FOLLOW_EACH_OTHER){
 				if(nFriendId == nSmallId){
 					strSql2 = "update IMRelationShip set status=" + int2string(RELATION_TYPE_FOLLOW_BIG) +
 							" where id=" + int2string(nRelationId);
