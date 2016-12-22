@@ -142,7 +142,16 @@ static int const fontsize = 16;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"@"
                                                                            options:NSRegularExpressionCaseInsensitive
                                                                              error:&error];
-    NSArray *matches = [regex matchesInString:string options:0 range:NSMakeRange(0, [string length])];
+    
+    NSArray *matches=[NSArray array];
+    
+    
+    if (string!=nil) {
+ matches = [regex matchesInString:string options:0 range:NSMakeRange(0, [string length])];
+    }
+
+    
+   
     return matches;
 }
 
@@ -152,7 +161,12 @@ static int const fontsize = 16;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:URL_REGULA
                                                                            options:NSRegularExpressionCaseInsensitive
                                                                              error:&error];
-    NSArray *matches = [regex matchesInString:string options:0 range:NSMakeRange(0, [string length])];
+    NSArray *matches=[NSArray array];
+    if (string!=nil) {
+        matches = [regex matchesInString:string options:0 range:NSMakeRange(0, [string length])];
+    }
+    
+   
     return matches;
 }
 
@@ -162,7 +176,11 @@ static int const fontsize = 16;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:PHONE_REGULA
                                                                            options:NSRegularExpressionCaseInsensitive
                                                                              error:&error];
-    NSArray *matches = [regex matchesInString:string options:0 range:NSMakeRange(0, [string length])];
+    NSArray *matches=[NSArray array];
+    if (string!=nil) {
+      matches = [regex matchesInString:string options:0 range:NSMakeRange(0, [string length])];
+    }
+   
     return matches;
 }
 
@@ -172,7 +190,14 @@ static int const fontsize = 16;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:EMAIL_REGULA
                                                                            options:NSRegularExpressionCaseInsensitive
                                                                              error:&error];
-    NSArray *matches = [regex matchesInString:string options:0 range:NSMakeRange(0, [string length])];
+    
+    NSArray *matches=[NSArray array];
+    
+    if (string!=nil) {
+         matches = [regex matchesInString:string options:0 range:NSMakeRange(0, [string length])];
+    }
+    
+   
     return matches;
 }
 

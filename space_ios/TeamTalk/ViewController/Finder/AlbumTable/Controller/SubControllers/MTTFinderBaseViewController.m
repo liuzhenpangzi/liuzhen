@@ -7,6 +7,7 @@
 //
 
 #import "MTTFinderBaseViewController.h"
+#import "PublicProfileViewControll.h"
 #import "XunXinDetailViewController.h"
 #import "PublishInfoViewController.h"
 #import "MTTWebViewController.h"
@@ -31,6 +32,7 @@
 #import "AddConcernAPI.h"
 #import "CancellConcernAPI.h"
 #import "DDUserModule.h"
+#import "GetUserInfoAPI.h"
 /** SDK*/
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKUI/ShareSDK+SSUI.h>
@@ -42,8 +44,8 @@
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, assign) NSInteger currentPage;
 @property (nonatomic, assign) BOOL isFirstLoad;
-@property (nonatomic, strong) IMMsgBlogListAPI *requestBlogAPI;
 @property (nonatomic, strong) NSMutableDictionary *myUsersDictM;
+@property (nonatomic, strong) IMMsgBlogListAPI *requestBlogAPI;
 
 @end
 
@@ -58,6 +60,14 @@ static CGFloat const kGrayIntervalHeight = 10;
 
 #pragma mark - 懒加载
 
+- (IMMsgBlogListAPI *)requestBlogAPI
+{
+    if (_requestBlogAPI == nil) {
+        _requestBlogAPI = [[IMMsgBlogListAPI alloc] init];
+    }
+    return _requestBlogAPI;
+}
+
 - (NSMutableDictionary *)myUsersDictM
 {
     if (_myUsersDictM == nil) {
@@ -68,14 +78,6 @@ static CGFloat const kGrayIntervalHeight = 10;
         [_myUsersDictM setObject:userEntity.userID forKey:key];
     }
     return _myUsersDictM;
-}
-
-- (IMMsgBlogListAPI *)requestBlogAPI
-{
-    if (_requestBlogAPI == nil) {
-        _requestBlogAPI = [[IMMsgBlogListAPI alloc] init];
-    }
-    return _requestBlogAPI;
 }
 
 - (MTTPhotographyHelper *)photographyHelper {
@@ -184,7 +186,11 @@ static CGFloat const kGrayIntervalHeight = 10;
         xunxinModel = [_dataArray objectAtIndex:indexPath.section];
     }
     
-    return 40 + 66 + xunxinModel.photoViewHeight + xunxinModel.contentHeight;
+    if (xunxinModel.contentHeight > 120) {
+        return 40 + 66 + xunxinModel.photoViewHeight + 120;
+    }else {
+        return 40 + 66 + xunxinModel.photoViewHeight + xunxinModel.contentHeight;
+    }
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -196,7 +202,7 @@ static CGFloat const kGrayIntervalHeight = 10;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.delegate = self;
     
-    [cell setXunxinModel:self.dataArray[indexPath.section] isList:YES And:indexPath.section blogType:self.requestBlogType];
+    [cell setXunxinModel:self.dataArray[indexPath.section] isList:YES And:indexPath.section blogType:self.requestBlogType isShowDetailText:NO];
     
     return cell;
 }
@@ -217,16 +223,7 @@ static CGFloat const kGrayIntervalHeight = 10;
 
 - (void)dealWithTableViewDatas:(NSArray *)obj
 {
-    // 过滤掉好友和关注用户的blogs数据
-    if (self.requestBlogType == BlogTypeBlogTypeRcommend) {
-        XunxinModel *model = obj[0];
-        NSString *userID = [self.myUsersDictM objectForKey:[NSString stringWithFormat:@"user_%@", model.writerUserId]];
-        if (userID.length == 0) {
-            [_dataArray addObjectsFromArray:obj];
-        }
-    }else {
-        [_dataArray addObjectsFromArray:obj];
-    }
+    [_dataArray addObjectsFromArray:obj];
     
     // 插入数据库(1-推荐，2-好友，3-关注)
     NSString *blogType = [NSString stringWithFormat:@"%zd", self.requestBlogType];
@@ -276,15 +273,28 @@ static CGFloat const kGrayIntervalHeight = 10;
     [addConcern requestWithObject:model.writerUserId Completion:^(id response, NSError *error) {
         
         [response enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//            NSLog(@"%@--%zd", obj, idx);
             NSString *status = nil;
             if (idx == 0) {
                 status = [NSString stringWithFormat:@"%@", obj];
             }
-            
             if ([status isEqualToString:@"0"]) {
                 // 添加关注
-                [self blogBtn:careBtn status:@"关注成功" btnTitle:@"已关注" btnTitleColor:[UIColor lightGrayColor]];
+                UIColor *titleColor = [UIColor colorWithRed:14.0/255.0 green:207.0/255.0 blue:49.0/255.0 alpha:1.0];
+                [self blogBtn:careBtn status:@"关注成功" btnTitle:@"-关注" btnTitleColor:titleColor];
+                
+                GetUserInfoAPI *userInfoAPI = [[GetUserInfoAPI alloc] init];
+                [userInfoAPI requestWithObject:@[model.writerUserId] Completion:^(NSArray *response, NSError *error) {
+                    [response enumerateObjectsUsingBlock:^(MTTUserEntity *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        // 缓存本地
+//                        [[DDUserModule shareInstance] addToAttention:obj];
+                        // 添加到数据库
+                        [[MTTDatabaseUtil instance] insertAllUser:@[obj] completion:^(NSError *error) {
+                            if (!error) {
+//                                DDLog(@"插入成功");
+                            }
+                        }];
+                    }];
+                }];
             }
         }];
     }];
@@ -301,6 +311,13 @@ static CGFloat const kGrayIntervalHeight = 10;
         if ([resultCode isEqualToString:@"0"]) {  // 取消关注
             UIColor *titleColor = [UIColor colorWithRed:14.0/255.0 green:207.0/255.0 blue:49.0/255.0 alpha:1.0];
             [self blogBtn:careBtn status:@"已取消关注" btnTitle:@"+关注" btnTitleColor:titleColor];
+            
+            // 删除数据库
+            [[MTTDatabaseUtil instance] deleteFriendForSession:model.writerUserId completion:^(BOOL success) {
+                if (success) {
+                    [[DDUserModule shareInstance] cancelUser:model.writerUserId];
+                }
+            }];
         }
     }];
 }
@@ -331,6 +348,22 @@ static CGFloat const kGrayIntervalHeight = 10;
 //    XunxinModel *xunxinModel = [_dataArray objectAtIndex:index];
 }
 
+// 发blogs用户个人信息
+- (void)blogsUserInfo:(XunxinTableViewCell *)blogsCell
+{
+    XunxinModel *xunxinModel = blogsCell.xunxinModel;
+    GetUserInfoAPI *userInfoAPI = [[GetUserInfoAPI alloc] init];
+    [userInfoAPI requestWithObject:@[xunxinModel.writerUserId] Completion:^(NSArray *response, NSError *error) {
+        [response enumerateObjectsUsingBlock:^(MTTUserEntity *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            // 跳转用户信息控制器
+            PublicProfileViewControll *ppVC = [[PublicProfileViewControll alloc] init];
+            ppVC.user = obj;
+            
+            [self pushViewController:ppVC animated:YES];
+        }];
+    }];
+}
+
 - (void)userCareBtnOnClick:(XunxinTableViewCell *)userCell
 {
     UIButton *careBtn = userCell.careBtn;
@@ -339,27 +372,14 @@ static CGFloat const kGrayIntervalHeight = 10;
     if ([careBtn.titleLabel.text isEqualToString:@"+关注"]) {
         // 可关注
         [self careUser:careBtn andUserModel:xunxinModel];
-        // 更新blogs数据(3-关注)
-//        [[MTTDatabaseUtil instance] updateBlogsWithBlogType:@"3" andUserID:xunxinModel.writerUserId completion:^(NSError *error) {
-//            if (error) {
-//                DDLog(@"%@", error);
-//            }
-//        }];
         
-    }else if ([careBtn.titleLabel.text isEqualToString:@"已关注"]) {
+    }else if ([careBtn.titleLabel.text isEqualToString:@"-关注"]) {
         // 是否取消关注
         UIAlertController *alterVC = [UIAlertController alertControllerWithTitle:@"" message:@"确定要取消关注此人吗？" preferredStyle:UIAlertControllerStyleActionSheet];
         [alterVC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
         [alterVC addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
             // 取消关注
             [self cancellConcernUser:careBtn andUserModel:xunxinModel];
-            // 更新blogs数据(3-关注)
-//            NSString *blogType = [NSString stringWithFormat:@"%zd", self.requestBlogType];
-//            [[MTTDatabaseUtil instance] updateBlogsWithBlogType:blogType andUserID:xunxinModel.writerUserId completion:^(NSError *error) {
-//                if (error) {
-//                    DDLog(@"%@", error);
-//                }
-//            }];
         }]];
         
         [self presentViewController:alterVC animated:YES completion:nil];
@@ -377,7 +397,7 @@ static CGFloat const kGrayIntervalHeight = 10;
     switch (count) {
         case 100:  // 转发按钮
         {
-            [self shared];
+            [self shared:xunxinModel];
         }
             break;
             
@@ -394,16 +414,39 @@ static CGFloat const kGrayIntervalHeight = 10;
     }
 }
 
--(void)shared
+-(void)shared:(XunxinModel *)xunxinModel
 {
-    NSArray* imageArray = @[[UIImage imageNamed:@"header"]];
-    if (imageArray) {
+    //NSArray* imageArray = @[[UIImage imageNamed:@"header"]];
+    
+    UIImage *iconImage=[UIImage imageNamed:@"mshare"];
+    NSMutableArray*sharedArray=[[NSMutableArray alloc]initWithArray:xunxinModel.imgArray];
+    
+    if (sharedArray.count==0) {
+        
+
+        [sharedArray addObject:iconImage];
+    }
+    
+    
+    NSString *sharedContent=nil;
+    if (xunxinModel.content) {
+        sharedContent=xunxinModel.content;
+        
+
+    }else{
+    
+      sharedContent=@"";
+      
+    }
+    
+    if (sharedArray) {
+        
         
         NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
-        [shareParams SSDKSetupShareParamsByText:@"分享内容"
-                                         images:imageArray
-                                            url:[NSURL URLWithString:@"http://mob.com"]
-                                          title:@"分享标题"
+        [shareParams SSDKSetupShareParamsByText: sharedContent
+                                         images:sharedArray
+                                            url:[NSURL URLWithString:[NSString stringWithFormat:@"http://mobile.10thcommune.com/blog/%@/tenth",xunxinModel.blogId]]
+                                          title:@"第十空间"
                                            type:SSDKContentTypeAuto];
         //2、分享（可以弹出我们的分享菜单和编辑界面）
         [ShareSDK showShareActionSheet:self.view //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响
@@ -475,22 +518,22 @@ static CGFloat const kGrayIntervalHeight = 10;
                              };
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        
         [self.requestBlogAPI requestWithObject:params Completion:^(NSArray *response, NSError *error)
          {
-             [_dataArray removeAllObjects];
-             
+             [self.dataArray removeAllObjects];
              [response enumerateObjectsUsingBlock:^(NSArray* _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop)
               {
                   // 数据处理
-                  [self dealWithTableViewDatas:obj];
-                  
-                  dispatch_async(dispatch_get_main_queue(), ^{
-                      [self.tableView reloadData];
-                  });
+                  if (obj) {
+                      [self dealWithTableViewDatas:obj];
+                  }
               }];
              self.currentPage++;
              self.isFirstLoad = NO;
+             
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [self.tableView reloadData];
+             });
          }];
     });
 }
@@ -512,9 +555,10 @@ static CGFloat const kGrayIntervalHeight = 10;
                              @"pageSize": @"10"
                              };
     
+    IMMsgBlogListAPI *requestBlogAPI = [[IMMsgBlogListAPI alloc] init];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // 请求数据
-        [self.requestBlogAPI requestWithObject:params Completion:^(NSArray *response, NSError *error)
+        [requestBlogAPI requestWithObject:params Completion:^(NSArray *response, NSError *error)
          {
              if (response.count) {
                  [response enumerateObjectsUsingBlock:^(NSArray* _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop)

@@ -85,11 +85,22 @@ CGFloat const dd_bubbleUpDown = 20;                //气泡到上下边缘的距
 -(void)openProfilePage
 {
     if (self.currentUserID) {
+        
+       if ([self.currentUserID isEqualToString:[NSString stringWithFormat:@"user_%@",TheRuntime.user.userID]])
+       {
+              PublicProfileViewControll *public = [PublicProfileViewControll new];
+           public.user=TheRuntime.user;
+           [[ChattingMainViewController shareInstance] pushViewController:public animated:YES];
+           
+       
+       }else{
+           
         [[DDUserModule shareInstance] getUserForUserID:self.currentUserID Block:^(MTTUserEntity *user) {
             PublicProfileViewControll *public = [PublicProfileViewControll new];
             public.user=user;
             [[ChattingMainViewController shareInstance] pushViewController:public animated:YES];
         }];
+       }
     }
 }
 -(void)clickTheSendAgain
@@ -137,12 +148,20 @@ CGFloat const dd_bubbleUpDown = 20;                //气泡到上下边缘的距
     }
     // 设置头像和昵称
     self.currentUserID=content.senderId;
+   
+    if ([content.senderId isEqualToString:[NSString stringWithFormat:@"user_%@",TheRuntime.user.userID]]) {
+        [self.userAvatar sd_setImageWithURL:[NSURL URLWithString:TheRuntime.user.avatar] placeholderImage:[UIImage imageNamed:@"header"]];
+        [self.userName setText:TheRuntime.user.nick];
+    }else{
+    
+        
+       
     [[DDUserModule shareInstance] getUserForUserID:content.senderId Block:^(MTTUserEntity *user) {
-        NSURL* avatarURL = [NSURL URLWithString:[user getAvatarUrl]];
-        [self.userAvatar sd_setImageWithURL:avatarURL placeholderImage:[UIImage imageNamed:@"user_placeholder"]];
+        NSURL* avatarURL = [NSURL URLWithString:user.avatar];
+        [self.userAvatar sd_setImageWithURL:avatarURL placeholderImage:[UIImage imageNamed:@"header"]];
         [self.userName setText:user.nick];
     }];
-    
+    }
     //设置昵称是否隐藏
     if (self.session.sessionType == SessionTypeSessionTypeSingle || self.location == DDBubbleRight) {
         [self.userName mas_updateConstraints:^(MASConstraintMaker *make) {

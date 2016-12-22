@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "MTTConfig.h"
 @interface SecurityUtil : NSObject 
 
 #pragma mark - base64

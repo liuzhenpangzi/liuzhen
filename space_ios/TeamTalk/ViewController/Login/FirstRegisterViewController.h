@@ -9,5 +9,6 @@
 #import "MTTBaseViewController.h"
 
 @interface FirstRegisterViewController : MTTBaseViewController
+@property(nonatomic,assign)BOOL isRegister;//yes 注册 no 找回密码
 
 @end

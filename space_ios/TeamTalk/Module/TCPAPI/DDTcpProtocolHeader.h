@@ -116,6 +116,8 @@ enum
 //friend
 enum
 {
+    CID_BUDDY_LIST_USER_INFO_REQUEST                    = 0x0204,  // 用户信息
+    CID_BUDDY_LIST_USER_INFO_RESPONSE                   = 0x0205,
     CID_BUDDY_LIST_SEARCH_USER_REQUEST                  = 0x0216,
     CID_BUDDY_LIST_SEARCH_USER_RESPONSE                 = 0x0217,
     CID_BUDDY_LIST_ADD_FRIEND_REQUEST                   = 0x0218,
@@ -135,7 +137,9 @@ enum
     CID_BUDDY_LIST_ALL_ONLINE_USER_CNT_REQUEST          = 0x0228,  // 所有在线用户
     CID_BUDDY_LIST_ALL_ONLINE_USER_CNT_RESPONSE         = 0x0229,
     CID_BUDDY_LIST_UPDATE_USER_INFO_REQUEST             = 0x022a,
-    CID_BUDDY_LIST_UPDATE_USER_INFO_RESPONSE            = 0x022b
+    CID_BUDDY_LIST_UPDATE_USER_INFO_RESPONSE            = 0x022b,
+    CID_BUDDY_LIST_RECOMMEND_LIST_REQUEST               = 0x022c,  // 首页推荐用户
+    CID_BUDDY_LIST_RECOMMEND_LIST_RESPONSE              = 0x022d,
 };
 
 //blog

@@ -13,6 +13,7 @@
 static uint16_t theSeqNo = 0;
 
 @implementation DDSuperAPI
+
 - (void)requestWithObject:(id)object Completion:(RequestCompletion)completion
 {
     //seqNo
@@ -39,7 +40,6 @@ static uint16_t theSeqNo = 0;
     //数据打包
     Package package = [(id<DDAPIScheduleProtocol>)self packageRequestObject];
     NSMutableData *requestData = package(object,_seqNo);
-    
     //发送
     if (requestData)
     {

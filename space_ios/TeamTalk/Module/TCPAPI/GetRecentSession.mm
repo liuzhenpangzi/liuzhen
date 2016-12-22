@@ -89,18 +89,19 @@
             
             NSString *string =[[NSString alloc] initWithData:sessionInfo.latestMsgData encoding:NSUTF8StringEncoding];
 
-//            char* pOut;
-//            uint32_t nOutLen;
-//            uint32_t nInLen = strlen([string cStringUsingEncoding:NSUTF8StringEncoding]);
-//             int nRet =  DecryptMsg([string cStringUsingEncoding:NSUTF8StringEncoding], nInLen, &pOut, nOutLen);
-//            if (nRet == 0) {
-//                session.lastMsg=[NSString stringWithCString:pOut encoding:NSUTF8StringEncoding];
-//                Free(pOut);
-                session.lastMsg=string;
-//            }else{
-//                session.lastMsg=@" ";
-//            }
+            char* pOut;
+            uint32_t nOutLen;
+            uint32_t nInLen = strlen([string cStringUsingEncoding:NSUTF8StringEncoding]);
+             int nRet =  DecryptMsg([string cStringUsingEncoding:NSUTF8StringEncoding], nInLen, &pOut, nOutLen);
+            if (nRet == 0) {
+                session.lastMsg=[NSString stringWithCString:pOut encoding:NSUTF8StringEncoding];
+                Free(pOut);
+            
+            }else{
+               session.lastMsg=string;
+            }
           
+            
             session.lastMsgID=sessionInfo.latestMsgId;
             session.timeInterval=updated_time;
             [array addObject:session];

@@ -35,12 +35,21 @@
     
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.title=nil;
+
+
+
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
 
     [super viewWillAppear:animated];
     
-    
+    self.title=@"新的朋友";
     [[MTTDatabaseUtil instance]getAddFriendMsg:^(NSArray *contacts, NSError *error) {
         
         self.dataArray =[[NSMutableArray alloc]initWithArray:contacts];

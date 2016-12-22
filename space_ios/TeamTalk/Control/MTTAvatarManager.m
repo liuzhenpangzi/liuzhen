@@ -108,7 +108,7 @@
                 _currentLeftImages --;
                 if (!image)
                 {
-//                    image = [UIImage imageNamed:@"user_placeholder"];
+//                    image = [UIImage imageNamed:@"header"];
                     image = [UIImage initWithColor:RGB(228, 227, 230) rect:CGRectMake(0, 0, 100, 100)];
                     if (url && [url absoluteString].length > 0)
                     {

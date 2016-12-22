@@ -685,6 +685,7 @@ typedef NS_ENUM(NSUInteger, PanelStatus)
     cell.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:1];
     if ([object isKindOfClass:[MTTMessageEntity class]])
     {
+        
         MTTMessageEntity* message = (MTTMessageEntity*)object;
         
         NSString *str=[SecurityUtil decryptAESData:message.msgContent];

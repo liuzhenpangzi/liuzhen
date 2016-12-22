@@ -136,7 +136,7 @@ static NSInteger MyItemCount = 20;
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:newItem inSection:0];
     [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
     
-    self.pageControl.currentPage = newItem % 50;
+    self.pageControl.currentPage = newItem % 10;
 }
 
 #pragma mark - 定时器事件

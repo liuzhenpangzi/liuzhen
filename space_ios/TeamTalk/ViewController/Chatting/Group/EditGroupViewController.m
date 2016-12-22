@@ -111,7 +111,7 @@
             
             //if(user.pyname.length != 0){
                 //NSString *fl = [[user.pyname substringWithRange:NSMakeRange(0, 1)] uppercaseString];
-            NSString *fl = [user.name substringWithRange:NSMakeRange(0, 1)];
+            NSString *fl = [user.nick substringWithRange:NSMakeRange(0, 1)];
             
             char fi = [MTTUtil getFirstChar:fl];
             fl = [[NSString stringWithFormat:@"%c",fi] uppercaseString];
@@ -285,7 +285,7 @@
            [cell setCellToSelected:NO];
         }
         cell.nameLabel.text=user.nick;
-        UIImage* placeholder = [UIImage imageNamed:@"user_placeholder"];
+        UIImage* placeholder = [UIImage imageNamed:@"header"];
         [cell.avatar sd_setImageWithURL:[NSURL URLWithString:[user getAvatarUrl]] placeholderImage:placeholder];
         return cell;
         

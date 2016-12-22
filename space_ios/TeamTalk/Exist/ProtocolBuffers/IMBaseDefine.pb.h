@@ -142,6 +142,8 @@ typedef NS_ENUM(SInt32, BuddyListCmdID) {
   BuddyListCmdIDCidBuddyListAllOnlineUserCntResponse = 553,
   BuddyListCmdIDCidBuddyListUpdateUserInfoRequest = 554,
   BuddyListCmdIDCidBuddyListUpdateUserInfoResponse = 555,
+  BuddyListCmdIDCidBuddyListRecommendListRequest = 556,
+  BuddyListCmdIDCidBuddyListRecommendListResponse = 557,
 };
 
 BOOL BuddyListCmdIDIsValidValue(BuddyListCmdID value);

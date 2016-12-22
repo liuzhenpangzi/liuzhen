@@ -64,7 +64,7 @@
         NSString *user_nick_name = nil;
         NSString *avatar_url = nil;
         
-        [headImageView sd_setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:[UIImage imageNamed:@"user_placeholder"]];
+        [headImageView sd_setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:[UIImage imageNamed:@"header"]];
         userName.text = user_nick_name;
         content.text = [NSString stringWithFormat:@"%@ 请求添加好友",user_nick_name];
     }else{
@@ -75,7 +75,7 @@
     NSString *user_nick_name = [receiveDic objectForKey:@"user_nick_name"];
     NSString *avatar_url = [receiveDic objectForKey:@"avatar_url"];
     
-    [headImageView sd_setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:[UIImage imageNamed:@"user_placeholder"]];
+    [headImageView sd_setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:[UIImage imageNamed:@"header"]];
     userName.text = user_nick_name;
     content.text = [NSString stringWithFormat:@"%@ 请求添加好友",user_nick_name];
     }

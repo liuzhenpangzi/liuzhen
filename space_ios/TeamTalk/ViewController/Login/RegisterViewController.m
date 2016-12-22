@@ -121,7 +121,7 @@
     line5.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self.view addSubview:line5];
 
-    // 确认密码
+    
     self.inviteTF= [self createUserInputTextFieldWithFrame:CGRectMake(30, CGRectGetMaxY(self.confirmPasswordTF.frame), SCREEN_WIDTH - 60, 45)
                                                          placeholder:@"邀请码(可不填)"
                                                      secureTextEntry:YES
@@ -274,6 +274,9 @@
     [dic setObject:[MyMD5 md5:_passwordTF.text] forKey:@"passwd"];
     //[dic setObject:_nickNameTF.text forKey:@"nick"];
     
+    if (self.inviteTF.text.length!=0) {
+        [dic setObject:self.inviteTF.text forKey:@"referral_code"];
+    }
 
     NSString *landu_arg = [dic jsonString];
     NSDictionary *postDic = @{@"arg":landu_arg};
@@ -308,6 +311,14 @@
         
         
         }
+        else if([error_code isEqualToString:@"5"])
+        {
+            
+            [self showErrorInfoWithMessage:error_message hideAfterDelay:1.5f];
+            
+            
+        }
+
         else {
             [self showErrorInfoWithMessage:error_message hideAfterDelay:1.5f];
           [self performSelector:@selector(delayMethod) withObject:nil afterDelay:1.0f];

@@ -29,6 +29,7 @@
 #import "SCLAlertView.h"
 #import "DDAllUserAPI.h"
 #import "SendAddtionMsgViewController.h"
+
 @interface AddFriendViewController ()
 
 @end
@@ -40,8 +41,6 @@
     // Do any additional setup after loading the view.
     [self render];
     [self initData];
-    
-
 }
 
 -(void)render
@@ -83,7 +82,7 @@
 
 -(void)initData
 {
-    UIImage* placeholder = [UIImage imageNamed:@"user_placeholder"];
+    UIImage* placeholder = [UIImage imageNamed:@"header"];
     [_avatar sd_setImageWithURL:[NSURL URLWithString:[self.user get300AvatarUrl]] placeholderImage:placeholder];
     [_name setText:self.user.nick];
     [_cname setText:self.user.name];
@@ -149,7 +148,7 @@
         [_addBtn.layer setCornerRadius:5];
         [_addBtn setTitle:@"添加到通讯录" forState:UIControlStateNormal];
         [_addBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_addBtn setBackgroundColor:TTBLUE];
+        [_addBtn setBackgroundColor:RGB(28, 216, 27)];
         [_addBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(footView.mas_top).offset(90);
             make.height.mas_equalTo(40);
@@ -161,9 +160,9 @@
         [footView addSubview:_followBtn];
         [_followBtn setClipsToBounds:YES];
         [_followBtn.layer setCornerRadius:5];
-        [_followBtn setTitle:[NSString stringWithFormat:@"关注%@",_user.name] forState:UIControlStateNormal];
+        [_followBtn setTitle:[NSString stringWithFormat:@"关注%@",_user.nick] forState:UIControlStateNormal];
         [_followBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_followBtn setBackgroundColor:TTBLUE];
+        [_followBtn setBackgroundColor:RGB(28, 216, 27)];
         [_followBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(footView.mas_top).offset(25);
             make.height.mas_equalTo(40);
@@ -304,30 +303,21 @@
 
 -(void)followfriend
 {
-    
-  
     FollowUserAPI *follow = [[FollowUserAPI alloc] init];
     
     [follow requestWithObject:self.user.userID Completion:^(id response, NSError *error) {
         [response enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSString *resultcode = [NSString stringWithFormat:@"%@",obj];
-            if([resultcode isEqualToString:@"0"]){
-
-                SCLAlertView *alert = [SCLAlertView new];
-                [alert showSuccess:self title:[NSString stringWithFormat:@"成功关注%@",_user.name] subTitle:nil closeButtonTitle:@"确定" duration:0];
-                [[DDUserModule shareInstance]addToAttention:self.user];
-              
-                [self performSelector:@selector(delayMethod) withObject:nil afterDelay:1.0f];
-                
-            }
-  
             
+            if([resultcode isEqualToString:@"0"]){
+                SCLAlertView *alert = [SCLAlertView new];
+                [alert showSuccess:self title:[NSString stringWithFormat:@"成功关注%@",_user.nick] subTitle:nil closeButtonTitle:@"确定" duration:0];
+                
+                [[DDUserModule shareInstance] addToAttention:self.user];    
+                [self performSelector:@selector(delayMethod) withObject:nil afterDelay:1.0f];
+            }
         }];
     }];
-    
-    
- 
-    
 }
 
 -(void)delayMethod

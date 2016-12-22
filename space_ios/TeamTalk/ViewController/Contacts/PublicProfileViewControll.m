@@ -32,6 +32,7 @@
 #import "DeleteFriendAPI.h"
 #import "AddFriendAPI.h"
 #import "SendAddtionMsgViewController.h"
+#import "CancellConcernAPI.h"
 
 @interface PublicProfileViewControll ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
@@ -78,7 +79,7 @@
     _chatBtn   = [UIButton new];
     _callBtn   = [UIButton new];
     _deleteBtn = [UIButton new];
-    
+    _cancelAttendBtn= [UIButton new];
     // 获取签名
     DDUserDetailInfoAPI *request = [DDUserDetailInfoAPI new];
     NSMutableArray *array = [[NSMutableArray alloc]init];
@@ -95,43 +96,32 @@
 
 -(void)initData
 {
-    UIImage* placeholder = [UIImage imageNamed:@"user_placeholder"];
+    UIImage* placeholder = [UIImage imageNamed:@"header"];
     
-    
-    
-    //[_avatar sd_setImageWithURL:[NSURL URLWithString:[self.user get300AvatarUrl]] placeholderImage:placeholder];
-    
-    if (self.user.avatar&&![self.user.avatar isEqualToString:@"" ]) {
-        
-        
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            NSData *data = [NSData dataWithContentsOfURL:[NSURL  URLWithString:self.user.avatar]];
-            UIImage *image = [UIImage imageWithData:data]; // 取得图片
-            
-            if (data != nil) {
-                //通知主线程刷新
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    
-                    _avatar.image=image;
-                });
-            }
-            
-        });
-        
-    }else{
-        
-        
-        _avatar.image=placeholder;
-        
-    }
-
-    
+     [_avatar sd_setImageWithURL:[NSURL URLWithString:self.user.avatar] placeholderImage:placeholder];
+//    if (self.user.avatar&&![self.user.avatar isEqualToString:@"" ]) {
+//        
+//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            NSData *data = [NSData dataWithContentsOfURL:[NSURL  URLWithString:self.user.avatar]];
+//            UIImage *image = [UIImage imageWithData:data]; // 取得图片
+//            if (data != nil) {
+//                //通知主线程刷新
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    
+//                    _avatar.image=image;
+//                });
+//            }
+//        });
+//    }else{
+//        _avatar.image=placeholder;
+//    }
+//    
     if (self.user.nick.length) {
         [_name setText:self.user.nick];
     }else {
         [_name setText:self.user.name];
     }
-    [_cname setText:self.user.name];
+    [_cname setText:self.user.signature];
 }
 
 - (void)showAvatar:(UITapGestureRecognizer*)recognizer
@@ -156,32 +146,24 @@
     // 增加图片放大功能
     UIImage* placeholder = [UIImage initWithColor:TTBG rect:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH)];
     _avatarView = [[UIImageView alloc]init];
-    //[_avatarView sd_setImageWithURL:[NSURL URLWithString:self.user.avatar] placeholderImage:placeholder];
-    if (self.user.avatar&&![self.user.avatar isEqualToString:@"" ]) {
-        
-        
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            NSData *data = [NSData dataWithContentsOfURL:[NSURL  URLWithString:self.user.avatar]];
-            UIImage *image = [UIImage imageWithData:data]; // 取得图片
-
-             if (data != nil) {
-            //通知主线程刷新
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                   _avatarView.image=image;
-            });
-             }
-            
-        });
-        
-    }else{
-        
-        
-        _avatarView.image=placeholder;
-        
-    }
-
-    
+    [_avatarView sd_setImageWithURL:[NSURL URLWithString:self.user.avatar] placeholderImage:placeholder];
+//    if (self.user.avatar&&![self.user.avatar isEqualToString:@"" ]) {
+//        
+//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            NSData *data = [NSData dataWithContentsOfURL:[NSURL  URLWithString:self.user.avatar]];
+//            UIImage *image = [UIImage imageWithData:data]; // 取得图片
+//             if (data != nil) {
+//                 //通知主线程刷新
+//                 dispatch_async(dispatch_get_main_queue(), ^{
+//                   _avatarView.image=image;
+//                 });
+//             }
+//        });
+//        
+//    }else{
+//        _avatarView.image=placeholder;
+//    }
+//    
     [_avatar setUserInteractionEnabled:YES];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showAvatar:)];
     [_avatar addGestureRecognizer:tap];
@@ -197,7 +179,6 @@
         make.centerY.equalTo(headView).offset(-15);
         make.size.mas_equalTo(CGSizeMake(200, 20));
     }];
-    
     
     [_cname setFont:systemFont(15)];
     [_cname setTextColor:TTGRAY];
@@ -237,7 +218,7 @@
         [_addBtn.layer setCornerRadius:5];
         [_addBtn setTitle:@"添加好友" forState:UIControlStateNormal];
         [_addBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_addBtn setBackgroundColor:TTBLUE];
+        [_addBtn setBackgroundColor:RGB(28, 216, 27)];
         [_addBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(footView.mas_top).offset(15);
             make.height.mas_equalTo(40);
@@ -245,6 +226,25 @@
             make.right.mas_equalTo(-15);
         }];
         [_addBtn addTarget:self action:@selector(addFriend) forControlEvents:UIControlEventTouchUpInside];
+        
+        
+        //取消关注按钮
+        [footView addSubview:_cancelAttendBtn];
+        [_cancelAttendBtn setClipsToBounds:YES];
+        [_cancelAttendBtn.layer setCornerRadius:5];
+        [_cancelAttendBtn.layer setBorderColor:RGB(222, 222, 226).CGColor];
+        [_cancelAttendBtn.layer setBorderWidth:1];
+        [_cancelAttendBtn setTitle:@"取消关注" forState:UIControlStateNormal];
+        [_cancelAttendBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal]; // RGB(69, 69, 69)
+        [_cancelAttendBtn setBackgroundColor:[UIColor whiteColor]];
+        [_cancelAttendBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(_addBtn.mas_bottom).offset(15);
+            make.height.mas_equalTo(40);
+            make.left.mas_equalTo(15);
+            make.right.mas_equalTo(-15);
+        }];
+        [_cancelAttendBtn addTarget:self action:@selector(_cancelAttend) forControlEvents:UIControlEventTouchUpInside];
+        
     }else{
     
     if(![self.user.objID isEqualToString:TheRuntime.user.objID]){
@@ -254,7 +254,7 @@
         [_chatBtn.layer setCornerRadius:5];
         [_chatBtn setTitle:@"发送消息" forState:UIControlStateNormal];
         [_chatBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_chatBtn setBackgroundColor:[UIColor colorWithRed:14.0/255.0 green:207.0/255.0 blue:49.0/255.0 alpha:1.0]];
+        [_chatBtn setBackgroundColor:[UIColor colorWithRed:28.0/255.0 green:216.0/255.0 blue:27.0/255.0 alpha:1.0]];
         [_chatBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(footView.mas_top).offset(15);
             make.height.mas_equalTo(40);
@@ -350,26 +350,39 @@
     switch (indexPath.row) {
         case 0:
         {
-            [cell setDesc:@"部门" detail:self.user.department];
-            cell.userInteractionEnabled = NO;
+            NSString*str=nil;
+            if (self.user.sex==0||self.user.sex==1) {
+                str=@"男";
+            }else
+            {
+                str=@"女";
+                
+            }
+            
+            
+            [cell setDesc:@"性别" detail:str];
+            
         }
             break;
         case 1:
-        {
-            [cell setDesc:@"邮箱" detail:self.user.email];
-        }
-            break;
-        case 2:
         {
             [cell setDesc:@"签名" detail:self.user.signature];
             if(![self.user.objID isEqualToString:TheRuntime.user.objID]){
                 cell.userInteractionEnabled = NO;
             }
+            
+          
+        }
+            break;
+        case 2:
+        {
+           
+            [cell setDesc:@"邀请码" detail:self.user.name];
+            cell.userInteractionEnabled = NO;
         }
             break;
         case 3:
         {
-            
             [cell setDesc:@"粉丝数" detail:[NSString stringWithFormat:@"%ld",self.user.fansCount]];
             if(![self.user.objID isEqualToString:TheRuntime.user.objID]){
                 cell.userInteractionEnabled = NO;
@@ -448,11 +461,7 @@
 
 -(void)addFriend
 {
-
-//    NSLog(@"%@",self.user.userID);
-//    NSLog(@"%@",TheRuntime.user.userID);
-
-    SendAddtionMsgViewController *samvc=[[SendAddtionMsgViewController alloc]init];
+    SendAddtionMsgViewController *samvc = [[SendAddtionMsgViewController alloc]init];
     
     samvc.userID=self.user.userID;
     [self pushViewController:samvc animated:NO];
@@ -501,27 +510,57 @@
     }
 }
 
+-(void)_cancelAttend
+{
+    CancellConcernAPI *cancelAPI = [[CancellConcernAPI alloc] init];
+    [cancelAPI requestWithObject:self.user.userID Completion:^(id response, NSError *error) {
+        
+        if ([response[@"resultCode"] intValue] == 0) {
+            [[MTTDatabaseUtil instance]deleteFriendForSession:self.user.objID completion:^(BOOL success) {
+                if (success) {
+                    [[DDUserModule shareInstance] cancelUser: self.user.userID];
+                    [self popViewControllerAnimated:NO];
+                }
+            }];
+        }
+    }];
+}
+
 -(void)deleteFriend
 {
-    DeleteFriendAPI *delete = [[DeleteFriendAPI alloc] init];
     
-    [delete  requestWithObject:self.user.userID Completion:^(id response, NSError *error) {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:[NSString stringWithFormat:@"删除好友%@",self.user.nick]preferredStyle:  UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
-        [response enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSString *resultcode = [NSString stringWithFormat:@"%@",obj];
+        DeleteFriendAPI *delete = [[DeleteFriendAPI alloc] init];
+        
+        [delete  requestWithObject:self.user.userID Completion:^(id response, NSError *error) {
             
-            if([resultcode isEqualToString:@"0"]){
+            [response enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                NSString *resultcode = [NSString stringWithFormat:@"%@",obj];
                 
-                [[DDUserModule shareInstance]deleteFriendUser:self.user.userID];
-                [[MTTDatabaseUtil instance]deleteFriendForSession:self.user.objID completion:^(BOOL success) {
+                if([resultcode isEqualToString:@"0"]){
                     
-                }];
-            }else{
-                
-            }
-            [self popViewControllerAnimated:YES];
+                    [[DDUserModule shareInstance]deleteFriendUser:self.user.userID];
+                    [[MTTDatabaseUtil instance]deleteFriendForSession:self.user.objID completion:^(BOOL success) {
+                        
+                    }];
+                }else{
+                    
+                }
+                [self popViewControllerAnimated:YES];
+            }];
         }];
-    }];
+        //点击按钮的响应事件；
+    }]];
+    
+    //弹出提示框；
+    [self presentViewController:alert animated:true completion:nil];
+    
+    
+    
+    
 }
 
 -(void)delayMethod
@@ -706,8 +745,6 @@
 //    } failure:^(id error) {
 //        
 //    }];
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated

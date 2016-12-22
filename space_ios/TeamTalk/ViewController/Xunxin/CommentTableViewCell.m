@@ -29,7 +29,7 @@
         
         // 头像
         headImg = [[UIImageView alloc] initWithFrame:CGRectMake(12, 5, 35, 35)];
-        headImg.image = [UIImage imageNamed:@"user_placeholder"];
+        headImg.image = [UIImage imageNamed:@"header"];
         [headImg.layer setCornerRadius:17.5];
         [headImg setUserInteractionEnabled:YES];
         [headImg setContentMode:UIViewContentModeScaleAspectFill];

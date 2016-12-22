@@ -29,17 +29,14 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self){
-        
         self.title = @"搜索好友";
         dataArray = [NSMutableArray array];
-        
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -109,7 +106,7 @@
         user = [dataArray objectAtIndex:indexPath.row];
         AddFriendViewController *add = [AddFriendViewController new];
         add.user=user;
-        NSLog(@"--- add.user == %@",add.user);
+//        NSLog(@"--- add.user == %@",add.user);
         [self pushViewController:add animated:YES];
     }
 }

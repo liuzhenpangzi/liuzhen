@@ -13,6 +13,7 @@
 #import "NSDictionary+JSON.h"
 #import "MBProgressHUD.h"
 #import "RegisterViewController.h"
+#import "RePasswordViewController.h"
 @interface FirstRegisterViewController ()<UITextFieldDelegate>
 {
 
@@ -197,7 +198,11 @@
     
     NSMutableDictionary * dic = [[NSMutableDictionary alloc] init];
     [dic setObject:_phoneTF.text forKey:@"phone"];
-    
+    if (!_isRegister) {
+        
+        [dic setObject:@"2" forKey:@"tag"];
+        
+    }
     
     [dic setObject:_codeTF.text  forKey:@"valid_code2"];
     
@@ -212,16 +217,33 @@
     [manager POST:FIRSTREGIST parameters:postDic success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
-         NSLog(@"%@",responseDictionary);
-         NSLog(@"%@",responseDictionary[@"error_message"]);
+       
          
          if ([responseDictionary[@"error_code"]intValue]==0) {
              
-             RegisterViewController*reg=[[RegisterViewController alloc]init];
-             reg.phoneString=_phoneTF.text;
              
              
-             [self pushViewController:reg animated:NO];
+             
+             
+             if (self.isRegister) {
+                 RegisterViewController*reg=[[RegisterViewController alloc]init];
+                 reg.phoneString=_phoneTF.text;
+                 
+                 
+                 [self pushViewController:reg animated:NO];
+             }else{
+             
+                 RePasswordViewController *req=[[RePasswordViewController alloc]init];
+                 
+                 req.phoneString=_phoneTF.text;
+                 
+                 
+                 [self pushViewController:req animated:NO];
+             
+             
+             }
+             
+            
          }
          else if([responseDictionary[@"error_code"]intValue]==1){
          
@@ -239,7 +261,8 @@
          
             [self showErrorInfoWithMessage:[NSString stringWithFormat:@"%@",responseDictionary[@"error_message"]] hideAfterDelay:1.5f];
           
-             [self.navigationController popViewControllerAnimated:NO];
+             [self performSelector:@selector(delayMethod) withObject:nil afterDelay:1.0f];
+             
          }
          
          
@@ -256,6 +279,11 @@
     
 }
 
+-(void)delayMethod
+{
+
+[self.navigationController popViewControllerAnimated:NO];
+}
 
 - (void)showErrorInfoWithMessage:(NSString *)errorMessage hideAfterDelay:(NSTimeInterval)delay {
     MBProgressHUD *tips = [self showNoticeWithMessage:errorMessage modeOfHUD:MBProgressHUDModeText];

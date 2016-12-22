@@ -7,6 +7,7 @@
 //
 
 #import "HomeRecommendViewController.h"
+#import "PublicProfileViewControll.h"
 #import "RecommendFirstItemView.h"
 #import "InfiniteScrollView.h"
 #import "HomeViewCell.h"
@@ -17,23 +18,36 @@
 #import "UIImage+Orientation.h"
 /** API*/
 #import "DDSendPhotoMessageAPI.h"
+#import "HomeRecommendUserListAPI.h"
+#import <AliyunOSSiOS/OSSService.h>
+#import "GetUserInfoAPI.h"
 
 #define HomeScreenWidth [UIScreen mainScreen].bounds.size.width
 #define HomeScreenHeight [UIScreen mainScreen].bounds.size.height
 
 static CGFloat const margin = 3; // item 的间距
 static int const cols = 2;
-static NSString *const ID = @"cell";
+static NSString *const recommendReuseIdentifier = @"recommendCell";
 #define itemWidth (self.view.frame.size.width - ((cols - 1) * margin)) / cols
 
 @interface HomeRecommendViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, RecommendFirstItemViewDelegate, InfiniteScrollViewDelegate>
 
 @property (nonatomic, weak)   UICollectionView *collectionView;
+/** 用户昵称*/
 @property (nonatomic, strong) NSMutableArray *dataArray;
+/** 用户图片URL*/
+@property (nonatomic, strong) NSMutableArray *urlArray;
+/** 用户id*/
+@property (nonatomic, strong) NSMutableArray *idArray;
+
 @property (nonatomic, weak)   RecommendFirstItemView *firstItemView;
+/** 定时上传图片*/
 @property (nonatomic, weak)   NSTimer *timer;
+/** 定时刷新请求数据*/
+@property (nonatomic, weak)   NSTimer *refreshTimer;
 @property (nonatomic, assign) BOOL cameraIsOpen;
 @property (nonatomic, weak)   InfiniteScrollView *scrollView;
+@property (nonatomic, assign) NSInteger page;
 @property (nonatomic, strong) MTTUserEntity *userEntity;
 
 @end
@@ -42,14 +56,26 @@ static NSString *const ID = @"cell";
 
 #pragma mark - lazy
 
+- (NSMutableArray *)idArray
+{
+    if (_idArray == nil) {
+        _idArray = [NSMutableArray array];
+    }
+    return _idArray;
+}
+
+- (NSMutableArray *)urlArray
+{
+    if (_urlArray == nil) {
+        _urlArray = [NSMutableArray array];
+    }
+    return _urlArray;
+}
+
 - (NSMutableArray *)dataArray
 {
     if (_dataArray == nil) {
         _dataArray = [NSMutableArray array];
-        
-        MTTUserEntity *userEntity = (MTTUserEntity *)TheRuntime.user;
-        self.userEntity = userEntity;
-        [_dataArray addObject:userEntity];
     }
     return _dataArray;
 }
@@ -60,24 +86,55 @@ static NSString *const ID = @"cell";
 {
     [super viewWillAppear:animated];
     
+    [self startRefreshTimer];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     
+    [self stopRefreshTimer];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.page = 1;
+    MTTUserEntity *userEntity = (MTTUserEntity *)TheRuntime.user;
+    self.userEntity = userEntity;
+    
     // 广告轮播器
     [self setupADView];
-    
     self.cameraIsOpen = NO;
+    
     // 创建collectionView
     [self setupHomeCollectionView];
+    
+    [self loadNewHomeRecommendDatas];
+    
+    // 注册监听
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(currentViewIsThisView) name:@"RecommendView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(currentViewIsAnotherView) name:@"FriendView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(currentViewIsAnotherView) name:@"ConcernView" object:nil];
+    // 控制器view将要消失的时候
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(currentViewIsAnotherView) name:@"HomeViewWillDisappear" object:nil];
+}
+
+#pragma mark - 监听事件
+
+- (void)currentViewIsThisView
+{
+    if (self.refreshTimer == nil) {
+        [self startRefreshTimer];
+    }
+}
+
+- (void)currentViewIsAnotherView
+{
+    if (self.refreshTimer) {
+        [self stopRefreshTimer];
+    }
 }
 
 #pragma mark - 创建view
@@ -86,11 +143,9 @@ static NSString *const ID = @"cell";
 {
     InfiniteScrollView *scrollView = [[InfiniteScrollView alloc] init];
     scrollView.imagesArray = @[
-                               [UIImage imageNamed:@"img_00"],
-                               [UIImage imageNamed:@"img_01"],
-                               [UIImage imageNamed:@"img_02"],
-                               [UIImage imageNamed:@"img_03"],
-                               [UIImage imageNamed:@"img_04"]
+//                               [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://mobile.10thcommune.com/html/images/ad01.jpg"]]],
+//                               [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://mobile.10thcommune.com/html/images/ad02.jpg"]]],
+                               [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://mobile.10thcommune.com/html/images/ad03.jpg"]]]
                                ];
     
     scrollView.frame = CGRectMake(0, 0, HomeScreenWidth, 150);
@@ -116,13 +171,13 @@ static NSString *const ID = @"cell";
     collectionView.backgroundColor = [UIColor whiteColor];
     collectionView.dataSource = self;
     collectionView.delegate = self;
-    [collectionView registerClass:[HomeViewCell class] forCellWithReuseIdentifier:ID];
+    [collectionView registerClass:[HomeViewCell class] forCellWithReuseIdentifier:recommendReuseIdentifier];
     
     
     // 上下拉刷新加载
-//    [collectionView addHeaderWithTarget:self action:@selector(loadNewHomeData) dateKey:@"head"];
+//    [collectionView addHeaderWithTarget:self action:@selector(loadNewHomeRecommendDatas) dateKey:@"head"];
 //    [collectionView headerBeginRefreshing];
-//    [collectionView addFooterWithTarget:self action:@selector(loadMoreHomeData)];
+    [collectionView addFooterWithTarget:self action:@selector(loadMoreHomeRecommendDatas)];
     
     
     // 显示自己摄像头数据
@@ -132,29 +187,157 @@ static NSString *const ID = @"cell";
     self.firstItemView = firstItemView;
     [collectionView addSubview:firstItemView];
     
+    // 广告轮播
     [collectionView addSubview:self.scrollView];
     
     self.collectionView = collectionView;
     [self.view addSubview:collectionView];
 }
 
+#pragma mark - 定时刷新
+
+- (void)startRefreshTimer
+{
+    self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:13.0 target:self selector:@selector(loadNewHomeRecommendDatas) userInfo:nil repeats:YES];
+    // 添加到主运行循环中
+    [[NSRunLoop currentRunLoop] addTimer:self.refreshTimer forMode:NSRunLoopCommonModes];
+}
+
+- (void)refreshUserAliyunOSSImages
+{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        for (NSInteger i = 0; i < self.urlArray.count; i++) {
+            
+            NSString *userID = self.idArray[i];
+            if (![userID containsString:self.userEntity.userID]) {
+                // 检查是否有对应文件
+                NSString  *constrainURL = nil;
+                NSString  *objectKey = [NSString stringWithFormat:@"im/live/%@.png", userID];
+                OSSClient *client = [[DDSendPhotoMessageAPI sharedPhotoCache] ossInit];
+                OSSTask   *task = [client presignConstrainURLWithBucketName:kHomeBucketNameInAliYunOSS
+                                                              withObjectKey:objectKey
+                                                     withExpirationInterval: 30 * 60];
+                if (!task.error) {
+                    constrainURL = task.result;
+                } else {
+                    NSLog(@"error: %@", task.error);
+                    // 删除数据
+                    [self.idArray removeObject:userID];
+                    [self.dataArray removeObjectAtIndex:i];
+                    [self.urlArray removeObjectAtIndex:i];
+                }
+            }
+        }
+        // 刷新
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+        });
+    });
+}
+
+- (void)stopRefreshTimer
+{
+    [self.refreshTimer invalidate];
+    self.refreshTimer = nil;
+}
+
 #pragma mark - load_data
 
-- (void)loadNewHomeData
+- (void)loadNewHomeRecommendDatas
 {
-    [self.collectionView reloadData];
+    [self.dataArray removeAllObjects];
+    self.page = 1;
+    
+    MTTUserEntity *userEntity = (MTTUserEntity *)TheRuntime.user;
+    [self.dataArray addObject:userEntity.nick];
+    [self.urlArray  addObject:userEntity.userID];
+    [self.idArray   addObject:userEntity.userID];
+    
+    HomeRecommendUserListAPI *api = [[HomeRecommendUserListAPI alloc] init];
+    NSDictionary *params = @{
+                             @"page": @"0",
+                             @"pageSize": @"10"
+                             };
+    // 请求数据
+    [api requestWithObject:params Completion:^(NSArray *response, NSError *error) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            // 检查阿里云是否有对应的用户图片数据
+            [self aliyunOSSImagesForUsers:response andCurrentUserEntity:userEntity];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.collectionView reloadData];
+            });
+        });
+    }];
     
     [self.collectionView headerEndRefreshing];
 }
 
-- (void)loadMoreHomeData
+- (void)loadMoreHomeRecommendDatas
 {
-    [self.collectionView reloadData];
+    MTTUserEntity *userEntity = (MTTUserEntity *)TheRuntime.user;
+    [self.dataArray addObject:userEntity.nick];
+    [self.urlArray  addObject:userEntity.userID];
+    [self.idArray   addObject:userEntity.userID];
+    
+    NSString *currentPage = [NSString stringWithFormat:@"%zd", self.page];
+    HomeRecommendUserListAPI *api = [[HomeRecommendUserListAPI alloc] init];
+    NSDictionary *params = @{
+                             @"page": currentPage,
+                             @"pageSize": @"10"
+                             };
+    
+    // 请求数据
+    [api requestWithObject:params Completion:^(NSArray *response, NSError *error) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            // 检查阿里云是否有对应的用户图片数据
+            [self aliyunOSSImagesForUsers:response andCurrentUserEntity:userEntity];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.page++;
+                [self.collectionView reloadData];
+            });
+        });
+    }];
     
     [self.collectionView footerEndRefreshing];
 }
 
+// 检查阿里云是否有对应的用户图片数据
+- (void)aliyunOSSImagesForUsers:(NSArray *)response andCurrentUserEntity:(MTTUserEntity *)userEntity
+{
+    for (NSString *info in response) {
+        if (![info containsString:userEntity.userID]) {
+            // 截取用户信息
+            NSRange range      = [info rangeOfString:@"-"];
+            NSString *userID   = [info substringToIndex:range.location];
+            NSString *userNickName  = [info substringFromIndex:range.location + 1];
+            
+            
+            NSString  *constrainURL = nil;
+            NSString  *objectKey = [NSString stringWithFormat:@"im/live/%@.png", userID];
+            OSSClient *client = [[DDSendPhotoMessageAPI sharedPhotoCache] ossInit];
+            OSSTask   *task = [client presignConstrainURLWithBucketName:kHomeBucketNameInAliYunOSS
+                                                          withObjectKey:objectKey
+                                                 withExpirationInterval: 30 * 60];
+            if (!task.error) {
+                constrainURL = task.result;
+                // 保存URL的数组
+                [self.urlArray  addObject:constrainURL];
+                // 保存昵称的数组
+                [self.dataArray addObject:userNickName];
+                // 保存id
+                [self.idArray addObject:userID];
+                
+            } else {
+                NSLog(@"error: %@", task.error);
+            }
+        }
+    }
+}
+
 #pragma mark - collectionView
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;
@@ -168,18 +351,35 @@ static NSString *const ID = @"cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *reuseIdentifier = @"cell";
-    HomeViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    HomeViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:recommendReuseIdentifier forIndexPath:indexPath];
     if (cell == nil) {
         cell = [[HomeViewCell alloc] initWithFrame:CGRectMake(0, 0, itemWidth, itemWidth * 1.3)];
     }
     if (indexPath.row == 0) {
         cell.backgroundColor = [UIColor whiteColor];
     }else {
-        cell.backgroundColor = [self randomColor];
+        cell.backgroundColor = [UIColor lightGrayColor];
     }
-    cell.userEntity = self.dataArray[indexPath.item];
+    
+    // 给cell传值
+    [cell setValueForImageViewWithURL:self.urlArray[indexPath.item] andNickName:self.dataArray[indexPath.item] andUserID:self.idArray[indexPath.item]];
+    
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *userID = self.idArray[indexPath.item];
+    GetUserInfoAPI *userInfoAPI = [[GetUserInfoAPI alloc] init];
+    [userInfoAPI requestWithObject:@[userID] Completion:^(NSArray *response, NSError *error) {
+        [response enumerateObjectsUsingBlock:^(MTTUserEntity *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            // 跳转用户信息控制器
+            PublicProfileViewControll *ppVC = [[PublicProfileViewControll alloc] init];
+            ppVC.user = obj;
+            
+            [self pushViewController:ppVC animated:YES];
+        }];
+    }];
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -196,6 +396,7 @@ static NSString *const ID = @"cell";
     if (self.cameraIsOpen) {
         [self startTimer];
     }
+    [self startRefreshTimer];
 }
 
 // 将要开始拖拽的时候
@@ -204,6 +405,7 @@ static NSString *const ID = @"cell";
     if (self.cameraIsOpen) {
         [self stopTimer];
     }
+    [self stopRefreshTimer];
 }
 
 #pragma mark - CollectionFirstItemViewDelegate
@@ -224,7 +426,7 @@ static NSString *const ID = @"cell";
 
 - (void)userRefuseOpenCamera
 {
-    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"已关闭相机功能，如需重新开启可前往 “设置->隐私->相机” 里设置开启" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"已关闭相机功能，如需重新开启可前往“设置->隐私->相机”里设置开启" preferredStyle:UIAlertControllerStyleAlert];
     
     [alertVC addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleCancel handler:nil]];
     
@@ -234,11 +436,10 @@ static NSString *const ID = @"cell";
 // 提醒设置
 - (void)alertUserOpenCameraSetting
 {
-    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"" message:@"该设备尚未开启摄像机功能，是否去设置开启？" preferredStyle:UIAlertControllerStyleAlert];
-    [alertVC addAction:[UIAlertAction actionWithTitle:@"去设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"未获得授权使用摄像头" message:@"请在iOS“设置”-“隐私”-“相机”中打开" preferredStyle:UIAlertControllerStyleAlert];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
     }]];
-    [alertVC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     
     [self presentViewController:alertVC animated:YES completion:nil];
 }
@@ -249,7 +450,7 @@ static NSString *const ID = @"cell";
 - (void)startTimer
 {
     // 20s上传阿里云
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:6.0 target:self selector:@selector(dealWithTimerThing) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(dealWithTimerThing) userInfo:nil repeats:YES];
     
     // 添加到主运行循环中
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
@@ -257,10 +458,6 @@ static NSString *const ID = @"cell";
 
 - (void)dealWithTimerThing
 {
-    // dispatch_get_main_queue()
-//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-//        
-//    });
     [self uploadImageToAliyunOSS];
 }
 

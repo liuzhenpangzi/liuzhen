@@ -145,7 +145,7 @@
 - (void)uploadHeaderToAliyunOSS
 {
     MTTUserEntity *userEntity = (MTTUserEntity *)TheRuntime.user;
-    NSString *urlString = [NSString stringWithFormat:@"http://maomaojiang.oss-cn-shenzhen.aliyuncs.com/im/avatar/%@.png", userEntity.userID];
+    NSString *urlString = [NSString stringWithFormat:@"http://%@.oss-cn-shenzhen.aliyuncs.com/im/avatar/%@.png", kBucketNameInAliYunOSS, userEntity.userID];
     
     NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];;
     if (!imgData) {
@@ -158,20 +158,16 @@
     MTTPhotoEnity *photoEnity = [[MTTPhotoEnity alloc] init];
     photoEnity.localPath = [[MTTPhotosCache sharedPhotoCache] getHomeImgKeyName];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        // 缓存磁盘
-        [[MTTPhotosCache sharedPhotoCache] storePhoto:imgData forKey:photoEnity.localPath toDisk:YES];
-    });
-    
+    // 缓存磁盘
+    [[MTTPhotosCache sharedPhotoCache] storePhoto:imgData forKey:photoEnity.localPath toDisk:YES];
     NSString *imgKey = [photoEnity.localPath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
     // 将图片上传阿里云
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        [[DDSendPhotoMessageAPI sharedPhotoCache] homeUploadBlogToAliYunOSSWithContent:imgKey success:^(NSString *fileURL) {
-            
-        } failure:^(NSError *error) {
-            DDLog(@"upload failure：error");
-        }];
-    });
+    [[DDSendPhotoMessageAPI sharedPhotoCache] homeUploadBlogToAliYunOSSWithContent:imgKey success:^(NSString *fileURL) {
+        
+    } failure:^(NSError *error) {
+        DDLog(@"upload failure：error");
+    }];
 }
 
 #pragma mark - button pressed
@@ -196,7 +192,11 @@
     
    
     [dic setObject:[password MD5] forKey:@"passwd"];
-    [dic setObject:@"test" forKey:@"server_type"];
+    
+    /*
+     打开下面那一句就是测试服务器
+     */
+    //[dic setObject:@"test" forKey:@"server_type"];
 
     NSString *landu_arg = [dic jsonString];
     NSDictionary *postDic = @{@"arg":landu_arg};
@@ -214,7 +214,7 @@
        NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
 //         DDLog(@"----responseDic == %@",responseDictionary);
 //
-         DDLog(@"----responseDic == %@",responseDictionary[@"return_message"]);
+//         DDLog(@"----responseDic == %@",responseDictionary[@"return_message"]);
          if (!responseDictionary[@"return_code"]||!([responseDictionary[@"return_code"]intValue]==0)) {
              
              
@@ -253,7 +253,7 @@
                      
                  }];
                  
-                 [[RecentUsersViewController shareInstance]refreshUI];
+                 [[RecentUsersViewController shareInstance] refreshUI];
                  
                  MTTRootViewController *rootVC =[[MTTRootViewController alloc] init];
                  [self pushViewController:rootVC animated:YES];
@@ -261,7 +261,8 @@
              
          }failure:^(NSString *error) {
              [self.userLoginBtn setEnabled:YES];
-  
+             SCLAlertView *alert = [SCLAlertView new];
+             [alert showError:self title:@"错误" subTitle:@"登录失败" closeButtonTitle:@"确定" duration:0];
          }];
          }
 //         NSString *error_code = [NSString stringWithFormat:@"%@",[responseDictionary objectForKey:@"error_code"]];
@@ -273,14 +274,20 @@
 //             [self showErrorInfoWithMessage:error_message hideAfterDelay:1.5f];
 //         }
      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//         [HUD removeFromSuperview];
-//         [self showErrorInfoWithMessage:[NSString stringWithFormat:@"%@",error] hideAfterDelay:1.5f];
-           SCLAlertView *alert = [SCLAlertView new];
-          [alert showError:self title:@"错误" subTitle:@"登录失败" closeButtonTitle:@"确定" duration:0];
+        SCLAlertView *alert = [SCLAlertView new];
+        [alert showError:self title:@"错误" subTitle:@"登录失败" closeButtonTitle:@"确定" duration:0];
          [self.userLoginBtn setEnabled:YES];
-     } ];
-
+     }];
+    
     [self.userLoginBtn setEnabled:YES];
+}
+
+- (IBAction)forgetPassword:(UIButton *)sender {
+    
+    FirstRegisterViewController*frvc=[[FirstRegisterViewController alloc] init];
+ 
+    [self.navigationController pushViewController:frvc animated:YES];
+    
 }
 
 - (IBAction)loginButtonPressed:(UIButton*)button{
@@ -330,16 +337,15 @@
 //        }
 //    }];
 }
+
 - (IBAction)reg:(id)sender {
 
 //    RegisterViewController *reg = [[RegisterViewController alloc] init];
 //    [self.navigationController pushViewController:reg animated:YES];
     
     FirstRegisterViewController*frvc=[[FirstRegisterViewController alloc] init];
+    frvc.isRegister=YES;
     [self.navigationController pushViewController:frvc animated:YES];
-    
-    
-    
 }
 
 #pragma mark - UITextFieldDelegate
@@ -351,4 +357,5 @@
     
     return YES;
 }
+
 @end

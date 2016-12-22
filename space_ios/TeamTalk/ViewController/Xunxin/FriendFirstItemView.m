@@ -70,7 +70,7 @@
         }else {
             userID = userEntity.userID;
         }
-        NSString *urlString = [NSString stringWithFormat:@"http://maomaojiang.oss-cn-shenzhen.aliyuncs.com/im/avatar/%@.png", userID];
+        NSString *urlString = [NSString stringWithFormat:@"http://%@.oss-cn-shenzhen.aliyuncs.com/im/avatar/%@.png", kBucketNameInAliYunOSS, userID];
         self.urlString = urlString;
         
         self.isFirstOpen        = YES;
@@ -79,7 +79,6 @@
         
         // 添加子控件
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-        imageView.image = [UIImage imageNamed:@"toux"];
         self.imageView = imageView;
         [self addSubview:imageView];
         
@@ -112,7 +111,7 @@
         // 开启摄像头按钮  dd_take-photo@2x  chat_take_photo@2x
         UIButton *openCameraBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         // (frame.size.height - 60) * 0.5
-        openCameraBtn.frame = CGRectMake((frame.size.width - 60) * 0.5, 0, 60, 60);
+        openCameraBtn.frame = CGRectMake((frame.size.width - 60) * 0.5, (frame.size.height - 60) * 0.5, 60, 60);
         [openCameraBtn setImage:[UIImage imageNamed:@"chat_take_photo@2x"] forState:UIControlStateNormal];
         [openCameraBtn addTarget:self action:@selector(openCameraBtnClick) forControlEvents:UIControlEventTouchUpInside];
         self.openCameraBtn = openCameraBtn;
@@ -133,7 +132,7 @@
     
     NSString *cameraStatus = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentCameraStatus"];
     if ([cameraStatus isEqualToString:@"cameraOpen"]) {
-        [self dealWithCameraData];
+        [self dealWithOpenCameraData];
     }
     
     return self;
@@ -198,6 +197,8 @@
         [self.captureSession stopRunning];
         [self stopTimer];
         
+        self.captureSession = nil;
+        
         // 停止上传
         if ([self.delegate respondsToSelector:@selector(stopUploadImage)]) {
             [self.delegate stopUploadImage];
@@ -212,14 +213,21 @@
     if ([cameraStatus isEqualToString:@"cameraOpen"]) {
         // 检查按钮状态
         if (self.openCameraBtn.hidden) {
-            [self.captureSession startRunning];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"FriendViewCameraOpen" object:self userInfo:nil];
+            
+            if (self.captureSession) {
+                [self.captureSession startRunning];
+            }else {
+                [self initCapture];
+            }
             [self startTimer];
             
             if ([self.delegate respondsToSelector:@selector(startUploadImage)]) {
                 [self.delegate startUploadImage];
             }
         }else {
-            [self dealWithCameraData];
+            [self dealWithOpenCameraData];
         }
     // 相机关闭状态
     }else if ([cameraStatus isEqualToString:@"cameraClose"]) {
@@ -238,6 +246,8 @@
         [self.captureSession stopRunning];
         [self stopTimer];
         
+        self.captureSession = nil;
+        
         if ([self.delegate respondsToSelector:@selector(stopUploadImage)]) {
             [self.delegate stopUploadImage];
         }
@@ -246,7 +256,7 @@
 
 #pragma mark - 按钮的点击
 
-- (void)dealWithCameraData
+- (void)dealWithOpenCameraData
 {
     self.openCameraBtn.hidden  = YES;
     self.closeCameraBtn.hidden = NO;
@@ -257,8 +267,13 @@
         // 第一次初始化摄像头
         [self initCapture];
         self.isFirstOpen = NO;
-    }else {
-        [self.captureSession startRunning];
+    }
+    else {
+        if (self.captureSession) {
+            [self.captureSession startRunning];
+        }else {
+            [self initCapture];
+        }
     }
     // 开启定时器
     [self startTimer];
@@ -266,9 +281,10 @@
     if ([self.delegate respondsToSelector:@selector(startUploadImage)]) {
         [self.delegate startUploadImage];
     }
+    
     // 通知本页面开启了摄像头
     [[NSNotificationCenter defaultCenter] postNotificationName:@"FriendViewCameraOpen" object:self userInfo:nil];
-    [[NSUserDefaults standardUserDefaults] setObject:@"cameraOpen" forKey:@"currentCameraStatus"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"xxxviewCameraOpen" object:nil userInfo:nil];
 }
 
 - (void)openCameraBtnClick
@@ -279,14 +295,16 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (granted){
                     // 同意授权
-                    [self dealWithCameraData];
+                    [self dealWithOpenCameraData];
                 }
             });
         }];
+        // 不是第一次启动
+        [[NSUserDefaults standardUserDefaults] setObject:@"NO" forKey:@"isFirstRunning"];
         
     }else if ([isFirstRunning isEqualToString:@"NO"]){
         if ([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo] == 3) {
-            [self dealWithCameraData];
+            [self dealWithOpenCameraData];
         }else
         {
             // 提醒用户去开启设置
@@ -311,7 +329,7 @@
         [self.delegate stopUploadImage];
     }
     
-    [[NSUserDefaults standardUserDefaults] setObject:@"cameraClose" forKey:@"currentCameraStatus"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"xxxviewCameraClose" object:nil userInfo:nil];
 }
 
 - (void)closeCameraBtnClick

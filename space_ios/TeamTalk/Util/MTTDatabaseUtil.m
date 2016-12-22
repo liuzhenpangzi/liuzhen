@@ -304,6 +304,8 @@
     [dic safeSetObject:@([resultSet longForColumn:@"updated"])   forKey:@"lastUpdateTime"];
     [dic safeSetObject:[resultSet stringForColumn:@"pyname"]     forKey:@"pyname"];
     [dic safeSetObject:[resultSet stringForColumn:@"signature"]  forKey:@"signature"];
+    [dic safeSetObject:[resultSet stringForColumn:@"relation"]  forKey:@"relation"];
+    
       [dic safeSetObject:[resultSet stringForColumn:@"fanscount"]  forKey:@"fanscount"];
     
     MTTUserEntity *user = [MTTUserEntity dicToUserEntity:dic];
@@ -736,7 +738,7 @@
                     user.name = @"";
                 }
                 
-                NSLog(@"12345678%@",NSHomeDirectory());
+               
                 NSString* sql = [NSString stringWithFormat:@"INSERT OR REPLACE INTO %@ VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",TABLE_ALL_CONTACTS];
                 //ID,Name,Nick,Avatar,Role,updated,reserve1,reserve2
                 NSString *fanscount=[NSString stringWithFormat:@"%ld",user.fansCount];

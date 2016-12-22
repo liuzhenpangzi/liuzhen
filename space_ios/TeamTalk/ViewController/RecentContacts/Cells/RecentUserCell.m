@@ -259,21 +259,24 @@
 {
     [self setName:session.name];
     
-    
+   
+
     NSString *string3=  [SecurityUtil decryptAESData:session.lastMsg];
+    
+    
     if ([session.lastMsg isKindOfClass:[NSString class]]) {
         if ([session.lastMsg rangeOfString:DD_MESSAGE_IMAGE_PREFIX].location != NSNotFound||[string3 rangeOfString:DD_MESSAGE_IMAGE_PREFIX].location != NSNotFound) {
             NSArray *array = [string3 componentsSeparatedByString:DD_MESSAGE_IMAGE_PREFIX];
             NSString *string = [array lastObject];
             
             
-            if ([string rangeOfString:DD_MESSAGE_IMAGE_SUFFIX].location != NSNotFound||[string3 rangeOfString:DD_MESSAGE_IMAGE_SUFFIX].location != NSNotFound) {
+            if (([string rangeOfString:DD_MESSAGE_IMAGE_SUFFIX].location != NSNotFound)||([string3 rangeOfString:DD_MESSAGE_IMAGE_SUFFIX].location != NSNotFound)) {
                 [self setLastMessage:@"[图片]"];
             }else{
                 [self setLastMessage:string];
             }
             
-        }else if ([session.lastMsg hasSuffix:@".spx"])
+        }else if ([session.lastMsg hasSuffix:@".spx"]||[string3 hasSuffix:@".spx"])
         {
             [self setLastMessage:@"[语音]"];
         }
@@ -302,30 +305,30 @@
         
         [self loadGroupIcon:session];
     }
-    else{
-  
-        
-        if (session.lastMsg==nil) {
-            
-            NSString *user_nick_name =nil;
-            NSString *avatar_url =nil;
-            [_avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:[UIImage imageNamed:@"user_placeholder"]];
-            self.nameLabel.text = @"新朋友";
-            self.lastmessageLabel.text = [NSString stringWithFormat:@"%@ 请求添加好友",user_nick_name];
-            
-        }
-        else{
-        NSData *data = [session.lastMsg dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary *receiveDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        
-        NSString *user_nick_name = [receiveDic objectForKey:@"user_nick_name"];
-        NSString *avatar_url = [receiveDic objectForKey:@"avatar_url"];
-        
-        [_avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:[UIImage imageNamed:@"user_placeholder"]];
-        self.nameLabel.text = @"新朋友";
-        self.lastmessageLabel.text = [NSString stringWithFormat:@"%@ 请求添加好友",user_nick_name];
-        }
-    }
+//    else{
+//  
+//        
+//        if (session.lastMsg==nil) {
+//            
+//            NSString *user_nick_name =nil;
+//            NSString *avatar_url =nil;
+//            [_avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:[UIImage imageNamed:@"header"]];
+//            self.nameLabel.text = @"新朋友";
+//            self.lastmessageLabel.text = [NSString stringWithFormat:@"%@ 请求添加好友",user_nick_name];
+//            
+//        }
+//        else{
+//        NSData *data = [session.lastMsg dataUsingEncoding:NSUTF8StringEncoding];
+//        NSDictionary *receiveDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+//        
+//        NSString *user_nick_name = [receiveDic objectForKey:@"user_nick_name"];
+//        NSString *avatar_url = [receiveDic objectForKey:@"avatar_url"];
+//        
+//        [_avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:[UIImage imageNamed:@"header"]];
+//        self.nameLabel.text = @"新朋友";
+//        self.lastmessageLabel.text = [NSString stringWithFormat:@"%@ 请求添加好友",user_nick_name];
+//        }
+//    }
     
     [self.shiledUnreadMessageCountLabel setHidden:YES];
     //[self setUnreadMessageCount:session.unReadMsgCount];

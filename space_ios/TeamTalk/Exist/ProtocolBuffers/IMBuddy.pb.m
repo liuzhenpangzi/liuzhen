@@ -14244,5 +14244,709 @@ static IMUpdateUsersInfoRsp* defaultIMUpdateUsersInfoRspInstance = nil;
 }
 @end
 
+@interface IMRecommendListReq ()
+@property UInt32 userId;
+@property UInt32 page;
+@property UInt32 pageSize;
+@property (strong) NSData* attachData;
+@end
+
+@implementation IMRecommendListReq
+
+- (BOOL) hasUserId {
+  return !!hasUserId_;
+}
+- (void) setHasUserId:(BOOL) _value_ {
+  hasUserId_ = !!_value_;
+}
+@synthesize userId;
+- (BOOL) hasPage {
+  return !!hasPage_;
+}
+- (void) setHasPage:(BOOL) _value_ {
+  hasPage_ = !!_value_;
+}
+@synthesize page;
+- (BOOL) hasPageSize {
+  return !!hasPageSize_;
+}
+- (void) setHasPageSize:(BOOL) _value_ {
+  hasPageSize_ = !!_value_;
+}
+@synthesize pageSize;
+- (BOOL) hasAttachData {
+  return !!hasAttachData_;
+}
+- (void) setHasAttachData:(BOOL) _value_ {
+  hasAttachData_ = !!_value_;
+}
+@synthesize attachData;
+- (instancetype) init {
+  if ((self = [super init])) {
+    self.userId = 0;
+    self.page = 0;
+    self.pageSize = 0;
+    self.attachData = [NSData data];
+  }
+  return self;
+}
+static IMRecommendListReq* defaultIMRecommendListReqInstance = nil;
++ (void) initialize {
+  if (self == [IMRecommendListReq class]) {
+    defaultIMRecommendListReqInstance = [[IMRecommendListReq alloc] init];
+  }
+}
++ (instancetype) defaultInstance {
+  return defaultIMRecommendListReqInstance;
+}
+- (instancetype) defaultInstance {
+  return defaultIMRecommendListReqInstance;
+}
+- (BOOL) isInitialized {
+  if (!self.hasUserId) {
+    return NO;
+  }
+  if (!self.hasPage) {
+    return NO;
+  }
+  if (!self.hasPageSize) {
+    return NO;
+  }
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasUserId) {
+    [output writeUInt32:1 value:self.userId];
+  }
+  if (self.hasPage) {
+    [output writeUInt32:2 value:self.page];
+  }
+  if (self.hasPageSize) {
+    [output writeUInt32:3 value:self.pageSize];
+  }
+  if (self.hasAttachData) {
+    [output writeData:20 value:self.attachData];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasUserId) {
+    size_ += computeUInt32Size(1, self.userId);
+  }
+  if (self.hasPage) {
+    size_ += computeUInt32Size(2, self.page);
+  }
+  if (self.hasPageSize) {
+    size_ += computeUInt32Size(3, self.pageSize);
+  }
+  if (self.hasAttachData) {
+    size_ += computeDataSize(20, self.attachData);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (IMRecommendListReq*) parseFromData:(NSData*) data {
+  return (IMRecommendListReq*)[[[IMRecommendListReq builder] mergeFromData:data] build];
+}
++ (IMRecommendListReq*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (IMRecommendListReq*)[[[IMRecommendListReq builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (IMRecommendListReq*) parseFromInputStream:(NSInputStream*) input {
+  return (IMRecommendListReq*)[[[IMRecommendListReq builder] mergeFromInputStream:input] build];
+}
++ (IMRecommendListReq*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (IMRecommendListReq*)[[[IMRecommendListReq builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (IMRecommendListReq*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (IMRecommendListReq*)[[[IMRecommendListReq builder] mergeFromCodedInputStream:input] build];
+}
++ (IMRecommendListReq*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (IMRecommendListReq*)[[[IMRecommendListReq builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (IMRecommendListReqBuilder*) builder {
+  return [[IMRecommendListReqBuilder alloc] init];
+}
++ (IMRecommendListReqBuilder*) builderWithPrototype:(IMRecommendListReq*) prototype {
+  return [[IMRecommendListReq builder] mergeFrom:prototype];
+}
+- (IMRecommendListReqBuilder*) builder {
+  return [IMRecommendListReq builder];
+}
+- (IMRecommendListReqBuilder*) toBuilder {
+  return [IMRecommendListReq builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", [NSNumber numberWithInteger:self.userId]];
+  }
+  if (self.hasPage) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"page", [NSNumber numberWithInteger:self.page]];
+  }
+  if (self.hasPageSize) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"pageSize", [NSNumber numberWithInteger:self.pageSize]];
+  }
+  if (self.hasAttachData) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"attachData", self.attachData];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (void) storeInDictionary:(NSMutableDictionary *)dictionary {
+  if (self.hasUserId) {
+    [dictionary setObject: [NSNumber numberWithInteger:self.userId] forKey: @"userId"];
+  }
+  if (self.hasPage) {
+    [dictionary setObject: [NSNumber numberWithInteger:self.page] forKey: @"page"];
+  }
+  if (self.hasPageSize) {
+    [dictionary setObject: [NSNumber numberWithInteger:self.pageSize] forKey: @"pageSize"];
+  }
+  if (self.hasAttachData) {
+    [dictionary setObject: self.attachData forKey: @"attachData"];
+  }
+  [self.unknownFields storeInDictionary:dictionary];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[IMRecommendListReq class]]) {
+    return NO;
+  }
+  IMRecommendListReq *otherMessage = other;
+  return
+      self.hasUserId == otherMessage.hasUserId &&
+      (!self.hasUserId || self.userId == otherMessage.userId) &&
+      self.hasPage == otherMessage.hasPage &&
+      (!self.hasPage || self.page == otherMessage.page) &&
+      self.hasPageSize == otherMessage.hasPageSize &&
+      (!self.hasPageSize || self.pageSize == otherMessage.pageSize) &&
+      self.hasAttachData == otherMessage.hasAttachData &&
+      (!self.hasAttachData || [self.attachData isEqual:otherMessage.attachData]) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  __block NSUInteger hashCode = 7;
+  if (self.hasUserId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInteger:self.userId] hash];
+  }
+  if (self.hasPage) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInteger:self.page] hash];
+  }
+  if (self.hasPageSize) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInteger:self.pageSize] hash];
+  }
+  if (self.hasAttachData) {
+    hashCode = hashCode * 31 + [self.attachData hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface IMRecommendListReqBuilder()
+@property (strong) IMRecommendListReq* resultImrecommendListReq;
+@end
+
+@implementation IMRecommendListReqBuilder
+@synthesize resultImrecommendListReq;
+- (instancetype) init {
+  if ((self = [super init])) {
+    self.resultImrecommendListReq = [[IMRecommendListReq alloc] init];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return resultImrecommendListReq;
+}
+- (IMRecommendListReqBuilder*) clear {
+  self.resultImrecommendListReq = [[IMRecommendListReq alloc] init];
+  return self;
+}
+- (IMRecommendListReqBuilder*) clone {
+  return [IMRecommendListReq builderWithPrototype:resultImrecommendListReq];
+}
+- (IMRecommendListReq*) defaultInstance {
+  return [IMRecommendListReq defaultInstance];
+}
+- (IMRecommendListReq*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (IMRecommendListReq*) buildPartial {
+  IMRecommendListReq* returnMe = resultImrecommendListReq;
+  self.resultImrecommendListReq = nil;
+  return returnMe;
+}
+- (IMRecommendListReqBuilder*) mergeFrom:(IMRecommendListReq*) other {
+  if (other == [IMRecommendListReq defaultInstance]) {
+    return self;
+  }
+  if (other.hasUserId) {
+    [self setUserId:other.userId];
+  }
+  if (other.hasPage) {
+    [self setPage:other.page];
+  }
+  if (other.hasPageSize) {
+    [self setPageSize:other.pageSize];
+  }
+  if (other.hasAttachData) {
+    [self setAttachData:other.attachData];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (IMRecommendListReqBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (IMRecommendListReqBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setUserId:[input readUInt32]];
+        break;
+      }
+      case 16: {
+        [self setPage:[input readUInt32]];
+        break;
+      }
+      case 24: {
+        [self setPageSize:[input readUInt32]];
+        break;
+      }
+      case 162: {
+        [self setAttachData:[input readData]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasUserId {
+  return resultImrecommendListReq.hasUserId;
+}
+- (UInt32) userId {
+  return resultImrecommendListReq.userId;
+}
+- (IMRecommendListReqBuilder*) setUserId:(UInt32) value {
+  resultImrecommendListReq.hasUserId = YES;
+  resultImrecommendListReq.userId = value;
+  return self;
+}
+- (IMRecommendListReqBuilder*) clearUserId {
+  resultImrecommendListReq.hasUserId = NO;
+  resultImrecommendListReq.userId = 0;
+  return self;
+}
+- (BOOL) hasPage {
+  return resultImrecommendListReq.hasPage;
+}
+- (UInt32) page {
+  return resultImrecommendListReq.page;
+}
+- (IMRecommendListReqBuilder*) setPage:(UInt32) value {
+  resultImrecommendListReq.hasPage = YES;
+  resultImrecommendListReq.page = value;
+  return self;
+}
+- (IMRecommendListReqBuilder*) clearPage {
+  resultImrecommendListReq.hasPage = NO;
+  resultImrecommendListReq.page = 0;
+  return self;
+}
+- (BOOL) hasPageSize {
+  return resultImrecommendListReq.hasPageSize;
+}
+- (UInt32) pageSize {
+  return resultImrecommendListReq.pageSize;
+}
+- (IMRecommendListReqBuilder*) setPageSize:(UInt32) value {
+  resultImrecommendListReq.hasPageSize = YES;
+  resultImrecommendListReq.pageSize = value;
+  return self;
+}
+- (IMRecommendListReqBuilder*) clearPageSize {
+  resultImrecommendListReq.hasPageSize = NO;
+  resultImrecommendListReq.pageSize = 0;
+  return self;
+}
+- (BOOL) hasAttachData {
+  return resultImrecommendListReq.hasAttachData;
+}
+- (NSData*) attachData {
+  return resultImrecommendListReq.attachData;
+}
+- (IMRecommendListReqBuilder*) setAttachData:(NSData*) value {
+  resultImrecommendListReq.hasAttachData = YES;
+  resultImrecommendListReq.attachData = value;
+  return self;
+}
+- (IMRecommendListReqBuilder*) clearAttachData {
+  resultImrecommendListReq.hasAttachData = NO;
+  resultImrecommendListReq.attachData = [NSData data];
+  return self;
+}
+@end
+
+@interface IMRecommendListRsp ()
+@property (strong) PBAppendableArray * recommendListArray;
+@property (strong) NSMutableArray * recommendNickListArray;
+@property (strong) NSData* attachData;
+@end
+
+@implementation IMRecommendListRsp
+
+@synthesize recommendListArray;
+@dynamic recommendList;
+@synthesize recommendNickListArray;
+@dynamic recommendNickList;
+- (BOOL) hasAttachData {
+  return !!hasAttachData_;
+}
+- (void) setHasAttachData:(BOOL) _value_ {
+  hasAttachData_ = !!_value_;
+}
+@synthesize attachData;
+- (instancetype) init {
+  if ((self = [super init])) {
+    self.attachData = [NSData data];
+  }
+  return self;
+}
+static IMRecommendListRsp* defaultIMRecommendListRspInstance = nil;
++ (void) initialize {
+  if (self == [IMRecommendListRsp class]) {
+    defaultIMRecommendListRspInstance = [[IMRecommendListRsp alloc] init];
+  }
+}
++ (instancetype) defaultInstance {
+  return defaultIMRecommendListRspInstance;
+}
+- (instancetype) defaultInstance {
+  return defaultIMRecommendListRspInstance;
+}
+- (PBArray *)recommendList {
+  return recommendListArray;
+}
+- (UInt32)recommendListAtIndex:(NSUInteger)index {
+  return [recommendListArray uint32AtIndex:index];
+}
+- (NSArray *)recommendNickList {
+  return recommendNickListArray;
+}
+- (NSString*)recommendNickListAtIndex:(NSUInteger)index {
+  return [recommendNickListArray objectAtIndex:index];
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  const NSUInteger recommendListArrayCount = self.recommendListArray.count;
+  if (recommendListArrayCount > 0) {
+    const UInt32 *values = (const UInt32 *)self.recommendListArray.data;
+    for (NSUInteger i = 0; i < recommendListArrayCount; ++i) {
+      [output writeUInt32:1 value:values[i]];
+    }
+  }
+  [self.recommendNickListArray enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+    [output writeString:2 value:element];
+  }];
+  if (self.hasAttachData) {
+    [output writeData:20 value:self.attachData];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  {
+    __block SInt32 dataSize = 0;
+    const NSUInteger count = self.recommendListArray.count;
+    const UInt32 *values = (const UInt32 *)self.recommendListArray.data;
+    for (NSUInteger i = 0; i < count; ++i) {
+      dataSize += computeUInt32SizeNoTag(values[i]);
+    }
+    size_ += dataSize;
+    size_ += (SInt32)(1 * count);
+  }
+  {
+    __block SInt32 dataSize = 0;
+    const NSUInteger count = self.recommendNickListArray.count;
+    [self.recommendNickListArray enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+      dataSize += computeStringSizeNoTag(element);
+    }];
+    size_ += dataSize;
+    size_ += (SInt32)(1 * count);
+  }
+  if (self.hasAttachData) {
+    size_ += computeDataSize(20, self.attachData);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (IMRecommendListRsp*) parseFromData:(NSData*) data {
+  return (IMRecommendListRsp*)[[[IMRecommendListRsp builder] mergeFromData:data] build];
+}
++ (IMRecommendListRsp*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (IMRecommendListRsp*)[[[IMRecommendListRsp builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (IMRecommendListRsp*) parseFromInputStream:(NSInputStream*) input {
+  return (IMRecommendListRsp*)[[[IMRecommendListRsp builder] mergeFromInputStream:input] build];
+}
++ (IMRecommendListRsp*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (IMRecommendListRsp*)[[[IMRecommendListRsp builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (IMRecommendListRsp*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (IMRecommendListRsp*)[[[IMRecommendListRsp builder] mergeFromCodedInputStream:input] build];
+}
++ (IMRecommendListRsp*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (IMRecommendListRsp*)[[[IMRecommendListRsp builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (IMRecommendListRspBuilder*) builder {
+  return [[IMRecommendListRspBuilder alloc] init];
+}
++ (IMRecommendListRspBuilder*) builderWithPrototype:(IMRecommendListRsp*) prototype {
+  return [[IMRecommendListRsp builder] mergeFrom:prototype];
+}
+- (IMRecommendListRspBuilder*) builder {
+  return [IMRecommendListRsp builder];
+}
+- (IMRecommendListRspBuilder*) toBuilder {
+  return [IMRecommendListRsp builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  [self.recommendListArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"recommendList", obj];
+  }];
+  [self.recommendNickListArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"recommendNickList", obj];
+  }];
+  if (self.hasAttachData) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"attachData", self.attachData];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (void) storeInDictionary:(NSMutableDictionary *)dictionary {
+  NSMutableArray * recommendListArrayArray = [NSMutableArray new];
+  NSUInteger recommendListArrayCount=self.recommendListArray.count;
+  for(int i=0;i<recommendListArrayCount;i++){
+    [recommendListArrayArray addObject: @([self.recommendListArray uint32AtIndex:i])];
+  }
+  [dictionary setObject: recommendListArrayArray forKey: @"recommendList"];
+  [dictionary setObject:self.recommendNickList forKey: @"recommendNickList"];
+  if (self.hasAttachData) {
+    [dictionary setObject: self.attachData forKey: @"attachData"];
+  }
+  [self.unknownFields storeInDictionary:dictionary];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[IMRecommendListRsp class]]) {
+    return NO;
+  }
+  IMRecommendListRsp *otherMessage = other;
+  return
+      [self.recommendListArray isEqualToArray:otherMessage.recommendListArray] &&
+      [self.recommendNickListArray isEqualToArray:otherMessage.recommendNickListArray] &&
+      self.hasAttachData == otherMessage.hasAttachData &&
+      (!self.hasAttachData || [self.attachData isEqual:otherMessage.attachData]) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  __block NSUInteger hashCode = 7;
+  [self.recommendListArray enumerateObjectsUsingBlock:^(NSNumber *obj, NSUInteger idx, BOOL *stop) {
+    hashCode = hashCode * 31 + [obj longValue];
+  }];
+  [self.recommendNickListArray enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+    hashCode = hashCode * 31 + [element hash];
+  }];
+  if (self.hasAttachData) {
+    hashCode = hashCode * 31 + [self.attachData hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface IMRecommendListRspBuilder()
+@property (strong) IMRecommendListRsp* resultImrecommendListRsp;
+@end
+
+@implementation IMRecommendListRspBuilder
+@synthesize resultImrecommendListRsp;
+- (instancetype) init {
+  if ((self = [super init])) {
+    self.resultImrecommendListRsp = [[IMRecommendListRsp alloc] init];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return resultImrecommendListRsp;
+}
+- (IMRecommendListRspBuilder*) clear {
+  self.resultImrecommendListRsp = [[IMRecommendListRsp alloc] init];
+  return self;
+}
+- (IMRecommendListRspBuilder*) clone {
+  return [IMRecommendListRsp builderWithPrototype:resultImrecommendListRsp];
+}
+- (IMRecommendListRsp*) defaultInstance {
+  return [IMRecommendListRsp defaultInstance];
+}
+- (IMRecommendListRsp*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (IMRecommendListRsp*) buildPartial {
+  IMRecommendListRsp* returnMe = resultImrecommendListRsp;
+  self.resultImrecommendListRsp = nil;
+  return returnMe;
+}
+- (IMRecommendListRspBuilder*) mergeFrom:(IMRecommendListRsp*) other {
+  if (other == [IMRecommendListRsp defaultInstance]) {
+    return self;
+  }
+  if (other.recommendListArray.count > 0) {
+    if (resultImrecommendListRsp.recommendListArray == nil) {
+      resultImrecommendListRsp.recommendListArray = [other.recommendListArray copy];
+    } else {
+      [resultImrecommendListRsp.recommendListArray appendArray:other.recommendListArray];
+    }
+  }
+  if (other.recommendNickListArray.count > 0) {
+    if (resultImrecommendListRsp.recommendNickListArray == nil) {
+      resultImrecommendListRsp.recommendNickListArray = [[NSMutableArray alloc] initWithArray:other.recommendNickListArray];
+    } else {
+      [resultImrecommendListRsp.recommendNickListArray addObjectsFromArray:other.recommendNickListArray];
+    }
+  }
+  if (other.hasAttachData) {
+    [self setAttachData:other.attachData];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (IMRecommendListRspBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (IMRecommendListRspBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self addRecommendList:[input readUInt32]];
+        break;
+      }
+      case 18: {
+        [self addRecommendNickList:[input readString]];
+        break;
+      }
+      case 162: {
+        [self setAttachData:[input readData]];
+        break;
+      }
+    }
+  }
+}
+- (PBAppendableArray *)recommendList {
+  return resultImrecommendListRsp.recommendListArray;
+}
+- (UInt32)recommendListAtIndex:(NSUInteger)index {
+  return [resultImrecommendListRsp recommendListAtIndex:index];
+}
+- (IMRecommendListRspBuilder *)addRecommendList:(UInt32)value {
+  if (resultImrecommendListRsp.recommendListArray == nil) {
+    resultImrecommendListRsp.recommendListArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  }
+  [resultImrecommendListRsp.recommendListArray addUint32:value];
+  return self;
+}
+- (IMRecommendListRspBuilder *)setRecommendListArray:(NSArray *)array {
+  resultImrecommendListRsp.recommendListArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  return self;
+}
+- (IMRecommendListRspBuilder *)setRecommendListValues:(const UInt32 *)values count:(NSUInteger)count {
+  resultImrecommendListRsp.recommendListArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  return self;
+}
+- (IMRecommendListRspBuilder *)clearRecommendList {
+  resultImrecommendListRsp.recommendListArray = nil;
+  return self;
+}
+- (NSMutableArray *)recommendNickList {
+  return resultImrecommendListRsp.recommendNickListArray;
+}
+- (NSString*)recommendNickListAtIndex:(NSUInteger)index {
+  return [resultImrecommendListRsp recommendNickListAtIndex:index];
+}
+- (IMRecommendListRspBuilder *)addRecommendNickList:(NSString*)value {
+  if (resultImrecommendListRsp.recommendNickListArray == nil) {
+    resultImrecommendListRsp.recommendNickListArray = [[NSMutableArray alloc]init];
+  }
+  [resultImrecommendListRsp.recommendNickListArray addObject:value];
+  return self;
+}
+- (IMRecommendListRspBuilder *)setRecommendNickListArray:(NSArray *)array {
+  resultImrecommendListRsp.recommendNickListArray = [[NSMutableArray alloc] initWithArray:array];
+  return self;
+}
+- (IMRecommendListRspBuilder *)clearRecommendNickList {
+  resultImrecommendListRsp.recommendNickListArray = nil;
+  return self;
+}
+- (BOOL) hasAttachData {
+  return resultImrecommendListRsp.hasAttachData;
+}
+- (NSData*) attachData {
+  return resultImrecommendListRsp.attachData;
+}
+- (IMRecommendListRspBuilder*) setAttachData:(NSData*) value {
+  resultImrecommendListRsp.hasAttachData = YES;
+  resultImrecommendListRsp.attachData = value;
+  return self;
+}
+- (IMRecommendListRspBuilder*) clearAttachData {
+  resultImrecommendListRsp.hasAttachData = NO;
+  resultImrecommendListRsp.attachData = [NSData data];
+  return self;
+}
+@end
+
 
 // @@protoc_insertion_point(global_scope)

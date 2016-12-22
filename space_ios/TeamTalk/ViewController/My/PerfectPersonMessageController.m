@@ -237,26 +237,26 @@
             _usertouxiangimage = [[UIImageView alloc]initWithFrame:CGRectMake(section0view.frame.size.width-100, 10, 50, 50)];
            // _usertouxiangimage.image = [UIImage imageNamed:@"header"];
             
-            //[_usertouxiangimage sd_setImageWithURL:[NSURL URLWithString:self.theUser.avatar] placeholderImage:[UIImage imageNamed:@"header"]];
-            if (self.theUser.avatar&&![self.theUser.avatar isEqualToString:@""]) {
-                
-            
-            dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                NSData *data = [NSData dataWithContentsOfURL:[NSURL  URLWithString:self.theUser.avatar]];
-                UIImage *image = [UIImage imageWithData:data]; // 取得图片
-                
-                if (data != nil) {
-                    //通知主线程刷新
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        
-                        _usertouxiangimage.image=image;
-                    });
-                }
-            });
-                
-            }else{
-                _usertouxiangimage.image=[UIImage imageNamed:@"header"];
-            }
+            [_usertouxiangimage sd_setImageWithURL:[NSURL URLWithString:self.theUser.avatar] placeholderImage:[UIImage imageNamed:@"header"]];
+//            if (self.theUser.avatar&&![self.theUser.avatar isEqualToString:@""]) {
+//                
+//            
+//            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//                NSData *data = [NSData dataWithContentsOfURL:[NSURL  URLWithString:self.theUser.avatar]];
+//                UIImage *image = [UIImage imageWithData:data]; // 取得图片
+//                
+//                if (data != nil) {
+//                    //通知主线程刷新
+//                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        
+//                        _usertouxiangimage.image=image;
+//                    });
+//                }
+//            });
+//                
+//            }else{
+//                _usertouxiangimage.image=[UIImage imageNamed:@"header"];
+//            }
             _usertouxiangimage.clipsToBounds = YES;
             _usertouxiangimage.layer.cornerRadius = 25;
             
@@ -414,6 +414,7 @@
             
             _inviteCodeLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(_personalizedsignatureTV.frame), CGRectGetMaxY(_personalizedsignatureTV.frame), _personalizedsignatureTV.frame.size.width, inviteCodeLabel.bounds.size.height)];
             _inviteCodeLabel.font = [UIFont systemFontOfSize:14];
+            _inviteCodeLabel.text=self.theUser.name;
             [section4view addSubview:_inviteCodeLabel];
             
             
@@ -701,10 +702,14 @@
                     [response enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                         NSString *resultCode = [NSString stringWithFormat:@"%@",obj];
                         if([resultCode isEqualToString:@"0"]){
-//                            _avatar .image = image;
+                            
+                             [[SDImageCache sharedImageCache]removeImageForKey:fileURL];
+                           _usertouxiangimage .image = image;
                             TheRuntime.user.avatar   = fileURL;
                             self.theUser.avatar      = fileURL;
-                            _usertouxiangimage.image = image;
+                            
+                            
+                            //_usertouxiangimage.image = image;
                         }}];
                 }];
             });
@@ -786,6 +791,8 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"修改成功" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
            
             [alert show];
+            [self.navigationController popViewControllerAnimated:YES];
+  
             
         }
         
@@ -796,6 +803,7 @@
     
     
 }
+
 
 #pragma mark - UITextView相关
 

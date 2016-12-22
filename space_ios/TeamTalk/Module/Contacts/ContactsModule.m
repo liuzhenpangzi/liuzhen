@@ -116,7 +116,7 @@
         //NSLog(@"--- user == %@--%@--%@",user.userID,user.name,user.pyname);
         // 排除用户名为空和本身
         if(![user.objID isEqualToString:TheRuntime.user.objID]){
-            NSString *fl = [user.name substringWithRange:NSMakeRange(0, 1)];
+            NSString *fl = [user.nick substringWithRange:NSMakeRange(0, 1)];
             
             char fi = [MTTUtil getFirstChar:fl];
             fl = [[NSString stringWithFormat:@"%c",fi] uppercaseString];

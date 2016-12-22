@@ -71,7 +71,7 @@
     {
         //只有一个头像
         NSURL* avatarURL = [NSURL safeURLWithString:avatar];
-        UIImage* placeholdImage = [UIImage imageNamed:@"user_placeholder"];
+        UIImage* placeholdImage = [UIImage imageNamed:@"header"];
         [self sd_setImageWithURL:avatarURL placeholderImage:placeholdImage];
     }
 }
@@ -80,7 +80,7 @@
 #pragma mark PrivateAPI
 - (void)p_setGroupAvatar:(NSString*)avatar avatars:(NSArray*)avatarImages
 {
-    UIImage* placeholdImage = [UIImage imageNamed:@"user_placeholder"];
+    UIImage* placeholdImage = [UIImage imageNamed:@"header"];
     NSArray* imageViewFrames = [self p_getAvatarLayout:[avatarImages count] forScale:1];
     NSArray* frames = [self p_getAvatarLayout:[avatarImages count] forScale:2];
     if (avatar&&[frames count] > 0)

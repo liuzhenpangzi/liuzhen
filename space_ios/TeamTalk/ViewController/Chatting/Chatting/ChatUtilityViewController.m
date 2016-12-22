@@ -132,32 +132,32 @@
         make.width.equalTo(ws.view).multipliedBy(0.25);
     }];
     
-    UIButton *shakeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_rightView addSubview:shakeBtn];
-    [shakeBtn setBackgroundImage:[UIImage imageNamed:@"chat_shake_pc"] forState:UIControlStateNormal];
-    [shakeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_rightView);
-        make.top.mas_equalTo(15);
-        make.size.mas_equalTo(CGSizeMake(65, 65));
-    }];
-    [shakeBtn setClipsToBounds:YES];
-    [shakeBtn.layer setCornerRadius:5];
-    [shakeBtn.layer setBorderWidth:0.5];
-    [shakeBtn.layer setBorderColor:RGB(174, 177, 181).CGColor];
-    [shakeBtn addTarget:self action:@selector(shakePC:) forControlEvents:UIControlEventTouchUpInside];
-    
-    UILabel *shakeLabel = [UILabel new];
-    [shakeLabel setText:@"抖动"];
-    [shakeLabel setTextAlignment:NSTextAlignmentCenter];
-    [shakeLabel setFont:systemFont(13)];
-    [shakeLabel setTextColor:RGB(174, 177, 181)];
-    [_rightView addSubview:shakeLabel];
-    [shakeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(shakeBtn);
-        make.top.mas_equalTo(shakeBtn.mas_bottom).offset(15);
-        make.width.equalTo(_rightView);
-        make.height.mas_equalTo(13);
-    }];
+//    UIButton *shakeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [_rightView addSubview:shakeBtn];
+//    [shakeBtn setBackgroundImage:[UIImage imageNamed:@"chat_shake_pc"] forState:UIControlStateNormal];
+//    [shakeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.equalTo(_rightView);
+//        make.top.mas_equalTo(15);
+//        make.size.mas_equalTo(CGSizeMake(65, 65));
+//    }];
+//    [shakeBtn setClipsToBounds:YES];
+//    [shakeBtn.layer setCornerRadius:5];
+//    [shakeBtn.layer setBorderWidth:0.5];
+//    [shakeBtn.layer setBorderColor:RGB(174, 177, 181).CGColor];
+//    [shakeBtn addTarget:self action:@selector(shakePC:) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    UILabel *shakeLabel = [UILabel new];
+//    [shakeLabel setText:@"抖动"];
+//    [shakeLabel setTextAlignment:NSTextAlignmentCenter];
+//    [shakeLabel setFont:systemFont(13)];
+//    [shakeLabel setTextColor:RGB(174, 177, 181)];
+//    [_rightView addSubview:shakeLabel];
+//    [shakeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.equalTo(shakeBtn);
+//        make.top.mas_equalTo(shakeBtn.mas_bottom).offset(15);
+//        make.width.equalTo(_rightView);
+//        make.height.mas_equalTo(13);
+//    }];
 }
 -(void)setShakeHidden
 {

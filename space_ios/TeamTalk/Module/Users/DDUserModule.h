@@ -31,4 +31,6 @@ typedef void(^DDLoadRecentUsersCompletion)();
 -(void)clearAllContact;
 -(NSArray*)getAllAttention;
 -(void)addToAttention:(MTTUserEntity*)user;
+-(void)cancelUser:(NSString*)userID;
+
 @end

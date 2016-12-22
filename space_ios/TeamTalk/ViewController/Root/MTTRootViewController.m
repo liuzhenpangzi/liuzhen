@@ -191,9 +191,9 @@
                         allStop = YES;
                     }
                 }];
-                if(!allStop){
-                    [[RecentUsersViewController shareInstance].tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1] atScrollPosition:UITableViewScrollPositionTop animated:YES];
-                }
+//                if(!allStop){
+//                    [[RecentUsersViewController shareInstance].tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+//                }
             }
             self.clickCount=0;
         }

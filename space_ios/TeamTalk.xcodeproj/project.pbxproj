@@ -7,22 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0402AD3C1E01288D0065CEBD /* IMBaseDefine.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402AD271E01288D0065CEBD /* IMBaseDefine.pb.m */; };
-		0402AD3D1E01288D0065CEBD /* IMBlog.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402AD291E01288D0065CEBD /* IMBlog.pb.m */; };
-		0402AD3E1E01288D0065CEBD /* IMBuddy.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402AD2B1E01288D0065CEBD /* IMBuddy.pb.m */; };
-		0402AD3F1E01288D0065CEBD /* IMFile.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402AD2D1E01288D0065CEBD /* IMFile.pb.m */; };
-		0402AD401E01288D0065CEBD /* IMGroup.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402AD2F1E01288D0065CEBD /* IMGroup.pb.m */; };
-		0402AD411E01288D0065CEBD /* IMLogin.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402AD311E01288D0065CEBD /* IMLogin.pb.m */; };
-		0402AD421E01288D0065CEBD /* IMMessage.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402AD331E01288D0065CEBD /* IMMessage.pb.m */; };
-		0402AD431E01288D0065CEBD /* IMOther.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402AD351E01288D0065CEBD /* IMOther.pb.m */; };
-		0402AD441E01288D0065CEBD /* IMServer.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402AD371E01288D0065CEBD /* IMServer.pb.m */; };
-		0402AD451E01288D0065CEBD /* IMSwitchService.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402AD391E01288D0065CEBD /* IMSwitchService.pb.m */; };
-		0402AD461E01288D0065CEBD /* IMSystem.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402AD3B1E01288D0065CEBD /* IMSystem.pb.m */; };
 		0402AD4A1E012A860065CEBD /* UpdataUserInfoAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402AD491E012A860065CEBD /* UpdataUserInfoAPI.m */; };
 		0403CB231DFBD7620024E044 /* libAPOpenSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0403CB221DFBD7620024E044 /* libAPOpenSdk.a */; };
 		0403CB251DFBD77D0024E044 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0403CB241DFBD77D0024E044 /* libWeiboSDK.a */; };
 		0403CB271DFBD7880024E044 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0403CB261DFBD7880024E044 /* libWeChatSDK.a */; };
 		0403CB291DFBD7930024E044 /* libYixinSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0403CB281DFBD7930024E044 /* libYixinSDK.a */; };
+		0422EDBE1E04D66400E2E92A /* RePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0422EDBD1E04D66400E2E92A /* RePasswordViewController.m */; };
 		042E77091DE54A3500A18093 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 042E77061DE54A3500A18093 /* NSData+AES.m */; };
 		042E770A1DE54A3500A18093 /* SecurityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 042E77081DE54A3500A18093 /* SecurityUtil.m */; };
 		0434076D1DFE4763008B70EB /* FirstRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434076C1DFE4763008B70EB /* FirstRegisterViewController.m */; };
@@ -52,6 +42,18 @@
 		63010D811DDADEFB00143F94 /* HomeFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63010D801DDADEFB00143F94 /* HomeFriendsViewController.m */; };
 		63010D841DDADF3A00143F94 /* HomeConcernViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63010D831DDADF3A00143F94 /* HomeConcernViewController.m */; };
 		63029DBC1DC99A4D0055E696 /* login_page_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 63029DBB1DC99A4D0055E696 /* login_page_logo.png */; };
+		63356F3B1E04E16D000E53FB /* IMBaseDefine.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 63356F261E04E16D000E53FB /* IMBaseDefine.pb.m */; };
+		63356F3C1E04E16D000E53FB /* IMBlog.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 63356F281E04E16D000E53FB /* IMBlog.pb.m */; };
+		63356F3D1E04E16D000E53FB /* IMBuddy.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 63356F2A1E04E16D000E53FB /* IMBuddy.pb.m */; };
+		63356F3E1E04E16D000E53FB /* IMFile.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 63356F2C1E04E16D000E53FB /* IMFile.pb.m */; };
+		63356F3F1E04E16D000E53FB /* IMGroup.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 63356F2E1E04E16D000E53FB /* IMGroup.pb.m */; };
+		63356F401E04E16D000E53FB /* IMLogin.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 63356F301E04E16D000E53FB /* IMLogin.pb.m */; };
+		63356F411E04E16D000E53FB /* IMMessage.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 63356F321E04E16D000E53FB /* IMMessage.pb.m */; };
+		63356F421E04E16D000E53FB /* IMOther.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 63356F341E04E16D000E53FB /* IMOther.pb.m */; };
+		63356F431E04E16D000E53FB /* IMServer.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 63356F361E04E16D000E53FB /* IMServer.pb.m */; };
+		63356F441E04E16D000E53FB /* IMSwitchService.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 63356F381E04E16D000E53FB /* IMSwitchService.pb.m */; };
+		63356F451E04E16D000E53FB /* IMSystem.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 63356F3A1E04E16D000E53FB /* IMSystem.pb.m */; };
+		63356F471E04E1DA000E53FB /* HomeRecommendUserListAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 63356F461E04E1DA000E53FB /* HomeRecommendUserListAPI.m */; };
 		633FAEA91DF69AE8009C8A85 /* InfiniteScrollView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 633FAEA61DF69AE8009C8A85 /* InfiniteScrollView.bundle */; };
 		633FAEAA1DF69AE8009C8A85 /* InfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 633FAEA81DF69AE8009C8A85 /* InfiniteScrollView.m */; };
 		635777951DEBC5F800BEC247 /* XunXinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635777941DEBC5F800BEC247 /* XunXinViewController.m */; };
@@ -59,6 +61,7 @@
 		635777AC1DEC183E00BEC247 /* FriendFirstItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 635777AB1DEC183E00BEC247 /* FriendFirstItemView.m */; };
 		635777AF1DEC184F00BEC247 /* ConcernFirstItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 635777AE1DEC184F00BEC247 /* ConcernFirstItemView.m */; };
 		637D092C1DCC307600F933FC /* HomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 637D092B1DCC307600F933FC /* HomeViewCell.m */; };
+		638425C51E09037500A2CC91 /* GetUserInfoAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 638425C41E09037500A2CC91 /* GetUserInfoAPI.m */; };
 		638A935B1DD5690700F7C6E2 /* MTTFinderBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638A935A1DD5690700F7C6E2 /* MTTFinderBaseViewController.m */; };
 		638A93611DD5928100F7C6E2 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638A93601DD5928100F7C6E2 /* RecommendViewController.m */; };
 		638A93641DD592AD00F7C6E2 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638A93631DD592AD00F7C6E2 /* FriendsViewController.m */; };
@@ -565,34 +568,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0402AD261E01288D0065CEBD /* IMBaseDefine.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMBaseDefine.pb.h; sourceTree = "<group>"; };
-		0402AD271E01288D0065CEBD /* IMBaseDefine.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMBaseDefine.pb.m; sourceTree = "<group>"; };
-		0402AD281E01288D0065CEBD /* IMBlog.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMBlog.pb.h; sourceTree = "<group>"; };
-		0402AD291E01288D0065CEBD /* IMBlog.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMBlog.pb.m; sourceTree = "<group>"; };
-		0402AD2A1E01288D0065CEBD /* IMBuddy.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMBuddy.pb.h; sourceTree = "<group>"; };
-		0402AD2B1E01288D0065CEBD /* IMBuddy.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMBuddy.pb.m; sourceTree = "<group>"; };
-		0402AD2C1E01288D0065CEBD /* IMFile.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMFile.pb.h; sourceTree = "<group>"; };
-		0402AD2D1E01288D0065CEBD /* IMFile.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMFile.pb.m; sourceTree = "<group>"; };
-		0402AD2E1E01288D0065CEBD /* IMGroup.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGroup.pb.h; sourceTree = "<group>"; };
-		0402AD2F1E01288D0065CEBD /* IMGroup.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGroup.pb.m; sourceTree = "<group>"; };
-		0402AD301E01288D0065CEBD /* IMLogin.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMLogin.pb.h; sourceTree = "<group>"; };
-		0402AD311E01288D0065CEBD /* IMLogin.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMLogin.pb.m; sourceTree = "<group>"; };
-		0402AD321E01288D0065CEBD /* IMMessage.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMMessage.pb.h; sourceTree = "<group>"; };
-		0402AD331E01288D0065CEBD /* IMMessage.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMMessage.pb.m; sourceTree = "<group>"; };
-		0402AD341E01288D0065CEBD /* IMOther.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMOther.pb.h; sourceTree = "<group>"; };
-		0402AD351E01288D0065CEBD /* IMOther.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMOther.pb.m; sourceTree = "<group>"; };
-		0402AD361E01288D0065CEBD /* IMServer.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMServer.pb.h; sourceTree = "<group>"; };
-		0402AD371E01288D0065CEBD /* IMServer.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMServer.pb.m; sourceTree = "<group>"; };
-		0402AD381E01288D0065CEBD /* IMSwitchService.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSwitchService.pb.h; sourceTree = "<group>"; };
-		0402AD391E01288D0065CEBD /* IMSwitchService.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSwitchService.pb.m; sourceTree = "<group>"; };
-		0402AD3A1E01288D0065CEBD /* IMSystem.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSystem.pb.h; sourceTree = "<group>"; };
-		0402AD3B1E01288D0065CEBD /* IMSystem.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSystem.pb.m; sourceTree = "<group>"; };
 		0402AD481E012A860065CEBD /* UpdataUserInfoAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdataUserInfoAPI.h; sourceTree = "<group>"; };
 		0402AD491E012A860065CEBD /* UpdataUserInfoAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdataUserInfoAPI.m; sourceTree = "<group>"; };
 		0403CB221DFBD7620024E044 /* libAPOpenSdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAPOpenSdk.a; sourceTree = "<group>"; };
 		0403CB241DFBD77D0024E044 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
 		0403CB261DFBD7880024E044 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		0403CB281DFBD7930024E044 /* libYixinSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYixinSDK.a; sourceTree = "<group>"; };
+		0422EDBC1E04D66400E2E92A /* RePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RePasswordViewController.h; sourceTree = "<group>"; };
+		0422EDBD1E04D66400E2E92A /* RePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RePasswordViewController.m; sourceTree = "<group>"; };
 		042E77051DE54A3500A18093 /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
 		042E77061DE54A3500A18093 /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
 		042E77071DE54A3500A18093 /* SecurityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityUtil.h; sourceTree = "<group>"; };
@@ -643,6 +626,29 @@
 		63010D821DDADF3A00143F94 /* HomeConcernViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeConcernViewController.h; sourceTree = "<group>"; };
 		63010D831DDADF3A00143F94 /* HomeConcernViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeConcernViewController.m; sourceTree = "<group>"; };
 		63029DBB1DC99A4D0055E696 /* login_page_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_page_logo.png; sourceTree = "<group>"; };
+		63356F251E04E16D000E53FB /* IMBaseDefine.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMBaseDefine.pb.h; sourceTree = "<group>"; };
+		63356F261E04E16D000E53FB /* IMBaseDefine.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMBaseDefine.pb.m; sourceTree = "<group>"; };
+		63356F271E04E16D000E53FB /* IMBlog.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMBlog.pb.h; sourceTree = "<group>"; };
+		63356F281E04E16D000E53FB /* IMBlog.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMBlog.pb.m; sourceTree = "<group>"; };
+		63356F291E04E16D000E53FB /* IMBuddy.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMBuddy.pb.h; sourceTree = "<group>"; };
+		63356F2A1E04E16D000E53FB /* IMBuddy.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMBuddy.pb.m; sourceTree = "<group>"; };
+		63356F2B1E04E16D000E53FB /* IMFile.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMFile.pb.h; sourceTree = "<group>"; };
+		63356F2C1E04E16D000E53FB /* IMFile.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMFile.pb.m; sourceTree = "<group>"; };
+		63356F2D1E04E16D000E53FB /* IMGroup.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGroup.pb.h; sourceTree = "<group>"; };
+		63356F2E1E04E16D000E53FB /* IMGroup.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGroup.pb.m; sourceTree = "<group>"; };
+		63356F2F1E04E16D000E53FB /* IMLogin.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMLogin.pb.h; sourceTree = "<group>"; };
+		63356F301E04E16D000E53FB /* IMLogin.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMLogin.pb.m; sourceTree = "<group>"; };
+		63356F311E04E16D000E53FB /* IMMessage.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMMessage.pb.h; sourceTree = "<group>"; };
+		63356F321E04E16D000E53FB /* IMMessage.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMMessage.pb.m; sourceTree = "<group>"; };
+		63356F331E04E16D000E53FB /* IMOther.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMOther.pb.h; sourceTree = "<group>"; };
+		63356F341E04E16D000E53FB /* IMOther.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMOther.pb.m; sourceTree = "<group>"; };
+		63356F351E04E16D000E53FB /* IMServer.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMServer.pb.h; sourceTree = "<group>"; };
+		63356F361E04E16D000E53FB /* IMServer.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMServer.pb.m; sourceTree = "<group>"; };
+		63356F371E04E16D000E53FB /* IMSwitchService.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSwitchService.pb.h; sourceTree = "<group>"; };
+		63356F381E04E16D000E53FB /* IMSwitchService.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSwitchService.pb.m; sourceTree = "<group>"; };
+		63356F391E04E16D000E53FB /* IMSystem.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSystem.pb.h; sourceTree = "<group>"; };
+		63356F3A1E04E16D000E53FB /* IMSystem.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSystem.pb.m; sourceTree = "<group>"; };
+		63356F461E04E1DA000E53FB /* HomeRecommendUserListAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeRecommendUserListAPI.m; sourceTree = "<group>"; };
 		633FAEA61DF69AE8009C8A85 /* InfiniteScrollView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = InfiniteScrollView.bundle; sourceTree = "<group>"; };
 		633FAEA71DF69AE8009C8A85 /* InfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollView.h; sourceTree = "<group>"; };
 		633FAEA81DF69AE8009C8A85 /* InfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollView.m; sourceTree = "<group>"; };
@@ -653,8 +659,11 @@
 		635777AB1DEC183E00BEC247 /* FriendFirstItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendFirstItemView.m; sourceTree = "<group>"; };
 		635777AD1DEC184F00BEC247 /* ConcernFirstItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcernFirstItemView.h; sourceTree = "<group>"; };
 		635777AE1DEC184F00BEC247 /* ConcernFirstItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConcernFirstItemView.m; sourceTree = "<group>"; };
+		6364E4AB1E03F9F8006E7F06 /* HomeRecommendUserListAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeRecommendUserListAPI.h; sourceTree = "<group>"; };
 		637D092A1DCC307600F933FC /* HomeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewCell.h; sourceTree = "<group>"; };
 		637D092B1DCC307600F933FC /* HomeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewCell.m; sourceTree = "<group>"; };
+		638425C31E09037500A2CC91 /* GetUserInfoAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserInfoAPI.h; sourceTree = "<group>"; };
+		638425C41E09037500A2CC91 /* GetUserInfoAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUserInfoAPI.m; sourceTree = "<group>"; };
 		638A93591DD5690700F7C6E2 /* MTTFinderBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTFinderBaseViewController.h; sourceTree = "<group>"; };
 		638A935A1DD5690700F7C6E2 /* MTTFinderBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTFinderBaseViewController.m; sourceTree = "<group>"; };
 		638A935F1DD5928100F7C6E2 /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
@@ -1684,6 +1693,8 @@
 			children = (
 				639280391DD167850096978E /* HomeMainAPI.h */,
 				6392803A1DD167850096978E /* HomeMainAPI.m */,
+				6364E4AB1E03F9F8006E7F06 /* HomeRecommendUserListAPI.h */,
+				63356F461E04E1DA000E53FB /* HomeRecommendUserListAPI.m */,
 				63F601B31DE2D9B100F98382 /* UserOnline */,
 				63F601B21DE2D9A800F98382 /* UserOffline */,
 			);
@@ -2470,28 +2481,28 @@
 		C054EC691B3274AB00078809 /* ProtocolBuffers */ = {
 			isa = PBXGroup;
 			children = (
-				0402AD261E01288D0065CEBD /* IMBaseDefine.pb.h */,
-				0402AD271E01288D0065CEBD /* IMBaseDefine.pb.m */,
-				0402AD281E01288D0065CEBD /* IMBlog.pb.h */,
-				0402AD291E01288D0065CEBD /* IMBlog.pb.m */,
-				0402AD2A1E01288D0065CEBD /* IMBuddy.pb.h */,
-				0402AD2B1E01288D0065CEBD /* IMBuddy.pb.m */,
-				0402AD2C1E01288D0065CEBD /* IMFile.pb.h */,
-				0402AD2D1E01288D0065CEBD /* IMFile.pb.m */,
-				0402AD2E1E01288D0065CEBD /* IMGroup.pb.h */,
-				0402AD2F1E01288D0065CEBD /* IMGroup.pb.m */,
-				0402AD301E01288D0065CEBD /* IMLogin.pb.h */,
-				0402AD311E01288D0065CEBD /* IMLogin.pb.m */,
-				0402AD321E01288D0065CEBD /* IMMessage.pb.h */,
-				0402AD331E01288D0065CEBD /* IMMessage.pb.m */,
-				0402AD341E01288D0065CEBD /* IMOther.pb.h */,
-				0402AD351E01288D0065CEBD /* IMOther.pb.m */,
-				0402AD361E01288D0065CEBD /* IMServer.pb.h */,
-				0402AD371E01288D0065CEBD /* IMServer.pb.m */,
-				0402AD381E01288D0065CEBD /* IMSwitchService.pb.h */,
-				0402AD391E01288D0065CEBD /* IMSwitchService.pb.m */,
-				0402AD3A1E01288D0065CEBD /* IMSystem.pb.h */,
-				0402AD3B1E01288D0065CEBD /* IMSystem.pb.m */,
+				63356F251E04E16D000E53FB /* IMBaseDefine.pb.h */,
+				63356F261E04E16D000E53FB /* IMBaseDefine.pb.m */,
+				63356F271E04E16D000E53FB /* IMBlog.pb.h */,
+				63356F281E04E16D000E53FB /* IMBlog.pb.m */,
+				63356F291E04E16D000E53FB /* IMBuddy.pb.h */,
+				63356F2A1E04E16D000E53FB /* IMBuddy.pb.m */,
+				63356F2B1E04E16D000E53FB /* IMFile.pb.h */,
+				63356F2C1E04E16D000E53FB /* IMFile.pb.m */,
+				63356F2D1E04E16D000E53FB /* IMGroup.pb.h */,
+				63356F2E1E04E16D000E53FB /* IMGroup.pb.m */,
+				63356F2F1E04E16D000E53FB /* IMLogin.pb.h */,
+				63356F301E04E16D000E53FB /* IMLogin.pb.m */,
+				63356F311E04E16D000E53FB /* IMMessage.pb.h */,
+				63356F321E04E16D000E53FB /* IMMessage.pb.m */,
+				63356F331E04E16D000E53FB /* IMOther.pb.h */,
+				63356F341E04E16D000E53FB /* IMOther.pb.m */,
+				63356F351E04E16D000E53FB /* IMServer.pb.h */,
+				63356F361E04E16D000E53FB /* IMServer.pb.m */,
+				63356F371E04E16D000E53FB /* IMSwitchService.pb.h */,
+				63356F381E04E16D000E53FB /* IMSwitchService.pb.m */,
+				63356F391E04E16D000E53FB /* IMSystem.pb.h */,
+				63356F3A1E04E16D000E53FB /* IMSystem.pb.m */,
 			);
 			path = ProtocolBuffers;
 			sourceTree = "<group>";
@@ -3189,6 +3200,8 @@
 			children = (
 				C07E66231B328F1A00A5102C /* GetGroupInfoAPi.h */,
 				C07E66241B328F1A00A5102C /* GetGroupInfoAPi.m */,
+				638425C31E09037500A2CC91 /* GetUserInfoAPI.h */,
+				638425C41E09037500A2CC91 /* GetUserInfoAPI.m */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -3292,6 +3305,8 @@
 				A966520A1BEB52E0005D8F76 /* RegisterViewController.m */,
 				0434076B1DFE4763008B70EB /* FirstRegisterViewController.h */,
 				0434076C1DFE4763008B70EB /* FirstRegisterViewController.m */,
+				0422EDBC1E04D66400E2E92A /* RePasswordViewController.h */,
+				0422EDBD1E04D66400E2E92A /* RePasswordViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -4016,7 +4031,7 @@
 				81B6F4DD1B3A43B80058C911 /* MTTSignNotifyAPI.m in Sources */,
 				C0AE39FE1B32C68200B67232 /* DDChatBaseCell.m in Sources */,
 				C054ED201B3276DE00078809 /* gain_table.c in Sources */,
-				0402AD3F1E01288D0065CEBD /* IMFile.pb.m in Sources */,
+				63356F3E1E04E16D000E53FB /* IMFile.pb.m in Sources */,
 				C07E646B1B32791D00A5102C /* AQGridViewUpdateItem.m in Sources */,
 				A95AABEC1C213D30004A62D2 /* CommentTableViewCell.m in Sources */,
 				A94F65A61C0C610D00BC676D /* MXXSystemEntity.m in Sources */,
@@ -4072,7 +4087,7 @@
 				C0AE39CA1B32BD0200B67232 /* MTTWebViewController.m in Sources */,
 				C07E675A1B32BAA000A5102C /* ContactAvatarTools.m in Sources */,
 				817CB3B41B3C04940004AFEA /* MTTGroupInfoCell.m in Sources */,
-				0402AD3C1E01288D0065CEBD /* IMBaseDefine.pb.m in Sources */,
+				63356F3B1E04E16D000E53FB /* IMBaseDefine.pb.m in Sources */,
 				C07E675D1B32BBA300A5102C /* PublicProfileCell.m in Sources */,
 				C07E66621B32917000A5102C /* MTTDepartment.m in Sources */,
 				C0AE3A101B32C68200B67232 /* EditGroupViewCell.m in Sources */,
@@ -4094,7 +4109,7 @@
 				C07E67021B32ADE600A5102C /* DDAlbumDetailsViewControll.m in Sources */,
 				C054ED181B3276DE00078809 /* exc_10_32_table.c in Sources */,
 				C054EC381B3270D900078809 /* AppDelegate.m in Sources */,
-				0402AD441E01288D0065CEBD /* IMServer.pb.m in Sources */,
+				63356F431E04E16D000E53FB /* IMServer.pb.m in Sources */,
 				C07E672F1B32B05F00A5102C /* MTTPhotosCache.m in Sources */,
 				C054EC351B3270D900078809 /* main.m in Sources */,
 				A9F0D3DD1C22A2B000B2EC02 /* FollowUserAPI.m in Sources */,
@@ -4111,6 +4126,7 @@
 				C07E67141B32AE6700A5102C /* TouchDownGestureRecognizer.m in Sources */,
 				63B58D421DCADC98006CE9FA /* MTTFinderViewController.m in Sources */,
 				C07E67401B32B3F400A5102C /* SearchContentViewController.m in Sources */,
+				638425C51E09037500A2CC91 /* GetUserInfoAPI.m in Sources */,
 				C054ED381B3276DE00078809 /* speex_callbacks.c in Sources */,
 				A9D9E0E31C0BF0BE00F387B7 /* SystemViewController.m in Sources */,
 				A9927EE51C02EC9D00DE46E6 /* UIScrollView+MJExtension.m in Sources */,
@@ -4120,7 +4136,7 @@
 				81EFA50B1B5D0B31002E825B /* UIScrollView+PullToLoadMore.m in Sources */,
 				63F601AE1DE295AE00F98382 /* UserOfflineUnrequestAPI.m in Sources */,
 				81F8502F1B58E3110004F6DE /* MTTPCLoginViewController.m in Sources */,
-				0402AD3E1E01288D0065CEBD /* IMBuddy.pb.m in Sources */,
+				63356F3D1E04E16D000E53FB /* IMBuddy.pb.m in Sources */,
 				C054ED3C1B3276DE00078809 /* vq.c in Sources */,
 				0456E6261DE28CA600CA52BE /* GetUnreadAddFriendMsgAPI.m in Sources */,
 				C054ED421B3276DE00078809 /* PlayerManager.m in Sources */,
@@ -4141,8 +4157,8 @@
 				C07E66571B328F1A00A5102C /* SendPushTokenAPI.m in Sources */,
 				C0AE3A0F1B32C68200B67232 /* EditContactsCell.m in Sources */,
 				C07E66531B328F1A00A5102C /* GetMessageQueueAPI.m in Sources */,
+				63356F441E04E16D000E53FB /* IMSwitchService.pb.m in Sources */,
 				C07E64A21B3280E700A5102C /* UIView+Addition.m in Sources */,
-				0402AD451E01288D0065CEBD /* IMSwitchService.pb.m in Sources */,
 				C07E673D1B32B0A200A5102C /* MTTRootViewController.m in Sources */,
 				638A935B1DD5690700F7C6E2 /* MTTFinderBaseViewController.m in Sources */,
 				C054ED231B3276DE00078809 /* hexc_table.c in Sources */,
@@ -4164,14 +4180,15 @@
 				C0AE3A0B1B32C68200B67232 /* EmotionsViewController.m in Sources */,
 				638A93611DD5928100F7C6E2 /* RecommendViewController.m in Sources */,
 				C07E65BE1B32894800A5102C /* MTTMessageEntity.mm in Sources */,
+				63356F401E04E16D000E53FB /* IMLogin.pb.m in Sources */,
 				81B962711B4BD75D00CD1278 /* MTTSearchShowMoreCell.m in Sources */,
-				0402AD411E01288D0065CEBD /* IMLogin.pb.m in Sources */,
 				C07E664C1B328F1A00A5102C /* LogoutAPI.m in Sources */,
 				C07E665B1B328F1A00A5102C /* DDReceiveMessageAPI.m in Sources */,
 				C054ED411B3276DE00078809 /* Encapsulator.m in Sources */,
 				A970D9A91C12CA73002DF627 /* LCUserActionView.m in Sources */,
 				C07E64651B32791D00A5102C /* AQGridView.m in Sources */,
 				81A9032C1B5D60F900EBAE93 /* MTTPCLoginStatusNotifyAPI.m in Sources */,
+				0422EDBE1E04D66400E2E92A /* RePasswordViewController.m in Sources */,
 				A9BCE3061C0EEFC400C0050A /* ActionTableViewCell.m in Sources */,
 				C07E66421B328F1A00A5102C /* DDReceiveGroupAddMemberAPI.m in Sources */,
 				C054ED431B3276DE00078809 /* CADebugMacros.cpp in Sources */,
@@ -4180,8 +4197,8 @@
 				045F5A171DDEF4CD001D99B0 /* AddFriendModule.m in Sources */,
 				C07E649C1B3280E700A5102C /* UIButton+JSMessagesView.m in Sources */,
 				C054ED351B3276DE00078809 /* smallft.c in Sources */,
+				63356F451E04E16D000E53FB /* IMSystem.pb.m in Sources */,
 				C07E64BB1B3281F200A5102C /* DDMessageModule.m in Sources */,
-				0402AD461E01288D0065CEBD /* IMSystem.pb.m in Sources */,
 				C07E649B1B3280E700A5102C /* NSString+JSMessagesView.m in Sources */,
 				810D52641B52592A004DF7B4 /* MTTSearchDetailViewControll.m in Sources */,
 				C054ED301B3276DE00078809 /* preprocess.c in Sources */,
@@ -4190,8 +4207,8 @@
 				C054ED2C1B3276DE00078809 /* mdf.c in Sources */,
 				C054ED2A1B3276DE00078809 /* lsp_tables_nb.c in Sources */,
 				C054ED1F1B3276DE00078809 /* filters.c in Sources */,
+				63356F421E04E16D000E53FB /* IMOther.pb.m in Sources */,
 				C07E66551B328F1A00A5102C /* SendMessageAPI.m in Sources */,
-				0402AD431E01288D0065CEBD /* IMOther.pb.m in Sources */,
 				C07E64681B32791D00A5102C /* AQGridViewController.m in Sources */,
 				C054ED3B1B3276DE00078809 /* vbr.c in Sources */,
 				C07E66541B328F1A00A5102C /* GetUnreadMessagesAPI.m in Sources */,
@@ -4215,6 +4232,7 @@
 				C07E66511B328F1A00A5102C /* LoginAPI.mm in Sources */,
 				C07E64971B3280E700A5102C /* NSIndexSet+AQIndexesOutsideSet.m in Sources */,
 				C0AE3A081B32C68200B67232 /* MenuImageView.m in Sources */,
+				63356F471E04E1DA000E53FB /* HomeRecommendUserListAPI.m in Sources */,
 				A973B6B01C000CE000A5FB9D /* CYAlbumDetailsViewControll.m in Sources */,
 				C07E64501B3278F100A5102C /* JSDismissiveTextView.m in Sources */,
 				C0AE3A021B32C68200B67232 /* DDChatVoiceCell.m in Sources */,
@@ -4233,7 +4251,7 @@
 				A977385F1C046C6A00BFFBFC /* IMAvatarChangedAPI.m in Sources */,
 				C07E65CC1B328AFE00A5102C /* DDClientStateMaintenanceManager.m in Sources */,
 				A9927EE71C02EC9D00DE46E6 /* UIView+MJExtension.m in Sources */,
-				0402AD421E01288D0065CEBD /* IMMessage.pb.m in Sources */,
+				63356F411E04E16D000E53FB /* IMMessage.pb.m in Sources */,
 				C054ED341B3276DE00078809 /* scal.c in Sources */,
 				C00078511B3A780300E7E5B8 /* MTTLogoAnimateView.m in Sources */,
 				C07E65BF1B32894800A5102C /* MTTUserEntity.m in Sources */,
@@ -4249,7 +4267,7 @@
 				045F5A111DDEED72001D99B0 /* AddFriendMsgViewController.m in Sources */,
 				C07E663D1B328F1A00A5102C /* DDDepartmentAPI.m in Sources */,
 				A984934B1BEDEC3F004B9D1E /* DES3Util.m in Sources */,
-				0402AD401E01288D0065CEBD /* IMGroup.pb.m in Sources */,
+				63356F3F1E04E16D000E53FB /* IMGroup.pb.m in Sources */,
 				C07E665A1B328F1A00A5102C /* DDReceiveMessageACKAPI.m in Sources */,
 				C07E646A1B32791D00A5102C /* AQGridViewUpdateInfo.m in Sources */,
 				6392803B1DD167850096978E /* HomeMainAPI.m in Sources */,
@@ -4263,7 +4281,7 @@
 				04E696901DF79E4F00BDF464 /* PerfectPersonMessageController.m in Sources */,
 				81F8502A1B58B4F60004F6DE /* MTTPCStatusCell.m in Sources */,
 				C054ED191B3276DE00078809 /* exc_20_32_table.c in Sources */,
-				0402AD3D1E01288D0065CEBD /* IMBlog.pb.m in Sources */,
+				63356F3C1E04E16D000E53FB /* IMBlog.pb.m in Sources */,
 				C07E66561B328F1A00A5102C /* GetGroupInfoAPi.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4450,6 +4468,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.im.space;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -4515,6 +4534,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.im.space;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -4568,7 +4588,7 @@
 				C054EC511B3270D900078809 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		C054EC521B3270D900078809 /* Build configuration list for PBXNativeTarget "TeamTalk" */ = {
 			isa = XCConfigurationList;
@@ -4577,7 +4597,7 @@
 				C054EC541B3270D900078809 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		C054EC551B3270D900078809 /* Build configuration list for PBXNativeTarget "TeamTalkTests" */ = {
 			isa = XCConfigurationList;
@@ -4586,7 +4606,7 @@
 				C054EC571B3270D900078809 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

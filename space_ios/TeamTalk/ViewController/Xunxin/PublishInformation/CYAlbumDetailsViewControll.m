@@ -85,6 +85,7 @@
             
             [weakSelf.photoBrowser setCurrentPhotoIndex:0];
             weakSelf.photos = [NSMutableArray new];
+            
             for (int i =0; i<[self.choosePhotosArray count]; i++) {
                 ALAsset *result = [weakSelf.choosePhotosArray objectAtIndex:i];
                 ALAssetRepresentation* representation = [result defaultRepresentation];
@@ -107,7 +108,6 @@
                 [weakSelf.selections addObject:@(1)];
             }
             
-//            [self.photoBrowser reloadData];
             UIView *toolView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, FULL_WIDTH, 50)];
             [toolView setBackgroundColor:RGBA(0, 0, 0, 0.7)];
             // 选取按钮
@@ -268,6 +268,7 @@
 }
 
 #pragma mark - AQGridViewDataSource
+
 - (NSUInteger) numberOfItemsInGridView: (AQGridView *) gridView
 {
     return  [self.assetsArray count];
@@ -342,7 +343,7 @@
 
 -(IBAction)sendPhotos:(id)sender
 {
-    UIButton *button =(UIButton *)sender;
+    UIButton *button = (UIButton *)sender;
     [button setEnabled:NO];
     MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:self.view];
     [self.photoBrowser.view addSubview:HUD];
@@ -352,8 +353,8 @@
     
     [HUD showAnimated:YES whileExecutingBlock:^{
         if ([self.photos count] >0) {
-            NSMutableArray *array = [[NSMutableArray alloc] init];
-            NSMutableArray *tmp = [NSMutableArray new];
+            NSMutableArray *array = [NSMutableArray array];
+            NSMutableArray *tmp = [NSMutableArray array];
             [self.selections enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 if ([obj boolValue]) {
                     [tmp addObject:@(idx)];
@@ -366,12 +367,10 @@
                 
                 MTTPhotoEnity *photo = [MTTPhotoEnity new];
                 NSString *keyName = [[MTTPhotosCache sharedPhotoCache] getKeyName];
-//                NSData *photoData = UIImagePNGRepresentation(newPhoto.image);
-//                [[MTTPhotosCache sharedPhotoCache] storePhoto:photoData forKey:keyName toDisk:YES];
+                
                 photo.localPath=keyName;
                 photo.image = [self scaleImage:newPhoto.image toScale:0.3];
                 [array addObject:photo.image];
-                
             }];
             [[PublishInfoViewController shareInstance] receiveImageArray:array];
         }

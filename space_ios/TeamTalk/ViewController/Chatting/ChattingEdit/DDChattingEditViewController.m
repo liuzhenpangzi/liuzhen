@@ -349,6 +349,7 @@
         {
             MTTSessionEntity* session = self.session;
             [[DDGroupModule instance] getGroupInfogroupID:session.sessionID completion:^(MTTGroupEntity *group) {
+                
                 self.group =group;
                 self.groupName = self.group.name;
                 [self loadUserToView:self.group.groupUserIds];
@@ -367,6 +368,7 @@
 
 -(void)loadUserToView:(NSArray *)users
 {
+    
     NSMutableArray *tmpArray = [[NSMutableArray alloc]initWithArray:users];
     // 对users排序.群主第一个!
     if (self.session.sessionType == SessionTypeSessionTypeGroup) {

@@ -7,6 +7,7 @@
 //
 
 #import "XunXinDetailViewController.h"
+#import "PublicProfileViewControll.h"
 #import "XunxinTableViewCell.h"
 #import "ActionTableViewCell.h"
 #import "TouchDownGestureRecognizer.h"
@@ -15,10 +16,12 @@
 #import "NSDate+DDAddition.h"
 #import "MBProgressHUD.h"
 #import "AddConcernAPI.h"
+#import "GetUserInfoAPI.h"
 #import "CancellConcernAPI.h"
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKUI/ShareSDK+SSUI.h>
 #import "MTTDatabaseUtil.h"
+#import "DDUserModule.h"
 
 #define DDINPUT_MIN_HEIGHT          44.0f
 #define DDINPUT_HEIGHT              self.ConmentInputView.size.height
@@ -122,7 +125,7 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         cell.delegate = self;
-        [cell setXunxinModel:_xunxinModel isList:NO And:indexPath.row blogType:self.blogType];
+        [cell setXunxinModel:_xunxinModel isList:NO And:indexPath.row blogType:self.blogType isShowDetailText:YES];
         
         return cell;
         
@@ -146,8 +149,8 @@
 {
     if(indexPath.section == 0){
         return 65 + _xunxinModel.photoViewHeight + _xunxinModel.contentHeight;
-        
-    }else {
+    }
+    else {
         CommentModel *comment = [dataArray objectAtIndex:indexPath.row];
         return 35 + comment.commentHeight;
     }
@@ -166,8 +169,8 @@
 {
     if(section == 0){
         return nil;
-        
-    } else {
+    }
+    else {
         UIView *view = [[UIView alloc] init];
         view.backgroundColor = RGB(235, 235, 235);
         
@@ -185,8 +188,8 @@
         [view addSubview:line];
         
         // 按钮标题
-        NSString *comment = [NSString stringWithFormat:@"评论 %@", self.xunxinModel.commentCnt];
-        NSArray *array = @[@"分享", comment];
+//        NSString *comment = [NSString stringWithFormat:@"评论 %@", self.xunxinModel.commentCnt];
+        NSArray *array = @[@"分享", @"评论"];
         
         for (int i = 0; i < 2; i ++) {
             UIButton *actionButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2 * i + 1, 1, SCREEN_WIDTH/2 - 2, 38)];
@@ -226,7 +229,23 @@
             
             if ([status isEqualToString:@"0"]) {
                 // 添加关注
-                [self blogBtn:careBtn status:@"关注成功" btnTitle:@"已关注" btnTitleColor:[UIColor lightGrayColor]];
+                [self blogBtn:careBtn status:@"关注成功" btnTitle:@"-关注" btnTitleColor:[UIColor lightGrayColor]];
+                
+                // 添加到数据库
+                GetUserInfoAPI *userInfoAPI = [[GetUserInfoAPI alloc] init];
+                [userInfoAPI requestWithObject:@[model.writerUserId] Completion:^(NSArray *response, NSError *error) {
+                    [response enumerateObjectsUsingBlock:^(MTTUserEntity *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        // 缓存本地
+//                        [[DDUserModule shareInstance] addToAttention:obj];
+                        // 添加到数据库
+                        [[MTTDatabaseUtil instance] insertAllUser:@[obj] completion:^(NSError *error) {
+                            if (!error) {
+                                DDLog(@"插入成功");
+                            }
+                        }];
+                    }];
+                }];
+                
             }
         }];
     }];
@@ -243,8 +262,14 @@
         if ([resultCode isEqualToString:@"0"]) {  // 取消关注
             UIColor *titleColor = [UIColor colorWithRed:14.0/255.0 green:207.0/255.0 blue:49.0/255.0 alpha:1.0];
             [self blogBtn:careBtn status:@"已取消关注" btnTitle:@"+关注" btnTitleColor:titleColor];
+            
+            // 删除数据库
+            [[MTTDatabaseUtil instance] deleteFriendForSession:model.writerUserId completion:^(BOOL success) {
+                if (success) {
+                    [[DDUserModule shareInstance] cancelUser:model.writerUserId];
+                }
+            }];
         }
-        
     }];
 }
 
@@ -268,14 +293,27 @@
 
 -(void)shared
 {
-    NSArray* imageArray = @[[UIImage imageNamed:@"header"]];
-    if (imageArray) {
+    UIImage *iconImage=[UIImage imageNamed:@"mshare"];
+    NSMutableArray*sharedArray=[[NSMutableArray alloc]initWithArray:self.xunxinModel.imgArray];
+    
+    if (sharedArray.count==0) {
+        [sharedArray addObject:iconImage];
+    }
+    
+    NSString *sharedContent=nil;
+    if (self.xunxinModel.content) {
+        sharedContent=self.xunxinModel.content;
+    }else{
+        sharedContent=@"";
+    }
+    
+    if (sharedArray) {
         
         NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
-        [shareParams SSDKSetupShareParamsByText:@"分享内容"
-                                         images:imageArray
-                                            url:[NSURL URLWithString:@"http://mob.com"]
-                                          title:@"分享标题"
+        [shareParams SSDKSetupShareParamsByText:sharedContent
+                                         images:sharedArray
+                                            url:[NSURL URLWithString:[NSString stringWithFormat:@"http://mobile.10thcommune.com/blog/%@/tenth",self.xunxinModel.blogId]]
+                                          title:@"第十空间"
                                            type:SSDKContentTypeAuto];
         //2、分享（可以弹出我们的分享菜单和编辑界面）
         [ShareSDK showShareActionSheet:self.view //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响
@@ -313,6 +351,21 @@
 
 #pragma mark - 按钮的点击
 
+- (void)blogsUserInfo:(XunxinTableViewCell *)blogsCell
+{
+    XunxinModel *xunxinModel = blogsCell.xunxinModel;
+    GetUserInfoAPI *userInfoAPI = [[GetUserInfoAPI alloc] init];
+    [userInfoAPI requestWithObject:@[xunxinModel.writerUserId] Completion:^(NSArray *response, NSError *error) {
+        [response enumerateObjectsUsingBlock:^(MTTUserEntity *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            // 跳转用户信息控制器
+            PublicProfileViewControll *ppVC = [[PublicProfileViewControll alloc] init];
+            ppVC.user = obj;
+            
+            [self.navigationController pushViewController:ppVC animated:YES];
+        }];
+    }];
+}
+
 - (void)userCareBtnOnClick:(XunxinTableViewCell *)userCell
 {
     UIButton *careBtn = userCell.careBtn;
@@ -321,7 +374,7 @@
     if ([careBtn.titleLabel.text isEqualToString:@"+关注"]) {
         [self careUser:careBtn andUserModel:xunxinModel];
         
-    }else if ([careBtn.titleLabel.text isEqualToString:@"已关注"]) {
+    }else if ([careBtn.titleLabel.text isEqualToString:@"-关注"]) {
         [self cancellConcernUser:careBtn andUserModel:xunxinModel];
         
     }
@@ -372,15 +425,15 @@
         [self.ConmentInputView setFrame:DDINPUT_BOTTOM_FRAME];
     }];
     
-    
     [self setValue:@(self.ConmentInputView.origin.y) forKeyPath:@"_inputViewY"];
     [self.view endEditing:YES];
 }
 
 #pragma mark - 添加评论
+
 -(void)textViewEnterSend
 {
-    NSString* text = [self.ConmentInputView.textView text];
+    NSString *text = [self.ConmentInputView.textView text];
     
     if(text.length == 0){
         return;
@@ -404,13 +457,19 @@
             NSMutableArray *array = [NSMutableArray array];
             [array addObjectsFromArray:obj];
             
+            // 评论的model
             CommentModel *comment = [[CommentModel alloc] init];
             comment.commentID = [NSString stringWithFormat:@"%@",array[0]];
             comment.comment = text;
-            NSDate* date = [NSDate dateWithTimeIntervalSince1970:[array[1] doubleValue]];
+            NSDate *date = [NSDate dateWithTimeIntervalSince1970:[array[1] doubleValue]];
             comment.createTime = [date blogDataString];
-            [dataArray addObject:comment];
+            // 用户头像
+            MTTUserEntity *userEntity = (MTTUserEntity *)TheRuntime.user;
+            comment.avatarUrl = userEntity.avatar;
             
+            // 添加到数组
+            [dataArray addObject:comment];
+            // 刷新UI
             [_tbView reloadData];
             
             [self.ConmentInputView.textView resignFirstResponder];
@@ -434,6 +493,7 @@
 }
 
 #pragma mark - KVO
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"_inputViewY"]){

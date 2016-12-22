@@ -9,7 +9,9 @@
 #import "GetGroupInfoAPI.h"
 #import "MTTGroupEntity.h"
 #import "IMGroup.pb.h"
+
 @implementation GetGroupInfoAPI
+
 - (int)requestTimeOutTimeInterval
 {
     return 0;
@@ -76,4 +78,5 @@
     };
     return package;
 }
+
 @end

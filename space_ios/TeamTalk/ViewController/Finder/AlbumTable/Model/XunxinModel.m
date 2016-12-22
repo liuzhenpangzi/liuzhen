@@ -112,9 +112,9 @@
         _contentHeight = 0;
     }
     else{
-        _contentHeight = [_content boundingRectWithSize:CGSizeMake(SCREEN_HEIGHT - 24, MAXFLOAT) options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:22]} context:nil].size.height;
+        _contentHeight = [_content boundingRectWithSize:CGSizeMake(SCREEN_HEIGHT - 24, MAXFLOAT) options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:20]} context:nil].size.height;
     }
-    //NSLog(@"----_contentHeight %f",_contentHeight);
+//    NSLog(@"----_contentHeight %f",_contentHeight);
 }
 
 @end

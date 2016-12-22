@@ -26,6 +26,7 @@
 #define DDLog(xx, ...)                 nil
 #endif
 
+
 #define IM_PDU_HEADER_LEN   16
 #define IM_PDU_VERSION      13
 
@@ -48,9 +49,19 @@
 #define REGISTER                                @"http://www.10thcommune.com:86/register"
 
 #define LOGINCHECK                              @"http://www.10thcommune.com:86/login"
+
 #define FIRSTREGIST                             @"http://10thcommune.com:86/get_phone_valid_code"
 
 #define GET_VALID_CODE                          @"http://www.10thcommune.com:86/get_phone_valid_code"
 
+#define RE_PASSWORD                             @"http://www.10thcommune.com:86/repassword"
+
 #define _(x)                                    NSLocalizedString(x,@"")
 
+#define Iv                                      @"0392039203920300" //偏移量,可自行修改
+#define KEY                                     @"smkldospdosldaaa" //key，可自行修改
+
+
+// OSS BucketName
+#define kHomeBucketNameInAliYunOSS              @"tenth"       // 测试打开（首页）
+#define kBucketNameInAliYunOSS                  @"maomaojiang" // 测试打开（其他）

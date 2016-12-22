@@ -9,5 +9,5 @@
 #import "MTTBaseViewController.h"
 
 @interface MTTCodeViewController : MTTBaseViewController
-
+@property(nonatomic,copy)NSString*inviteCode;
 @end

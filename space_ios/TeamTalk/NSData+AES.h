@@ -12,7 +12,7 @@
 
 @interface NSData (Encryption)
 
-- (NSData *)AES128EncryptWithKey:(NSString *)key gIv:(NSString *)Iv;   //加密
-- (NSData *)AES128DecryptWithKey:(NSString *)key gIv:(NSString *)Iv;   //解密
+- (NSData *)AES128EncryptWithKey:(NSString *)key gIv:(NSString *)Ivs;   //加密
+- (NSData *)AES128DecryptWithKey:(NSString *)key gIv:(NSString *)Ivs;   //解密
 
 @end

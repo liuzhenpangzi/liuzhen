@@ -77,6 +77,8 @@
         NSUInteger begin = rsp.msgIdBegin;
          NSMutableArray *msgArray = [NSMutableArray new];
         for (MsgInfo *msgInfo in [rsp msgList]) {
+            
+            
             MTTMessageEntity *msg = [MTTMessageEntity makeMessageFromPB:msgInfo SessionType:sessionType];
             msg.sessionId=sessionID;
             msg.state=DDmessageSendSuccess;
@@ -101,10 +103,10 @@
     {
         NSArray* array = (NSArray*)object;
         IMGetMsgListReqBuilder *getMsgListReq = [IMGetMsgListReq builder];
-        [getMsgListReq setMsgIdBegin:[array[0] integerValue]];
+        [getMsgListReq setMsgIdBegin:[array[0] intValue]];
         [getMsgListReq setUserId:0];
-        [getMsgListReq setMsgCnt:[array[1] integerValue]];
-        [getMsgListReq setSessionType: [array[2] integerValue]];
+        [getMsgListReq setMsgCnt:[array[1] intValue]];
+        [getMsgListReq setSessionType: [array[2] intValue]];
         [getMsgListReq setSessionId:[MTTUtil changeIDToOriginal:array[3]]];
         DDDataOutputStream *dataout = [[DDDataOutputStream alloc] init];
         [dataout writeInt:0];

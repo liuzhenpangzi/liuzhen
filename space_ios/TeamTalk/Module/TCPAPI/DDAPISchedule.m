@@ -130,7 +130,7 @@ static NSInteger const timeInterval = 1;
 - (void)receiveServerData:(NSData *)data forDataType:(ServerDataType)dataType
 {
     dispatch_async(self.apiScheduleQueue, ^{
-        NSString* key = MAP_DATA_RESPONSE_KEY(dataType);
+        NSString *key = MAP_DATA_RESPONSE_KEY(dataType);
         // 根据key去调用注册api的completion
         id<DDAPIScheduleProtocol> api = _apiResponseMap[key];
         if (api) {

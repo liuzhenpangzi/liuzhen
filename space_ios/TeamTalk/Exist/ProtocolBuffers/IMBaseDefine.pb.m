@@ -229,6 +229,8 @@ BOOL BuddyListCmdIDIsValidValue(BuddyListCmdID value) {
     case BuddyListCmdIDCidBuddyListAllOnlineUserCntResponse:
     case BuddyListCmdIDCidBuddyListUpdateUserInfoRequest:
     case BuddyListCmdIDCidBuddyListUpdateUserInfoResponse:
+    case BuddyListCmdIDCidBuddyListRecommendListRequest:
+    case BuddyListCmdIDCidBuddyListRecommendListResponse:
       return YES;
     default:
       return NO;
@@ -322,6 +324,10 @@ NSString *NSStringFromBuddyListCmdID(BuddyListCmdID value) {
       return @"BuddyListCmdIDCidBuddyListUpdateUserInfoRequest";
     case BuddyListCmdIDCidBuddyListUpdateUserInfoResponse:
       return @"BuddyListCmdIDCidBuddyListUpdateUserInfoResponse";
+    case BuddyListCmdIDCidBuddyListRecommendListRequest:
+      return @"BuddyListCmdIDCidBuddyListRecommendListRequest";
+    case BuddyListCmdIDCidBuddyListRecommendListResponse:
+      return @"BuddyListCmdIDCidBuddyListRecommendListResponse";
     default:
       return nil;
   }

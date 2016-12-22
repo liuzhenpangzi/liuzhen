@@ -12,6 +12,7 @@
 #import "SJAvatarBrowser.h"
 #import "TLClickImageView.h"
 #import "UIImageView+WebCache.h"
+#import "DDUserModule.h"
 
 @interface XunxinTableViewCell()
 
@@ -21,6 +22,7 @@
 @property (nonatomic, weak) UIView *photoView;
 @property (nonatomic, weak) UILabel *content;
 @property (nonatomic, weak) UIView *userActionView;
+@property (nonatomic, weak) UIView *infoView;
 
 @end
 
@@ -32,6 +34,14 @@
         
         self.contentView.backgroundColor = RGB(255, 255, 255);
         
+        // 用户信息的view
+        UIView *infoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 125, 60)];
+        self.infoView = infoView;
+        UITapGestureRecognizer *tapInfoGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapUserInfo)];
+        [infoView addGestureRecognizer:tapInfoGesture];
+        [self.contentView addSubview:infoView];
+        
+        
         // 用户头像
         UIImageView *headImg = [[UIImageView alloc] initWithFrame:CGRectMake(12, 15, 40, 40)];
         headImg.layer.cornerRadius = 20;
@@ -39,14 +49,14 @@
         headImg.userInteractionEnabled = YES;
         headImg.contentMode = UIViewContentModeScaleAspectFill;
         self.headImg = headImg;
-        [self.contentView addSubview:headImg];
+        [infoView addSubview:headImg];
         
         
         // 用户名
         UILabel *userName = [[UILabel alloc] initWithFrame:CGRectMake(62, 15, 150, 20)];
         userName.font = [UIFont systemFontOfSize:16];
         self.userName = userName;
-        [self.contentView addSubview:userName];
+        [infoView addSubview:userName];
         
         
         // 发帖时间
@@ -55,12 +65,12 @@
         publishTime.textColor = [UIColor grayColor];
         publishTime.textAlignment = NSTextAlignmentLeft;
         self.publishTime = publishTime;
-        [self.contentView addSubview:publishTime];
+        [infoView addSubview:publishTime];
         
         
         // 关注按钮
         self.careBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.careBtn.frame = CGRectMake(SCREEN_WIDTH - 60 - 8, 15 + 2.5, 60, 25);
+        self.careBtn.frame = CGRectMake(SCREEN_WIDTH - 60 - 8, 15 + 1, 60, 28);
         self.careBtn.titleLabel.font = [UIFont systemFontOfSize:14.0];
         self.careBtn.layer.borderWidth = 0.5;
         self.careBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
@@ -81,6 +91,14 @@
     return self;
 }
 
+// blogs用户信息
+- (void)tapUserInfo
+{
+    if ([self.delegate respondsToSelector:@selector(blogsUserInfo:)]) {
+        [self.delegate blogsUserInfo:self];
+    }
+}
+
 // 点击关注按钮
 - (void)careBtnOnClick:(UIButton *)careBtn
 {
@@ -90,11 +108,13 @@
 }
 
 // 模型赋值
--(void)setXunxinModel:(XunxinModel *)xunxinModel isList:(BOOL)isList And:(NSInteger)index blogType:(BlogType)blogType
+-(void)setXunxinModel:(XunxinModel *)xunxinModel isList:(BOOL)isList And:(NSInteger)index blogType:(BlogType)blogType isShowDetailText:(BOOL)isNeedDetail
 {
     if(!xunxinModel) {
         return;
     }
+    
+    CGFloat contentTextHeight = 0.0;
     _xunxinModel = xunxinModel;
     // 创建cell下面的按钮
     [self initUserAction:index andModel:xunxinModel];
@@ -106,9 +126,19 @@
     
     
     // 内容的高度
-    self.content.frame = CGRectMake(12, 60, SCREEN_WIDTH - 24, xunxinModel.contentHeight);
-    self.photoView.frame = CGRectMake(8, 60 + xunxinModel.contentHeight, SCREEN_WIDTH - 16, xunxinModel.photoViewHeight);
-    
+    if (xunxinModel.contentHeight > 120) {
+        if (isNeedDetail) {
+            contentTextHeight = xunxinModel.contentHeight;
+            self.content.frame = CGRectMake(12, 60, SCREEN_WIDTH - 24, xunxinModel.contentHeight);
+        }else {
+            contentTextHeight = 120;
+            self.content.frame = CGRectMake(12, 60, SCREEN_WIDTH - 24, 120);
+        }
+    }else {
+        contentTextHeight = xunxinModel.contentHeight;
+        self.content.frame = CGRectMake(12, 60, SCREEN_WIDTH - 24, xunxinModel.contentHeight);
+    }
+    self.photoView.frame = CGRectMake(8, 60 + contentTextHeight, SCREEN_WIDTH - 16, xunxinModel.photoViewHeight);
     
     // 设置值
     // 头像
@@ -138,15 +168,77 @@
     
     // 控制按钮的状态
     if (blogType == BlogTypeBlogTypeFollowuser) {
-        [self.careBtn setTitle:@"已关注" forState:UIControlStateNormal];
-        [self.careBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    }else if (blogType == BlogTypeBlogTypeFriend) {
+        // 关注
+        [self.careBtn setTitle:@"-关注" forState:UIControlStateNormal];
+        [self.careBtn setTitleColor:[UIColor colorWithRed:14.0/255.0 green:207.0/255.0 blue:49.0/255.0 alpha:1.0] forState:UIControlStateNormal];
+    }
+    else if (blogType == BlogTypeBlogTypeFriend) {
+        // 好友
         self.careBtn.hidden = YES;
+    }
+    else if (blogType == BlogTypeBlogTypeRcommend) {
+        // 推荐
+        [self setupCareBtn:self.careBtn compareWithUserID:xunxinModel.writerUserId];
     }
     
     // 底部按钮
     self.userActionView.hidden = !isList;
-    self.userActionView.frame = CGRectMake(0, 66 + xunxinModel.photoViewHeight + xunxinModel.contentHeight, SCREEN_WIDTH, 40);
+    self.userActionView.frame = CGRectMake(0, 66 + xunxinModel.photoViewHeight + contentTextHeight, SCREEN_WIDTH, 40);
+}
+
+// 按钮状态的情况
+- (void)setupCareBtn:(UIButton *)careBtn compareWithUserID:(NSString *)currentUserID
+{
+    MTTUserEntity *mySelf = (MTTUserEntity *)TheRuntime.user;
+    
+    BOOL userIsFriend  = NO;
+    BOOL userIsConcern = NO;
+    
+    NSString *friendID;
+    NSString *concernID;
+    DDUserModule *userModule = [DDUserModule shareInstance];
+    
+    // 获取关注用户
+    NSArray *concernA = [userModule getAllAttention];
+    for (MTTUserEntity *userEntity in concernA) {
+        if ([userEntity.userID containsString:@"user_"]) {
+            friendID = [userEntity.userID substringFromIndex:5];
+        }else {
+            friendID = userEntity.userID;
+        }
+        
+        // 判断是否是关注的用户
+        if ([friendID isEqualToString:currentUserID]) {
+            userIsConcern = YES;
+        }
+    }
+    
+    // 获取好友用户
+    NSArray *friendA = [userModule getAllMaintanceUser];
+    for (MTTUserEntity *userEntity in friendA) {
+        if ([userEntity.userID containsString:@"user_"]) {
+            concernID = [userEntity.userID substringFromIndex:5];
+        }else {
+            concernID = userEntity.userID;
+        }
+        
+        // 判断是否是好友用户
+        if ([concernID isEqualToString:currentUserID]) {
+            userIsFriend = YES;
+        }
+    }
+    
+    if (userIsFriend || [currentUserID isEqualToString:mySelf.userID]) {  // 好友
+        self.careBtn.hidden = YES;
+    }
+    else if (userIsConcern) { // 关注
+        [self.careBtn setTitle:@"-关注" forState:UIControlStateNormal];
+        [self.careBtn setTitleColor:[UIColor colorWithRed:14.0/255.0 green:207.0/255.0 blue:49.0/255.0 alpha:1.0] forState:UIControlStateNormal];
+    }
+    else {  // 推荐
+        [self.careBtn setTitle:@"+关注" forState:UIControlStateNormal];
+        [self.careBtn setTitleColor:[UIColor colorWithRed:14.0/255.0 green:207.0/255.0 blue:49.0/255.0 alpha:1.0] forState:UIControlStateNormal];
+    }
 }
 
 // 发表的图片内容
@@ -167,7 +259,7 @@
             TLClickImageView *imgView = [[TLClickImageView alloc] initWithFrame:CGRectMake(4 + (x/3 * j),4 + (x/3 * i), (x/3) - 8, (x/3) - 8)];
             // 大图的URL
             imgView.urlArray = imgArray;
-            imgView.backgroundColor = [self randomColor];
+//            imgView.backgroundColor = [self randomColor];
             
             imgView.userInteractionEnabled = YES;
             imgView.contentMode = UIViewContentModeScaleAspectFill;
@@ -221,7 +313,7 @@
     
     
     NSArray *array = @[@"xx_zf", @"xx_pl"];
-    NSArray *labelTitle = @[@"分享", xunxinModel.commentCnt]; // xunxinModel.likeCnt
+    NSArray *labelTitle = @[@"分享", @"评论"]; // xunxinModel.commentCnt
     
     for (int i = 0; i < 2; i ++) {
         

@@ -13,7 +13,7 @@
 
 //(key和iv向量这里是16位的) 这里是CBC加密模式，安全性更高
 
-- (NSData *)AES128EncryptWithKey:(NSString *)key gIv:(NSString *)Iv{//加密
+- (NSData *)AES128EncryptWithKey:(NSString *)key gIv:(NSString *)Ivs{//加密
     char keyPtr[kCCKeySizeAES128+1];
     bzero(keyPtr, sizeof(keyPtr));
     [key getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
@@ -45,7 +45,7 @@
 }
 
 
-- (NSData *)AES128DecryptWithKey:(NSString *)key gIv:(NSString *)Iv{//解密
+- (NSData *)AES128DecryptWithKey:(NSString *)key gIv:(NSString *)Ivs{//解密
     char keyPtr[kCCKeySizeAES128+1];
     bzero(keyPtr, sizeof(keyPtr));
     [key getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];

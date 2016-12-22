@@ -8,6 +8,7 @@
 
 #import "MTTBaseViewController.h"
 #import "LCActionSheet.h"
+
 @class MTTUserEntity;
 @interface AddFriendViewController : MTTBaseViewController<UITableViewDataSource,UITableViewDelegate,LCActionSheetDelegate>
 

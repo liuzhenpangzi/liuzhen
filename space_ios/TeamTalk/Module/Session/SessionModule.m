@@ -70,6 +70,7 @@
 }
 -(void)addToSessionModel:(MTTSessionEntity *)session
 {
+    
     [self.sessions safeSetObject:session forKey:session.sessionID];
 }
 -(NSUInteger)getAllUnreadMessageCount
@@ -108,6 +109,7 @@
 }
 -(void)addSessionsToSessionModel:(NSArray *)sessionArray
 {
+    
     [sessionArray enumerateObjectsUsingBlock:^(MTTSessionEntity *session, NSUInteger idx, BOOL *stop) {
         [self.sessions safeSetObject:session forKey:session.sessionID];
     }];
@@ -136,7 +138,7 @@
                 }
                 
                 
-                NSLog(@"%@",obj.lastMsg);
+               
                 [self addToSessionModel:obj];
             }
             
@@ -239,10 +241,10 @@
     if(message.msgType == MsgTypeMsgTypeSingleAudio || message.msgType == MsgTypeMsgTypeSingleText ){
         sessionType = SessionTypeSessionTypeSingle;
     }
-    else{
-        // 系统消息
-        sessionType = SessionTypeSessionTypeSystem;
-    }
+//    else{
+//        // 系统消息
+//        sessionType = SessionTypeSessionTypeSystem;
+//    }
     
     if ([[self.sessions allKeys] containsObject:message.sessionId]) {
         session = [self.sessions objectForKey:message.sessionId];
@@ -267,6 +269,7 @@
                 session.unReadMsgCount=session.unReadMsgCount+1;
             }
         }
+        
         [self addSessionsToSessionModel:@[session]];
     }
     [self updateToDatabase:session];

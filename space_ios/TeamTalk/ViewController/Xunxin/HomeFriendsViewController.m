@@ -7,6 +7,7 @@
 //
 
 #import "HomeFriendsViewController.h"
+#import "PublicProfileViewControll.h"
 #import "FriendFirstItemView.h"
 #import "HomeViewCell.h"
 #import "MJRefresh.h"
@@ -19,23 +20,29 @@
 #import <AliyunOSSiOS/OSSService.h>
 /** API*/
 #import "DDSendPhotoMessageAPI.h"
+#import "GetUserInfoAPI.h"
 
 #define HomeScreenWidth [UIScreen mainScreen].bounds.size.width
 #define HomeScreenHeight [UIScreen mainScreen].bounds.size.height
 
 static CGFloat const margin = 3; // item 的间距
 static int const cols = 2;
-static NSString *const ID = @"cell";
+static NSString *const friendReuseIdentifier = @"friendCell";
 #define itemWidth (self.view.frame.size.width - ((cols - 1) * margin)) / cols
 
 @interface HomeFriendsViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, FriendFirstItemViewDelegate>
 
 @property (nonatomic, weak)   UICollectionView *collectionView;
+/** 保存名字的数组*/
 @property (nonatomic, strong) NSMutableArray *dataArray;
+/** 保存URL的数组*/
+@property (nonatomic, strong) NSMutableArray *urlArray;
+/** 用户id*/
+@property (nonatomic, strong) NSMutableArray *idArray;
+
 @property (nonatomic, weak)   FriendFirstItemView *firstItemView;
 @property (nonatomic, weak)   NSTimer *timer;
 @property (nonatomic, assign) BOOL cameraIsOpen;
-@property (nonatomic, strong) MTTUserEntity *userEntity;
 /** 定时刷新*/
 @property (nonatomic, weak)   NSTimer *refreshTimer;
 
@@ -43,14 +50,26 @@ static NSString *const ID = @"cell";
 
 @implementation HomeFriendsViewController
 
+- (NSMutableArray *)idArray
+{
+    if (_idArray == nil) {
+        _idArray = [NSMutableArray array];
+    }
+    return _idArray;
+}
+
+- (NSMutableArray *)urlArray
+{
+    if (_urlArray == nil) {
+        _urlArray = [NSMutableArray array];
+    }
+    return _urlArray;
+}
+
 - (NSMutableArray *)dataArray
 {
     if (_dataArray == nil) {
         _dataArray = [NSMutableArray array];
-        
-        MTTUserEntity *userEntity = (MTTUserEntity *)TheRuntime.user;
-        self.userEntity = userEntity;
-        [_dataArray addObject:userEntity];
     }
     return _dataArray;
 }
@@ -61,14 +80,12 @@ static NSString *const ID = @"cell";
 {
     [super viewWillAppear:animated];
     
-    [self startRefreshTimer];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     
-    [self stopRefreshTimer];
 }
 
 - (void)viewDidLoad {
@@ -90,8 +107,9 @@ static NSString *const ID = @"cell";
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mainViewIsOtherView:) name:@"RecommendView" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mainViewIsOtherView:) name:@"ConcernView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mainViewIsOtherView:) name:@"HomeViewWillDisappear" object:nil];
     /** 滚动到当前页*/
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mainViewIsCurrentView:) name:@"FriendView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mainViewIsFriendView:) name:@"FriendView" object:nil];
 }
 
 // 实现监听的方法
@@ -103,7 +121,7 @@ static NSString *const ID = @"cell";
 }
 
 // 显示的位置是当前控制器的view
-- (void)mainViewIsCurrentView:(NSNotification *)note
+- (void)mainViewIsFriendView:(NSNotification *)note
 {
     if (self.refreshTimer == nil) {
         [self startRefreshTimer];
@@ -126,8 +144,7 @@ static NSString *const ID = @"cell";
     collectionView.backgroundColor = [UIColor whiteColor];
     collectionView.dataSource = self;
     collectionView.delegate = self;
-    [collectionView registerClass:[HomeViewCell class] forCellWithReuseIdentifier:ID];
-    
+    [collectionView registerClass:[HomeViewCell class] forCellWithReuseIdentifier:friendReuseIdentifier];
     
     // 显示自己摄像头数据
     FriendFirstItemView *firstItemView = [[FriendFirstItemView alloc] initWithFrame:CGRectMake(0, 0, itemWidth, itemWidth * 1.3)];
@@ -162,25 +179,40 @@ static NSString *const ID = @"cell";
 
 - (void)getAllContactsFromFMDB
 {
-    [self.dataArray addObject:self.userEntity];
+    MTTUserEntity *userEntity = (MTTUserEntity *)TheRuntime.user;
+    [self.dataArray addObject:userEntity.nick];
+    [self.urlArray  addObject:userEntity.userID];
+    [self.idArray   addObject:userEntity.userID];
     
+    // 获取好友
+    NSArray *friendUserArray = [[DDUserModule shareInstance] getAllMaintanceUser];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        // 获取好友
-        NSArray *friendUserArray = [[DDUserModule shareInstance] getAllMaintanceUser];
         for (MTTUserEntity *userEntity in friendUserArray) {
-            NSString *userID = [userEntity.objID substringFromIndex:5];
-//            for (NSInteger i = 0; i < 15; i++) {
-//                [self.dataArray addObject:userEntity];
-//            }
+            NSString *userID = [NSString stringWithFormat:@"%@", userEntity.userID];
             // 检查是否有图片
             NSString *objectKey = [NSString stringWithFormat:@"im/live/%@.png", userID];
             OSSClient *client   = [[DDSendPhotoMessageAPI sharedPhotoCache] ossInit];
-            NSError *error      = nil;
-            BOOL isExist = [client doesObjectExistInBucket:@"tenth" objectKey:objectKey error:&error];
+            NSError  *error     = nil;
+            BOOL isExist = [client doesObjectExistInBucket:kHomeBucketNameInAliYunOSS objectKey:objectKey error:&error];
             if (!error) {
                 if(isExist) {
                     // 文件存在
-                    [self.dataArray addObject:userEntity];
+                    [self.dataArray addObject:userEntity.nick];
+                    [self.idArray   addObject:userID];
+                    
+                    NSString  *constrainURL = nil;
+                    NSString  *objectKey = [NSString stringWithFormat:@"im/live/%@.png", userID];
+                    OSSClient *client = [[DDSendPhotoMessageAPI sharedPhotoCache] ossInit];
+                    OSSTask   *task = [client presignConstrainURLWithBucketName:kHomeBucketNameInAliYunOSS
+                                                                  withObjectKey:objectKey
+                                                         withExpirationInterval: 30 * 60];
+                    if (!task.error) {
+                        constrainURL = task.result;
+                        // 保存URL的数组
+                        [self.urlArray addObject:constrainURL];
+                    } else {
+                        NSLog(@"error: %@", task.error);
+                    }
                 }
             }
         }
@@ -209,24 +241,39 @@ static NSString *const ID = @"cell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-//    return 10;
     return self.dataArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *reuseIdentifier = @"cell";
-    HomeViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    HomeViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:friendReuseIdentifier forIndexPath:indexPath];
     if (cell == nil) {
         cell = [[HomeViewCell alloc] initWithFrame:CGRectMake(0, 0, itemWidth, itemWidth * 1.3)];
     }
     if (indexPath.row == 0) {
         cell.backgroundColor = [UIColor whiteColor];
     }else {
-        cell.backgroundColor = [self randomColor];
+        cell.backgroundColor = [UIColor lightGrayColor];
     }
-    cell.userEntity = self.dataArray[indexPath.item];
+    
+    // 设置值
+    [cell setValueForImageViewWithURL:self.urlArray[indexPath.item] andNickName:self.dataArray[indexPath.item] andUserID:self.idArray[indexPath.item]];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *userID = self.idArray[indexPath.item + 1];
+    GetUserInfoAPI *userInfoAPI = [[GetUserInfoAPI alloc] init];
+    [userInfoAPI requestWithObject:@[userID] Completion:^(NSArray *response, NSError *error) {
+        [response enumerateObjectsUsingBlock:^(MTTUserEntity *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            // 跳转用户信息控制器
+            PublicProfileViewControll *ppVC = [[PublicProfileViewControll alloc] init];
+            ppVC.user = obj;
+            
+            [self pushViewController:ppVC animated:YES];
+        }];
+    }];
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -287,11 +334,10 @@ static NSString *const ID = @"cell";
 // 提醒设置
 - (void)alertUserOpenCameraSetting
 {
-    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"" message:@"该设备尚未开启摄像机功能，是否去设置开启？" preferredStyle:UIAlertControllerStyleAlert];
-    [alertVC addAction:[UIAlertAction actionWithTitle:@"去设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"未获得授权使用摄像头" message:@"请在iOS“设置”-“隐私”-“相机”中打开" preferredStyle:UIAlertControllerStyleAlert];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
     }]];
-    [alertVC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     
     [self presentViewController:alertVC animated:YES completion:nil];
 }

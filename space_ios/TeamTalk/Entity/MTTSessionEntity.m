@@ -69,15 +69,18 @@
                 break;
             case SessionTypeSessionTypeSystem:
             {
-//                MTTGroupEntity* group = [[DDGroupModule instance] getGroupByGId:_sessionID];
-//                if (!group) {
-//                    [[DDGroupModule instance] getGroupInfogroupID:_sessionID completion:^(MTTGroupEntity *group) {
-//                        name=group.name;
-//                    }];
-//                }else{
-//                    name=group.name;
-//                }
-                name = @"系统消息";
+                
+                
+                MTTGroupEntity* group = [[DDGroupModule instance] getGroupByGId:_sessionID];
+                if (!group) {
+                    [[DDGroupModule instance] getGroupInfogroupID:_sessionID completion:^(MTTGroupEntity *group) {
+                        name=group.name;
+                    }];
+                }else{
+                    name=group.name;
+                }
+                //name = @"系统消息";
+                
             }
                 break;
         }

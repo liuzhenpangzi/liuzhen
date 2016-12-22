@@ -58,7 +58,7 @@
 }
 
 - (void)setCellContent:(NSString *)avatar title:(NSString *)title detail:(NSString *)detail key:(NSString *)key{
-    UIImage* placeholder = [UIImage imageNamed:@"user_placeholder"];
+    UIImage* placeholder = [UIImage imageNamed:@"header"];
     [_avatar sd_setImageWithURL:[NSURL URLWithString:avatar] placeholderImage:placeholder];
     
     if(detail.length>0){

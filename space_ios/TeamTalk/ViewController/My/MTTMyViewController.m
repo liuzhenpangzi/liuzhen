@@ -33,7 +33,11 @@
 #import "MTTCodeViewController.h"
 #import "PerfectPersonMessageController.h"
 @interface MTTMyViewController ()
-
+{
+    UILabel *label;
+    
+    UIImageView *arrow;
+}
 @property(assign)NSInteger hadUpdate;
 
 @end
@@ -190,7 +194,7 @@
             MTTUserEntity *userEntity = (MTTUserEntity *)TheRuntime.user;
             self.user = userEntity;
             // 设置显示个人信息
-            [cell setCellContent:userEntity.avatar Name: userEntity.name Cname: userEntity.nick];
+            [cell setCellContent:userEntity.avatar Name: userEntity.signature Cname: userEntity.nick];
         }];
         [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
         return cell;
@@ -239,9 +243,46 @@
                 }];
             }];
         }
+        
         else if(row == 3)
         {
-           [cell.textLabel setText:@"我的推荐码"];
+           [cell.textLabel setText:[NSString stringWithFormat:@"我的邀请码 : %@",TheRuntime.user.name]];
+            
+
+            if (arrow==nil) {
+                
+           
+            arrow=[[UIImageView alloc]init];
+            arrow.image=[UIImage imageNamed:@"jiantou"];
+            [cell addSubview:arrow];
+            [arrow mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.right.mas_equalTo(-10);
+
+                
+                make.centerY.equalTo(cell);
+                
+            }];
+
+             }
+            
+            if (label==nil) {
+                
+           
+            
+            label =[[UILabel alloc]init];
+            label.text=@"分享";
+            label.textColor=cell.textLabel.textColor;
+            label.font=[UIFont systemFontOfSize:13.0];
+            [cell addSubview:label];
+            [label mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.right.equalTo(arrow.mas_left).offset(0);
+                               make.centerY.equalTo(cell);
+               
+            }];
+            
+            
+           }
+            
         }
         return cell;
         
@@ -286,7 +327,10 @@
 -(void)codeShark
 {
     MTTCodeViewController *mcc=[[MTTCodeViewController alloc]init];
-    [self pushViewController:mcc animated:mcc];
+    
+    mcc.inviteCode=self.user.name;
+    
+    [self pushViewController:mcc animated:NO];
 }
 
 #pragma mark - buttonClick

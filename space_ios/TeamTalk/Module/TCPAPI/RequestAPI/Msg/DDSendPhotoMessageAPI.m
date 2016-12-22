@@ -16,8 +16,8 @@
 #import "AFNetworking.h"
 
 static int max_try_upload_times = 5;
-static NSString * const kBucketNameInAliYunOSS = @"maomaojiang";
-static NSString * const kHomeBucketNameInAliYunOSS = @"tenth";
+//static NSString *const kBucketNameInAliYunOSS = @"maomaojiang";
+//static NSString *const kHomeBucketNameInAliYunOSS = @"tenth";
 
 @interface DDSendPhotoMessageAPI ()
 
@@ -180,7 +180,6 @@ static NSString * const kHomeBucketNameInAliYunOSS = @"tenth";
         if (!task.error) {
             task = [client presignPublicURLWithBucketName:kBucketNameInAliYunOSS
                                             withObjectKey:objectKey];
-//            task = [client presignConstrainURLWithBucketName:kBucketNameInAliYunOSS withObjectKey:objectKey withExpirationInterval:30 * 60];
             NSString *imagePath = [task.result stringByRemovingPercentEncoding];
             success(imagePath);
         } else {
@@ -215,9 +214,7 @@ static NSString * const kHomeBucketNameInAliYunOSS = @"tenth";
         if (!task.error) {
 //            task = [client presignPublicURLWithBucketName:kHomeBucketNameInAliYunOSS
 //                                            withObjectKey:objectKey];
-//            task = [client presignConstrainURLWithBucketName:kHomeBucketNameInAliYunOSS withObjectKey:objectKey withExpirationInterval:30 * 60];
 //            NSString *imagePath = [task.result stringByRemovingPercentEncoding];
-//            success(task.result);
 //            success(imagePath);
             success(nil);
             NSLog(@"home image upload object success!");
@@ -398,10 +395,8 @@ static NSString * const kHomeBucketNameInAliYunOSS = @"tenth";
         if (!task.error) {
             task = [client presignPublicURLWithBucketName:kBucketNameInAliYunOSS
                                             withObjectKey:objectKey];
-//            task = [client presignConstrainURLWithBucketName:kBucketNameInAliYunOSS withObjectKey:objectKey withExpirationInterval:30 * 60];
             NSString *imagePath = [task.result stringByRemovingPercentEncoding];
             success(imagePath);
-            
         } else {
             failure(task.error);
             DDLog(@"upload object failed, error: %@" , task.error);
@@ -452,7 +447,6 @@ static NSString * const kHomeBucketNameInAliYunOSS = @"tenth";
         if (!task.error) {
             task = [client presignPublicURLWithBucketName:kBucketNameInAliYunOSS
                                             withObjectKey:objectKey];
-//            task = [client presignConstrainURLWithBucketName:kBucketNameInAliYunOSS withObjectKey:objectKey withExpirationInterval:30 * 60];
 //            NSString *imagePath = [task.result stringByRemovingPercentEncoding];
             NSString *imagePath = task.result ;
 //            NSString *imagePath = task.result;

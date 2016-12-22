@@ -27,6 +27,8 @@
 #import "AddFriendMsgViewController.h"
 #import <Masonry.h>
 #import "ReadAddFriendAPI.h"
+#import "GetUserInfoAPI.h"
+#import "MTTDatabaseUtil.h"
 @interface ContactsViewController ()<ContactsModuleDelegate,setToolAndCellbarBadgeDelegate>
 {
 
@@ -343,23 +345,15 @@
    
     [self swichContactsToALl];
     
-
-    
     [[AddFriendModule instance]onlyGetRecentAddFriendMsgCount:^(NSUInteger count) {
         
         [self setToolbarBadge:count];
         self.unReadCount=count;
               //[self setCellbarBadge:count];
-        
         self.aCount=count;
     
         [self.tableView reloadData];
- 
-        
     }];
-    
-
-    
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add)];
     
@@ -1012,11 +1006,11 @@
                 
             }];
           
-              self.aCount=0;
+            self.aCount=0;
             self.isClean=YES;
             [self.tableView reloadData];
             
-              [self pushViewController:add animated:NO];
+            [self pushViewController:add animated:YES];
             
             
          return;
@@ -1046,10 +1040,26 @@
             return;
         }
         
-        PublicProfileViewControll *public = [PublicProfileViewControll new];
-        public.user=user;
+        GetUserInfoAPI* api=[[GetUserInfoAPI alloc]init];
         
-        [self pushViewController:public animated:YES];
+        [api requestWithObject:@[user.userID] Completion:^(id response, NSError *error) {
+            
+            if (((NSArray*)response).count>0) {
+                
+       
+            PublicProfileViewControll *public = [PublicProfileViewControll new];
+            
+            
+            public.user=((NSArray*)response)[0];
+            
+                [[MTTDatabaseUtil  instance]insertAllUser:((NSArray*)response) completion:^(NSError *error) {
+                }];
+
+            [self pushViewController:public animated:YES];
+            }
+        }];
+        
+        
     }else
     {
         NSString *keyStr = [[self allKeys] objectAtIndex:indexPath.section];
@@ -1061,10 +1071,28 @@
             [self.navigationController popViewControllerAnimated:YES];
             return;
         }
-        PublicProfileViewControll *public = [PublicProfileViewControll new];
-        public.user=user;
         
-        [self pushViewController:public animated:YES];
+        
+        GetUserInfoAPI* api=[[GetUserInfoAPI alloc]init];
+        
+        [api requestWithObject:@[user.userID] Completion:^(id response, NSError *error) {
+            
+            if (((NSArray*)response).count>0) {
+                
+                
+                PublicProfileViewControll *public = [PublicProfileViewControll new];
+                
+                
+                public.user=((NSArray*)response)[0];
+               
+            [[MTTDatabaseUtil  instance]insertAllUser:((NSArray*)response) completion:^(NSError *error) {
+                
+            }];
+                [self pushViewController:public animated:YES];
+            }
+        }];
+
+       
         
     }
         
@@ -1084,20 +1112,27 @@
 //            return;
 //        }
         
-        PublicProfileViewControll *public = [PublicProfileViewControll new];
-        public.user=user;
-        public.isFromAttention=YES;
-        [self pushViewController:public animated:YES];
+        GetUserInfoAPI* api=[[GetUserInfoAPI alloc]init];
         
+        [api requestWithObject:@[user.userID] Completion:^(id response, NSError *error) {
+            
+            if (((NSArray*)response).count>0) {
+                
+                
+                PublicProfileViewControll *public = [PublicProfileViewControll new];
+                
+                
+                public.user=((NSArray*)response)[0];
+                  public.isFromAttention=YES;
+                [[MTTDatabaseUtil  instance]insertAllUser:((NSArray*)response) completion:^(NSError *error) {
+                }];
+
+                [self pushViewController:public animated:YES];
+            }
+        }];
+
         
-        
-    
-    
-    
-    
-    
-    
-    
+       
     }
 }
 

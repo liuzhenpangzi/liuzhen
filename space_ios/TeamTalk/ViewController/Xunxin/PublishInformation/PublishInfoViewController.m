@@ -18,6 +18,8 @@
 #import "XunXinViewController.h"
 #import "MTTNotification.h"
 
+static  PublishInfoViewController *publishManager = nil;
+
 @interface PublishInfoViewController ()<UIAlertViewDelegate,UITableViewDataSource,UITableViewDelegate,UITextViewDelegate,LCActionSheetDelegate,addImageDelegate>
 {
     UITableView *_tbView;
@@ -35,12 +37,17 @@
 +(instancetype )shareInstance
 {
     static dispatch_once_t onceToken;
-    static PublishInfoViewController *publishManager = nil;
+//    static  PublishInfoViewController *publishManager = nil;
     dispatch_once(&onceToken, ^{
         publishManager = [[PublishInfoViewController alloc] init];
     });
     
     return publishManager;
+}
+
+- (void)instance
+{
+    publishManager = [[PublishInfoViewController alloc] init];
 }
 
 - (UIImagePickerController *)imagePicker
@@ -139,8 +146,8 @@
         [cell addSubview:lineView];
         
         return cell;
-        
-    }else {
+    }
+    else {
         // 图片
         static NSString *identifier = @"hehe";
         BlogImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
@@ -241,6 +248,9 @@
                 // 发表完成
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"publishBlogFinished" object:self userInfo:nil];
                 
+                // 发表完重置单利
+                [self instance];
+                
                 [self popViewControllerAnimated:YES];
             }];
         }];
@@ -276,6 +286,9 @@
                      
                      // 发表完成
                      [[NSNotificationCenter defaultCenter] postNotificationName:@"publishBlogFinished" object:self userInfo:nil];
+                     
+                     // 发表完重置单利
+                     [self instance];
                      
                      [self popViewControllerAnimated:YES];
                  }];

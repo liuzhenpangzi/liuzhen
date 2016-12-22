@@ -13,4 +13,9 @@
 
 @property (nonatomic, strong) MTTUserEntity *userEntity;
 
+/** 
+ * 设置值
+ */
+- (void)setValueForImageViewWithURL:(NSString *)urlString andNickName:(NSString *)userName andUserID:(NSString *)userID;
+
 @end

@@ -27,7 +27,7 @@ NSString* const DDNotificationStartLogin = @"Notification_Start_login";
 NSString* const DDNotificationServerHeartBeat = @"Notification_Server_heart_beat";
 NSString* const DDNotificationUserLoginSuccess = @"Notification_user_login_success";
 
-NSString *const DDNotificationLogout = @"Notification_user_logout";
+NSString* const DDNotificationLogout = @"Notification_user_logout";
 NSString* const DDNotificationUserLoginFailure = @"Notification_user_login_failure";
 NSString* const DDNotificationUserReloginSuccess = @"Notification_user_relogin_success";
 NSString* const DDNotificationUserOffline = @"Notification_user_off_line";

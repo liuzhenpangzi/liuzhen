@@ -120,7 +120,7 @@ static NSInteger const reloginTimeinterval = 5;
 //                [RecentUsersViewController shareInstance].title=@"消息(未连接)";
                 [self p_stopCheckServerHeartBeat];
                 [self p_stopHeartBeat];
-                [self p_startRelogin];
+                //[self p_startRelogin];
                 break;
             case DDUserOffLineInitiative:
 //                [RecentUsersViewController shareInstance].title=@"消息(未连接)";

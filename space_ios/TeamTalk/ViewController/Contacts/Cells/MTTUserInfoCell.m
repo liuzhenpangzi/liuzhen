@@ -59,6 +59,9 @@
             make.size.mas_equalTo(CGSizeMake(200, 20));
         }];
         
+        
+        
+        
         self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.frame];
         self.selectedBackgroundView.backgroundColor = RGB(244, 245, 246);
     }
@@ -67,26 +70,26 @@
 
 -(void)setCellContent:(NSString *)avatar Name:(NSString *)name Cname:(NSString *)cname
 {
-    UIImage *placeholder = [UIImage imageNamed:@"user_placeholder"];
-    //[_avatar sd_setImageWithURL:[NSURL URLWithString:avatar] placeholderImage:placeholder];
+    UIImage *placeholder = [UIImage imageNamed:@"header"];
+    [_avatar sd_setImageWithURL:[NSURL URLWithString:avatar] placeholderImage:placeholder];
    
-    if (avatar && ![avatar isEqualToString:@""]) {
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            // 处理耗时操作的代码块...
-            NSData *data = [NSData dataWithContentsOfURL:[NSURL  URLWithString:avatar]];
-            UIImage *image = [UIImage imageWithData:data]; // 取得图片
-             if (data != nil) {
-                 //通知主线程刷新
-                 dispatch_async(dispatch_get_main_queue(), ^{
-                     //回调或者说是通知主线程刷新，
-                     _avatar.image=image;
-                 });
-             }
-        });
-        
-    }else{
-        _avatar.image=placeholder;
-    }
+//    if (avatar && ![avatar isEqualToString:@""]) {
+//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            // 处理耗时操作的代码块...
+//            NSData *data = [NSData dataWithContentsOfURL:[NSURL  URLWithString:avatar]];
+//            UIImage *image = [UIImage imageWithData:data]; // 取得图片
+//             if (data != nil) {
+//                 //通知主线程刷新
+//                 dispatch_async(dispatch_get_main_queue(), ^{
+//                     //回调或者说是通知主线程刷新，
+//                     _avatar.image=image;
+//                 });
+//             }
+//        });
+//        
+//    }else{
+//        _avatar.image=placeholder;
+//    }
     
     if (cname.length) {
         [_nameLabel setText:cname];

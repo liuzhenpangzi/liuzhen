@@ -76,7 +76,7 @@ static uint32_t seqNo = 0;
         
         
         
-//        char* pOut;
+      //  char* pOut;
 //        uint32_t nOutLen;
 //        const char *test =[newContent cStringUsingEncoding:NSUTF8StringEncoding];
 //        uint32_t nInLen  = strlen(test);
@@ -93,7 +93,7 @@ static uint32_t seqNo = 0;
             session.lastMsg=@"[图片]";
         }else if ([message isVoiceMessage])
         {
-            session.lastMsg=@"[语言]";
+            session.lastMsg=@"[语音]";
         }else
         {
             session.lastMsg=message.msgContent;

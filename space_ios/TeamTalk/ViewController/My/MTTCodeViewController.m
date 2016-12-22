@@ -35,7 +35,7 @@
     // 2、恢复滤镜的默认属性
     [filter setDefaults];
     // 3、设置内容
-    NSString *str = [NSString stringWithFormat:@"http://www.diybuy168.com/mobile_web/register.html?invitecode="];
+    NSString *str = [NSString stringWithFormat:@"http://mobile.10thcommune.com/register/%@",self.inviteCode];
     NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
     // 使用KVO设置属性
     [filter setValue:data forKey:@"inputMessage"];
@@ -181,13 +181,13 @@ void ProviderReleaseData (void *info, const void *data, size_t size){
 -(void)sharedButtonclick:(UIButton*)button
 {
 
-   
+   NSArray* imageArray = @[[UIImage imageNamed:@"mshare"]];
         
         NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
-        [shareParams SSDKSetupShareParamsByText:@"分享内容"
-                                         images:nil
-                                            url:[NSURL URLWithString:@"http://mob.com"]
-                                          title:@"分享标题"
+        [shareParams SSDKSetupShareParamsByText:@"我发现了一款好玩的App,快来注册和我一起玩吧！"
+                                         images:imageArray
+                                            url:[NSURL URLWithString:[NSString stringWithFormat:@"http://mobile.10thcommune.com/register/%@",self.inviteCode]]
+                                          title:@"第十空间"
                                            type:SSDKContentTypeAuto];
         //2、分享（可以弹出我们的分享菜单和编辑界面）
         [ShareSDK showShareActionSheet:self.view //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响

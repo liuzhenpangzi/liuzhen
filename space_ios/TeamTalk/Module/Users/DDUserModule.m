@@ -66,33 +66,28 @@
     if (!_attention) {
         _attention = [[NSMutableDictionary alloc] init];
     }
-    if([user.relation intValue]!=UserRelationTypeRelationFollow)
+    
+    if([user.relation intValue]!=UserRelationTypeRelationFollow&&user.relation!=nil)
     {
-    [_allUsers setValue:user forKey:user.objID];
-
+        [_allUsers setValue:user forKey:user.objID];
     }
     
-    if ([user.relation intValue]== UserRelationTypeRelationFollow) {
-       
+    if ([user.relation intValue]== UserRelationTypeRelationFollow&&user.relation!=nil)
+    {
         [_attention setValue:user forKey:user.objID];
     }
     
     [_allUsersNick setValue:user forKey:user.nick];
-    
 }
 
 -(void)addToAttention:(MTTUserEntity*)user
 {
-    if (!user)
-    {
-        return;
-    }
+    if (!user) return;
+    
     if (!_attention) {
         _attention = [[NSMutableDictionary alloc] init];
     }
-    
-
-  [_attention setValue:user forKey:user.objID];
+    [_attention setValue:user forKey:user.objID];
 }
 
 -(NSArray *)getAllUsersNick
@@ -184,6 +179,17 @@
         if ([userID isEqualToString: user.userID]) {
                
             [_allUsers removeObjectForKey:[NSString stringWithFormat:@"user_%@",userID]];
+        }
+    }
+}
+
+-(void)cancelUser:(NSString*)userID
+{
+    for (MTTUserEntity * user in [_attention allValues]) {
+        if ([userID isEqualToString: user.userID]) {
+            
+            [_attention removeObjectForKey:[NSString stringWithFormat:@"user_%@",userID]];
+            
         }
     }
 }

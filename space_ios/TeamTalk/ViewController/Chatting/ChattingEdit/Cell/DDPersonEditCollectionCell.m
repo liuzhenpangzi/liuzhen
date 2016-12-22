@@ -69,7 +69,7 @@
         self.personIcon.image = [UIImage imageNamed:@"tt_group_manager_delete_user"];
     }else
     {
-        [self.personIcon sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:[UIImage imageNamed:@"user_placeholder"]];
+        [self.personIcon sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:[UIImage imageNamed:@"header"]];
     }
 
 }

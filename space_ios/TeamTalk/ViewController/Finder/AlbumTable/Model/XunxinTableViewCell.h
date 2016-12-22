@@ -14,11 +14,12 @@
 @protocol UserActionDelegate <NSObject>
 
 @optional
-
 - (void)userAction:(NSInteger)count Andindex:(NSInteger)index;
 - (void)imageMagnify:(NSInteger)count AndIndex:(NSInteger)index AndRect:(CGRect) oldRect;
+
 @required
 - (void)userCareBtnOnClick:(XunxinTableViewCell *)userCell;
+- (void)blogsUserInfo:(XunxinTableViewCell *)blogsCell;
 
 @end
 
@@ -28,6 +29,6 @@
 @property (nonatomic,strong) XunxinModel * xunxinModel;
 @property (nonatomic,weak) id<UserActionDelegate>delegate;
 
--(void)setXunxinModel:(XunxinModel *)xunxinModel isList:(BOOL)isList And:(NSInteger)index blogType:(BlogType)blogType;
+-(void)setXunxinModel:(XunxinModel *)xunxinModel isList:(BOOL)isList And:(NSInteger)index blogType:(BlogType)blogType isShowDetailText:(BOOL)isNeedDetail;
 
 @end

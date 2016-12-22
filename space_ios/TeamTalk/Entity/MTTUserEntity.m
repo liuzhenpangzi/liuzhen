@@ -127,6 +127,8 @@
     user.lastUpdateTime = [[dic safeObjectForKey:@"lastUpdateTime"] integerValue];
     user.pyname         = [dic safeObjectForKey:@"pyname"];
     user.signature      = [dic safeObjectForKey:@"signature"];
+    
+    user.relation=[dic safeObjectForKey:@"relation"];
     user.fansCount=[[dic safeObjectForKey:@"fanscount"]integerValue];
     return user;
 }

@@ -58,49 +58,36 @@
     [self setTitleBtnLocation];  // 处理标题栏位置
     
     self.navigationItem.rightBarButtonItem = nil;
-      [self setTheFirstPromptMessage];//登录后提示调屏幕亮度
+    [self setTheFirstPromptMessage]; // 登录后提示调屏幕亮度
     [[NSNotificationCenter defaultCenter] postNotificationName:@"HomeViewWillAppear" object:self userInfo:nil];
 
-    
     // 开启定时器
     [self startTimer];
 }
 
 -(void)setTheFirstPromptMessage
 {
-
-//    if (![[NSUserDefaults standardUserDefaults ]objectForKey:@"FirstPromptMessage"]) {
-//        
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请调低屏幕亮度" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"下次不再提示", nil];
-//        
-//        
-//        [alert show];
-//        
-//        [[NSUserDefaults standardUserDefaults ]setObject:@"yes" forKey:@"FirstPromptMessage"];
-//    }
-    
     if (![[NSUserDefaults standardUserDefaults ]objectForKey:@"FirstPromptMessage"]) {
 
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"请把手机屏幕亮度调低" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"请把手机屏幕亮度调低" preferredStyle:UIAlertControllerStyleAlert];
     
-    // Create the actions.
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        NSLog(@"The \"Okay/Cancel\" alert's cancel action occured.");
-    }];
+        // Create the actions.
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            NSLog(@"The \"Okay/Cancel\" alert's cancel action occured.");
+        }];
     
-    UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"下次不再提示" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"下次不再提示" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
         [[NSUserDefaults standardUserDefaults ]setObject:@"yes" forKey:@"FirstPromptMessage"];
-    }];
+            
+        }];
+        
+        // Add the actions.
+        [alertController addAction:cancelAction];
+        [alertController addAction:otherAction];
     
-    // Add the actions.
-    [alertController addAction:cancelAction];
-    [alertController addAction:otherAction];
-    
-    [self presentViewController:alertController animated:YES completion:nil];
-}
-
-
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
 }
 
 - (void)viewDidLoad {
@@ -117,14 +104,11 @@
     [UIApplication sharedApplication].idleTimerDisabled = YES;
     
   
-    
     [self setupUserOnlineView];         // 提示用户在线人数
     [self loadHomeMainDatas];           // 请求首页数据
     [self addAllChildViewControllers];  // 添加所有的自控制器
     [self setupMainView];               // collectionView
-    
-    
-    
+    [self addListeningEvents];          // 注册监听
 }
 
 #pragma mark - 创建view
@@ -138,7 +122,7 @@
     // 文字
     UILabel *onlineCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, baseImageView.frame.size.width, baseImageView.frame.size.height)];
     onlineCountLabel.text = @"当前在线人数";
-    onlineCountLabel.textAlignment = NSTextAlignmentLeft;
+    onlineCountLabel.textAlignment = NSTextAlignmentCenter;
     onlineCountLabel.font = [UIFont systemFontOfSize:14.0];
     onlineCountLabel.textColor = [UIColor whiteColor];
     self.onlineCountLabel = onlineCountLabel;
@@ -168,9 +152,14 @@
     scrollView.delegate = self;
     
     // 添加第一个自控制器
-    UIViewController *childViewController = self.childViewControllers[0];
-    childViewController.view.frame = CGRectMake(0, 0, scrollView.frame.size.width, scrollView.frame.size.height);
-    [scrollView addSubview:childViewController.view];
+    for (NSInteger i = 0; i < self.childViewControllers.count; i++) {
+        UIViewController *childViewController = self.childViewControllers[i];
+        childViewController.view.frame = CGRectMake(i * scrollView.frame.size.width, 0, scrollView.frame.size.width, scrollView.frame.size.height);
+        [scrollView addSubview:childViewController.view];
+    }
+//    UIViewController *childViewController = self.childViewControllers[0];
+//    childViewController.view.frame = CGRectMake(0, 0, scrollView.frame.size.width, scrollView.frame.size.height);
+//    [scrollView addSubview:childViewController.view];
     
     self.scrollView = scrollView;
     [self.view addSubview:scrollView];
@@ -230,6 +219,24 @@
     [self.navTitleView addSubview:lineView];
 }
 
+#pragma mark - 注册监听
+
+- (void)addListeningEvents
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(listenCameraOpen) name:@"xxxviewCameraOpen" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(listenCameraClose) name:@"xxxviewCameraClose" object:nil];
+}
+
+- (void)listenCameraOpen
+{
+    [[NSUserDefaults standardUserDefaults] setObject:@"cameraOpen" forKey:@"currentCameraStatus"];
+}
+
+- (void)listenCameraClose
+{
+    [[NSUserDefaults standardUserDefaults] setObject:@"cameraClose" forKey:@"currentCameraStatus"];
+}
+
 #pragma mark - 定时器事件
 
 // 开启定时器
@@ -264,6 +271,9 @@
         CGPoint center = self.lineView.center;
         center.x = self.currentTitleBtn.center.x;
         self.lineView.center = center;
+        
+        // 当前显示的view
+        [self postNotificationFromTitleBtn:self.currentTitleBtn];
     }
 }
 
@@ -380,13 +390,8 @@
 
 #pragma mark - button_click
 
-- (void)navTitleViewBtnClick:(UIButton *)titleBtn
+- (void)postNotificationFromTitleBtn:(UIButton *)titleBtn
 {
-    self.preveBtn.selected = NO;
-    titleBtn.selected = YES;
-    self.preveBtn = titleBtn;
-    self.currentTitleBtn = titleBtn;
-    
     // 当前显示的view
     if (titleBtn.tag == 0) {
         self.titleBtnTag = 0;
@@ -400,6 +405,17 @@
         self.titleBtnTag = 2;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"ConcernView" object:self userInfo:nil];
     }
+}
+
+- (void)navTitleViewBtnClick:(UIButton *)titleBtn
+{
+    self.preveBtn.selected = NO;
+    titleBtn.selected = YES;
+    self.preveBtn = titleBtn;
+    self.currentTitleBtn = titleBtn;
+
+    // 发通知
+    [self postNotificationFromTitleBtn:titleBtn];
     
     CGSize size = [titleBtn.titleLabel.text sizeWithAttributes:@{NSFontAttributeName: titleBtn.titleLabel.font}];
     // 动画
@@ -460,6 +476,11 @@
     
     UIColor *color = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
     return color;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
