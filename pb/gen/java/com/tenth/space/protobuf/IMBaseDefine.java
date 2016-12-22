@@ -862,6 +862,14 @@ public final class IMBaseDefine {
      * <code>CID_BUDDY_LIST_UPDATE_USER_INFO_RESPONSE = 555;</code>
      */
     CID_BUDDY_LIST_UPDATE_USER_INFO_RESPONSE(42, 555),
+    /**
+     * <code>CID_BUDDY_LIST_RECOMMEND_LIST_REQUEST = 556;</code>
+     */
+    CID_BUDDY_LIST_RECOMMEND_LIST_REQUEST(43, 556),
+    /**
+     * <code>CID_BUDDY_LIST_RECOMMEND_LIST_RESPONSE = 557;</code>
+     */
+    CID_BUDDY_LIST_RECOMMEND_LIST_RESPONSE(44, 557),
     ;
 
     /**
@@ -1065,6 +1073,14 @@ public final class IMBaseDefine {
      * <code>CID_BUDDY_LIST_UPDATE_USER_INFO_RESPONSE = 555;</code>
      */
     public static final int CID_BUDDY_LIST_UPDATE_USER_INFO_RESPONSE_VALUE = 555;
+    /**
+     * <code>CID_BUDDY_LIST_RECOMMEND_LIST_REQUEST = 556;</code>
+     */
+    public static final int CID_BUDDY_LIST_RECOMMEND_LIST_REQUEST_VALUE = 556;
+    /**
+     * <code>CID_BUDDY_LIST_RECOMMEND_LIST_RESPONSE = 557;</code>
+     */
+    public static final int CID_BUDDY_LIST_RECOMMEND_LIST_RESPONSE_VALUE = 557;
 
 
     public final int getNumber() { return value; }
@@ -1114,6 +1130,8 @@ public final class IMBaseDefine {
         case 553: return CID_BUDDY_LIST_ALL_ONLINE_USER_CNT_RESPONSE;
         case 554: return CID_BUDDY_LIST_UPDATE_USER_INFO_REQUEST;
         case 555: return CID_BUDDY_LIST_UPDATE_USER_INFO_RESPONSE;
+        case 556: return CID_BUDDY_LIST_RECOMMEND_LIST_REQUEST;
+        case 557: return CID_BUDDY_LIST_RECOMMEND_LIST_RESPONSE;
         default: return null;
       }
     }

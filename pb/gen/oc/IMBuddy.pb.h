@@ -75,6 +75,10 @@
 @class IMRecentContactSessionReqBuilder;
 @class IMRecentContactSessionRsp;
 @class IMRecentContactSessionRspBuilder;
+@class IMRecommendListReq;
+@class IMRecommendListReqBuilder;
+@class IMRecommendListRsp;
+@class IMRecommendListRspBuilder;
 @class IMRemoveSessionNotify;
 @class IMRemoveSessionNotifyBuilder;
 @class IMRemoveSessionReq;
@@ -3266,6 +3270,157 @@
 - (NSData*) attachData;
 - (IMUpdateUsersInfoRspBuilder*) setAttachData:(NSData*) value;
 - (IMUpdateUsersInfoRspBuilder*) clearAttachData;
+@end
+
+#define IMRecommendListReq_user_id @"userId"
+#define IMRecommendListReq_page @"page"
+#define IMRecommendListReq_page_size @"pageSize"
+#define IMRecommendListReq_attach_data @"attachData"
+@interface IMRecommendListReq : PBGeneratedMessage<GeneratedMessageProtocol> {
+@private
+  BOOL hasAttachData_:1;
+  BOOL hasUserId_:1;
+  BOOL hasPage_:1;
+  BOOL hasPageSize_:1;
+  NSData* attachData;
+  UInt32 userId;
+  UInt32 page;
+  UInt32 pageSize;
+}
+- (BOOL) hasUserId;
+- (BOOL) hasPage;
+- (BOOL) hasPageSize;
+- (BOOL) hasAttachData;
+@property (readonly) UInt32 userId;
+@property (readonly) UInt32 page;
+@property (readonly) UInt32 pageSize;
+@property (readonly, strong) NSData* attachData;
+
++ (instancetype) defaultInstance;
+- (instancetype) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (IMRecommendListReqBuilder*) builder;
++ (IMRecommendListReqBuilder*) builder;
++ (IMRecommendListReqBuilder*) builderWithPrototype:(IMRecommendListReq*) prototype;
+- (IMRecommendListReqBuilder*) toBuilder;
+
++ (IMRecommendListReq*) parseFromData:(NSData*) data;
++ (IMRecommendListReq*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (IMRecommendListReq*) parseFromInputStream:(NSInputStream*) input;
++ (IMRecommendListReq*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (IMRecommendListReq*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (IMRecommendListReq*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface IMRecommendListReqBuilder : PBGeneratedMessageBuilder {
+@private
+  IMRecommendListReq* resultImrecommendListReq;
+}
+
+- (IMRecommendListReq*) defaultInstance;
+
+- (IMRecommendListReqBuilder*) clear;
+- (IMRecommendListReqBuilder*) clone;
+
+- (IMRecommendListReq*) build;
+- (IMRecommendListReq*) buildPartial;
+
+- (IMRecommendListReqBuilder*) mergeFrom:(IMRecommendListReq*) other;
+- (IMRecommendListReqBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (IMRecommendListReqBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasUserId;
+- (UInt32) userId;
+- (IMRecommendListReqBuilder*) setUserId:(UInt32) value;
+- (IMRecommendListReqBuilder*) clearUserId;
+
+- (BOOL) hasPage;
+- (UInt32) page;
+- (IMRecommendListReqBuilder*) setPage:(UInt32) value;
+- (IMRecommendListReqBuilder*) clearPage;
+
+- (BOOL) hasPageSize;
+- (UInt32) pageSize;
+- (IMRecommendListReqBuilder*) setPageSize:(UInt32) value;
+- (IMRecommendListReqBuilder*) clearPageSize;
+
+- (BOOL) hasAttachData;
+- (NSData*) attachData;
+- (IMRecommendListReqBuilder*) setAttachData:(NSData*) value;
+- (IMRecommendListReqBuilder*) clearAttachData;
+@end
+
+#define IMRecommendListRsp_recommend_list @"recommendList"
+#define IMRecommendListRsp_recommend_nick_list @"recommendNickList"
+#define IMRecommendListRsp_attach_data @"attachData"
+@interface IMRecommendListRsp : PBGeneratedMessage<GeneratedMessageProtocol> {
+@private
+  BOOL hasAttachData_:1;
+  NSData* attachData;
+  NSMutableArray * recommendNickListArray;
+  PBAppendableArray * recommendListArray;
+}
+- (BOOL) hasAttachData;
+@property (readonly, strong) PBArray * recommendList;
+@property (readonly, strong) NSArray * recommendNickList;
+@property (readonly, strong) NSData* attachData;
+- (UInt32)recommendListAtIndex:(NSUInteger)index;
+- (NSString*)recommendNickListAtIndex:(NSUInteger)index;
+
++ (instancetype) defaultInstance;
+- (instancetype) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (IMRecommendListRspBuilder*) builder;
++ (IMRecommendListRspBuilder*) builder;
++ (IMRecommendListRspBuilder*) builderWithPrototype:(IMRecommendListRsp*) prototype;
+- (IMRecommendListRspBuilder*) toBuilder;
+
++ (IMRecommendListRsp*) parseFromData:(NSData*) data;
++ (IMRecommendListRsp*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (IMRecommendListRsp*) parseFromInputStream:(NSInputStream*) input;
++ (IMRecommendListRsp*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (IMRecommendListRsp*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (IMRecommendListRsp*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface IMRecommendListRspBuilder : PBGeneratedMessageBuilder {
+@private
+  IMRecommendListRsp* resultImrecommendListRsp;
+}
+
+- (IMRecommendListRsp*) defaultInstance;
+
+- (IMRecommendListRspBuilder*) clear;
+- (IMRecommendListRspBuilder*) clone;
+
+- (IMRecommendListRsp*) build;
+- (IMRecommendListRsp*) buildPartial;
+
+- (IMRecommendListRspBuilder*) mergeFrom:(IMRecommendListRsp*) other;
+- (IMRecommendListRspBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (IMRecommendListRspBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (PBAppendableArray *)recommendList;
+- (UInt32)recommendListAtIndex:(NSUInteger)index;
+- (IMRecommendListRspBuilder *)addRecommendList:(UInt32)value;
+- (IMRecommendListRspBuilder *)setRecommendListArray:(NSArray *)array;
+- (IMRecommendListRspBuilder *)setRecommendListValues:(const UInt32 *)values count:(NSUInteger)count;
+- (IMRecommendListRspBuilder *)clearRecommendList;
+
+- (NSMutableArray *)recommendNickList;
+- (NSString*)recommendNickListAtIndex:(NSUInteger)index;
+- (IMRecommendListRspBuilder *)addRecommendNickList:(NSString*)value;
+- (IMRecommendListRspBuilder *)setRecommendNickListArray:(NSArray *)array;
+- (IMRecommendListRspBuilder *)clearRecommendNickList;
+
+- (BOOL) hasAttachData;
+- (NSData*) attachData;
+- (IMRecommendListRspBuilder*) setAttachData:(NSData*) value;
+- (IMRecommendListRspBuilder*) clearAttachData;
 @end
 
 

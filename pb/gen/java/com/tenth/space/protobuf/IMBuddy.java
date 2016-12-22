@@ -26845,6 +26845,1396 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMUpdateUsersInfoRsp)
   }
 
+  public interface IMRecommendListReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMRecommendListReq)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>required uint32 user_id = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0204
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required uint32 user_id = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0204
+     * </pre>
+     */
+    int getUserId();
+
+    /**
+     * <code>required uint32 page = 2;</code>
+     */
+    boolean hasPage();
+    /**
+     * <code>required uint32 page = 2;</code>
+     */
+    int getPage();
+
+    /**
+     * <code>required uint32 page_size = 3;</code>
+     */
+    boolean hasPageSize();
+    /**
+     * <code>required uint32 page_size = 3;</code>
+     */
+    int getPageSize();
+
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    boolean hasAttachData();
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    com.google.protobuf.ByteString getAttachData();
+  }
+  /**
+   * Protobuf type {@code IM.Buddy.IMRecommendListReq}
+   */
+  public static final class IMRecommendListReq extends
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMRecommendListReq)
+      IMRecommendListReqOrBuilder {
+    // Use IMRecommendListReq.newBuilder() to construct.
+    private IMRecommendListReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private IMRecommendListReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
+
+    private static final IMRecommendListReq defaultInstance;
+    public static IMRecommendListReq getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public IMRecommendListReq getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.ByteString unknownFields;
+    private IMRecommendListReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              userId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              page_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              pageSize_ = input.readUInt32();
+              break;
+            }
+            case 162: {
+              bitField0_ |= 0x00000008;
+              attachData_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<IMRecommendListReq> PARSER =
+        new com.google.protobuf.AbstractParser<IMRecommendListReq>() {
+      public IMRecommendListReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new IMRecommendListReq(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IMRecommendListReq> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int USER_ID_FIELD_NUMBER = 1;
+    private int userId_;
+    /**
+     * <code>required uint32 user_id = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0204
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required uint32 user_id = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0204
+     * </pre>
+     */
+    public int getUserId() {
+      return userId_;
+    }
+
+    public static final int PAGE_FIELD_NUMBER = 2;
+    private int page_;
+    /**
+     * <code>required uint32 page = 2;</code>
+     */
+    public boolean hasPage() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required uint32 page = 2;</code>
+     */
+    public int getPage() {
+      return page_;
+    }
+
+    public static final int PAGE_SIZE_FIELD_NUMBER = 3;
+    private int pageSize_;
+    /**
+     * <code>required uint32 page_size = 3;</code>
+     */
+    public boolean hasPageSize() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required uint32 page_size = 3;</code>
+     */
+    public int getPageSize() {
+      return pageSize_;
+    }
+
+    public static final int ATTACH_DATA_FIELD_NUMBER = 20;
+    private com.google.protobuf.ByteString attachData_;
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    public boolean hasAttachData() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    public com.google.protobuf.ByteString getAttachData() {
+      return attachData_;
+    }
+
+    private void initFields() {
+      userId_ = 0;
+      page_ = 0;
+      pageSize_ = 0;
+      attachData_ = com.google.protobuf.ByteString.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPage()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPageSize()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, userId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt32(2, page_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeUInt32(3, pageSize_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(20, attachData_);
+      }
+      output.writeRawBytes(unknownFields);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, userId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, page_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, pageSize_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(20, attachData_);
+      }
+      size += unknownFields.size();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMRecommendListReq prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code IM.Buddy.IMRecommendListReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.tenth.space.protobuf.IMBuddy.IMRecommendListReq, Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMRecommendListReq)
+        com.tenth.space.protobuf.IMBuddy.IMRecommendListReqOrBuilder {
+      // Construct using com.tenth.space.protobuf.IMBuddy.IMRecommendListReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        userId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        page_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        pageSize_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        attachData_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.tenth.space.protobuf.IMBuddy.IMRecommendListReq getDefaultInstanceForType() {
+        return com.tenth.space.protobuf.IMBuddy.IMRecommendListReq.getDefaultInstance();
+      }
+
+      public com.tenth.space.protobuf.IMBuddy.IMRecommendListReq build() {
+        com.tenth.space.protobuf.IMBuddy.IMRecommendListReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.tenth.space.protobuf.IMBuddy.IMRecommendListReq buildPartial() {
+        com.tenth.space.protobuf.IMBuddy.IMRecommendListReq result = new com.tenth.space.protobuf.IMBuddy.IMRecommendListReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.userId_ = userId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.page_ = page_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.pageSize_ = pageSize_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.attachData_ = attachData_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+
+      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMRecommendListReq other) {
+        if (other == com.tenth.space.protobuf.IMBuddy.IMRecommendListReq.getDefaultInstance()) return this;
+        if (other.hasUserId()) {
+          setUserId(other.getUserId());
+        }
+        if (other.hasPage()) {
+          setPage(other.getPage());
+        }
+        if (other.hasPageSize()) {
+          setPageSize(other.getPageSize());
+        }
+        if (other.hasAttachData()) {
+          setAttachData(other.getAttachData());
+        }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasUserId()) {
+          
+          return false;
+        }
+        if (!hasPage()) {
+          
+          return false;
+        }
+        if (!hasPageSize()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.tenth.space.protobuf.IMBuddy.IMRecommendListReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMRecommendListReq) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int userId_ ;
+      /**
+       * <code>required uint32 user_id = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0204
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required uint32 user_id = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0204
+       * </pre>
+       */
+      public int getUserId() {
+        return userId_;
+      }
+      /**
+       * <code>required uint32 user_id = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0204
+       * </pre>
+       */
+      public Builder setUserId(int value) {
+        bitField0_ |= 0x00000001;
+        userId_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required uint32 user_id = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0204
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = 0;
+        
+        return this;
+      }
+
+      private int page_ ;
+      /**
+       * <code>required uint32 page = 2;</code>
+       */
+      public boolean hasPage() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required uint32 page = 2;</code>
+       */
+      public int getPage() {
+        return page_;
+      }
+      /**
+       * <code>required uint32 page = 2;</code>
+       */
+      public Builder setPage(int value) {
+        bitField0_ |= 0x00000002;
+        page_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required uint32 page = 2;</code>
+       */
+      public Builder clearPage() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        page_ = 0;
+        
+        return this;
+      }
+
+      private int pageSize_ ;
+      /**
+       * <code>required uint32 page_size = 3;</code>
+       */
+      public boolean hasPageSize() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required uint32 page_size = 3;</code>
+       */
+      public int getPageSize() {
+        return pageSize_;
+      }
+      /**
+       * <code>required uint32 page_size = 3;</code>
+       */
+      public Builder setPageSize(int value) {
+        bitField0_ |= 0x00000004;
+        pageSize_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required uint32 page_size = 3;</code>
+       */
+      public Builder clearPageSize() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        pageSize_ = 0;
+        
+        return this;
+      }
+
+      private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public boolean hasAttachData() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public com.google.protobuf.ByteString getAttachData() {
+        return attachData_;
+      }
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public Builder setAttachData(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        attachData_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public Builder clearAttachData() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        attachData_ = getDefaultInstance().getAttachData();
+        
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:IM.Buddy.IMRecommendListReq)
+    }
+
+    static {
+      defaultInstance = new IMRecommendListReq(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:IM.Buddy.IMRecommendListReq)
+  }
+
+  public interface IMRecommendListRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMRecommendListRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>repeated uint32 recommend_list = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0205
+     * </pre>
+     */
+    java.util.List<java.lang.Integer> getRecommendListList();
+    /**
+     * <code>repeated uint32 recommend_list = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0205
+     * </pre>
+     */
+    int getRecommendListCount();
+    /**
+     * <code>repeated uint32 recommend_list = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0205
+     * </pre>
+     */
+    int getRecommendList(int index);
+
+    /**
+     * <code>repeated string recommend_nick_list = 2;</code>
+     */
+    com.google.protobuf.ProtocolStringList
+        getRecommendNickListList();
+    /**
+     * <code>repeated string recommend_nick_list = 2;</code>
+     */
+    int getRecommendNickListCount();
+    /**
+     * <code>repeated string recommend_nick_list = 2;</code>
+     */
+    java.lang.String getRecommendNickList(int index);
+    /**
+     * <code>repeated string recommend_nick_list = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getRecommendNickListBytes(int index);
+
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    boolean hasAttachData();
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    com.google.protobuf.ByteString getAttachData();
+  }
+  /**
+   * Protobuf type {@code IM.Buddy.IMRecommendListRsp}
+   */
+  public static final class IMRecommendListRsp extends
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMRecommendListRsp)
+      IMRecommendListRspOrBuilder {
+    // Use IMRecommendListRsp.newBuilder() to construct.
+    private IMRecommendListRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private IMRecommendListRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
+
+    private static final IMRecommendListRsp defaultInstance;
+    public static IMRecommendListRsp getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public IMRecommendListRsp getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.ByteString unknownFields;
+    private IMRecommendListRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                recommendList_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              recommendList_.add(input.readUInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
+                recommendList_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                recommendList_.add(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                recommendNickList_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              recommendNickList_.add(bs);
+              break;
+            }
+            case 162: {
+              bitField0_ |= 0x00000001;
+              attachData_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          recommendList_ = java.util.Collections.unmodifiableList(recommendList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          recommendNickList_ = recommendNickList_.getUnmodifiableView();
+        }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<IMRecommendListRsp> PARSER =
+        new com.google.protobuf.AbstractParser<IMRecommendListRsp>() {
+      public IMRecommendListRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new IMRecommendListRsp(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IMRecommendListRsp> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int RECOMMEND_LIST_FIELD_NUMBER = 1;
+    private java.util.List<java.lang.Integer> recommendList_;
+    /**
+     * <code>repeated uint32 recommend_list = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0205
+     * </pre>
+     */
+    public java.util.List<java.lang.Integer>
+        getRecommendListList() {
+      return recommendList_;
+    }
+    /**
+     * <code>repeated uint32 recommend_list = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0205
+     * </pre>
+     */
+    public int getRecommendListCount() {
+      return recommendList_.size();
+    }
+    /**
+     * <code>repeated uint32 recommend_list = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0205
+     * </pre>
+     */
+    public int getRecommendList(int index) {
+      return recommendList_.get(index);
+    }
+
+    public static final int RECOMMEND_NICK_LIST_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList recommendNickList_;
+    /**
+     * <code>repeated string recommend_nick_list = 2;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRecommendNickListList() {
+      return recommendNickList_;
+    }
+    /**
+     * <code>repeated string recommend_nick_list = 2;</code>
+     */
+    public int getRecommendNickListCount() {
+      return recommendNickList_.size();
+    }
+    /**
+     * <code>repeated string recommend_nick_list = 2;</code>
+     */
+    public java.lang.String getRecommendNickList(int index) {
+      return recommendNickList_.get(index);
+    }
+    /**
+     * <code>repeated string recommend_nick_list = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRecommendNickListBytes(int index) {
+      return recommendNickList_.getByteString(index);
+    }
+
+    public static final int ATTACH_DATA_FIELD_NUMBER = 20;
+    private com.google.protobuf.ByteString attachData_;
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    public boolean hasAttachData() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    public com.google.protobuf.ByteString getAttachData() {
+      return attachData_;
+    }
+
+    private void initFields() {
+      recommendList_ = java.util.Collections.emptyList();
+      recommendNickList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      attachData_ = com.google.protobuf.ByteString.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < recommendList_.size(); i++) {
+        output.writeUInt32(1, recommendList_.get(i));
+      }
+      for (int i = 0; i < recommendNickList_.size(); i++) {
+        output.writeBytes(2, recommendNickList_.getByteString(i));
+      }
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(20, attachData_);
+      }
+      output.writeRawBytes(unknownFields);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < recommendList_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(recommendList_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getRecommendListList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < recommendNickList_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(recommendNickList_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getRecommendNickListList().size();
+      }
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(20, attachData_);
+      }
+      size += unknownFields.size();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code IM.Buddy.IMRecommendListRsp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp, Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMRecommendListRsp)
+        com.tenth.space.protobuf.IMBuddy.IMRecommendListRspOrBuilder {
+      // Construct using com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        recommendList_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        recommendNickList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        attachData_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp getDefaultInstanceForType() {
+        return com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp.getDefaultInstance();
+      }
+
+      public com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp build() {
+        com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp buildPartial() {
+        com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp result = new com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          recommendList_ = java.util.Collections.unmodifiableList(recommendList_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.recommendList_ = recommendList_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          recommendNickList_ = recommendNickList_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.recommendNickList_ = recommendNickList_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.attachData_ = attachData_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+
+      public Builder mergeFrom(com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp other) {
+        if (other == com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp.getDefaultInstance()) return this;
+        if (!other.recommendList_.isEmpty()) {
+          if (recommendList_.isEmpty()) {
+            recommendList_ = other.recommendList_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureRecommendListIsMutable();
+            recommendList_.addAll(other.recommendList_);
+          }
+          
+        }
+        if (!other.recommendNickList_.isEmpty()) {
+          if (recommendNickList_.isEmpty()) {
+            recommendNickList_ = other.recommendNickList_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureRecommendNickListIsMutable();
+            recommendNickList_.addAll(other.recommendNickList_);
+          }
+          
+        }
+        if (other.hasAttachData()) {
+          setAttachData(other.getAttachData());
+        }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.tenth.space.protobuf.IMBuddy.IMRecommendListRsp) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<java.lang.Integer> recommendList_ = java.util.Collections.emptyList();
+      private void ensureRecommendListIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          recommendList_ = new java.util.ArrayList<java.lang.Integer>(recommendList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated uint32 recommend_list = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0205
+       * </pre>
+       */
+      public java.util.List<java.lang.Integer>
+          getRecommendListList() {
+        return java.util.Collections.unmodifiableList(recommendList_);
+      }
+      /**
+       * <code>repeated uint32 recommend_list = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0205
+       * </pre>
+       */
+      public int getRecommendListCount() {
+        return recommendList_.size();
+      }
+      /**
+       * <code>repeated uint32 recommend_list = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0205
+       * </pre>
+       */
+      public int getRecommendList(int index) {
+        return recommendList_.get(index);
+      }
+      /**
+       * <code>repeated uint32 recommend_list = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0205
+       * </pre>
+       */
+      public Builder setRecommendList(
+          int index, int value) {
+        ensureRecommendListIsMutable();
+        recommendList_.set(index, value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated uint32 recommend_list = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0205
+       * </pre>
+       */
+      public Builder addRecommendList(int value) {
+        ensureRecommendListIsMutable();
+        recommendList_.add(value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated uint32 recommend_list = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0205
+       * </pre>
+       */
+      public Builder addAllRecommendList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureRecommendListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, recommendList_);
+        
+        return this;
+      }
+      /**
+       * <code>repeated uint32 recommend_list = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0205
+       * </pre>
+       */
+      public Builder clearRecommendList() {
+        recommendList_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList recommendNickList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureRecommendNickListIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          recommendNickList_ = new com.google.protobuf.LazyStringArrayList(recommendNickList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getRecommendNickListList() {
+        return recommendNickList_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public int getRecommendNickListCount() {
+        return recommendNickList_.size();
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public java.lang.String getRecommendNickList(int index) {
+        return recommendNickList_.get(index);
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRecommendNickListBytes(int index) {
+        return recommendNickList_.getByteString(index);
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public Builder setRecommendNickList(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRecommendNickListIsMutable();
+        recommendNickList_.set(index, value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public Builder addRecommendNickList(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRecommendNickListIsMutable();
+        recommendNickList_.add(value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public Builder addAllRecommendNickList(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureRecommendNickListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, recommendNickList_);
+        
+        return this;
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public Builder clearRecommendNickList() {
+        recommendNickList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        
+        return this;
+      }
+      /**
+       * <code>repeated string recommend_nick_list = 2;</code>
+       */
+      public Builder addRecommendNickListBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRecommendNickListIsMutable();
+        recommendNickList_.add(value);
+        
+        return this;
+      }
+
+      private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public boolean hasAttachData() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public com.google.protobuf.ByteString getAttachData() {
+        return attachData_;
+      }
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public Builder setAttachData(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        attachData_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public Builder clearAttachData() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        attachData_ = getDefaultInstance().getAttachData();
+        
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:IM.Buddy.IMRecommendListRsp)
+    }
+
+    static {
+      defaultInstance = new IMRecommendListRsp(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:IM.Buddy.IMRecommendListRsp)
+  }
+
 
   static {
   }

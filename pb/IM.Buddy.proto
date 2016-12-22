@@ -353,3 +353,19 @@ message IMUpdateUsersInfoRsp{
 	optional bytes attach_data = 20;
 }
 
+message IMRecommendListReq{
+	//cmd id:		0x0204
+	required uint32 user_id = 1;
+	required uint32 page = 2;
+	required uint32 page_size = 3;
+	optional bytes attach_data = 20;
+}
+
+message IMRecommendListRsp{
+	//cmd id:		0x0205
+	repeated uint32 recommend_list = 1;
+	repeated string recommend_nick_list = 2;
+	optional bytes attach_data = 20;
+}
+
+

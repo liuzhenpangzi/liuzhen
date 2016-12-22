@@ -77,6 +77,8 @@ class IMALLOnlineUserCntReq;
 class IMALLOnlineUserCntRsp;
 class IMUpdateUsersInfoReq;
 class IMUpdateUsersInfoRsp;
+class IMRecommendListReq;
+class IMRecommendListRsp;
 
 // ===================================================================
 
@@ -5256,6 +5258,258 @@ class IMUpdateUsersInfoRsp : public ::google::protobuf::MessageLite {
 
   void InitAsDefaultInstance();
   static IMUpdateUsersInfoRsp* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class IMRecommendListReq : public ::google::protobuf::MessageLite {
+ public:
+  IMRecommendListReq();
+  virtual ~IMRecommendListReq();
+
+  IMRecommendListReq(const IMRecommendListReq& from);
+
+  inline IMRecommendListReq& operator=(const IMRecommendListReq& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::std::string& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::std::string* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const IMRecommendListReq& default_instance();
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  // Returns the internal default instance pointer. This function can
+  // return NULL thus should not be used by the user. This is intended
+  // for Protobuf internal code. Please use default_instance() declared
+  // above instead.
+  static inline const IMRecommendListReq* internal_default_instance() {
+    return default_instance_;
+  }
+  #endif
+
+  void Swap(IMRecommendListReq* other);
+
+  // implements Message ----------------------------------------------
+
+  IMRecommendListReq* New() const;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from);
+  void CopyFrom(const IMRecommendListReq& from);
+  void MergeFrom(const IMRecommendListReq& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  void DiscardUnknownFields();
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::std::string GetTypeName() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required uint32 user_id = 1;
+  inline bool has_user_id() const;
+  inline void clear_user_id();
+  static const int kUserIdFieldNumber = 1;
+  inline ::google::protobuf::uint32 user_id() const;
+  inline void set_user_id(::google::protobuf::uint32 value);
+
+  // required uint32 page = 2;
+  inline bool has_page() const;
+  inline void clear_page();
+  static const int kPageFieldNumber = 2;
+  inline ::google::protobuf::uint32 page() const;
+  inline void set_page(::google::protobuf::uint32 value);
+
+  // required uint32 page_size = 3;
+  inline bool has_page_size() const;
+  inline void clear_page_size();
+  static const int kPageSizeFieldNumber = 3;
+  inline ::google::protobuf::uint32 page_size() const;
+  inline void set_page_size(::google::protobuf::uint32 value);
+
+  // optional bytes attach_data = 20;
+  inline bool has_attach_data() const;
+  inline void clear_attach_data();
+  static const int kAttachDataFieldNumber = 20;
+  inline const ::std::string& attach_data() const;
+  inline void set_attach_data(const ::std::string& value);
+  inline void set_attach_data(const char* value);
+  inline void set_attach_data(const void* value, size_t size);
+  inline ::std::string* mutable_attach_data();
+  inline ::std::string* release_attach_data();
+  inline void set_allocated_attach_data(::std::string* attach_data);
+
+  // @@protoc_insertion_point(class_scope:IM.Buddy.IMRecommendListReq)
+ private:
+  inline void set_has_user_id();
+  inline void clear_has_user_id();
+  inline void set_has_page();
+  inline void clear_has_page();
+  inline void set_has_page_size();
+  inline void clear_has_page_size();
+  inline void set_has_attach_data();
+  inline void clear_has_attach_data();
+
+  ::std::string _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 user_id_;
+  ::google::protobuf::uint32 page_;
+  ::std::string* attach_data_;
+  ::google::protobuf::uint32 page_size_;
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  friend void  protobuf_AddDesc_IM_2eBuddy_2eproto_impl();
+  #else
+  friend void  protobuf_AddDesc_IM_2eBuddy_2eproto();
+  #endif
+  friend void protobuf_AssignDesc_IM_2eBuddy_2eproto();
+  friend void protobuf_ShutdownFile_IM_2eBuddy_2eproto();
+
+  void InitAsDefaultInstance();
+  static IMRecommendListReq* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class IMRecommendListRsp : public ::google::protobuf::MessageLite {
+ public:
+  IMRecommendListRsp();
+  virtual ~IMRecommendListRsp();
+
+  IMRecommendListRsp(const IMRecommendListRsp& from);
+
+  inline IMRecommendListRsp& operator=(const IMRecommendListRsp& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::std::string& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::std::string* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const IMRecommendListRsp& default_instance();
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  // Returns the internal default instance pointer. This function can
+  // return NULL thus should not be used by the user. This is intended
+  // for Protobuf internal code. Please use default_instance() declared
+  // above instead.
+  static inline const IMRecommendListRsp* internal_default_instance() {
+    return default_instance_;
+  }
+  #endif
+
+  void Swap(IMRecommendListRsp* other);
+
+  // implements Message ----------------------------------------------
+
+  IMRecommendListRsp* New() const;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from);
+  void CopyFrom(const IMRecommendListRsp& from);
+  void MergeFrom(const IMRecommendListRsp& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  void DiscardUnknownFields();
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::std::string GetTypeName() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated uint32 recommend_list = 1;
+  inline int recommend_list_size() const;
+  inline void clear_recommend_list();
+  static const int kRecommendListFieldNumber = 1;
+  inline ::google::protobuf::uint32 recommend_list(int index) const;
+  inline void set_recommend_list(int index, ::google::protobuf::uint32 value);
+  inline void add_recommend_list(::google::protobuf::uint32 value);
+  inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+      recommend_list() const;
+  inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+      mutable_recommend_list();
+
+  // repeated string recommend_nick_list = 2;
+  inline int recommend_nick_list_size() const;
+  inline void clear_recommend_nick_list();
+  static const int kRecommendNickListFieldNumber = 2;
+  inline const ::std::string& recommend_nick_list(int index) const;
+  inline ::std::string* mutable_recommend_nick_list(int index);
+  inline void set_recommend_nick_list(int index, const ::std::string& value);
+  inline void set_recommend_nick_list(int index, const char* value);
+  inline void set_recommend_nick_list(int index, const char* value, size_t size);
+  inline ::std::string* add_recommend_nick_list();
+  inline void add_recommend_nick_list(const ::std::string& value);
+  inline void add_recommend_nick_list(const char* value);
+  inline void add_recommend_nick_list(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& recommend_nick_list() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_recommend_nick_list();
+
+  // optional bytes attach_data = 20;
+  inline bool has_attach_data() const;
+  inline void clear_attach_data();
+  static const int kAttachDataFieldNumber = 20;
+  inline const ::std::string& attach_data() const;
+  inline void set_attach_data(const ::std::string& value);
+  inline void set_attach_data(const char* value);
+  inline void set_attach_data(const void* value, size_t size);
+  inline ::std::string* mutable_attach_data();
+  inline ::std::string* release_attach_data();
+  inline void set_allocated_attach_data(::std::string* attach_data);
+
+  // @@protoc_insertion_point(class_scope:IM.Buddy.IMRecommendListRsp)
+ private:
+  inline void set_has_attach_data();
+  inline void clear_has_attach_data();
+
+  ::std::string _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > recommend_list_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> recommend_nick_list_;
+  ::std::string* attach_data_;
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  friend void  protobuf_AddDesc_IM_2eBuddy_2eproto_impl();
+  #else
+  friend void  protobuf_AddDesc_IM_2eBuddy_2eproto();
+  #endif
+  friend void protobuf_AssignDesc_IM_2eBuddy_2eproto();
+  friend void protobuf_ShutdownFile_IM_2eBuddy_2eproto();
+
+  void InitAsDefaultInstance();
+  static IMRecommendListRsp* default_instance_;
 };
 // ===================================================================
 
@@ -11569,6 +11823,322 @@ inline void IMUpdateUsersInfoRsp::set_allocated_attach_data(::std::string* attac
     attach_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:IM.Buddy.IMUpdateUsersInfoRsp.attach_data)
+}
+
+// -------------------------------------------------------------------
+
+// IMRecommendListReq
+
+// required uint32 user_id = 1;
+inline bool IMRecommendListReq::has_user_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void IMRecommendListReq::set_has_user_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void IMRecommendListReq::clear_has_user_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void IMRecommendListReq::clear_user_id() {
+  user_id_ = 0u;
+  clear_has_user_id();
+}
+inline ::google::protobuf::uint32 IMRecommendListReq::user_id() const {
+  // @@protoc_insertion_point(field_get:IM.Buddy.IMRecommendListReq.user_id)
+  return user_id_;
+}
+inline void IMRecommendListReq::set_user_id(::google::protobuf::uint32 value) {
+  set_has_user_id();
+  user_id_ = value;
+  // @@protoc_insertion_point(field_set:IM.Buddy.IMRecommendListReq.user_id)
+}
+
+// required uint32 page = 2;
+inline bool IMRecommendListReq::has_page() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void IMRecommendListReq::set_has_page() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void IMRecommendListReq::clear_has_page() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void IMRecommendListReq::clear_page() {
+  page_ = 0u;
+  clear_has_page();
+}
+inline ::google::protobuf::uint32 IMRecommendListReq::page() const {
+  // @@protoc_insertion_point(field_get:IM.Buddy.IMRecommendListReq.page)
+  return page_;
+}
+inline void IMRecommendListReq::set_page(::google::protobuf::uint32 value) {
+  set_has_page();
+  page_ = value;
+  // @@protoc_insertion_point(field_set:IM.Buddy.IMRecommendListReq.page)
+}
+
+// required uint32 page_size = 3;
+inline bool IMRecommendListReq::has_page_size() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void IMRecommendListReq::set_has_page_size() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void IMRecommendListReq::clear_has_page_size() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void IMRecommendListReq::clear_page_size() {
+  page_size_ = 0u;
+  clear_has_page_size();
+}
+inline ::google::protobuf::uint32 IMRecommendListReq::page_size() const {
+  // @@protoc_insertion_point(field_get:IM.Buddy.IMRecommendListReq.page_size)
+  return page_size_;
+}
+inline void IMRecommendListReq::set_page_size(::google::protobuf::uint32 value) {
+  set_has_page_size();
+  page_size_ = value;
+  // @@protoc_insertion_point(field_set:IM.Buddy.IMRecommendListReq.page_size)
+}
+
+// optional bytes attach_data = 20;
+inline bool IMRecommendListReq::has_attach_data() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void IMRecommendListReq::set_has_attach_data() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void IMRecommendListReq::clear_has_attach_data() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void IMRecommendListReq::clear_attach_data() {
+  if (attach_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_->clear();
+  }
+  clear_has_attach_data();
+}
+inline const ::std::string& IMRecommendListReq::attach_data() const {
+  // @@protoc_insertion_point(field_get:IM.Buddy.IMRecommendListReq.attach_data)
+  return *attach_data_;
+}
+inline void IMRecommendListReq::set_attach_data(const ::std::string& value) {
+  set_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_ = new ::std::string;
+  }
+  attach_data_->assign(value);
+  // @@protoc_insertion_point(field_set:IM.Buddy.IMRecommendListReq.attach_data)
+}
+inline void IMRecommendListReq::set_attach_data(const char* value) {
+  set_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_ = new ::std::string;
+  }
+  attach_data_->assign(value);
+  // @@protoc_insertion_point(field_set_char:IM.Buddy.IMRecommendListReq.attach_data)
+}
+inline void IMRecommendListReq::set_attach_data(const void* value, size_t size) {
+  set_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_ = new ::std::string;
+  }
+  attach_data_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:IM.Buddy.IMRecommendListReq.attach_data)
+}
+inline ::std::string* IMRecommendListReq::mutable_attach_data() {
+  set_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:IM.Buddy.IMRecommendListReq.attach_data)
+  return attach_data_;
+}
+inline ::std::string* IMRecommendListReq::release_attach_data() {
+  clear_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = attach_data_;
+    attach_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void IMRecommendListReq::set_allocated_attach_data(::std::string* attach_data) {
+  if (attach_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete attach_data_;
+  }
+  if (attach_data) {
+    set_has_attach_data();
+    attach_data_ = attach_data;
+  } else {
+    clear_has_attach_data();
+    attach_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:IM.Buddy.IMRecommendListReq.attach_data)
+}
+
+// -------------------------------------------------------------------
+
+// IMRecommendListRsp
+
+// repeated uint32 recommend_list = 1;
+inline int IMRecommendListRsp::recommend_list_size() const {
+  return recommend_list_.size();
+}
+inline void IMRecommendListRsp::clear_recommend_list() {
+  recommend_list_.Clear();
+}
+inline ::google::protobuf::uint32 IMRecommendListRsp::recommend_list(int index) const {
+  // @@protoc_insertion_point(field_get:IM.Buddy.IMRecommendListRsp.recommend_list)
+  return recommend_list_.Get(index);
+}
+inline void IMRecommendListRsp::set_recommend_list(int index, ::google::protobuf::uint32 value) {
+  recommend_list_.Set(index, value);
+  // @@protoc_insertion_point(field_set:IM.Buddy.IMRecommendListRsp.recommend_list)
+}
+inline void IMRecommendListRsp::add_recommend_list(::google::protobuf::uint32 value) {
+  recommend_list_.Add(value);
+  // @@protoc_insertion_point(field_add:IM.Buddy.IMRecommendListRsp.recommend_list)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+IMRecommendListRsp::recommend_list() const {
+  // @@protoc_insertion_point(field_list:IM.Buddy.IMRecommendListRsp.recommend_list)
+  return recommend_list_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+IMRecommendListRsp::mutable_recommend_list() {
+  // @@protoc_insertion_point(field_mutable_list:IM.Buddy.IMRecommendListRsp.recommend_list)
+  return &recommend_list_;
+}
+
+// repeated string recommend_nick_list = 2;
+inline int IMRecommendListRsp::recommend_nick_list_size() const {
+  return recommend_nick_list_.size();
+}
+inline void IMRecommendListRsp::clear_recommend_nick_list() {
+  recommend_nick_list_.Clear();
+}
+inline const ::std::string& IMRecommendListRsp::recommend_nick_list(int index) const {
+  // @@protoc_insertion_point(field_get:IM.Buddy.IMRecommendListRsp.recommend_nick_list)
+  return recommend_nick_list_.Get(index);
+}
+inline ::std::string* IMRecommendListRsp::mutable_recommend_nick_list(int index) {
+  // @@protoc_insertion_point(field_mutable:IM.Buddy.IMRecommendListRsp.recommend_nick_list)
+  return recommend_nick_list_.Mutable(index);
+}
+inline void IMRecommendListRsp::set_recommend_nick_list(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:IM.Buddy.IMRecommendListRsp.recommend_nick_list)
+  recommend_nick_list_.Mutable(index)->assign(value);
+}
+inline void IMRecommendListRsp::set_recommend_nick_list(int index, const char* value) {
+  recommend_nick_list_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:IM.Buddy.IMRecommendListRsp.recommend_nick_list)
+}
+inline void IMRecommendListRsp::set_recommend_nick_list(int index, const char* value, size_t size) {
+  recommend_nick_list_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:IM.Buddy.IMRecommendListRsp.recommend_nick_list)
+}
+inline ::std::string* IMRecommendListRsp::add_recommend_nick_list() {
+  return recommend_nick_list_.Add();
+}
+inline void IMRecommendListRsp::add_recommend_nick_list(const ::std::string& value) {
+  recommend_nick_list_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:IM.Buddy.IMRecommendListRsp.recommend_nick_list)
+}
+inline void IMRecommendListRsp::add_recommend_nick_list(const char* value) {
+  recommend_nick_list_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:IM.Buddy.IMRecommendListRsp.recommend_nick_list)
+}
+inline void IMRecommendListRsp::add_recommend_nick_list(const char* value, size_t size) {
+  recommend_nick_list_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:IM.Buddy.IMRecommendListRsp.recommend_nick_list)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+IMRecommendListRsp::recommend_nick_list() const {
+  // @@protoc_insertion_point(field_list:IM.Buddy.IMRecommendListRsp.recommend_nick_list)
+  return recommend_nick_list_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+IMRecommendListRsp::mutable_recommend_nick_list() {
+  // @@protoc_insertion_point(field_mutable_list:IM.Buddy.IMRecommendListRsp.recommend_nick_list)
+  return &recommend_nick_list_;
+}
+
+// optional bytes attach_data = 20;
+inline bool IMRecommendListRsp::has_attach_data() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void IMRecommendListRsp::set_has_attach_data() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void IMRecommendListRsp::clear_has_attach_data() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void IMRecommendListRsp::clear_attach_data() {
+  if (attach_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_->clear();
+  }
+  clear_has_attach_data();
+}
+inline const ::std::string& IMRecommendListRsp::attach_data() const {
+  // @@protoc_insertion_point(field_get:IM.Buddy.IMRecommendListRsp.attach_data)
+  return *attach_data_;
+}
+inline void IMRecommendListRsp::set_attach_data(const ::std::string& value) {
+  set_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_ = new ::std::string;
+  }
+  attach_data_->assign(value);
+  // @@protoc_insertion_point(field_set:IM.Buddy.IMRecommendListRsp.attach_data)
+}
+inline void IMRecommendListRsp::set_attach_data(const char* value) {
+  set_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_ = new ::std::string;
+  }
+  attach_data_->assign(value);
+  // @@protoc_insertion_point(field_set_char:IM.Buddy.IMRecommendListRsp.attach_data)
+}
+inline void IMRecommendListRsp::set_attach_data(const void* value, size_t size) {
+  set_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_ = new ::std::string;
+  }
+  attach_data_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:IM.Buddy.IMRecommendListRsp.attach_data)
+}
+inline ::std::string* IMRecommendListRsp::mutable_attach_data() {
+  set_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:IM.Buddy.IMRecommendListRsp.attach_data)
+  return attach_data_;
+}
+inline ::std::string* IMRecommendListRsp::release_attach_data() {
+  clear_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = attach_data_;
+    attach_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void IMRecommendListRsp::set_allocated_attach_data(::std::string* attach_data) {
+  if (attach_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete attach_data_;
+  }
+  if (attach_data) {
+    set_has_attach_data();
+    attach_data_ = attach_data;
+  } else {
+    clear_has_attach_data();
+    attach_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:IM.Buddy.IMRecommendListRsp.attach_data)
 }
 
 

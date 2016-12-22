@@ -19,7 +19,7 @@ import IM.BaseDefine_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='IM.Buddy.proto',
   package='IM.Buddy',
-  serialized_pb=_b('\n\x0eIM.Buddy.proto\x12\x08IM.Buddy\x1a\x13IM.BaseDefine.proto\"]\n\x19IMRecentContactSessionReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x1a\n\x12latest_update_time\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x82\x01\n\x19IMRecentContactSessionRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12?\n\x14\x63ontact_session_list\x18\x02 \x03(\x0b\x32!.IM.BaseDefine.ContactSessionInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\">\n\x10IMUserStatNotify\x12*\n\tuser_stat\x18\x01 \x02(\x0b\x32\x17.IM.BaseDefine.UserStat\"L\n\x0eIMUsersInfoReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x14\n\x0cuser_id_list\x18\x02 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"g\n\x0eIMUsersInfoRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12/\n\x0euser_info_list\x18\x02 \x03(\x0b\x32\x17.IM.BaseDefine.UserInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x80\x01\n\x12IMRemoveSessionReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x03 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x95\x01\n\x12IMRemoveSessionRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x30\n\x0csession_type\x18\x03 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x04 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"P\n\x0cIMAllUserReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x1a\n\x12latest_update_time\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"|\n\x0cIMAllUserRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x1a\n\x12latest_update_time\x18\x02 \x02(\r\x12*\n\tuser_list\x18\x03 \x03(\x0b\x32\x17.IM.BaseDefine.UserInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"L\n\x0eIMUsersStatReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x14\n\x0cuser_id_list\x18\x02 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"g\n\x0eIMUsersStatRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12/\n\x0euser_stat_list\x18\x02 \x03(\x0b\x32\x17.IM.BaseDefine.UserStat\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"M\n\x11IMChangeAvatarReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x12\n\navatar_url\x18\x02 \x02(\t\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"N\n\x11IMChangeAvatarRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"Y\n\x15IMPCLoginStatusNotify\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12/\n\nlogin_stat\x18\x02 \x02(\x0e\x32\x1b.IM.BaseDefine.UserStatType\"n\n\x15IMRemoveSessionNotify\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x03 \x02(\r\"S\n\x0fIMDepartmentReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x1a\n\x12latest_update_time\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x81\x01\n\x0fIMDepartmentRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x1a\n\x12latest_update_time\x18\x02 \x02(\r\x12,\n\tdept_list\x18\x03 \x03(\x0b\x32\x19.IM.BaseDefine.DepartInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"D\n\x15IMAvatarChangedNotify\x12\x17\n\x0f\x63hanged_user_id\x18\x01 \x02(\r\x12\x12\n\navatar_url\x18\x02 \x02(\t\"N\n\x13IMChangeSignInfoReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tsign_info\x18\x02 \x02(\t\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"c\n\x13IMChangeSignInfoRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x11\n\tsign_info\x18\x03 \x01(\t\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"E\n\x17IMSignInfoChangedNotify\x12\x17\n\x0f\x63hanged_user_id\x18\x01 \x02(\r\x12\x11\n\tsign_info\x18\x02 \x02(\t\"Q\n\x0fIMSearchUserReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x18\n\x10search_user_name\x18\x02 \x02(\t\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"j\n\x0fIMSearchUserRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x31\n\x10search_user_list\x18\x02 \x03(\x0b\x32\x17.IM.BaseDefine.UserInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"_\n\x0eIMAddFriendReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12\x14\n\x0c\x61\x64\x64ition_msg\x18\x03 \x01(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"w\n\x0eIMAddFriendRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12\x13\n\x0bresult_code\x18\x03 \x02(\r\x12\x17\n\x0f\x61\x64\x64_friend_data\x18\x04 \x01(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x8f\x01\n\x0fIMAddFriendData\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12*\n\x04type\x18\x03 \x02(\x0e\x32\x1c.IM.BaseDefine.SystemMsgType\x12\x17\n\x0f\x61\x64\x64_friend_data\x18\x05 \x02(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\">\n\x16IMAddFriendReadDataAck\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"N\n\x15IMGetAddFriendDataReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x0f\n\x07msg_cnt\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"k\n\x15IMGetAddFriendDataRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12,\n\tdata_list\x18\x02 \x03(\x0b\x32\x19.IM.Buddy.IMAddFriendData\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"?\n\x17IMAddFriendUnreadCntReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"S\n\x17IMAddFriendUnreadCntRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x12\n\nunread_cnt\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x91\x01\n\x13IMAgreeAddFriendReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12+\n\x05\x61gree\x18\x03 \x02(\x0e\x32\x1c.IM.BaseDefine.SystemMsgType\x12\x14\n\x0c\x61\x64\x64ition_msg\x18\x04 \x01(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xab\x01\n\x13IMAgreeAddFriendRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12+\n\x05\x61gree\x18\x03 \x02(\x0e\x32\x1c.IM.BaseDefine.SystemMsgType\x12\x13\n\x0bresult_code\x18\x04 \x02(\r\x12\x19\n\x11\x61gree_friend_data\x18\x05 \x01(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"J\n\x0fIMFollowUserReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"L\n\x0fIMFollowUserRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"_\n\x0eIMDelFriendReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12\x14\n\x0c\x61\x64\x64ition_msg\x18\x03 \x01(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"t\n\x0eIMDelFriendRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12\x13\n\x0bresult_code\x18\x03 \x02(\r\x12\x14\n\x0c\x61\x64\x64ition_msg\x18\x04 \x01(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"M\n\x12IMDelFollowUserReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"b\n\x12IMDelFollowUserRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12\x13\n\x0bresult_code\x18\x03 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"=\n\x15IMALLOnlineUserCntReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"V\n\x15IMALLOnlineUserCntRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x17\n\x0fonline_user_cnt\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"h\n\x14IMUpdateUsersInfoReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12*\n\tuser_info\x18\x02 \x02(\x0b\x32\x17.IM.BaseDefine.UserInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"Q\n\x14IMUpdateUsersInfoRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\x42\x1c\n\x18\x63om.tenth.space.protobufH\x03')
+  serialized_pb=_b('\n\x0eIM.Buddy.proto\x12\x08IM.Buddy\x1a\x13IM.BaseDefine.proto\"]\n\x19IMRecentContactSessionReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x1a\n\x12latest_update_time\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x82\x01\n\x19IMRecentContactSessionRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12?\n\x14\x63ontact_session_list\x18\x02 \x03(\x0b\x32!.IM.BaseDefine.ContactSessionInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\">\n\x10IMUserStatNotify\x12*\n\tuser_stat\x18\x01 \x02(\x0b\x32\x17.IM.BaseDefine.UserStat\"L\n\x0eIMUsersInfoReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x14\n\x0cuser_id_list\x18\x02 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"g\n\x0eIMUsersInfoRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12/\n\x0euser_info_list\x18\x02 \x03(\x0b\x32\x17.IM.BaseDefine.UserInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x80\x01\n\x12IMRemoveSessionReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x03 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x95\x01\n\x12IMRemoveSessionRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x30\n\x0csession_type\x18\x03 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x04 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"P\n\x0cIMAllUserReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x1a\n\x12latest_update_time\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"|\n\x0cIMAllUserRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x1a\n\x12latest_update_time\x18\x02 \x02(\r\x12*\n\tuser_list\x18\x03 \x03(\x0b\x32\x17.IM.BaseDefine.UserInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"L\n\x0eIMUsersStatReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x14\n\x0cuser_id_list\x18\x02 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"g\n\x0eIMUsersStatRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12/\n\x0euser_stat_list\x18\x02 \x03(\x0b\x32\x17.IM.BaseDefine.UserStat\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"M\n\x11IMChangeAvatarReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x12\n\navatar_url\x18\x02 \x02(\t\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"N\n\x11IMChangeAvatarRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"Y\n\x15IMPCLoginStatusNotify\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12/\n\nlogin_stat\x18\x02 \x02(\x0e\x32\x1b.IM.BaseDefine.UserStatType\"n\n\x15IMRemoveSessionNotify\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x03 \x02(\r\"S\n\x0fIMDepartmentReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x1a\n\x12latest_update_time\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x81\x01\n\x0fIMDepartmentRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x1a\n\x12latest_update_time\x18\x02 \x02(\r\x12,\n\tdept_list\x18\x03 \x03(\x0b\x32\x19.IM.BaseDefine.DepartInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"D\n\x15IMAvatarChangedNotify\x12\x17\n\x0f\x63hanged_user_id\x18\x01 \x02(\r\x12\x12\n\navatar_url\x18\x02 \x02(\t\"N\n\x13IMChangeSignInfoReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tsign_info\x18\x02 \x02(\t\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"c\n\x13IMChangeSignInfoRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x11\n\tsign_info\x18\x03 \x01(\t\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"E\n\x17IMSignInfoChangedNotify\x12\x17\n\x0f\x63hanged_user_id\x18\x01 \x02(\r\x12\x11\n\tsign_info\x18\x02 \x02(\t\"Q\n\x0fIMSearchUserReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x18\n\x10search_user_name\x18\x02 \x02(\t\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"j\n\x0fIMSearchUserRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x31\n\x10search_user_list\x18\x02 \x03(\x0b\x32\x17.IM.BaseDefine.UserInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"_\n\x0eIMAddFriendReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12\x14\n\x0c\x61\x64\x64ition_msg\x18\x03 \x01(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"w\n\x0eIMAddFriendRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12\x13\n\x0bresult_code\x18\x03 \x02(\r\x12\x17\n\x0f\x61\x64\x64_friend_data\x18\x04 \x01(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x8f\x01\n\x0fIMAddFriendData\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12*\n\x04type\x18\x03 \x02(\x0e\x32\x1c.IM.BaseDefine.SystemMsgType\x12\x17\n\x0f\x61\x64\x64_friend_data\x18\x05 \x02(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\">\n\x16IMAddFriendReadDataAck\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"N\n\x15IMGetAddFriendDataReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x0f\n\x07msg_cnt\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"k\n\x15IMGetAddFriendDataRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12,\n\tdata_list\x18\x02 \x03(\x0b\x32\x19.IM.Buddy.IMAddFriendData\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"?\n\x17IMAddFriendUnreadCntReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"S\n\x17IMAddFriendUnreadCntRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x12\n\nunread_cnt\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x91\x01\n\x13IMAgreeAddFriendReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12+\n\x05\x61gree\x18\x03 \x02(\x0e\x32\x1c.IM.BaseDefine.SystemMsgType\x12\x14\n\x0c\x61\x64\x64ition_msg\x18\x04 \x01(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xab\x01\n\x13IMAgreeAddFriendRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12+\n\x05\x61gree\x18\x03 \x02(\x0e\x32\x1c.IM.BaseDefine.SystemMsgType\x12\x13\n\x0bresult_code\x18\x04 \x02(\r\x12\x19\n\x11\x61gree_friend_data\x18\x05 \x01(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"J\n\x0fIMFollowUserReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"L\n\x0fIMFollowUserRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"_\n\x0eIMDelFriendReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12\x14\n\x0c\x61\x64\x64ition_msg\x18\x03 \x01(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"t\n\x0eIMDelFriendRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12\x13\n\x0bresult_code\x18\x03 \x02(\r\x12\x14\n\x0c\x61\x64\x64ition_msg\x18\x04 \x01(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"M\n\x12IMDelFollowUserReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"b\n\x12IMDelFollowUserRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\tfriend_id\x18\x02 \x02(\r\x12\x13\n\x0bresult_code\x18\x03 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"=\n\x15IMALLOnlineUserCntReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"V\n\x15IMALLOnlineUserCntRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x17\n\x0fonline_user_cnt\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"h\n\x14IMUpdateUsersInfoReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12*\n\tuser_info\x18\x02 \x02(\x0b\x32\x17.IM.BaseDefine.UserInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"Q\n\x14IMUpdateUsersInfoRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"[\n\x12IMRecommendListReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x0c\n\x04page\x18\x02 \x02(\r\x12\x11\n\tpage_size\x18\x03 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"^\n\x12IMRecommendListRsp\x12\x16\n\x0erecommend_list\x18\x01 \x03(\r\x12\x1b\n\x13recommend_nick_list\x18\x02 \x03(\t\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\x42\x1c\n\x18\x63om.tenth.space.protobufH\x03')
   ,
   dependencies=[IM.BaseDefine_pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -2002,6 +2002,101 @@ _IMUPDATEUSERSINFORSP = _descriptor.Descriptor(
   serialized_end=4265,
 )
 
+
+_IMRECOMMENDLISTREQ = _descriptor.Descriptor(
+  name='IMRecommendListReq',
+  full_name='IM.Buddy.IMRecommendListReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='IM.Buddy.IMRecommendListReq.user_id', index=0,
+      number=1, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='page', full_name='IM.Buddy.IMRecommendListReq.page', index=1,
+      number=2, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='page_size', full_name='IM.Buddy.IMRecommendListReq.page_size', index=2,
+      number=3, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attach_data', full_name='IM.Buddy.IMRecommendListReq.attach_data', index=3,
+      number=20, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4267,
+  serialized_end=4358,
+)
+
+
+_IMRECOMMENDLISTRSP = _descriptor.Descriptor(
+  name='IMRecommendListRsp',
+  full_name='IM.Buddy.IMRecommendListRsp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='recommend_list', full_name='IM.Buddy.IMRecommendListRsp.recommend_list', index=0,
+      number=1, type=13, cpp_type=3, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='recommend_nick_list', full_name='IM.Buddy.IMRecommendListRsp.recommend_nick_list', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attach_data', full_name='IM.Buddy.IMRecommendListRsp.attach_data', index=2,
+      number=20, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4360,
+  serialized_end=4454,
+)
+
 _IMRECENTCONTACTSESSIONRSP.fields_by_name['contact_session_list'].message_type = IM.BaseDefine_pb2._CONTACTSESSIONINFO
 _IMUSERSTATNOTIFY.fields_by_name['user_stat'].message_type = IM.BaseDefine_pb2._USERSTAT
 _IMUSERSINFORSP.fields_by_name['user_info_list'].message_type = IM.BaseDefine_pb2._USERINFO
@@ -2061,6 +2156,8 @@ DESCRIPTOR.message_types_by_name['IMALLOnlineUserCntReq'] = _IMALLONLINEUSERCNTR
 DESCRIPTOR.message_types_by_name['IMALLOnlineUserCntRsp'] = _IMALLONLINEUSERCNTRSP
 DESCRIPTOR.message_types_by_name['IMUpdateUsersInfoReq'] = _IMUPDATEUSERSINFOREQ
 DESCRIPTOR.message_types_by_name['IMUpdateUsersInfoRsp'] = _IMUPDATEUSERSINFORSP
+DESCRIPTOR.message_types_by_name['IMRecommendListReq'] = _IMRECOMMENDLISTREQ
+DESCRIPTOR.message_types_by_name['IMRecommendListRsp'] = _IMRECOMMENDLISTRSP
 
 IMRecentContactSessionReq = _reflection.GeneratedProtocolMessageType('IMRecentContactSessionReq', (_message.Message,), dict(
   DESCRIPTOR = _IMRECENTCONTACTSESSIONREQ,
@@ -2362,6 +2459,20 @@ IMUpdateUsersInfoRsp = _reflection.GeneratedProtocolMessageType('IMUpdateUsersIn
   # @@protoc_insertion_point(class_scope:IM.Buddy.IMUpdateUsersInfoRsp)
   ))
 _sym_db.RegisterMessage(IMUpdateUsersInfoRsp)
+
+IMRecommendListReq = _reflection.GeneratedProtocolMessageType('IMRecommendListReq', (_message.Message,), dict(
+  DESCRIPTOR = _IMRECOMMENDLISTREQ,
+  __module__ = 'IM.Buddy_pb2'
+  # @@protoc_insertion_point(class_scope:IM.Buddy.IMRecommendListReq)
+  ))
+_sym_db.RegisterMessage(IMRecommendListReq)
+
+IMRecommendListRsp = _reflection.GeneratedProtocolMessageType('IMRecommendListRsp', (_message.Message,), dict(
+  DESCRIPTOR = _IMRECOMMENDLISTRSP,
+  __module__ = 'IM.Buddy_pb2'
+  # @@protoc_insertion_point(class_scope:IM.Buddy.IMRecommendListRsp)
+  ))
+_sym_db.RegisterMessage(IMRecommendListRsp)
 
 
 DESCRIPTOR.has_options = True

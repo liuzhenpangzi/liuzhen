@@ -60,6 +60,8 @@ void protobuf_ShutdownFile_IM_2eBuddy_2eproto() {
   delete IMALLOnlineUserCntRsp::default_instance_;
   delete IMUpdateUsersInfoReq::default_instance_;
   delete IMUpdateUsersInfoRsp::default_instance_;
+  delete IMRecommendListReq::default_instance_;
+  delete IMRecommendListRsp::default_instance_;
 }
 
 #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
@@ -118,6 +120,8 @@ void protobuf_AddDesc_IM_2eBuddy_2eproto() {
   IMALLOnlineUserCntRsp::default_instance_ = new IMALLOnlineUserCntRsp();
   IMUpdateUsersInfoReq::default_instance_ = new IMUpdateUsersInfoReq();
   IMUpdateUsersInfoRsp::default_instance_ = new IMUpdateUsersInfoRsp();
+  IMRecommendListReq::default_instance_ = new IMRecommendListReq();
+  IMRecommendListRsp::default_instance_ = new IMRecommendListRsp();
   IMRecentContactSessionReq::default_instance_->InitAsDefaultInstance();
   IMRecentContactSessionRsp::default_instance_->InitAsDefaultInstance();
   IMUserStatNotify::default_instance_->InitAsDefaultInstance();
@@ -161,6 +165,8 @@ void protobuf_AddDesc_IM_2eBuddy_2eproto() {
   IMALLOnlineUserCntRsp::default_instance_->InitAsDefaultInstance();
   IMUpdateUsersInfoReq::default_instance_->InitAsDefaultInstance();
   IMUpdateUsersInfoRsp::default_instance_->InitAsDefaultInstance();
+  IMRecommendListReq::default_instance_->InitAsDefaultInstance();
+  IMRecommendListRsp::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_IM_2eBuddy_2eproto);
 }
 
@@ -12560,6 +12566,591 @@ void IMUpdateUsersInfoRsp::Swap(IMUpdateUsersInfoRsp* other) {
 
 ::std::string IMUpdateUsersInfoRsp::GetTypeName() const {
   return "IM.Buddy.IMUpdateUsersInfoRsp";
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int IMRecommendListReq::kUserIdFieldNumber;
+const int IMRecommendListReq::kPageFieldNumber;
+const int IMRecommendListReq::kPageSizeFieldNumber;
+const int IMRecommendListReq::kAttachDataFieldNumber;
+#endif  // !_MSC_VER
+
+IMRecommendListReq::IMRecommendListReq()
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:IM.Buddy.IMRecommendListReq)
+}
+
+void IMRecommendListReq::InitAsDefaultInstance() {
+}
+
+IMRecommendListReq::IMRecommendListReq(const IMRecommendListReq& from)
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:IM.Buddy.IMRecommendListReq)
+}
+
+void IMRecommendListReq::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  user_id_ = 0u;
+  page_ = 0u;
+  page_size_ = 0u;
+  attach_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+IMRecommendListReq::~IMRecommendListReq() {
+  // @@protoc_insertion_point(destructor:IM.Buddy.IMRecommendListReq)
+  SharedDtor();
+}
+
+void IMRecommendListReq::SharedDtor() {
+  if (attach_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete attach_data_;
+  }
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  if (this != &default_instance()) {
+  #else
+  if (this != default_instance_) {
+  #endif
+  }
+}
+
+void IMRecommendListReq::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const IMRecommendListReq& IMRecommendListReq::default_instance() {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  protobuf_AddDesc_IM_2eBuddy_2eproto();
+#else
+  if (default_instance_ == NULL) protobuf_AddDesc_IM_2eBuddy_2eproto();
+#endif
+  return *default_instance_;
+}
+
+IMRecommendListReq* IMRecommendListReq::default_instance_ = NULL;
+
+IMRecommendListReq* IMRecommendListReq::New() const {
+  return new IMRecommendListReq;
+}
+
+void IMRecommendListReq::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<IMRecommendListReq*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 15) {
+    ZR_(user_id_, page_);
+    page_size_ = 0u;
+    if (has_attach_data()) {
+      if (attach_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        attach_data_->clear();
+      }
+    }
+  }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->clear();
+}
+
+bool IMRecommendListReq::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::io::StringOutputStream unknown_fields_string(
+      mutable_unknown_fields());
+  ::google::protobuf::io::CodedOutputStream unknown_fields_stream(
+      &unknown_fields_string);
+  // @@protoc_insertion_point(parse_start:IM.Buddy.IMRecommendListReq)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(16383);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required uint32 user_id = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &user_id_)));
+          set_has_user_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_page;
+        break;
+      }
+
+      // required uint32 page = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_page:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &page_)));
+          set_has_page();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_page_size;
+        break;
+      }
+
+      // required uint32 page_size = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_page_size:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &page_size_)));
+          set_has_page_size();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(162)) goto parse_attach_data;
+        break;
+      }
+
+      // optional bytes attach_data = 20;
+      case 20: {
+        if (tag == 162) {
+         parse_attach_data:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->mutable_attach_data()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(
+            input, tag, &unknown_fields_stream));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:IM.Buddy.IMRecommendListReq)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:IM.Buddy.IMRecommendListReq)
+  return false;
+#undef DO_
+}
+
+void IMRecommendListReq::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:IM.Buddy.IMRecommendListReq)
+  // required uint32 user_id = 1;
+  if (has_user_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->user_id(), output);
+  }
+
+  // required uint32 page = 2;
+  if (has_page()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->page(), output);
+  }
+
+  // required uint32 page_size = 3;
+  if (has_page_size()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->page_size(), output);
+  }
+
+  // optional bytes attach_data = 20;
+  if (has_attach_data()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
+      20, this->attach_data(), output);
+  }
+
+  output->WriteRaw(unknown_fields().data(),
+                   unknown_fields().size());
+  // @@protoc_insertion_point(serialize_end:IM.Buddy.IMRecommendListReq)
+}
+
+int IMRecommendListReq::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required uint32 user_id = 1;
+    if (has_user_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->user_id());
+    }
+
+    // required uint32 page = 2;
+    if (has_page()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->page());
+    }
+
+    // required uint32 page_size = 3;
+    if (has_page_size()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->page_size());
+    }
+
+    // optional bytes attach_data = 20;
+    if (has_attach_data()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::BytesSize(
+          this->attach_data());
+    }
+
+  }
+  total_size += unknown_fields().size();
+
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void IMRecommendListReq::CheckTypeAndMergeFrom(
+    const ::google::protobuf::MessageLite& from) {
+  MergeFrom(*::google::protobuf::down_cast<const IMRecommendListReq*>(&from));
+}
+
+void IMRecommendListReq::MergeFrom(const IMRecommendListReq& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_user_id()) {
+      set_user_id(from.user_id());
+    }
+    if (from.has_page()) {
+      set_page(from.page());
+    }
+    if (from.has_page_size()) {
+      set_page_size(from.page_size());
+    }
+    if (from.has_attach_data()) {
+      set_attach_data(from.attach_data());
+    }
+  }
+  mutable_unknown_fields()->append(from.unknown_fields());
+}
+
+void IMRecommendListReq::CopyFrom(const IMRecommendListReq& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool IMRecommendListReq::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
+
+  return true;
+}
+
+void IMRecommendListReq::Swap(IMRecommendListReq* other) {
+  if (other != this) {
+    std::swap(user_id_, other->user_id_);
+    std::swap(page_, other->page_);
+    std::swap(page_size_, other->page_size_);
+    std::swap(attach_data_, other->attach_data_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.swap(other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::std::string IMRecommendListReq::GetTypeName() const {
+  return "IM.Buddy.IMRecommendListReq";
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int IMRecommendListRsp::kRecommendListFieldNumber;
+const int IMRecommendListRsp::kRecommendNickListFieldNumber;
+const int IMRecommendListRsp::kAttachDataFieldNumber;
+#endif  // !_MSC_VER
+
+IMRecommendListRsp::IMRecommendListRsp()
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:IM.Buddy.IMRecommendListRsp)
+}
+
+void IMRecommendListRsp::InitAsDefaultInstance() {
+}
+
+IMRecommendListRsp::IMRecommendListRsp(const IMRecommendListRsp& from)
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:IM.Buddy.IMRecommendListRsp)
+}
+
+void IMRecommendListRsp::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  attach_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+IMRecommendListRsp::~IMRecommendListRsp() {
+  // @@protoc_insertion_point(destructor:IM.Buddy.IMRecommendListRsp)
+  SharedDtor();
+}
+
+void IMRecommendListRsp::SharedDtor() {
+  if (attach_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete attach_data_;
+  }
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  if (this != &default_instance()) {
+  #else
+  if (this != default_instance_) {
+  #endif
+  }
+}
+
+void IMRecommendListRsp::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const IMRecommendListRsp& IMRecommendListRsp::default_instance() {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  protobuf_AddDesc_IM_2eBuddy_2eproto();
+#else
+  if (default_instance_ == NULL) protobuf_AddDesc_IM_2eBuddy_2eproto();
+#endif
+  return *default_instance_;
+}
+
+IMRecommendListRsp* IMRecommendListRsp::default_instance_ = NULL;
+
+IMRecommendListRsp* IMRecommendListRsp::New() const {
+  return new IMRecommendListRsp;
+}
+
+void IMRecommendListRsp::Clear() {
+  if (has_attach_data()) {
+    if (attach_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+      attach_data_->clear();
+    }
+  }
+  recommend_list_.Clear();
+  recommend_nick_list_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->clear();
+}
+
+bool IMRecommendListRsp::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::io::StringOutputStream unknown_fields_string(
+      mutable_unknown_fields());
+  ::google::protobuf::io::CodedOutputStream unknown_fields_stream(
+      &unknown_fields_string);
+  // @@protoc_insertion_point(parse_start:IM.Buddy.IMRecommendListRsp)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(16383);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated uint32 recommend_list = 1;
+      case 1: {
+        if (tag == 8) {
+         parse_recommend_list:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 1, 8, input, this->mutable_recommend_list())));
+        } else if (tag == 10) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, this->mutable_recommend_list())));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(8)) goto parse_recommend_list;
+        if (input->ExpectTag(18)) goto parse_recommend_nick_list;
+        break;
+      }
+
+      // repeated string recommend_nick_list = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_recommend_nick_list:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_recommend_nick_list()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_recommend_nick_list;
+        if (input->ExpectTag(162)) goto parse_attach_data;
+        break;
+      }
+
+      // optional bytes attach_data = 20;
+      case 20: {
+        if (tag == 162) {
+         parse_attach_data:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->mutable_attach_data()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(
+            input, tag, &unknown_fields_stream));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:IM.Buddy.IMRecommendListRsp)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:IM.Buddy.IMRecommendListRsp)
+  return false;
+#undef DO_
+}
+
+void IMRecommendListRsp::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:IM.Buddy.IMRecommendListRsp)
+  // repeated uint32 recommend_list = 1;
+  for (int i = 0; i < this->recommend_list_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(
+      1, this->recommend_list(i), output);
+  }
+
+  // repeated string recommend_nick_list = 2;
+  for (int i = 0; i < this->recommend_nick_list_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      2, this->recommend_nick_list(i), output);
+  }
+
+  // optional bytes attach_data = 20;
+  if (has_attach_data()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
+      20, this->attach_data(), output);
+  }
+
+  output->WriteRaw(unknown_fields().data(),
+                   unknown_fields().size());
+  // @@protoc_insertion_point(serialize_end:IM.Buddy.IMRecommendListRsp)
+}
+
+int IMRecommendListRsp::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[2 / 32] & (0xffu << (2 % 32))) {
+    // optional bytes attach_data = 20;
+    if (has_attach_data()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::BytesSize(
+          this->attach_data());
+    }
+
+  }
+  // repeated uint32 recommend_list = 1;
+  {
+    int data_size = 0;
+    for (int i = 0; i < this->recommend_list_size(); i++) {
+      data_size += ::google::protobuf::internal::WireFormatLite::
+        UInt32Size(this->recommend_list(i));
+    }
+    total_size += 1 * this->recommend_list_size() + data_size;
+  }
+
+  // repeated string recommend_nick_list = 2;
+  total_size += 1 * this->recommend_nick_list_size();
+  for (int i = 0; i < this->recommend_nick_list_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->recommend_nick_list(i));
+  }
+
+  total_size += unknown_fields().size();
+
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void IMRecommendListRsp::CheckTypeAndMergeFrom(
+    const ::google::protobuf::MessageLite& from) {
+  MergeFrom(*::google::protobuf::down_cast<const IMRecommendListRsp*>(&from));
+}
+
+void IMRecommendListRsp::MergeFrom(const IMRecommendListRsp& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  recommend_list_.MergeFrom(from.recommend_list_);
+  recommend_nick_list_.MergeFrom(from.recommend_nick_list_);
+  if (from._has_bits_[2 / 32] & (0xffu << (2 % 32))) {
+    if (from.has_attach_data()) {
+      set_attach_data(from.attach_data());
+    }
+  }
+  mutable_unknown_fields()->append(from.unknown_fields());
+}
+
+void IMRecommendListRsp::CopyFrom(const IMRecommendListRsp& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool IMRecommendListRsp::IsInitialized() const {
+
+  return true;
+}
+
+void IMRecommendListRsp::Swap(IMRecommendListRsp* other) {
+  if (other != this) {
+    recommend_list_.Swap(&other->recommend_list_);
+    recommend_nick_list_.Swap(&other->recommend_nick_list_);
+    std::swap(attach_data_, other->attach_data_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.swap(other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::std::string IMRecommendListRsp::GetTypeName() const {
+  return "IM.Buddy.IMRecommendListRsp";
 }
 
 

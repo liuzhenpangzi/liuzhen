@@ -19,7 +19,7 @@ _sym_db = _symbol_database.Default()
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='IM.BaseDefine.proto',
   package='IM.BaseDefine',
-  serialized_pb=_b('\n\x13IM.BaseDefine.proto\x12\rIM.BaseDefine\"\"\n\x06IpAddr\x12\n\n\x02ip\x18\x01 \x02(\t\x12\x0c\n\x04port\x18\x02 \x02(\r\"\xba\x02\n\x08UserInfo\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0buser_gender\x18\x02 \x02(\r\x12\x16\n\x0euser_nick_name\x18\x03 \x02(\t\x12\x12\n\navatar_url\x18\x04 \x02(\t\x12\x15\n\rdepartment_id\x18\x05 \x02(\r\x12\r\n\x05\x65mail\x18\x06 \x02(\t\x12\x16\n\x0euser_real_name\x18\x07 \x02(\t\x12\x10\n\x08user_tel\x18\x08 \x02(\t\x12\x13\n\x0buser_domain\x18\t \x02(\t\x12\x0e\n\x06status\x18\n \x02(\r\x12\x11\n\tsign_info\x18\x0b \x01(\t\x12\x0f\n\x07updated\x18\x0c \x01(\r\x12\x31\n\x08relation\x18\r \x01(\x0e\x32\x1f.IM.BaseDefine.UserRelationType\x12\x10\n\x08\x66\x61ns_cnt\x18\x0e \x01(\r\"\xac\x02\n\x12\x43ontactSessionInfo\x12\x12\n\nsession_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x38\n\x0esession_status\x18\x03 \x02(\x0e\x32 .IM.BaseDefine.SessionStatusType\x12\x14\n\x0cupdated_time\x18\x04 \x02(\r\x12\x15\n\rlatest_msg_id\x18\x05 \x02(\r\x12\x17\n\x0flatest_msg_data\x18\x06 \x02(\x0c\x12/\n\x0flatest_msg_type\x18\x07 \x02(\x0e\x32\x16.IM.BaseDefine.MsgType\x12\x1f\n\x17latest_msg_from_user_id\x18\x08 \x02(\r\"H\n\x08UserStat\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12+\n\x06status\x18\x02 \x02(\x0e\x32\x1b.IM.BaseDefine.UserStatType\"~\n\x0eServerUserStat\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12+\n\x06status\x18\x02 \x02(\x0e\x32\x1b.IM.BaseDefine.UserStatType\x12.\n\x0b\x63lient_type\x18\x03 \x02(\x0e\x32\x19.IM.BaseDefine.ClientType\"\xe8\x01\n\nUnreadInfo\x12\x12\n\nsession_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nunread_cnt\x18\x03 \x02(\r\x12\x15\n\rlatest_msg_id\x18\x04 \x02(\r\x12\x17\n\x0flatest_msg_data\x18\x05 \x02(\x0c\x12/\n\x0flatest_msg_type\x18\x06 \x02(\x0e\x32\x16.IM.BaseDefine.MsgType\x12\x1f\n\x17latest_msg_from_user_id\x18\x07 \x02(\r\"\x83\x01\n\x07MsgInfo\x12\x0e\n\x06msg_id\x18\x01 \x02(\r\x12\x17\n\x0f\x66rom_session_id\x18\x02 \x02(\r\x12\x13\n\x0b\x63reate_time\x18\x03 \x02(\r\x12(\n\x08msg_type\x18\x04 \x02(\x0e\x32\x16.IM.BaseDefine.MsgType\x12\x10\n\x08msg_data\x18\x05 \x02(\x0c\"\xa9\x01\n\x08\x42logInfo\x12\x0f\n\x07\x62log_id\x18\x01 \x02(\r\x12\x16\n\x0ewriter_user_id\x18\x02 \x02(\r\x12\x11\n\tnick_name\x18\x03 \x02(\t\x12\x12\n\navatar_url\x18\x04 \x02(\t\x12\x10\n\x08like_cnt\x18\x05 \x02(\r\x12\x13\n\x0b\x63omment_cnt\x18\x06 \x02(\r\x12\x13\n\x0b\x63reate_time\x18\x07 \x02(\r\x12\x11\n\tblog_data\x18\x08 \x02(\x0c\"5\n\x10GroupVersionInfo\x12\x10\n\x08group_id\x18\x01 \x02(\r\x12\x0f\n\x07version\x18\x02 \x02(\r\"\xd2\x01\n\tGroupInfo\x12\x10\n\x08group_id\x18\x01 \x02(\r\x12\x0f\n\x07version\x18\x02 \x02(\r\x12\x12\n\ngroup_name\x18\x03 \x02(\t\x12\x14\n\x0cgroup_avatar\x18\x04 \x02(\t\x12\x18\n\x10group_creator_id\x18\x05 \x02(\r\x12,\n\ngroup_type\x18\x06 \x02(\x0e\x32\x18.IM.BaseDefine.GroupType\x12\x15\n\rshield_status\x18\x07 \x02(\r\x12\x19\n\x11group_member_list\x18\x08 \x03(\r\"\x84\x01\n\rUserTokenInfo\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12,\n\tuser_type\x18\x02 \x02(\x0e\x32\x19.IM.BaseDefine.ClientType\x12\r\n\x05token\x18\x03 \x02(\t\x12\x12\n\npush_count\x18\x04 \x02(\r\x12\x11\n\tpush_type\x18\x05 \x02(\r\"5\n\nPushResult\x12\x12\n\nuser_token\x18\x01 \x02(\t\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\"H\n\x0cShieldStatus\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x10\n\x08group_id\x18\x02 \x02(\r\x12\x15\n\rshield_status\x18\x03 \x02(\r\"^\n\x0fOfflineFileInfo\x12\x14\n\x0c\x66rom_user_id\x18\x01 \x02(\r\x12\x0f\n\x07task_id\x18\x02 \x02(\t\x12\x11\n\tfile_name\x18\x03 \x02(\t\x12\x11\n\tfile_size\x18\x04 \x02(\r\"\x94\x01\n\nDepartInfo\x12\x0f\n\x07\x64\x65pt_id\x18\x01 \x02(\r\x12\x10\n\x08priority\x18\x02 \x02(\r\x12\x11\n\tdept_name\x18\x03 \x02(\t\x12\x16\n\x0eparent_dept_id\x18\x04 \x02(\r\x12\x38\n\x0b\x64\x65pt_status\x18\x05 \x02(\x0e\x32#.IM.BaseDefine.DepartmentStatusType\":\n\x10PushShieldStatus\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x15\n\rshield_status\x18\x02 \x02(\r*\xc1\x01\n\tServiceID\x12\r\n\tSID_LOGIN\x10\x01\x12\x12\n\x0eSID_BUDDY_LIST\x10\x02\x12\x0b\n\x07SID_MSG\x10\x03\x12\r\n\tSID_GROUP\x10\x04\x12\x0c\n\x08SID_FILE\x10\x05\x12\x16\n\x12SID_SWITCH_SERVICE\x10\x06\x12\r\n\tSID_OTHER\x10\x07\x12\x10\n\x0cSID_INTERNAL\x10\x08\x12\x10\n\x0cSID_REGISTER\x10\t\x12\x0c\n\x08SID_BLOG\x10\n\x12\x0e\n\nSID_SYSTEM\x10\x0b*\x86\x02\n\tBlogCmdID\x12\x12\n\rCID_BLOG_SEND\x10\x81\x14\x12\x16\n\x11\x43ID_BLOG_SEND_ACK\x10\x82\x14\x12\x1e\n\x19\x43ID_BLOG_GET_LIST_REQUEST\x10\x83\x14\x12\x1f\n\x1a\x43ID_BLOG_GET_LIST_RESPONSE\x10\x84\x14\x12!\n\x1c\x43ID_BLOG_ADD_COMMENT_REQUEST\x10\x85\x14\x12\"\n\x1d\x43ID_BLOG_ADD_COMMENT_RESPONSE\x10\x86\x14\x12!\n\x1c\x43ID_BLOG_GET_COMMENT_REQUEST\x10\x87\x14\x12\"\n\x1d\x43ID_BLOG_GET_COMMENT_RESPONSE\x10\x88\x14*=\n\rRegisterCmdID\x12\x15\n\x10\x43ID_REGISTER_REQ\x10\x81\x12\x12\x15\n\x10\x43ID_REGISTER_RSP\x10\x82\x12*\xe6\x03\n\nLoginCmdID\x12\x1c\n\x17\x43ID_LOGIN_REQ_MSGSERVER\x10\x81\x02\x12\x1c\n\x17\x43ID_LOGIN_RES_MSGSERVER\x10\x82\x02\x12\x1c\n\x17\x43ID_LOGIN_REQ_USERLOGIN\x10\x83\x02\x12\x1c\n\x17\x43ID_LOGIN_RES_USERLOGIN\x10\x84\x02\x12\x1b\n\x16\x43ID_LOGIN_REQ_LOGINOUT\x10\x85\x02\x12\x1b\n\x16\x43ID_LOGIN_RES_LOGINOUT\x10\x86\x02\x12\x18\n\x13\x43ID_LOGIN_KICK_USER\x10\x87\x02\x12\x1e\n\x19\x43ID_LOGIN_REQ_DEVICETOKEN\x10\x88\x02\x12\x1e\n\x19\x43ID_LOGIN_RES_DEVICETOKEN\x10\x89\x02\x12\x1f\n\x1a\x43ID_LOGIN_REQ_KICKPCCLIENT\x10\x8a\x02\x12\x1f\n\x1a\x43ID_LOGIN_RES_KICKPCCLIENT\x10\x8b\x02\x12\x1e\n\x19\x43ID_LOGIN_REQ_PUSH_SHIELD\x10\x8c\x02\x12\x1e\n\x19\x43ID_LOGIN_RES_PUSH_SHIELD\x10\x8d\x02\x12$\n\x1f\x43ID_LOGIN_REQ_QUERY_PUSH_SHIELD\x10\x8e\x02\x12$\n\x1f\x43ID_LOGIN_RES_QUERY_PUSH_SHIELD\x10\x8f\x02*\xef\x0e\n\x0e\x42uddyListCmdID\x12\x32\n-CID_BUDDY_LIST_RECENT_CONTACT_SESSION_REQUEST\x10\x81\x04\x12\x33\n.CID_BUDDY_LIST_RECENT_CONTACT_SESSION_RESPONSE\x10\x82\x04\x12!\n\x1c\x43ID_BUDDY_LIST_STATUS_NOTIFY\x10\x83\x04\x12%\n CID_BUDDY_LIST_USER_INFO_REQUEST\x10\x84\x04\x12&\n!CID_BUDDY_LIST_USER_INFO_RESPONSE\x10\x85\x04\x12&\n!CID_BUDDY_LIST_REMOVE_SESSION_REQ\x10\x86\x04\x12&\n!CID_BUDDY_LIST_REMOVE_SESSION_RES\x10\x87\x04\x12$\n\x1f\x43ID_BUDDY_LIST_ALL_USER_REQUEST\x10\x88\x04\x12%\n CID_BUDDY_LIST_ALL_USER_RESPONSE\x10\x89\x04\x12(\n#CID_BUDDY_LIST_USERS_STATUS_REQUEST\x10\x8a\x04\x12)\n$CID_BUDDY_LIST_USERS_STATUS_RESPONSE\x10\x8b\x04\x12)\n$CID_BUDDY_LIST_CHANGE_AVATAR_REQUEST\x10\x8c\x04\x12*\n%CID_BUDDY_LIST_CHANGE_AVATAR_RESPONSE\x10\x8d\x04\x12*\n%CID_BUDDY_LIST_PC_LOGIN_STATUS_NOTIFY\x10\x8e\x04\x12)\n$CID_BUDDY_LIST_REMOVE_SESSION_NOTIFY\x10\x8f\x04\x12&\n!CID_BUDDY_LIST_DEPARTMENT_REQUEST\x10\x90\x04\x12\'\n\"CID_BUDDY_LIST_DEPARTMENT_RESPONSE\x10\x91\x04\x12)\n$CID_BUDDY_LIST_AVATAR_CHANGED_NOTIFY\x10\x92\x04\x12,\n\'CID_BUDDY_LIST_CHANGE_SIGN_INFO_REQUEST\x10\x93\x04\x12-\n(CID_BUDDY_LIST_CHANGE_SIGN_INFO_RESPONSE\x10\x94\x04\x12,\n\'CID_BUDDY_LIST_SIGN_INFO_CHANGED_NOTIFY\x10\x95\x04\x12\'\n\"CID_BUDDY_LIST_SEARCH_USER_REQUEST\x10\x96\x04\x12(\n#CID_BUDDY_LIST_SEARCH_USER_RESPONSE\x10\x97\x04\x12&\n!CID_BUDDY_LIST_ADD_FRIEND_REQUEST\x10\x98\x04\x12\'\n\"CID_BUDDY_LIST_ADD_FRIEND_RESPONSE\x10\x99\x04\x12#\n\x1e\x43ID_BUDDY_LIST_ADD_FRIEND_DATA\x10\x9a\x04\x12,\n\'CID_BUDDY_LIST_ADD_FRIEND_READ_DATA_ACK\x10\x9b\x04\x12\x31\n,CID_BUDDY_LIST_ADD_FRIEND_UNREAD_CNT_REQUEST\x10\x9c\x04\x12\x32\n-CID_BUDDY_LIST_ADD_FRIEND_UNREAD_CNT_RESPONSE\x10\x9d\x04\x12,\n\'CID_BUDDY_LIST_AGREE_ADD_FRIEND_REQUEST\x10\x9e\x04\x12-\n(CID_BUDDY_LIST_AGREE_ADD_FRIEND_RESPONSE\x10\x9f\x04\x12\'\n\"CID_BUDDY_LIST_FOLLOW_USER_REQUEST\x10\xa0\x04\x12(\n#CID_BUDDY_LIST_FOLLOW_USER_RESPONSE\x10\xa1\x04\x12&\n!CID_BUDDY_LIST_DEL_FRIEND_REQUEST\x10\xa2\x04\x12\'\n\"CID_BUDDY_LIST_DEL_FRIEND_RESPONSE\x10\xa3\x04\x12+\n&CID_BUDDY_LIST_DEL_FOLLOW_USER_REQUEST\x10\xa4\x04\x12,\n\'CID_BUDDY_LIST_DEL_FOLLOW_USER_RESPONSE\x10\xa5\x04\x12/\n*CID_BUDDY_LIST_GET_ADD_FRIEND_DATA_REQUEST\x10\xa6\x04\x12\x30\n+CID_BUDDY_LIST_GET_ADD_FRIEND_DATA_RESPONSE\x10\xa7\x04\x12/\n*CID_BUDDY_LIST_ALL_ONLINE_USER_CNT_REQUEST\x10\xa8\x04\x12\x30\n+CID_BUDDY_LIST_ALL_ONLINE_USER_CNT_RESPONSE\x10\xa9\x04\x12,\n\'CID_BUDDY_LIST_UPDATE_USER_INFO_REQUEST\x10\xaa\x04\x12-\n(CID_BUDDY_LIST_UPDATE_USER_INFO_RESPONSE\x10\xab\x04*\xa2\x03\n\x0cMessageCmdID\x12\x11\n\x0c\x43ID_MSG_DATA\x10\x81\x06\x12\x15\n\x10\x43ID_MSG_DATA_ACK\x10\x82\x06\x12\x15\n\x10\x43ID_MSG_READ_ACK\x10\x83\x06\x12\x18\n\x13\x43ID_MSG_READ_NOTIFY\x10\x84\x06\x12\x19\n\x14\x43ID_MSG_TIME_REQUEST\x10\x85\x06\x12\x1a\n\x15\x43ID_MSG_TIME_RESPONSE\x10\x86\x06\x12\x1f\n\x1a\x43ID_MSG_UNREAD_CNT_REQUEST\x10\x87\x06\x12 \n\x1b\x43ID_MSG_UNREAD_CNT_RESPONSE\x10\x88\x06\x12\x19\n\x14\x43ID_MSG_LIST_REQUEST\x10\x89\x06\x12\x1a\n\x15\x43ID_MSG_LIST_RESPONSE\x10\x8a\x06\x12\"\n\x1d\x43ID_MSG_GET_LATEST_MSG_ID_REQ\x10\x8b\x06\x12\"\n\x1d\x43ID_MSG_GET_LATEST_MSG_ID_RSP\x10\x8c\x06\x12\x1e\n\x19\x43ID_MSG_GET_BY_MSG_ID_REQ\x10\x8d\x06\x12\x1e\n\x19\x43ID_MSG_GET_BY_MSG_ID_RES\x10\x8e\x06*\x8c\x03\n\nGroupCmdID\x12\"\n\x1d\x43ID_GROUP_NORMAL_LIST_REQUEST\x10\x81\x08\x12#\n\x1e\x43ID_GROUP_NORMAL_LIST_RESPONSE\x10\x82\x08\x12\x1b\n\x16\x43ID_GROUP_INFO_REQUEST\x10\x83\x08\x12\x1c\n\x17\x43ID_GROUP_INFO_RESPONSE\x10\x84\x08\x12\x1d\n\x18\x43ID_GROUP_CREATE_REQUEST\x10\x85\x08\x12\x1e\n\x19\x43ID_GROUP_CREATE_RESPONSE\x10\x86\x08\x12$\n\x1f\x43ID_GROUP_CHANGE_MEMBER_REQUEST\x10\x87\x08\x12%\n CID_GROUP_CHANGE_MEMBER_RESPONSE\x10\x88\x08\x12#\n\x1e\x43ID_GROUP_SHIELD_GROUP_REQUEST\x10\x89\x08\x12$\n\x1f\x43ID_GROUP_SHIELD_GROUP_RESPONSE\x10\x8a\x08\x12#\n\x1e\x43ID_GROUP_CHANGE_MEMBER_NOTIFY\x10\x8b\x08*\xcd\x02\n\tFileCmdID\x12\x17\n\x12\x43ID_FILE_LOGIN_REQ\x10\x81\n\x12\x17\n\x12\x43ID_FILE_LOGIN_RES\x10\x82\n\x12\x13\n\x0e\x43ID_FILE_STATE\x10\x83\n\x12\x1b\n\x16\x43ID_FILE_PULL_DATA_REQ\x10\x84\n\x12\x1b\n\x16\x43ID_FILE_PULL_DATA_RSP\x10\x85\n\x12\x15\n\x10\x43ID_FILE_REQUEST\x10\x86\n\x12\x16\n\x11\x43ID_FILE_RESPONSE\x10\x87\n\x12\x14\n\x0f\x43ID_FILE_NOTIFY\x10\x88\n\x12\x1d\n\x18\x43ID_FILE_HAS_OFFLINE_REQ\x10\x89\n\x12\x1d\n\x18\x43ID_FILE_HAS_OFFLINE_RES\x10\x8a\n\x12\x1d\n\x18\x43ID_FILE_ADD_OFFLINE_REQ\x10\x8b\n\x12\x1d\n\x18\x43ID_FILE_DEL_OFFLINE_REQ\x10\x8c\n*-\n\x12SwitchServiceCmdID\x12\x17\n\x12\x43ID_SWITCH_P2P_CMD\x10\x81\x0c*\xef\x05\n\nOtherCmdID\x12\x18\n\x13\x43ID_OTHER_HEARTBEAT\x10\x81\x0e\x12\x1f\n\x1a\x43ID_OTHER_STOP_RECV_PACKET\x10\x82\x0e\x12\x1b\n\x16\x43ID_OTHER_VALIDATE_REQ\x10\x83\x0e\x12\x1b\n\x16\x43ID_OTHER_VALIDATE_RSP\x10\x84\x0e\x12#\n\x1e\x43ID_OTHER_GET_DEVICE_TOKEN_REQ\x10\x85\x0e\x12#\n\x1e\x43ID_OTHER_GET_DEVICE_TOKEN_RSP\x10\x86\x0e\x12\x17\n\x12\x43ID_OTHER_ROLE_SET\x10\x87\x0e\x12\x1f\n\x1a\x43ID_OTHER_ONLINE_USER_INFO\x10\x88\x0e\x12\x1c\n\x17\x43ID_OTHER_MSG_SERV_INFO\x10\x89\x0e\x12!\n\x1c\x43ID_OTHER_USER_STATUS_UPDATE\x10\x8a\x0e\x12\x1e\n\x19\x43ID_OTHER_USER_CNT_UPDATE\x10\x8b\x0e\x12\x1f\n\x1a\x43ID_OTHER_SERVER_KICK_USER\x10\x8d\x0e\x12\"\n\x1d\x43ID_OTHER_LOGIN_STATUS_NOTIFY\x10\x8e\x0e\x12\x1f\n\x1a\x43ID_OTHER_PUSH_TO_USER_REQ\x10\x8f\x0e\x12\x1f\n\x1a\x43ID_OTHER_PUSH_TO_USER_RSP\x10\x90\x0e\x12\x1d\n\x18\x43ID_OTHER_GET_SHIELD_REQ\x10\x91\x0e\x12\x1d\n\x18\x43ID_OTHER_GET_SHIELD_RSP\x10\x92\x0e\x12 \n\x1b\x43ID_OTHER_FILE_TRANSFER_REQ\x10\xb1\x0e\x12 \n\x1b\x43ID_OTHER_FILE_TRANSFER_RSP\x10\xb2\x0e\x12!\n\x1c\x43ID_OTHER_FILE_SERVER_IP_REQ\x10\xb3\x0e\x12!\n\x1c\x43ID_OTHER_FILE_SERVER_IP_RSP\x10\xb4\x0e\x12\x1b\n\x16\x43ID_OTHER_REGISTER_REQ\x10\xb5\x0e\x12\x1b\n\x16\x43ID_OTHER_REGISTER_RSP\x10\xb6\x0e*\x97\x02\n\nResultType\x12\x16\n\x12REFUSE_REASON_NONE\x10\x00\x12\x1f\n\x1bREFUSE_REASON_NO_MSG_SERVER\x10\x01\x12!\n\x1dREFUSE_REASON_MSG_SERVER_FULL\x10\x02\x12\x1e\n\x1aREFUSE_REASON_NO_DB_SERVER\x10\x03\x12!\n\x1dREFUSE_REASON_NO_LOGIN_SERVER\x10\x04\x12!\n\x1dREFUSE_REASON_NO_ROUTE_SERVER\x10\x05\x12$\n REFUSE_REASON_DB_VALIDATE_FAILED\x10\x06\x12!\n\x1dREFUSE_REASON_VERSION_TOO_OLD\x10\x07*M\n\x0eKickReasonType\x12\x1e\n\x1aKICK_REASON_DUPLICATE_USER\x10\x01\x12\x1b\n\x17KICK_REASON_MOBILE_KICK\x10\x02*2\n\x0eOnlineListType\x12 \n\x1cONLINE_LIST_TYPE_FRIEND_LIST\x10\x01*V\n\x0cUserStatType\x12\x16\n\x12USER_STATUS_ONLINE\x10\x01\x12\x17\n\x13USER_STATUS_OFFLINE\x10\x02\x12\x15\n\x11USER_STATUS_LEAVE\x10\x03*z\n\x0bSessionType\x12\x17\n\x13SESSION_TYPE_SINGLE\x10\x01\x12\x16\n\x12SESSION_TYPE_GROUP\x10\x02\x12\x17\n\x13SESSION_TYPE_SYSTEM\x10\x03\x12!\n\x1dSESSION_TYPE_ERROR_NOT_FRIEND\x10 *\x90\x01\n\x07MsgType\x12\x18\n\x14MSG_TYPE_SINGLE_TEXT\x10\x01\x12\x19\n\x15MSG_TYPE_SINGLE_AUDIO\x10\x02\x12\x17\n\x13MSG_TYPE_GROUP_TEXT\x10\x11\x12\x18\n\x14MSG_TYPE_GROUP_AUDIO\x10\x12\x12\x1d\n\x19MSG_TYPE_ERROR_NOT_FRIEND\x10 *R\n\x08\x42logType\x12\x16\n\x12\x42LOG_TYPE_RCOMMEND\x10\x01\x12\x14\n\x10\x42LOG_TYPE_FRIEND\x10\x02\x12\x18\n\x14\x42LOG_TYPE_FOLLOWUSER\x10\x03*8\n\tBlogType2\x12\x13\n\x0f\x42LOG_TYPE2_BLOG\x10\x01\x12\x16\n\x12\x42LOG_TYPE2_COMMENT\x10\x02*V\n\rSystemMsgType\x12\x16\n\x12\x41\x44\x44_FRIEND_REQUEST\x10\x01\x12\x14\n\x10\x41\x44\x44_FRIEND_AGREE\x10\x02\x12\x17\n\x13\x41\x44\x44_FRIEND_DISAGREE\x10\x03*h\n\nClientType\x12\x17\n\x13\x43LIENT_TYPE_WINDOWS\x10\x01\x12\x13\n\x0f\x43LIENT_TYPE_MAC\x10\x02\x12\x13\n\x0f\x43LIENT_TYPE_IOS\x10\x11\x12\x17\n\x13\x43LIENT_TYPE_ANDROID\x10\x12*6\n\tGroupType\x12\x15\n\x11GROUP_TYPE_NORMAL\x10\x01\x12\x12\n\x0eGROUP_TYPE_TMP\x10\x02*G\n\x0fGroupModifyType\x12\x19\n\x15GROUP_MODIFY_TYPE_ADD\x10\x01\x12\x19\n\x15GROUP_MODIFY_TYPE_DEL\x10\x02*?\n\x10TransferFileType\x12\x14\n\x10\x46ILE_TYPE_ONLINE\x10\x01\x12\x15\n\x11\x46ILE_TYPE_OFFLINE\x10\x02*s\n\x0f\x43lientFileState\x12\x1a\n\x16\x43LIENT_FILE_PEER_READY\x10\x00\x12\x16\n\x12\x43LIENT_FILE_CANCEL\x10\x01\x12\x16\n\x12\x43LIENT_FILE_REFUSE\x10\x02\x12\x14\n\x10\x43LIENT_FILE_DONE\x10\x03*\x80\x01\n\x0e\x43lientFileRole\x12\x1a\n\x16\x43LIENT_REALTIME_SENDER\x10\x01\x12\x1a\n\x16\x43LIENT_REALTIME_RECVER\x10\x02\x12\x19\n\x15\x43LIENT_OFFLINE_UPLOAD\x10\x03\x12\x1b\n\x17\x43LIENT_OFFLINE_DOWNLOAD\x10\x04*\xe1\x04\n\x0f\x46ileServerError\x12\x18\n\x14\x46ILE_SERVER_ERRNO_OK\x10\x00\x12*\n&FILE_SERVER_ERRNO_CREATE_TASK_ID_ERROR\x10\x01\x12\'\n#FILE_SERVER_ERRNO_CREATE_TASK_ERROR\x10\x02\x12)\n%FILE_SERVER_ERRNO_LOGIN_INVALID_TOKEN\x10\x03\x12+\n\'FILE_SERVER_ERRNO_INVALID_USER_FOR_TASK\x10\x04\x12\x34\n0FILE_SERVER_ERRNO_PULL_DATA_WITH_INVALID_TASK_ID\x10\x05\x12-\n)FILE_SERVER_ERRNO_PULL_DATA_ILLIEAGE_USER\x10\x06\x12+\n\'FILE_SERVER_ERRNO_PULL_DATA_MKDIR_ERROR\x10\x07\x12/\n+FILE_SERVER_ERRNO_PULL_DATA_OPEN_FILE_ERROR\x10\x08\x12\x36\n2FILE_SERVER_ERRNO_PULL_DATA_READ_FILE_HEADER_ERROR\x10\t\x12/\n+FILE_SERVER_ERRNO_PULL_DATA_ALLOC_MEM_ERROR\x10\n\x12\x31\n-FILE_SERVER_ERRNO_PULL_DATA_SEEK_OFFSET_ERROR\x10\x0b\x12(\n$FILE_SERVER_ERRNO_PULL_DATA_FINISHED\x10\x0c*E\n\x11SessionStatusType\x12\x15\n\x11SESSION_STATUS_OK\x10\x00\x12\x19\n\x15SESSION_STATUS_DELETE\x10\x01*B\n\x14\x44\x65partmentStatusType\x12\x12\n\x0e\x44\x45PT_STATUS_OK\x10\x00\x12\x16\n\x12\x44\x45PT_STATUS_DELETE\x10\x01*T\n\x10UserRelationType\x12\x16\n\x12RELATION_RECOMMEND\x10\x00\x12\x13\n\x0fRELATION_FRIEND\x10\x01\x12\x13\n\x0fRELATION_FOLLOW\x10\x02\x42\x1c\n\x18\x63om.tenth.space.protobufH\x03')
+  serialized_pb=_b('\n\x13IM.BaseDefine.proto\x12\rIM.BaseDefine\"\"\n\x06IpAddr\x12\n\n\x02ip\x18\x01 \x02(\t\x12\x0c\n\x04port\x18\x02 \x02(\r\"\xba\x02\n\x08UserInfo\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0buser_gender\x18\x02 \x02(\r\x12\x16\n\x0euser_nick_name\x18\x03 \x02(\t\x12\x12\n\navatar_url\x18\x04 \x02(\t\x12\x15\n\rdepartment_id\x18\x05 \x02(\r\x12\r\n\x05\x65mail\x18\x06 \x02(\t\x12\x16\n\x0euser_real_name\x18\x07 \x02(\t\x12\x10\n\x08user_tel\x18\x08 \x02(\t\x12\x13\n\x0buser_domain\x18\t \x02(\t\x12\x0e\n\x06status\x18\n \x02(\r\x12\x11\n\tsign_info\x18\x0b \x01(\t\x12\x0f\n\x07updated\x18\x0c \x01(\r\x12\x31\n\x08relation\x18\r \x01(\x0e\x32\x1f.IM.BaseDefine.UserRelationType\x12\x10\n\x08\x66\x61ns_cnt\x18\x0e \x01(\r\"\xac\x02\n\x12\x43ontactSessionInfo\x12\x12\n\nsession_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x38\n\x0esession_status\x18\x03 \x02(\x0e\x32 .IM.BaseDefine.SessionStatusType\x12\x14\n\x0cupdated_time\x18\x04 \x02(\r\x12\x15\n\rlatest_msg_id\x18\x05 \x02(\r\x12\x17\n\x0flatest_msg_data\x18\x06 \x02(\x0c\x12/\n\x0flatest_msg_type\x18\x07 \x02(\x0e\x32\x16.IM.BaseDefine.MsgType\x12\x1f\n\x17latest_msg_from_user_id\x18\x08 \x02(\r\"H\n\x08UserStat\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12+\n\x06status\x18\x02 \x02(\x0e\x32\x1b.IM.BaseDefine.UserStatType\"~\n\x0eServerUserStat\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12+\n\x06status\x18\x02 \x02(\x0e\x32\x1b.IM.BaseDefine.UserStatType\x12.\n\x0b\x63lient_type\x18\x03 \x02(\x0e\x32\x19.IM.BaseDefine.ClientType\"\xe8\x01\n\nUnreadInfo\x12\x12\n\nsession_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nunread_cnt\x18\x03 \x02(\r\x12\x15\n\rlatest_msg_id\x18\x04 \x02(\r\x12\x17\n\x0flatest_msg_data\x18\x05 \x02(\x0c\x12/\n\x0flatest_msg_type\x18\x06 \x02(\x0e\x32\x16.IM.BaseDefine.MsgType\x12\x1f\n\x17latest_msg_from_user_id\x18\x07 \x02(\r\"\x83\x01\n\x07MsgInfo\x12\x0e\n\x06msg_id\x18\x01 \x02(\r\x12\x17\n\x0f\x66rom_session_id\x18\x02 \x02(\r\x12\x13\n\x0b\x63reate_time\x18\x03 \x02(\r\x12(\n\x08msg_type\x18\x04 \x02(\x0e\x32\x16.IM.BaseDefine.MsgType\x12\x10\n\x08msg_data\x18\x05 \x02(\x0c\"\xa9\x01\n\x08\x42logInfo\x12\x0f\n\x07\x62log_id\x18\x01 \x02(\r\x12\x16\n\x0ewriter_user_id\x18\x02 \x02(\r\x12\x11\n\tnick_name\x18\x03 \x02(\t\x12\x12\n\navatar_url\x18\x04 \x02(\t\x12\x10\n\x08like_cnt\x18\x05 \x02(\r\x12\x13\n\x0b\x63omment_cnt\x18\x06 \x02(\r\x12\x13\n\x0b\x63reate_time\x18\x07 \x02(\r\x12\x11\n\tblog_data\x18\x08 \x02(\x0c\"5\n\x10GroupVersionInfo\x12\x10\n\x08group_id\x18\x01 \x02(\r\x12\x0f\n\x07version\x18\x02 \x02(\r\"\xd2\x01\n\tGroupInfo\x12\x10\n\x08group_id\x18\x01 \x02(\r\x12\x0f\n\x07version\x18\x02 \x02(\r\x12\x12\n\ngroup_name\x18\x03 \x02(\t\x12\x14\n\x0cgroup_avatar\x18\x04 \x02(\t\x12\x18\n\x10group_creator_id\x18\x05 \x02(\r\x12,\n\ngroup_type\x18\x06 \x02(\x0e\x32\x18.IM.BaseDefine.GroupType\x12\x15\n\rshield_status\x18\x07 \x02(\r\x12\x19\n\x11group_member_list\x18\x08 \x03(\r\"\x84\x01\n\rUserTokenInfo\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12,\n\tuser_type\x18\x02 \x02(\x0e\x32\x19.IM.BaseDefine.ClientType\x12\r\n\x05token\x18\x03 \x02(\t\x12\x12\n\npush_count\x18\x04 \x02(\r\x12\x11\n\tpush_type\x18\x05 \x02(\r\"5\n\nPushResult\x12\x12\n\nuser_token\x18\x01 \x02(\t\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\"H\n\x0cShieldStatus\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x10\n\x08group_id\x18\x02 \x02(\r\x12\x15\n\rshield_status\x18\x03 \x02(\r\"^\n\x0fOfflineFileInfo\x12\x14\n\x0c\x66rom_user_id\x18\x01 \x02(\r\x12\x0f\n\x07task_id\x18\x02 \x02(\t\x12\x11\n\tfile_name\x18\x03 \x02(\t\x12\x11\n\tfile_size\x18\x04 \x02(\r\"\x94\x01\n\nDepartInfo\x12\x0f\n\x07\x64\x65pt_id\x18\x01 \x02(\r\x12\x10\n\x08priority\x18\x02 \x02(\r\x12\x11\n\tdept_name\x18\x03 \x02(\t\x12\x16\n\x0eparent_dept_id\x18\x04 \x02(\r\x12\x38\n\x0b\x64\x65pt_status\x18\x05 \x02(\x0e\x32#.IM.BaseDefine.DepartmentStatusType\":\n\x10PushShieldStatus\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x15\n\rshield_status\x18\x02 \x02(\r*\xc1\x01\n\tServiceID\x12\r\n\tSID_LOGIN\x10\x01\x12\x12\n\x0eSID_BUDDY_LIST\x10\x02\x12\x0b\n\x07SID_MSG\x10\x03\x12\r\n\tSID_GROUP\x10\x04\x12\x0c\n\x08SID_FILE\x10\x05\x12\x16\n\x12SID_SWITCH_SERVICE\x10\x06\x12\r\n\tSID_OTHER\x10\x07\x12\x10\n\x0cSID_INTERNAL\x10\x08\x12\x10\n\x0cSID_REGISTER\x10\t\x12\x0c\n\x08SID_BLOG\x10\n\x12\x0e\n\nSID_SYSTEM\x10\x0b*\x86\x02\n\tBlogCmdID\x12\x12\n\rCID_BLOG_SEND\x10\x81\x14\x12\x16\n\x11\x43ID_BLOG_SEND_ACK\x10\x82\x14\x12\x1e\n\x19\x43ID_BLOG_GET_LIST_REQUEST\x10\x83\x14\x12\x1f\n\x1a\x43ID_BLOG_GET_LIST_RESPONSE\x10\x84\x14\x12!\n\x1c\x43ID_BLOG_ADD_COMMENT_REQUEST\x10\x85\x14\x12\"\n\x1d\x43ID_BLOG_ADD_COMMENT_RESPONSE\x10\x86\x14\x12!\n\x1c\x43ID_BLOG_GET_COMMENT_REQUEST\x10\x87\x14\x12\"\n\x1d\x43ID_BLOG_GET_COMMENT_RESPONSE\x10\x88\x14*=\n\rRegisterCmdID\x12\x15\n\x10\x43ID_REGISTER_REQ\x10\x81\x12\x12\x15\n\x10\x43ID_REGISTER_RSP\x10\x82\x12*\xe6\x03\n\nLoginCmdID\x12\x1c\n\x17\x43ID_LOGIN_REQ_MSGSERVER\x10\x81\x02\x12\x1c\n\x17\x43ID_LOGIN_RES_MSGSERVER\x10\x82\x02\x12\x1c\n\x17\x43ID_LOGIN_REQ_USERLOGIN\x10\x83\x02\x12\x1c\n\x17\x43ID_LOGIN_RES_USERLOGIN\x10\x84\x02\x12\x1b\n\x16\x43ID_LOGIN_REQ_LOGINOUT\x10\x85\x02\x12\x1b\n\x16\x43ID_LOGIN_RES_LOGINOUT\x10\x86\x02\x12\x18\n\x13\x43ID_LOGIN_KICK_USER\x10\x87\x02\x12\x1e\n\x19\x43ID_LOGIN_REQ_DEVICETOKEN\x10\x88\x02\x12\x1e\n\x19\x43ID_LOGIN_RES_DEVICETOKEN\x10\x89\x02\x12\x1f\n\x1a\x43ID_LOGIN_REQ_KICKPCCLIENT\x10\x8a\x02\x12\x1f\n\x1a\x43ID_LOGIN_RES_KICKPCCLIENT\x10\x8b\x02\x12\x1e\n\x19\x43ID_LOGIN_REQ_PUSH_SHIELD\x10\x8c\x02\x12\x1e\n\x19\x43ID_LOGIN_RES_PUSH_SHIELD\x10\x8d\x02\x12$\n\x1f\x43ID_LOGIN_REQ_QUERY_PUSH_SHIELD\x10\x8e\x02\x12$\n\x1f\x43ID_LOGIN_RES_QUERY_PUSH_SHIELD\x10\x8f\x02*\xc8\x0f\n\x0e\x42uddyListCmdID\x12\x32\n-CID_BUDDY_LIST_RECENT_CONTACT_SESSION_REQUEST\x10\x81\x04\x12\x33\n.CID_BUDDY_LIST_RECENT_CONTACT_SESSION_RESPONSE\x10\x82\x04\x12!\n\x1c\x43ID_BUDDY_LIST_STATUS_NOTIFY\x10\x83\x04\x12%\n CID_BUDDY_LIST_USER_INFO_REQUEST\x10\x84\x04\x12&\n!CID_BUDDY_LIST_USER_INFO_RESPONSE\x10\x85\x04\x12&\n!CID_BUDDY_LIST_REMOVE_SESSION_REQ\x10\x86\x04\x12&\n!CID_BUDDY_LIST_REMOVE_SESSION_RES\x10\x87\x04\x12$\n\x1f\x43ID_BUDDY_LIST_ALL_USER_REQUEST\x10\x88\x04\x12%\n CID_BUDDY_LIST_ALL_USER_RESPONSE\x10\x89\x04\x12(\n#CID_BUDDY_LIST_USERS_STATUS_REQUEST\x10\x8a\x04\x12)\n$CID_BUDDY_LIST_USERS_STATUS_RESPONSE\x10\x8b\x04\x12)\n$CID_BUDDY_LIST_CHANGE_AVATAR_REQUEST\x10\x8c\x04\x12*\n%CID_BUDDY_LIST_CHANGE_AVATAR_RESPONSE\x10\x8d\x04\x12*\n%CID_BUDDY_LIST_PC_LOGIN_STATUS_NOTIFY\x10\x8e\x04\x12)\n$CID_BUDDY_LIST_REMOVE_SESSION_NOTIFY\x10\x8f\x04\x12&\n!CID_BUDDY_LIST_DEPARTMENT_REQUEST\x10\x90\x04\x12\'\n\"CID_BUDDY_LIST_DEPARTMENT_RESPONSE\x10\x91\x04\x12)\n$CID_BUDDY_LIST_AVATAR_CHANGED_NOTIFY\x10\x92\x04\x12,\n\'CID_BUDDY_LIST_CHANGE_SIGN_INFO_REQUEST\x10\x93\x04\x12-\n(CID_BUDDY_LIST_CHANGE_SIGN_INFO_RESPONSE\x10\x94\x04\x12,\n\'CID_BUDDY_LIST_SIGN_INFO_CHANGED_NOTIFY\x10\x95\x04\x12\'\n\"CID_BUDDY_LIST_SEARCH_USER_REQUEST\x10\x96\x04\x12(\n#CID_BUDDY_LIST_SEARCH_USER_RESPONSE\x10\x97\x04\x12&\n!CID_BUDDY_LIST_ADD_FRIEND_REQUEST\x10\x98\x04\x12\'\n\"CID_BUDDY_LIST_ADD_FRIEND_RESPONSE\x10\x99\x04\x12#\n\x1e\x43ID_BUDDY_LIST_ADD_FRIEND_DATA\x10\x9a\x04\x12,\n\'CID_BUDDY_LIST_ADD_FRIEND_READ_DATA_ACK\x10\x9b\x04\x12\x31\n,CID_BUDDY_LIST_ADD_FRIEND_UNREAD_CNT_REQUEST\x10\x9c\x04\x12\x32\n-CID_BUDDY_LIST_ADD_FRIEND_UNREAD_CNT_RESPONSE\x10\x9d\x04\x12,\n\'CID_BUDDY_LIST_AGREE_ADD_FRIEND_REQUEST\x10\x9e\x04\x12-\n(CID_BUDDY_LIST_AGREE_ADD_FRIEND_RESPONSE\x10\x9f\x04\x12\'\n\"CID_BUDDY_LIST_FOLLOW_USER_REQUEST\x10\xa0\x04\x12(\n#CID_BUDDY_LIST_FOLLOW_USER_RESPONSE\x10\xa1\x04\x12&\n!CID_BUDDY_LIST_DEL_FRIEND_REQUEST\x10\xa2\x04\x12\'\n\"CID_BUDDY_LIST_DEL_FRIEND_RESPONSE\x10\xa3\x04\x12+\n&CID_BUDDY_LIST_DEL_FOLLOW_USER_REQUEST\x10\xa4\x04\x12,\n\'CID_BUDDY_LIST_DEL_FOLLOW_USER_RESPONSE\x10\xa5\x04\x12/\n*CID_BUDDY_LIST_GET_ADD_FRIEND_DATA_REQUEST\x10\xa6\x04\x12\x30\n+CID_BUDDY_LIST_GET_ADD_FRIEND_DATA_RESPONSE\x10\xa7\x04\x12/\n*CID_BUDDY_LIST_ALL_ONLINE_USER_CNT_REQUEST\x10\xa8\x04\x12\x30\n+CID_BUDDY_LIST_ALL_ONLINE_USER_CNT_RESPONSE\x10\xa9\x04\x12,\n\'CID_BUDDY_LIST_UPDATE_USER_INFO_REQUEST\x10\xaa\x04\x12-\n(CID_BUDDY_LIST_UPDATE_USER_INFO_RESPONSE\x10\xab\x04\x12*\n%CID_BUDDY_LIST_RECOMMEND_LIST_REQUEST\x10\xac\x04\x12+\n&CID_BUDDY_LIST_RECOMMEND_LIST_RESPONSE\x10\xad\x04*\xa2\x03\n\x0cMessageCmdID\x12\x11\n\x0c\x43ID_MSG_DATA\x10\x81\x06\x12\x15\n\x10\x43ID_MSG_DATA_ACK\x10\x82\x06\x12\x15\n\x10\x43ID_MSG_READ_ACK\x10\x83\x06\x12\x18\n\x13\x43ID_MSG_READ_NOTIFY\x10\x84\x06\x12\x19\n\x14\x43ID_MSG_TIME_REQUEST\x10\x85\x06\x12\x1a\n\x15\x43ID_MSG_TIME_RESPONSE\x10\x86\x06\x12\x1f\n\x1a\x43ID_MSG_UNREAD_CNT_REQUEST\x10\x87\x06\x12 \n\x1b\x43ID_MSG_UNREAD_CNT_RESPONSE\x10\x88\x06\x12\x19\n\x14\x43ID_MSG_LIST_REQUEST\x10\x89\x06\x12\x1a\n\x15\x43ID_MSG_LIST_RESPONSE\x10\x8a\x06\x12\"\n\x1d\x43ID_MSG_GET_LATEST_MSG_ID_REQ\x10\x8b\x06\x12\"\n\x1d\x43ID_MSG_GET_LATEST_MSG_ID_RSP\x10\x8c\x06\x12\x1e\n\x19\x43ID_MSG_GET_BY_MSG_ID_REQ\x10\x8d\x06\x12\x1e\n\x19\x43ID_MSG_GET_BY_MSG_ID_RES\x10\x8e\x06*\x8c\x03\n\nGroupCmdID\x12\"\n\x1d\x43ID_GROUP_NORMAL_LIST_REQUEST\x10\x81\x08\x12#\n\x1e\x43ID_GROUP_NORMAL_LIST_RESPONSE\x10\x82\x08\x12\x1b\n\x16\x43ID_GROUP_INFO_REQUEST\x10\x83\x08\x12\x1c\n\x17\x43ID_GROUP_INFO_RESPONSE\x10\x84\x08\x12\x1d\n\x18\x43ID_GROUP_CREATE_REQUEST\x10\x85\x08\x12\x1e\n\x19\x43ID_GROUP_CREATE_RESPONSE\x10\x86\x08\x12$\n\x1f\x43ID_GROUP_CHANGE_MEMBER_REQUEST\x10\x87\x08\x12%\n CID_GROUP_CHANGE_MEMBER_RESPONSE\x10\x88\x08\x12#\n\x1e\x43ID_GROUP_SHIELD_GROUP_REQUEST\x10\x89\x08\x12$\n\x1f\x43ID_GROUP_SHIELD_GROUP_RESPONSE\x10\x8a\x08\x12#\n\x1e\x43ID_GROUP_CHANGE_MEMBER_NOTIFY\x10\x8b\x08*\xcd\x02\n\tFileCmdID\x12\x17\n\x12\x43ID_FILE_LOGIN_REQ\x10\x81\n\x12\x17\n\x12\x43ID_FILE_LOGIN_RES\x10\x82\n\x12\x13\n\x0e\x43ID_FILE_STATE\x10\x83\n\x12\x1b\n\x16\x43ID_FILE_PULL_DATA_REQ\x10\x84\n\x12\x1b\n\x16\x43ID_FILE_PULL_DATA_RSP\x10\x85\n\x12\x15\n\x10\x43ID_FILE_REQUEST\x10\x86\n\x12\x16\n\x11\x43ID_FILE_RESPONSE\x10\x87\n\x12\x14\n\x0f\x43ID_FILE_NOTIFY\x10\x88\n\x12\x1d\n\x18\x43ID_FILE_HAS_OFFLINE_REQ\x10\x89\n\x12\x1d\n\x18\x43ID_FILE_HAS_OFFLINE_RES\x10\x8a\n\x12\x1d\n\x18\x43ID_FILE_ADD_OFFLINE_REQ\x10\x8b\n\x12\x1d\n\x18\x43ID_FILE_DEL_OFFLINE_REQ\x10\x8c\n*-\n\x12SwitchServiceCmdID\x12\x17\n\x12\x43ID_SWITCH_P2P_CMD\x10\x81\x0c*\xef\x05\n\nOtherCmdID\x12\x18\n\x13\x43ID_OTHER_HEARTBEAT\x10\x81\x0e\x12\x1f\n\x1a\x43ID_OTHER_STOP_RECV_PACKET\x10\x82\x0e\x12\x1b\n\x16\x43ID_OTHER_VALIDATE_REQ\x10\x83\x0e\x12\x1b\n\x16\x43ID_OTHER_VALIDATE_RSP\x10\x84\x0e\x12#\n\x1e\x43ID_OTHER_GET_DEVICE_TOKEN_REQ\x10\x85\x0e\x12#\n\x1e\x43ID_OTHER_GET_DEVICE_TOKEN_RSP\x10\x86\x0e\x12\x17\n\x12\x43ID_OTHER_ROLE_SET\x10\x87\x0e\x12\x1f\n\x1a\x43ID_OTHER_ONLINE_USER_INFO\x10\x88\x0e\x12\x1c\n\x17\x43ID_OTHER_MSG_SERV_INFO\x10\x89\x0e\x12!\n\x1c\x43ID_OTHER_USER_STATUS_UPDATE\x10\x8a\x0e\x12\x1e\n\x19\x43ID_OTHER_USER_CNT_UPDATE\x10\x8b\x0e\x12\x1f\n\x1a\x43ID_OTHER_SERVER_KICK_USER\x10\x8d\x0e\x12\"\n\x1d\x43ID_OTHER_LOGIN_STATUS_NOTIFY\x10\x8e\x0e\x12\x1f\n\x1a\x43ID_OTHER_PUSH_TO_USER_REQ\x10\x8f\x0e\x12\x1f\n\x1a\x43ID_OTHER_PUSH_TO_USER_RSP\x10\x90\x0e\x12\x1d\n\x18\x43ID_OTHER_GET_SHIELD_REQ\x10\x91\x0e\x12\x1d\n\x18\x43ID_OTHER_GET_SHIELD_RSP\x10\x92\x0e\x12 \n\x1b\x43ID_OTHER_FILE_TRANSFER_REQ\x10\xb1\x0e\x12 \n\x1b\x43ID_OTHER_FILE_TRANSFER_RSP\x10\xb2\x0e\x12!\n\x1c\x43ID_OTHER_FILE_SERVER_IP_REQ\x10\xb3\x0e\x12!\n\x1c\x43ID_OTHER_FILE_SERVER_IP_RSP\x10\xb4\x0e\x12\x1b\n\x16\x43ID_OTHER_REGISTER_REQ\x10\xb5\x0e\x12\x1b\n\x16\x43ID_OTHER_REGISTER_RSP\x10\xb6\x0e*\x97\x02\n\nResultType\x12\x16\n\x12REFUSE_REASON_NONE\x10\x00\x12\x1f\n\x1bREFUSE_REASON_NO_MSG_SERVER\x10\x01\x12!\n\x1dREFUSE_REASON_MSG_SERVER_FULL\x10\x02\x12\x1e\n\x1aREFUSE_REASON_NO_DB_SERVER\x10\x03\x12!\n\x1dREFUSE_REASON_NO_LOGIN_SERVER\x10\x04\x12!\n\x1dREFUSE_REASON_NO_ROUTE_SERVER\x10\x05\x12$\n REFUSE_REASON_DB_VALIDATE_FAILED\x10\x06\x12!\n\x1dREFUSE_REASON_VERSION_TOO_OLD\x10\x07*M\n\x0eKickReasonType\x12\x1e\n\x1aKICK_REASON_DUPLICATE_USER\x10\x01\x12\x1b\n\x17KICK_REASON_MOBILE_KICK\x10\x02*2\n\x0eOnlineListType\x12 \n\x1cONLINE_LIST_TYPE_FRIEND_LIST\x10\x01*V\n\x0cUserStatType\x12\x16\n\x12USER_STATUS_ONLINE\x10\x01\x12\x17\n\x13USER_STATUS_OFFLINE\x10\x02\x12\x15\n\x11USER_STATUS_LEAVE\x10\x03*z\n\x0bSessionType\x12\x17\n\x13SESSION_TYPE_SINGLE\x10\x01\x12\x16\n\x12SESSION_TYPE_GROUP\x10\x02\x12\x17\n\x13SESSION_TYPE_SYSTEM\x10\x03\x12!\n\x1dSESSION_TYPE_ERROR_NOT_FRIEND\x10 *\x90\x01\n\x07MsgType\x12\x18\n\x14MSG_TYPE_SINGLE_TEXT\x10\x01\x12\x19\n\x15MSG_TYPE_SINGLE_AUDIO\x10\x02\x12\x17\n\x13MSG_TYPE_GROUP_TEXT\x10\x11\x12\x18\n\x14MSG_TYPE_GROUP_AUDIO\x10\x12\x12\x1d\n\x19MSG_TYPE_ERROR_NOT_FRIEND\x10 *R\n\x08\x42logType\x12\x16\n\x12\x42LOG_TYPE_RCOMMEND\x10\x01\x12\x14\n\x10\x42LOG_TYPE_FRIEND\x10\x02\x12\x18\n\x14\x42LOG_TYPE_FOLLOWUSER\x10\x03*8\n\tBlogType2\x12\x13\n\x0f\x42LOG_TYPE2_BLOG\x10\x01\x12\x16\n\x12\x42LOG_TYPE2_COMMENT\x10\x02*V\n\rSystemMsgType\x12\x16\n\x12\x41\x44\x44_FRIEND_REQUEST\x10\x01\x12\x14\n\x10\x41\x44\x44_FRIEND_AGREE\x10\x02\x12\x17\n\x13\x41\x44\x44_FRIEND_DISAGREE\x10\x03*h\n\nClientType\x12\x17\n\x13\x43LIENT_TYPE_WINDOWS\x10\x01\x12\x13\n\x0f\x43LIENT_TYPE_MAC\x10\x02\x12\x13\n\x0f\x43LIENT_TYPE_IOS\x10\x11\x12\x17\n\x13\x43LIENT_TYPE_ANDROID\x10\x12*6\n\tGroupType\x12\x15\n\x11GROUP_TYPE_NORMAL\x10\x01\x12\x12\n\x0eGROUP_TYPE_TMP\x10\x02*G\n\x0fGroupModifyType\x12\x19\n\x15GROUP_MODIFY_TYPE_ADD\x10\x01\x12\x19\n\x15GROUP_MODIFY_TYPE_DEL\x10\x02*?\n\x10TransferFileType\x12\x14\n\x10\x46ILE_TYPE_ONLINE\x10\x01\x12\x15\n\x11\x46ILE_TYPE_OFFLINE\x10\x02*s\n\x0f\x43lientFileState\x12\x1a\n\x16\x43LIENT_FILE_PEER_READY\x10\x00\x12\x16\n\x12\x43LIENT_FILE_CANCEL\x10\x01\x12\x16\n\x12\x43LIENT_FILE_REFUSE\x10\x02\x12\x14\n\x10\x43LIENT_FILE_DONE\x10\x03*\x80\x01\n\x0e\x43lientFileRole\x12\x1a\n\x16\x43LIENT_REALTIME_SENDER\x10\x01\x12\x1a\n\x16\x43LIENT_REALTIME_RECVER\x10\x02\x12\x19\n\x15\x43LIENT_OFFLINE_UPLOAD\x10\x03\x12\x1b\n\x17\x43LIENT_OFFLINE_DOWNLOAD\x10\x04*\xe1\x04\n\x0f\x46ileServerError\x12\x18\n\x14\x46ILE_SERVER_ERRNO_OK\x10\x00\x12*\n&FILE_SERVER_ERRNO_CREATE_TASK_ID_ERROR\x10\x01\x12\'\n#FILE_SERVER_ERRNO_CREATE_TASK_ERROR\x10\x02\x12)\n%FILE_SERVER_ERRNO_LOGIN_INVALID_TOKEN\x10\x03\x12+\n\'FILE_SERVER_ERRNO_INVALID_USER_FOR_TASK\x10\x04\x12\x34\n0FILE_SERVER_ERRNO_PULL_DATA_WITH_INVALID_TASK_ID\x10\x05\x12-\n)FILE_SERVER_ERRNO_PULL_DATA_ILLIEAGE_USER\x10\x06\x12+\n\'FILE_SERVER_ERRNO_PULL_DATA_MKDIR_ERROR\x10\x07\x12/\n+FILE_SERVER_ERRNO_PULL_DATA_OPEN_FILE_ERROR\x10\x08\x12\x36\n2FILE_SERVER_ERRNO_PULL_DATA_READ_FILE_HEADER_ERROR\x10\t\x12/\n+FILE_SERVER_ERRNO_PULL_DATA_ALLOC_MEM_ERROR\x10\n\x12\x31\n-FILE_SERVER_ERRNO_PULL_DATA_SEEK_OFFSET_ERROR\x10\x0b\x12(\n$FILE_SERVER_ERRNO_PULL_DATA_FINISHED\x10\x0c*E\n\x11SessionStatusType\x12\x15\n\x11SESSION_STATUS_OK\x10\x00\x12\x19\n\x15SESSION_STATUS_DELETE\x10\x01*B\n\x14\x44\x65partmentStatusType\x12\x12\n\x0e\x44\x45PT_STATUS_OK\x10\x00\x12\x16\n\x12\x44\x45PT_STATUS_DELETE\x10\x01*T\n\x10UserRelationType\x12\x16\n\x12RELATION_RECOMMEND\x10\x00\x12\x13\n\x0fRELATION_FRIEND\x10\x01\x12\x13\n\x0fRELATION_FOLLOW\x10\x02\x42\x1c\n\x18\x63om.tenth.space.protobufH\x03')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -405,11 +405,19 @@ _BUDDYLISTCMDID = _descriptor.EnumDescriptor(
       name='CID_BUDDY_LIST_UPDATE_USER_INFO_RESPONSE', index=42, number=555,
       options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='CID_BUDDY_LIST_RECOMMEND_LIST_REQUEST', index=43, number=556,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='CID_BUDDY_LIST_RECOMMEND_LIST_RESPONSE', index=44, number=557,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
   serialized_start=3290,
-  serialized_end=5193,
+  serialized_end=5282,
 )
 _sym_db.RegisterEnumDescriptor(_BUDDYLISTCMDID)
 
@@ -479,8 +487,8 @@ _MESSAGECMDID = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=5196,
-  serialized_end=5614,
+  serialized_start=5285,
+  serialized_end=5703,
 )
 _sym_db.RegisterEnumDescriptor(_MESSAGECMDID)
 
@@ -538,8 +546,8 @@ _GROUPCMDID = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=5617,
-  serialized_end=6013,
+  serialized_start=5706,
+  serialized_end=6102,
 )
 _sym_db.RegisterEnumDescriptor(_GROUPCMDID)
 
@@ -601,8 +609,8 @@ _FILECMDID = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6016,
-  serialized_end=6349,
+  serialized_start=6105,
+  serialized_end=6438,
 )
 _sym_db.RegisterEnumDescriptor(_FILECMDID)
 
@@ -620,8 +628,8 @@ _SWITCHSERVICECMDID = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6351,
-  serialized_end=6396,
+  serialized_start=6440,
+  serialized_end=6485,
 )
 _sym_db.RegisterEnumDescriptor(_SWITCHSERVICECMDID)
 
@@ -727,8 +735,8 @@ _OTHERCMDID = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6399,
-  serialized_end=7150,
+  serialized_start=6488,
+  serialized_end=7239,
 )
 _sym_db.RegisterEnumDescriptor(_OTHERCMDID)
 
@@ -774,8 +782,8 @@ _RESULTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=7153,
-  serialized_end=7432,
+  serialized_start=7242,
+  serialized_end=7521,
 )
 _sym_db.RegisterEnumDescriptor(_RESULTTYPE)
 
@@ -797,8 +805,8 @@ _KICKREASONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=7434,
-  serialized_end=7511,
+  serialized_start=7523,
+  serialized_end=7600,
 )
 _sym_db.RegisterEnumDescriptor(_KICKREASONTYPE)
 
@@ -816,8 +824,8 @@ _ONLINELISTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=7513,
-  serialized_end=7563,
+  serialized_start=7602,
+  serialized_end=7652,
 )
 _sym_db.RegisterEnumDescriptor(_ONLINELISTTYPE)
 
@@ -843,8 +851,8 @@ _USERSTATTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=7565,
-  serialized_end=7651,
+  serialized_start=7654,
+  serialized_end=7740,
 )
 _sym_db.RegisterEnumDescriptor(_USERSTATTYPE)
 
@@ -874,8 +882,8 @@ _SESSIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=7653,
-  serialized_end=7775,
+  serialized_start=7742,
+  serialized_end=7864,
 )
 _sym_db.RegisterEnumDescriptor(_SESSIONTYPE)
 
@@ -909,8 +917,8 @@ _MSGTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=7778,
-  serialized_end=7922,
+  serialized_start=7867,
+  serialized_end=8011,
 )
 _sym_db.RegisterEnumDescriptor(_MSGTYPE)
 
@@ -936,8 +944,8 @@ _BLOGTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=7924,
-  serialized_end=8006,
+  serialized_start=8013,
+  serialized_end=8095,
 )
 _sym_db.RegisterEnumDescriptor(_BLOGTYPE)
 
@@ -959,8 +967,8 @@ _BLOGTYPE2 = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=8008,
-  serialized_end=8064,
+  serialized_start=8097,
+  serialized_end=8153,
 )
 _sym_db.RegisterEnumDescriptor(_BLOGTYPE2)
 
@@ -986,8 +994,8 @@ _SYSTEMMSGTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=8066,
-  serialized_end=8152,
+  serialized_start=8155,
+  serialized_end=8241,
 )
 _sym_db.RegisterEnumDescriptor(_SYSTEMMSGTYPE)
 
@@ -1017,8 +1025,8 @@ _CLIENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=8154,
-  serialized_end=8258,
+  serialized_start=8243,
+  serialized_end=8347,
 )
 _sym_db.RegisterEnumDescriptor(_CLIENTTYPE)
 
@@ -1040,8 +1048,8 @@ _GROUPTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=8260,
-  serialized_end=8314,
+  serialized_start=8349,
+  serialized_end=8403,
 )
 _sym_db.RegisterEnumDescriptor(_GROUPTYPE)
 
@@ -1063,8 +1071,8 @@ _GROUPMODIFYTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=8316,
-  serialized_end=8387,
+  serialized_start=8405,
+  serialized_end=8476,
 )
 _sym_db.RegisterEnumDescriptor(_GROUPMODIFYTYPE)
 
@@ -1086,8 +1094,8 @@ _TRANSFERFILETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=8389,
-  serialized_end=8452,
+  serialized_start=8478,
+  serialized_end=8541,
 )
 _sym_db.RegisterEnumDescriptor(_TRANSFERFILETYPE)
 
@@ -1117,8 +1125,8 @@ _CLIENTFILESTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=8454,
-  serialized_end=8569,
+  serialized_start=8543,
+  serialized_end=8658,
 )
 _sym_db.RegisterEnumDescriptor(_CLIENTFILESTATE)
 
@@ -1148,8 +1156,8 @@ _CLIENTFILEROLE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=8572,
-  serialized_end=8700,
+  serialized_start=8661,
+  serialized_end=8789,
 )
 _sym_db.RegisterEnumDescriptor(_CLIENTFILEROLE)
 
@@ -1215,8 +1223,8 @@ _FILESERVERERROR = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=8703,
-  serialized_end=9312,
+  serialized_start=8792,
+  serialized_end=9401,
 )
 _sym_db.RegisterEnumDescriptor(_FILESERVERERROR)
 
@@ -1238,8 +1246,8 @@ _SESSIONSTATUSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=9314,
-  serialized_end=9383,
+  serialized_start=9403,
+  serialized_end=9472,
 )
 _sym_db.RegisterEnumDescriptor(_SESSIONSTATUSTYPE)
 
@@ -1261,8 +1269,8 @@ _DEPARTMENTSTATUSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=9385,
-  serialized_end=9451,
+  serialized_start=9474,
+  serialized_end=9540,
 )
 _sym_db.RegisterEnumDescriptor(_DEPARTMENTSTATUSTYPE)
 
@@ -1288,8 +1296,8 @@ _USERRELATIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=9453,
-  serialized_end=9537,
+  serialized_start=9542,
+  serialized_end=9626,
 )
 _sym_db.RegisterEnumDescriptor(_USERRELATIONTYPE)
 
@@ -1373,6 +1381,8 @@ CID_BUDDY_LIST_ALL_ONLINE_USER_CNT_REQUEST = 552
 CID_BUDDY_LIST_ALL_ONLINE_USER_CNT_RESPONSE = 553
 CID_BUDDY_LIST_UPDATE_USER_INFO_REQUEST = 554
 CID_BUDDY_LIST_UPDATE_USER_INFO_RESPONSE = 555
+CID_BUDDY_LIST_RECOMMEND_LIST_REQUEST = 556
+CID_BUDDY_LIST_RECOMMEND_LIST_RESPONSE = 557
 CID_MSG_DATA = 769
 CID_MSG_DATA_ACK = 770
 CID_MSG_READ_ACK = 771
