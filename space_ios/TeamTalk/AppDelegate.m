@@ -54,19 +54,19 @@
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
     
     // 推送消息的注册方式
-    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        // for iOS 8
-        UIUserNotificationSettings* settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-        [application registerForRemoteNotifications];
-    } else {
-        // for iOS 7 or iOS 6
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
-    }
-    
-    if( SYSTEM_VERSION >= 8 ) {
-        [[UINavigationBar appearance] setTranslucent:YES];
-    }
+//    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+//        // for iOS 8
+//        UIUserNotificationSettings* settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+//        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+//        [application registerForRemoteNotifications];
+//    } else {
+//        // for iOS 7 or iOS 6
+//        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+//    }
+//    
+//    if( SYSTEM_VERSION >= 8 ) {
+//        [[UINavigationBar appearance] setTranslucent:YES];
+//    }
     
     [[UINavigationBar appearance] setBarStyle:UIBarStyleDefault];
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName]];

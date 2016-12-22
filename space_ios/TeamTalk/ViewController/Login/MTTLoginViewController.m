@@ -193,6 +193,9 @@
    
     [dic setObject:[password MD5] forKey:@"passwd"];
     
+    /*
+     
+     */
     [dic setObject:@"test" forKey:@"server_type"];
 
     NSString *landu_arg = [dic jsonString];
